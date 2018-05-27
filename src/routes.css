@@ -1,0 +1,22 @@
+.Routes {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex: row wrap space-between;
+    flex: row wrap;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 1600px;
+
+    /*
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    */
+}
+
+.Routes > main {
+    margin: 0 auto;
+    width: 70vw;
+}
