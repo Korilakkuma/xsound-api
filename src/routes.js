@@ -10,6 +10,7 @@ import Home from './components/Home';
 import * as XSound from './components/xsound';
 import * as OscillatorModule from './components/oscillator';
 import * as OneshotModule from './components/oneshot';
+import * as NoiseModule from './components/noise';
 import * as AudioModule from './components/audio';
 import * as MediaModule from './components/media';
 import * as StreamModule from './components/stream';
@@ -99,6 +100,7 @@ export default (
                 <Route exact path={`${path}oneshot/params`} render={render(OneshotModule.Params)} />
                 <Route exact path={`${path}oneshot/to-json`} render={render(OneshotModule.ToJSON)} />
                 <Route exact path={`${path}oneshot/get`} render={render(OneshotModule.Get)} />
+                <Route exact path={`${path}noise/start`} render={render(NoiseModule.Start)} />
                 <Route exact path={`${path}audio/setup`} render={render(AudioModule.Setup)} />
                 <Route exact path={`${path}audio/ready`} render={render(AudioModule.Ready)} />
                 <Route exact path={`${path}audio/start`} render={render(AudioModule.Start)} />

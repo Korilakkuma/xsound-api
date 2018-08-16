@@ -108,6 +108,13 @@ class Nav extends React.Component {
                     </dl>
                 </section>
                 <section role="presentation">
+                    <h2><button type="button" role="tab" aria-expanded={expandedPanelId === 'panel-noise'} aria-selected={expandedPanelId === 'panel-noise'} aria-controls="panel-noise" tabIndex="0" onClick={this.onClick}>Noise</button></h2>
+                    <dl id="panel-noise" aria-hidden={expandedPanelId !== 'panel-noise'}>
+                        <dt>Methods</dt>
+                        <dd><Link to={`${this.path}noise/start`} className={this.getSelectedClassName(`${this.path}noise/start`)}>start</Link></dd>
+                    </dl>
+                </section>
+                <section role="presentation">
                     <h2><button type="button" role="tab" aria-expanded={expandedPanelId === 'panel-audio'} aria-selected={expandedPanelId === 'panel-audio'} aria-controls="panel-audio" tabIndex="0" onClick={this.onClick}>Audio</button></h2>
                     <dl id="panel-audio" aria-hidden={expandedPanelId !== 'panel-audio'}>
                         <dt>Methods</dt>
