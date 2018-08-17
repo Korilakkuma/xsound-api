@@ -101,6 +101,7 @@ export default (
                 <Route exact path={`${path}oneshot/to-json`} render={render(OneshotModule.ToJSON)} />
                 <Route exact path={`${path}oneshot/get`} render={render(OneshotModule.Get)} />
                 <Route exact path={`${path}noise/start`} render={render(NoiseModule.Start)} />
+                <Route exact path={`${path}noise/stop`} render={render(NoiseModule.Stop)} />
                 <Route exact path={`${path}audio/setup`} render={render(AudioModule.Setup)} />
                 <Route exact path={`${path}audio/ready`} render={render(AudioModule.Ready)} />
                 <Route exact path={`${path}audio/start`} render={render(AudioModule.Start)} />

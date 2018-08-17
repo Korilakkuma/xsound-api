@@ -112,6 +112,7 @@ class Nav extends React.Component {
                     <dl id="panel-noise" aria-hidden={expandedPanelId !== 'panel-noise'}>
                         <dt>Methods</dt>
                         <dd><Link to={`${this.path}noise/start`} className={this.getSelectedClassName(`${this.path}noise/start`)}>start</Link></dd>
+                        <dd><Link to={`${this.path}noise/stop`} className={this.getSelectedClassName(`${this.path}noise/stop`)}>stop</Link></dd>
                     </dl>
                 </section>
                 <section role="presentation">
