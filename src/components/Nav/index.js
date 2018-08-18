@@ -113,6 +113,7 @@ class Nav extends React.Component {
                         <dt>Methods</dt>
                         <dd><Link to={`${this.path}noise/start`} className={this.getSelectedClassName(`${this.path}noise/start`)}>start</Link></dd>
                         <dd><Link to={`${this.path}noise/stop`} className={this.getSelectedClassName(`${this.path}noise/stop`)}>stop</Link></dd>
+                        <dd><Link to={`${this.path}noise/param`} className={this.getSelectedClassName(`${this.path}noise/param`)}>param</Link></dd>
                     </dl>
                 </section>
                 <section role="presentation">
