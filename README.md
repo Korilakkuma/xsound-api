@@ -22,7 +22,7 @@ In concrete, XSound may be useful to implement the following features.
   
 XSound don't depend on other libraries or frameworks (For example, jQuery, React).
   
-![support-browsers](images/support-browsers.jpg)
+![support-browsers](assets/images/support-browsers.jpg)
   
 ## Getting Started
 
