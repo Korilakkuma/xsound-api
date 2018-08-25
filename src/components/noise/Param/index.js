@@ -21,7 +21,7 @@ class Param extends React.Component {
                 <section>
                     <div className="component-title">
                         <h1>param</h1>
-                        <p className="returns">Returns : <span>number | NoiseModule</span></p>
+                        <p className="returns">Returns : <span>number | string | NoiseModule</span></p>
                     </div>
                     <hr role="presentation" />
                     <p>
@@ -38,7 +38,7 @@ class Param extends React.Component {
                             </tr>
                             <tr>
                                 <th scope="row">2nd</th>
-                                <td><span className="argument-type">number</span> or <span className="argument-type">undefined</span></td>
+                                <td><span className="argument-type">number</span> or <span className="argument-type">string</span> or <span className="argument-type">undefined</span></td>
                                 <td>This value is value for parameters. If this value is undefined, this method is getter.</td>
                             </tr>
                         </tbody>
