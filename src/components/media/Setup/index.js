@@ -39,8 +39,10 @@ class Setup extends React.Component {
                                     <dl className="list-marker">
                                         <dt>media<span className="argument-type">HTMLAudioElement</span> or <span className="argument-type">HTMLVideoElement</span></dt>
                                         <dd>This value is the instance of HTMLAudioElement or HTMLVideoElement.</dd>
+                                        {/*
                                         <dt>formats<span className="argument-type">Array</span></dt>
                                         <dd>This value is the array that contains media formats.</dd>
+                                        */}
                                         <dt>listeners<span className="argument-type">Object</span></dt>
                                         <dd>This value is the associative array that contains event listeners that are defined by HTMLMediaElement.</dd>
                                         <dt>autoplay<span className="argument-type">boolean</span></dt>

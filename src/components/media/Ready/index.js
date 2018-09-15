@@ -36,7 +36,6 @@ class Ready extends React.Component {
                                 <td><span className="argument-type">string</span></td>
                                 <td>
                                     This value is media URL.
-                                    But, the extension is excepted.
                                 </td>
                             </tr>
                         </tbody>
