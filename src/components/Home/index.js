@@ -83,6 +83,15 @@ class Home extends React.Component {
                     <p>In the case of recording log, the path of log file must be designated by the 2nd argument.</p>
 <pre><code>$ node xsound-server-session-websocket.js 8080 websocket.log</code></pre>
                 </section>
+                <section>
+                    <h1>Setup</h1>
+                    <hr role="presentation" />
+<pre><code>$ git clone git@github.com:Korilakkuma/XSound.git<br />
+$ cd xsound<br />
+$ npm install<br />
+$ npm run docker:build<br />
+$ npm start</code></pre>
+                </section>
             </main>
         );
     }
