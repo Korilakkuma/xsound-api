@@ -25,6 +25,7 @@
   },
   "homepage": "https://korilakkuma.github.io/xsound-api/",
   "dependencies": {
+    "connected-react-router": "^4.5.0",
     "history": "^4.7.2",
     "prop-types": "^15.6.2",
     "react": "^16.5.2",
@@ -32,7 +33,6 @@
     "react-redux": "^5.0.7",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
-    "react-router-redux": "^5.0.0-alpha.9",
     "redux": "^4.0.0"
   },
   "devDependencies": {

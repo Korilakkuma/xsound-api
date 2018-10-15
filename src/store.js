@@ -1,14 +1,14 @@
 'use strict';
 
-import { createStore, applyMiddleware } from 'redux';
-import { routerMiddleware } from 'react-router-redux';
+import { createStore, compose, applyMiddleware } from 'redux';
+import { routerMiddleware } from 'connected-react-router';
 // import createHistory from 'history/createBrowserHistory';
 import createHistory from 'history/createHashHistory';
 import reducers from './reducers';
 
 const history    = createHistory();
 const middleware = routerMiddleware(history);
-const store      = createStore(reducers, applyMiddleware(middleware));
+const store      = createStore(reducers(history), compose(applyMiddleware(middleware)));
 
 export {
     store,

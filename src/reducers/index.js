@@ -1,12 +1,12 @@
 'use strict';
 
 import { combineReducers } from 'redux';
-import { routerReducer } from 'react-router-redux';
+import { connectRouter } from 'connected-react-router';
 import * as HeaderReducers from './HeaderReducers';
 import * as NavReducers from './NavReducers';
 
-export default combineReducers({
+export default history => combineReducers({
     ...HeaderReducers,
     ...NavReducers,
-    router : routerReducer
+    router : connectRouter(history)
 });
