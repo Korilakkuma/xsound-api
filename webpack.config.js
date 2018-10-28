@@ -32,7 +32,7 @@ module.exports = {
   plugins: [
     new webpack.LoaderOptionsPlugin({
       options: {
-        config : {
+        config: {
           path: './postcss.config.js'
         }
       }
@@ -41,7 +41,13 @@ module.exports = {
       filename: 'app.css',
       path: `${__dirname}/assets/`
     }),
-    new OptimizeCSSAssetsWebpackPlugin()
+    new OptimizeCSSAssetsWebpackPlugin({
+      cssProcessorOptions: {
+        map: {
+          inline: false
+        }
+      }
+    })
   ],
   devtool: 'source-map'
 };
