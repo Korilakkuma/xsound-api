@@ -29,8 +29,10 @@
 .component-title {
     display: -webkit-flex;
     display: flex;
-    -webkit-flex: row nowrap space-between center;
-    flex: row nowrap;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    flex-wrap: nowrap;
     -webkit-justify-content: space-between;
     justify-content: space-between;
     -webkit-align-items: center;
