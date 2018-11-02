@@ -2,7 +2,7 @@
   "name": "xsound-api",
   "version": "2.0.0",
   "description": "XSound API documentation",
-  "main": "./app.js",
+  "main": "./assets/app.js",
   "scripts": {
     "lint:js": "eslint ./src/*.js ./src/**/*.js",
     "lint:css": "stylelint ./src/*.css ./src/**/*.css",
