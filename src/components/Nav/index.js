@@ -73,6 +73,7 @@ class Nav extends React.Component {
                         <dd><Link to={`${this.path}xsound/no-conflict`} className={this.getSelectedClassName(`${this.path}xsound/no-conflict`)}>noConflict</Link></dd>
                         <dd><Link to={`${this.path}xsound/read`} className={this.getSelectedClassName(`${this.path}xsound/read`)}>read</Link></dd>
                         <dd><Link to={`${this.path}xsound/to-frequencies`} className={this.getSelectedClassName(`${this.path}xsound/to-frequencies`)}>toFrequencies</Link></dd>
+                        <dd><Link to={`${this.path}xsound/to-text-file`} className={this.getSelectedClassName(`${this.path}xsound/to-text-file`)}>toTextFile</Link></dd>
                     </dl>
                 </section>
                 <section role="presentation">
@@ -197,7 +198,6 @@ class Nav extends React.Component {
                         <dd><Link to={`${this.path}mml/get`} className={this.getSelectedClassName(`${this.path}mml/get`)}>get</Link></dd>
                         <dd><Link to={`${this.path}mml/is-sequences`} className={this.getSelectedClassName(`${this.path}mml/is-sequences`)}>isSequences</Link></dd>
                         <dd><Link to={`${this.path}mml/is-paused`} className={this.getSelectedClassName(`${this.path}mml/is-paused`)}>isPaused</Link></dd>
-                        <dd><Link to={`${this.path}mml/create`} className={this.getSelectedClassName(`${this.path}mml/create`)}>create</Link></dd>
                     </dl>
                 </section>
                 <section role="presentation">

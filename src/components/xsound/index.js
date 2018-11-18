@@ -17,6 +17,7 @@ import GetCurrentTime from './GetCurrentTime';
 import NoConflict from './NoConflict';
 import Read from './Read';
 import ToFrequencies from './ToFrequencies';
+import ToTextFile from './ToTextFile';
 
 export {
     IsXSound,
@@ -35,5 +36,6 @@ export {
     GetCurrentTime,
     NoConflict,
     Read,
-    ToFrequencies
+    ToFrequencies,
+    ToTextFile
 };

@@ -80,6 +80,7 @@ export default (
                 <Route exact path={`${path}xsound/no-conflict`} render={render(XSound.NoConflict)} />
                 <Route exact path={`${path}xsound/read`} render={render(XSound.Read)} />
                 <Route exact path={`${path}xsound/to-frequencies`} render={render(XSound.ToFrequencies)} />
+                <Route exact path={`${path}xsound/to-text-file`} render={render(XSound.ToTextFile)} />
                 <Route exact path={`${path}oscillator/setup`} render={render(OscillatorModule.Setup)} />
                 <Route exact path={`${path}oscillator/ready`} render={render(OscillatorModule.Ready)} />
                 <Route exact path={`${path}oscillator/start`} render={render(OscillatorModule.Start)} />
@@ -150,7 +151,6 @@ export default (
                 <Route exact path={`${path}mml/get`} render={render(MML.Get)} />
                 <Route exact path={`${path}mml/is-sequences`} render={render(MML.IsSequences)} />
                 <Route exact path={`${path}mml/is-paused`} render={render(MML.IsPaused)} />
-                <Route exact path={`${path}mml/create`} render={render(MML.Create)} />
                 <Route exact path={`${path}effectors/autopanner`} render={render(Effectors.Autopanner)} />
                 <Route exact path={`${path}effectors/chorus`} render={render(Effectors.Chorus)} />
                 <Route exact path={`${path}effectors/compressor`} render={render(Effectors.Compressor)} />
