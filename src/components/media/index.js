@@ -12,6 +12,8 @@ import Toggle from './Toggle';
 import IsMedia from './IsMedia';
 import IsSource from './IsSource';
 import IsPaused from './IsPaused';
+import RequestPictureInPicture from './RequestPictureInPicture';
+import ExitPictureInPicture from './ExitPictureInPicture';
 
 export {
     Setup,
@@ -25,5 +27,7 @@ export {
     Toggle,
     IsMedia,
     IsSource,
-    IsPaused
+    IsPaused,
+    RequestPictureInPicture,
+    ExitPictureInPicture
 };

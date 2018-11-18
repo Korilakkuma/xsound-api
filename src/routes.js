@@ -127,6 +127,8 @@ export default (
                 <Route exact path={`${path}media/is-media`} render={render(MediaModule.IsMedia)} />
                 <Route exact path={`${path}media/is-source`} render={render(MediaModule.IsSource)} />
                 <Route exact path={`${path}media/is-paused`} render={render(MediaModule.IsPaused)} />
+                <Route exact path={`${path}media/request-picture-in-picture`} render={render(MediaModule.RequestPictureInPicture)} />
+                <Route exact path={`${path}media/exit-picture-in-picture`} render={render(MediaModule.ExitPictureInPicture)} />
                 <Route exact path={`${path}stream/setup`} render={render(StreamModule.Setup)} />
                 <Route exact path={`${path}stream/ready`} render={render(StreamModule.Ready)} />
                 <Route exact path={`${path}stream/start`} render={render(StreamModule.Start)} />
