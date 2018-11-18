@@ -151,6 +151,7 @@ export default (
                 <Route exact path={`${path}mml/get`} render={render(MML.Get)} />
                 <Route exact path={`${path}mml/is-sequences`} render={render(MML.IsSequences)} />
                 <Route exact path={`${path}mml/is-paused`} render={render(MML.IsPaused)} />
+                <Route exact path={`${path}mml/to-abc`} render={render(MML.ToABC)} />
                 <Route exact path={`${path}effectors/autopanner`} render={render(Effectors.Autopanner)} />
                 <Route exact path={`${path}effectors/chorus`} render={render(Effectors.Chorus)} />
                 <Route exact path={`${path}effectors/compressor`} render={render(Effectors.Compressor)} />
