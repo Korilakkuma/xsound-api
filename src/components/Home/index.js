@@ -89,7 +89,8 @@ class Home extends React.Component {
 <pre><code>$ git clone git@github.com:Korilakkuma/XSound.git<br />
 $ cd xsound<br />
 $ npm install<br />
-$ npm run docker:build<br />
+$ npm run build<br />
+$ npm run docker-compose:build<br />
 $ npm start</code></pre>
                 </section>
             </main>
