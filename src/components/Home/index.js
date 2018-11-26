@@ -67,7 +67,8 @@ class Home extends React.Component {
                 <section>
                     <h1>Usage</h1>
                     <hr role="presentation" />
-<pre><code>&lt;script type="text/javascript" src="xsound.js"&gt;&lt;/script&gt;</code></pre>
+                    <p>In the case of using CDN,</p>
+<pre><code>&lt;script type="text/javascript" src="https://cdn.jsdelivr.net/npm/xsound@latest/build/xsound.min.js"&gt;&lt;/script&gt;</code></pre>
                     <p>In the case of using ESModules for SSR ... etc,</p>
 <pre><code>{`import { XSound, X } from 'xsound';`}</code></pre>
                     <p>In the case of using WebSocket,</p>
