@@ -34,7 +34,7 @@ class Get extends React.Component {
                             <tr>
                                 <th scope="row">1st</th>
                                 <td><span className="argument-type">number</span></td>
-                                <td>This value is SoundModule (OscillatorModule, OneshotModule, AudioModule, MediaModule, StreamModule) index.</td>
+                                <td>This value is SoundModule (OscillatorModule, OneshotModule, NoiseModule, AudioModule, MediaModule, StreamModule) index.</td>
                             </tr>
                         </tbody>
                     </table>
