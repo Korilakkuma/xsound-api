@@ -17,7 +17,7 @@ class Param extends React.Component {
 
     render() {
         return (
-            <section className={Param.CLASS_NAME}>
+            <main className={Param.CLASS_NAME}>
                 <section>
                     <div className="component-title">
                         <h1>param</h1>
@@ -60,7 +60,7 @@ class Param extends React.Component {
                     <iframe height='265' scrolling='no' title='Analyser#param | XSound - Web Audio API Library -' src='//codepen.io/Korilakkuma/embed/wjqoER/?height=265&amp;theme-id=0&amp;default-tab=js,result&amp;embed-version=2' frameBorder='no' allowtransparency='true' allowFullScreen='true' style={{ width : '100%' }}>See the Pen <a href='https://codepen.io/Korilakkuma/pen/wjqoER/'>Analyser#param | XSound - Web Audio API Library -</a> by Tomohiro IKEDA (<a href='https://codepen.io/Korilakkuma'>@Korilakkuma</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
                 </section>
-            </section>
+            </main>
         );
     }
 }
