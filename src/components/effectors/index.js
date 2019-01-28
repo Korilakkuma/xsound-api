@@ -17,6 +17,7 @@ import Ringmodulator from './Ringmodulator';
 import Tremolo from './Tremolo';
 import VocalCanceler from './VocalCanceler';
 import Wah from './Wah';
+import Custom from './Custom';
 
 export {
     Autopanner,
@@ -35,5 +36,6 @@ export {
     Ringmodulator,
     Tremolo,
     VocalCanceler,
-    Wah
+    Wah,
+    Custom
 };
