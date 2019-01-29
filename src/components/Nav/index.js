@@ -222,6 +222,7 @@ class Nav extends React.Component {
                         <dd><Link to={`${this.path}effectors/tremolo`} className={this.getSelectedClassName(`${this.path}effectors/tremolo`)}>tremolo</Link></dd>
                         <dd><Link to={`${this.path}effectors/vocalcanceler`} className={this.getSelectedClassName(`${this.path}effectors/vocalcanceler`)}>vocalcanceler</Link></dd>
                         <dd><Link to={`${this.path}effectors/wah`} className={this.getSelectedClassName(`${this.path}effectors/wah`)}>wah</Link></dd>
+                        <dd><Link to={`${this.path}effectors/custom`} className={this.getSelectedClassName(`${this.path}effectors/custom`)}>custom</Link></dd>
                     </dl>
                 </section>
                 <section role="presentation">

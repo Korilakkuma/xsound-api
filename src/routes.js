@@ -169,6 +169,7 @@ export default (
                 <Route exact path={`${path}effectors/tremolo`} render={render(Effectors.Tremolo)} />
                 <Route exact path={`${path}effectors/vocalcanceler`} render={render(Effectors.VocalCanceler)} />
                 <Route exact path={`${path}effectors/wah`} render={render(Effectors.Wah)} />
+                <Route exact path={`${path}effectors/custom`} render={render(Effectors.Custom)} />
                 <Route exact path={`${path}analyser/domain`} render={render(Analyser.Domain)} />
                 <Route exact path={`${path}analyser/param`} render={render(Analyser.Param)} />
                 <Route exact path={`${path}analyser/get`} render={render(Analyser.Get)} />
