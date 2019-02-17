@@ -4,11 +4,12 @@
   "description": "XSound API documentation",
   "main": "./assets/app.js",
   "scripts": {
+    "clean": "rm -rf ./assets/app.*",
     "lint:js": "eslint ./src/*.js ./src/**/*.js",
     "lint:css": "stylelint ./src/*.css ./src/**/*.css",
     "lint": "run-p lint:js lint:css",
-    "build": "webpack --mode production",
-    "build:watch": "webpack --watch --mode development",
+    "build": "npm run clean && webpack --mode production",
+    "build:watch": "npm run clean && webpack --watch --mode development",
     "docker-compose:build": "docker-compose build",
     "start": "docker-compose up -d",
     "stop": "docker stop nginx"
