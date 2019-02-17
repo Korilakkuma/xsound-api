@@ -71,18 +71,6 @@ class Home extends React.Component {
 <pre><code>&lt;script type="text/javascript" src="https://cdn.jsdelivr.net/npm/xsound@latest/build/xsound.min.js"&gt;&lt;/script&gt;</code></pre>
                     <p>In the case of using ESModules for SSR ... etc,</p>
 <pre><code>{`import { XSound, X } from 'xsound';`}</code></pre>
-                    <p>In the case of using WebSocket,</p>
-<pre><code>$ node xsound-server-session-websocket.js</code></pre>
-                    <p>or,</p>
-<pre><code>$ node xsound-server-session-ws.js</code></pre>
-                    <p>
-                        Default port number is 8000.<br />
-                        This port number can be changed by designating argument.<br />
-                        For example,
-                    </p>
-<pre><code>$ node xsound-server-session-websocket.js 8080</code></pre>
-                    <p>In the case of recording log, the path of log file must be designated by the 2nd argument.</p>
-<pre><code>$ node xsound-server-session-websocket.js 8080 websocket.log</code></pre>
                 </section>
                 <section>
                     <h1>Setup</h1>
