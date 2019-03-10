@@ -1,0 +1,10 @@
+.Home {
+}
+
+.Home__badges {
+    margin: 12px 0;
+}
+
+.Home__badges > a:not(:first-child) {
+    margin-left: 12px;
+}
