@@ -58,7 +58,21 @@ class Home extends React.Component {
                 <section>
                     <h1>Getting Started</h1>
                     <hr role="presentation" />
+                    <div className={`${Home.CLASS_NAME}__codeWrapper`}>
 <pre><code>X('oscillator').setup(true).ready().start(440);</code></pre>
+                    {navigator.clipboard && navigator.clipboard.writeText ?
+                        (
+                            <div className={`${Home.CLASS_NAME}__buttonWrapper`}>
+                                <button
+                                    type="button"
+                                    onClick={() => navigator.clipboard.writeText(`X('oscillator').setup(true).ready().start(440);`)}
+                                >
+                                    COPY
+                                </button>
+                            </div>
+                        )
+                    : null}
+                    </div>
                 </section>
                 <section>
                     <h1>Demo</h1>
@@ -79,15 +93,57 @@ class Home extends React.Component {
                 <section>
                     <h1>Installation</h1>
                     <hr role="presentation" />
+                    <div className={`${Home.CLASS_NAME}__codeWrapper`}>
 <pre><code>$ npm install --save xsound</code></pre>
+                    {navigator.clipboard && navigator.clipboard.writeText ?
+                        (
+                            <div className={`${Home.CLASS_NAME}__buttonWrapper`}>
+                                <button
+                                    type="button"
+                                    onClick={() => navigator.clipboard.writeText('$ npm install --save xsound')}
+                                >
+                                    COPY
+                                </button>
+                            </div>
+                        )
+                    : null}
+                    </div>
                 </section>
                 <section>
                     <h1>Usage</h1>
                     <hr role="presentation" />
                     <p>In the case of using CDN,</p>
+                    <div className={`${Home.CLASS_NAME}__codeWrapper`}>
 <pre><code>&lt;script type="text/javascript" src="https://cdn.jsdelivr.net/npm/xsound@latest/build/xsound.min.js"&gt;&lt;/script&gt;</code></pre>
+                    {navigator.clipboard && navigator.clipboard.writeText ?
+                        (
+                            <div className={`${Home.CLASS_NAME}__buttonWrapper`}>
+                                <button
+                                    type="button"
+                                    onClick={() => navigator.clipboard.writeText('<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/xsound@latest/build/xsound.min.js"></script>')}
+                                >
+                                    COPY
+                                </button>
+                            </div>
+                        )
+                    : null}
+                    </div>
                     <p>In the case of using ESModules for SSR ... etc,</p>
+                    <div className={`${Home.CLASS_NAME}__codeWrapper`}>
 <pre><code>{`import { XSound, X } from 'xsound';`}</code></pre>
+                    {navigator.clipboard && navigator.clipboard.writeText ?
+                        (
+                            <div className={`${Home.CLASS_NAME}__buttonWrapper`}>
+                                <button
+                                    type="button"
+                                    onClick={() => navigator.clipboard.writeText(`import { XSound, X } from 'xsound';`)}
+                                >
+                                    COPY
+                                </button>
+                            </div>
+                        )
+                    : null}
+                    </div>
                 </section>
                 <section>
                     <h1>Setup</h1>
