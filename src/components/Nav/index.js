@@ -180,6 +180,15 @@ class Nav extends React.Component {
                     </dl>
                 </section>
                 <section role="presentation">
+                    <h2><button type="button" role="tab" aria-expanded={expandedPanelId === 'panel-processor'} aria-selected={expandedPanelId === 'panel-processor'} aria-controls="panel-processor" tabIndex="0" onClick={this.onClick}>Processor</button></h2>
+                    <dl id="panel-processor" aria-hidden={expandedPanelId !== 'panel-processor'}>
+                        <dt>Methods</dt>
+                        <dd><Link to={`${this.path}processor/setup`} className={this.getSelectedClassName(`${this.path}processor/setup`)}>setup</Link></dd>
+                        <dd><Link to={`${this.path}processor/start`} className={this.getSelectedClassName(`${this.path}processor/start`)}>start</Link></dd>
+                        <dd><Link to={`${this.path}processor/stop`} className={this.getSelectedClassName(`${this.path}processor/stop`)}>stop</Link></dd>
+                    </dl>
+                </section>
+                <section role="presentation">
                     <h2><button type="button" role="tab" aria-expanded={expandedPanelId === 'panel-mexpandedPanelIdi'} aria-selected={expandedPanelId === 'panel-midi'} aria-controls="panel-midi" tabIndex="0" onClick={this.onClick}>MIDI</button></h2>
                     <dl id="panel-midi" aria-hidden={expandedPanelId !== 'panel-midi'}>
                         <dt>Methods</dt>

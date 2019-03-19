@@ -15,6 +15,7 @@ import * as AudioModule from './components/audio';
 import * as MediaModule from './components/media';
 import * as StreamModule from './components/stream';
 import * as MixerModule from './components/mixer';
+import * as ProcessorModule from './components/processor';
 import * as MIDI from './components/midi';
 import * as MML from './components/mml';
 import * as Effectors from './components/effectors';
@@ -142,6 +143,9 @@ export default (
                 <Route exact path={`${path}stream/is-streaming`} render={render(StreamModule.IsStreaming)} />
                 <Route exact path={`${path}mixer/mix`} render={render(MixerModule.Mix)} />
                 <Route exact path={`${path}mixer/get`} render={render(MixerModule.Get)} />
+                <Route exact path={`${path}processor/setup`} render={render(ProcessorModule.Setup)} />
+                <Route exact path={`${path}processor/start`} render={render(ProcessorModule.Start)} />
+                <Route exact path={`${path}processor/stop`} render={render(ProcessorModule.Stop)} />
                 <Route exact path={`${path}midi/setup`} render={render(MIDI.Setup)} />
                 <Route exact path={`${path}midi/get`} render={render(MIDI.Get)} />
                 <Route exact path={`${path}mml/setup`} render={render(MML.Setup)} />
