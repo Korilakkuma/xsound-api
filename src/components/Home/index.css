@@ -29,3 +29,7 @@
 .Home button:hover {
     background-color: var(--base-color);
 }
+
+.Home button:focus {
+    outline: 1px dotted var(--base-color);
+}
