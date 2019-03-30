@@ -4,7 +4,7 @@
   "description": "XSound API documentation",
   "main": "./assets/app.js",
   "scripts": {
-    "clean": "rm -rf ./assets/app.*",
+    "clean": "rm -rf ./assets/app.* ./assets/vendor.*",
     "lint:js": "eslint ./src/*.js ./src/**/*.js",
     "lint:css": "stylelint ./src/*.css ./src/**/*.css",
     "lint": "run-p lint:js lint:css",
