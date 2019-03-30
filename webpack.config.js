@@ -3,9 +3,14 @@ const ExtracktTextPlugin             = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin');
 
 module.exports = {
-  entry: ['./src/main.js', './src/main.css'],
+  entry: {
+    app: [
+      './src/main.js',
+      './src/main.css'
+    ]
+  },
   output: {
-    filename: 'app.js',
+    filename: '[name].js',
     path: `${__dirname}/assets`
   },
   module: {
@@ -49,5 +54,11 @@ module.exports = {
       }
     })
   ],
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+      name: 'vendor'
+    }
+  },
   devtool: 'source-map'
 };
