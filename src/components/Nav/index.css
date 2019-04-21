@@ -1,5 +1,8 @@
 .Nav {
-    margin-left: 48px;
+    overflow-y: auto;
+    margin-left: 32px;
+    padding-right: 24px;
+    height: 100vh;
 }
 
 .Nav [aria-hidden="true"] {

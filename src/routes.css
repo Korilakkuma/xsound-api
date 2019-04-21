@@ -1,8 +1,6 @@
 .Routes {
     display: -webkit-flex;
     display: flex;
-    -webkit-flex: row wrap space-between;
-    flex: row wrap;
     -webkit-justify-content: space-between;
     justify-content: space-between;
     margin: 0 auto;

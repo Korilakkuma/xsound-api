@@ -62,6 +62,7 @@ export default (
         <PageLoadingBar />
         <Header />
         <div className="Routes">
+            <Nav />
             <Switch>
                 <Route exact path={path} render={render(Home)} />
                 <Route exact path={`${path}xsound/is-xsound`} render={render(XSound.IsXSound)} />
@@ -203,7 +204,6 @@ export default (
                 <Route exact path={`${path}session/state`} render={render(Session.State)} />
                 <Route exact render={render(NotFound)} />
             </Switch>
-            <Nav />
         </div>
         <Footer />
     </React.Fragment>
