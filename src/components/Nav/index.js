@@ -133,6 +133,8 @@ class Nav extends React.Component {
                         <dd><Link to={`${this.path}audio/is-buffer`} className={this.getSelectedClassName(`${this.path}audio/is-buffer`)}>isBuffer</Link></dd>
                         <dd><Link to={`${this.path}audio/is-source`} className={this.getSelectedClassName(`${this.path}audio/is-source`)}>isSource</Link></dd>
                         <dd><Link to={`${this.path}audio/is-paused`} className={this.getSelectedClassName(`${this.path}audio/is-paused`)}>isPaused</Link></dd>
+                        <dd><Link to={`${this.path}audio/fade-in`} className={this.getSelectedClassName(`${this.path}audio/fade-in`)}>fadeIn</Link></dd>
+                        <dd><Link to={`${this.path}audio/fade-out`} className={this.getSelectedClassName(`${this.path}audio/fade-out`)}>fadeOut</Link></dd>
                     </dl>
                 </section>
                 <section role="presentation">
@@ -151,6 +153,8 @@ class Nav extends React.Component {
                         <dd><Link to={`${this.path}media/is-media`} className={this.getSelectedClassName(`${this.path}media/is-media`)}>isMedia</Link></dd>
                         <dd><Link to={`${this.path}media/is-source`} className={this.getSelectedClassName(`${this.path}media/is-source`)}>isSource</Link></dd>
                         <dd><Link to={`${this.path}media/is-paused`} className={this.getSelectedClassName(`${this.path}media/is-paused`)}>isPaused</Link></dd>
+                        <dd><Link to={`${this.path}media/fade-in`} className={this.getSelectedClassName(`${this.path}media/fade-in`)}>fadeIn</Link></dd>
+                        <dd><Link to={`${this.path}media/fade-out`} className={this.getSelectedClassName(`${this.path}media/fade-out`)}>fadeOut</Link></dd>
                         <dd><Link to={`${this.path}media/request-picture-in-picture`} className={this.getSelectedClassName(`${this.path}media/request-picture-in-picture`)}>requestPictureInPicture</Link></dd>
                         <dd><Link to={`${this.path}media/exit-picture-in-picture`} className={this.getSelectedClassName(`${this.path}media/exit-picture-in-picture`)}>exitPictureInPicture</Link></dd>
                     </dl>

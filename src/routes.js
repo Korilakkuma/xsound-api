@@ -117,6 +117,8 @@ export default (
                 <Route exact path={`${path}audio/is-buffer`} render={render(AudioModule.IsBuffer)} />
                 <Route exact path={`${path}audio/is-source`} render={render(AudioModule.IsSource)} />
                 <Route exact path={`${path}audio/is-paused`} render={render(AudioModule.IsPaused)} />
+                <Route exact path={`${path}audio/fade-in`} render={render(AudioModule.FadeIn)} />
+                <Route exact path={`${path}audio/fade-out`} render={render(AudioModule.FadeOut)} />
                 <Route exact path={`${path}media/setup`} render={render(MediaModule.Setup)} />
                 <Route exact path={`${path}media/ready`} render={render(MediaModule.Ready)} />
                 <Route exact path={`${path}media/start`} render={render(MediaModule.Start)} />
@@ -129,6 +131,8 @@ export default (
                 <Route exact path={`${path}media/is-media`} render={render(MediaModule.IsMedia)} />
                 <Route exact path={`${path}media/is-source`} render={render(MediaModule.IsSource)} />
                 <Route exact path={`${path}media/is-paused`} render={render(MediaModule.IsPaused)} />
+                <Route exact path={`${path}media/fade-in`} render={render(MediaModule.FadeIn)} />
+                <Route exact path={`${path}media/fade-out`} render={render(MediaModule.FadeOut)} />
                 <Route exact path={`${path}media/request-picture-in-picture`} render={render(MediaModule.RequestPictureInPicture)} />
                 <Route exact path={`${path}media/exit-picture-in-picture`} render={render(MediaModule.ExitPictureInPicture)} />
                 <Route exact path={`${path}stream/setup`} render={render(StreamModule.Setup)} />

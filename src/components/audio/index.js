@@ -12,6 +12,8 @@ import Toggle from './Toggle';
 import IsBuffer from './IsBuffer';
 import IsSource from './IsSource';
 import IsPaused from './IsPaused';
+import FadeIn from './FadeIn';
+import FadeOut from './FadeOut';
 
 export {
     Setup,
@@ -25,5 +27,7 @@ export {
     Toggle,
     IsBuffer,
     IsSource,
-    IsPaused
+    IsPaused,
+    FadeIn,
+    FadeOut
 };
