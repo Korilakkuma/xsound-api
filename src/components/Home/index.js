@@ -48,7 +48,7 @@ class Home extends React.Component {
                         <li>MML (Music Macro Language)</li>
                         <li>Effectors (Compressor / Wah / Equalizer / Tremolo / Phaser / Chorus / Delay / Reverb ... etc)</li>
                         <li>Visualization (Overview in Time Domain / Time Domain / Spectrum)</li>
-                        <li>Recording (Create WAVE file)</li>
+                        <li>Multi-Track Recording (Create WAVE file)</li>
                         <li>Session (by WebSocket)</li>
                     </ul>
                     <p>
@@ -82,8 +82,10 @@ class Home extends React.Component {
                     </p>
                     <ul className="list-marker">
                         <li><a href="https://korilakkuma.github.io/X-Sound/" target="_blank" rel="noopener noreferrer">X Sound</a></li>
+                        <li><a href="https://korilakkuma.github.io/x-piano/" target="_blank" rel="noopener noreferrer">x-piano</a></li>
                         <li><a href="https://weblike-curtaincall.ssl-lolipop.jp/portfolio-music-v/" target="_blank" rel="noopener noreferrer">Music V</a></li>
                         <li><a href="https://github.com/Korilakkuma/Music-Tweet" target="_blank" rel="noopener noreferrer">Music Tweet</a></li>
+                        <li><a href="https://github.com/Korilakkuma/Chrome-EQUALIZER" target="_blank" rel="noopener noreferrer">Chrome EQUALIZER</a></li>
                     </ul>
                     <p>Now, I&apos;m creating website for Web Audio API. Please refer to the following site for understanding this API Documentation.</p>
                     <ul className="list-marker">
