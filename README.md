@@ -1,7 +1,7 @@
 XSound
 =========
   
-Web Audio API Library for Synthesizer, Effects, Visualization, Recording ... etc
+Web Audio API Library for Synthesizer, Effects, Visualization, Multi-Track Recording ... etc
   
 ## Overview
   
@@ -17,7 +17,7 @@ In concrete, XSound may be useful to implement the following features.
 - MML (Music Macro Language)
 - Effectors (Compressor / Wah / Equalizer / Tremolo / Phaser / Chorus / Delay / Reverb ... etc)
 - Visualization (Overview in Time Domain / Time Domain / Spectrum)
-- Recording (Create WAVE file)
+- Multi-Track Recording (Create WAVE file)
 - Session (by WebSocket)
   
 XSound don't depend on other libraries or frameworks (For example, jQuery, React).
@@ -35,8 +35,10 @@ X('oscillator').setup(true).ready().start(440);
 The application that uses XSound is in the following URLs.
   
 - [X Sound](https://korilakkuma.github.io/X-Sound/)
+- [x-piano](https://korilakkuma.github.io/x-piano/)
 - [Music V](https://weblike-curtaincall.ssl-lolipop.jp/portfolio-music-v/)
 - [Music Tweet](https://github.com/Korilakkuma/Music-Tweet)
+- [Chrome EQUALIZER](https://github.com/Korilakkuma/Chrome-EQUALIZER)
   
 Now, I'm creating website for Web Audio API. Please refer to the following site for understanding API Documentation.
   
