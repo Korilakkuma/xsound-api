@@ -21,7 +21,7 @@ class Create extends React.Component {
                 <section>
                     <div className="component-title">
                         <h1>create</h1>
-                        <p className="returns">Returns : <span>string (Data URL or Object URL)</span></p>
+                        <p className="returns">Returns : <span>Blob | string (Object URL or Base64 or Data URL)</span></p>
                     </div>
                     <hr role="presentation" />
                     <p>
@@ -45,6 +45,13 @@ class Create extends React.Component {
                                 <td scope="row">3rd</td>
                                 <td><span className="argument-type">number</span></td>
                                 <td>This value is quantization bit. So, this value is either 8 (bit) or 16 (bit).</td>
+                            </tr>
+                            <tr>
+                                <td scope="row">4rd</td>
+                                <td><span className="argument-type">string</span></td>
+                                <td>
+                                   This value is type for exporting WAVE file. So, this value is one of &apos;blob&apos; or &apos;objecturl&apos; or &apos;base64&apos; or &apos;dataurl&apos;.
+                                </td>
                             </tr>
                         </tbody>
                     </table>
