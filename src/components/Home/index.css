@@ -33,3 +33,12 @@
 .Home button:focus {
     outline: 1px dotted var(--base-color);
 }
+
+.Home__supportedBrowsers > img {
+    max-width: 100%;
+}
+
+.Home blockquote {
+    font-style: italic;
+    color: var(--gray-light);
+}

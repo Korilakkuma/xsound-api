@@ -51,8 +51,12 @@ class Home extends React.Component {
                         <li>Multi-Track Recording (Create WAVE file)</li>
                         <li>Session (by WebSocket)</li>
                     </ul>
-                    <p>
-                        <img src="assets/images/support-browsers.jpg" alt="Browser Support" />
+                </section>
+                <section>
+                    <h1>Supported Browsers</h1>
+                    <hr role="presentation" />
+                    <p className={`${Home.CLASS_NAME}__supportedBrowsers`}>
+                        <img src="assets/images/supported-browsers.png" alt="Supported Browsers" />
                     </p>
                 </section>
                 <section>
@@ -151,11 +155,25 @@ class Home extends React.Component {
                     <h1>Setup</h1>
                     <hr role="presentation" />
 <pre><code>$ git clone git@github.com:Korilakkuma/XSound.git<br />
-$ cd xsound<br />
+$ cd XSound<br />
 $ npm install<br />
-$ npm run build<br />
-$ npm run docker-compose:build<br />
-$ npm start</code></pre>
+$ docker-compose up -d --build<br />
+$ npm run build:watch</code></pre>
+                </section>
+                <section>
+                    <h1>Pickups</h1>
+                    <hr role="presentation" />
+                    <ul className="list-marker">
+                        <li>
+                            <a href="https://dev.to/areknawo/9-libraries-to-kickstart-your-web-audio-stuff-460p" target="_blank" rel="noopener noreferrer">9 libraries to kickstart your Web Audio stuff - DEV Community</a>
+                            <blockquote>
+                                XSound is a batteries-included library for everything audio. From basic management and loading through streaming, effects, ending with visualizations and recording, this libraries provides almost everything! It also has nice, semi-chainable API with solid documentation.
+                            </blockquote>
+                        </li>
+                        <li>
+                            <a href="https://bashooka.com/coding/web-audio-javascript-libraries/" target="_blank" rel="noopener noreferrer">20 Useful Web Audio Javascript Libraries – Bashooka</a>
+                        </li>
+                    </ul>
                 </section>
             </main>
         );
