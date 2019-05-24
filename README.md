@@ -1,5 +1,10 @@
-XSound
-=========
+# XSound
+
+[![Build Status](https://travis-ci.org/Korilakkuma/XSound.svg?branch=master)](https://travis-ci.org/Korilakkuma/XSound)
+[![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT)
+[![npm](https://img.shields.io/npm/dt/xsound.svg)](https://www.npmjs.com/package/xsound)
+![David Dev](https://img.shields.io/david/dev/Korilakkuma/XSound.svg)
+[![jsDelivr](https://data.jsdelivr.com/v1/package/npm/xsound/badge)](https://www.jsdelivr.com/package/npm/xsound)
   
 Web Audio API Library for Synthesizer, Effects, Visualization, Multi-Track Recording ... etc
   
@@ -22,7 +27,9 @@ In concrete, XSound may be useful to implement the following features.
   
 XSound don't depend on other libraries or frameworks (For example, jQuery, React).
   
-![support-browsers](assets/images/support-browsers.jpg)
+## Supported Browsers
+  
+<img src="./assets/images/supported-browsers.png" alt="Supported Browsers" style="max-width: 100%;" />
   
 ## Getting Started
 
@@ -52,42 +59,39 @@ $ npm install --save xsound
 
 ## Usage
 
+In the case of using CDN,
+
 ```HTML
-<script type="text/javascript" src="xsound.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/xsound@latest/build/xsound.min.js"></script>
 ```
 
-In the case of using WebSocket,
+In the case of using ESModules for SSR ... etc,
 
-```bash
-$ node xsound-server-session-websocket.js
+```JavaScript
+import { XSound, X } from 'xsound';
 ```
 
-or,
+## Setup
 
 ```bash
-$ node xsound-server-session-ws.js
-```
-
-Default port number is 8000.  
-This port number can be changed by designating argument.  
-For example,
-
-```bash
-$ node xsound-server-session-websocket.js 8080
-```
-
-In the case of recording log, the path of log file must be designated by the 2nd argument.
-
-```bash
-$ node xsound-server-session-websocket.js 8080 websocket.log
+$ git clone git@github.com:Korilakkuma/XSound.git
+$ cd XSound
+$ npm install
+$ docker-compose up -d --build
+$ npm run build:watch
 ```
 
 ## API Documentation
   
 - [XSound API Documentation](https://korilakkuma.github.io/xsound-api/)
   
+## Pickups
+  
+- [9 libraries to kickstart your Web Audio stuff - DEV Community](https://dev.to/areknawo/9-libraries-to-kickstart-your-web-audio-stuff-460p)
+  - <blockquote>XSound is a batteries-included library for everything audio. From basic management and loading through streaming, effects, ending with visualizations and recording, this libraries provides almost everything! It also has nice, semi-chainable API with solid documentation.</blockquote>
+- [20 Useful Web Audio Javascript Libraries – Bashooka](https://bashooka.com/coding/web-audio-javascript-libraries/)
+  
 ## License
   
-Copyright (c) 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018 Tomohiro IKEDA (Korilakkuma)  
-Released under the MIT license
+Released under the [MIT](https://github.com/Korilakkuma/XSound/blob/master/LICENSE) license
   
