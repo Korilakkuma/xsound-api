@@ -41,7 +41,7 @@ X('oscillator').setup(true).ready().start(440);
   
 The application that uses XSound is in the following URLs.
   
-- [X Sound](https://korilakkuma.github.io/X-Sound/)
+- [X Sound](https://xsound.app/)
 - [x-piano](https://korilakkuma.github.io/x-piano/)
 - [Music V](https://weblike-curtaincall.ssl-lolipop.jp/portfolio-music-v/)
 - [Music Tweet](https://github.com/Korilakkuma/Music-Tweet)
@@ -83,7 +83,7 @@ $ npm run build:watch
 
 ## API Documentation
   
-- [XSound API Documentation](https://korilakkuma.github.io/xsound-api/)
+- [XSound API Documentation](https://xsound.dev/)
   
 ## Pickups
   

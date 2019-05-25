@@ -85,7 +85,7 @@ class Home extends React.Component {
                         The application that uses XSound is in the following URLs.
                     </p>
                     <ul className="list-marker">
-                        <li><a href="https://korilakkuma.github.io/X-Sound/" target="_blank" rel="noopener noreferrer">X Sound</a></li>
+                        <li><a href="https://xsound.app/" target="_blank" rel="noopener noreferrer">X Sound</a></li>
                         <li><a href="https://korilakkuma.github.io/x-piano/" target="_blank" rel="noopener noreferrer">x-piano</a></li>
                         <li><a href="https://weblike-curtaincall.ssl-lolipop.jp/portfolio-music-v/" target="_blank" rel="noopener noreferrer">Music V</a></li>
                         <li><a href="https://github.com/Korilakkuma/Music-Tweet" target="_blank" rel="noopener noreferrer">Music Tweet</a></li>
