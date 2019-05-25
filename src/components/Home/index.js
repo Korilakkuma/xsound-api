@@ -106,7 +106,7 @@ class Home extends React.Component {
                             <div className={`${Home.CLASS_NAME}__buttonWrapper`}>
                                 <button
                                     type="button"
-                                    onClick={() => navigator.clipboard.writeText('$ npm install --save xsound')}
+                                    onClick={() => navigator.clipboard.writeText('npm install --save xsound')}
                                 >
                                     COPY
                                 </button>
