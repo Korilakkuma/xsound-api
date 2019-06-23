@@ -40,6 +40,8 @@ class Ajax extends React.Component {
                                 <dl className="list-marker">
                                     <dt>url<span className="argument-type">string</span></dt>
                                     <dd>This value is resource URL.</dd>
+                                    <dt>type<span className="argument-type">string</span></dt>
+                                    <dd>This value is response type that is one of &apos;text&apos;, &apos;arraybuffer&apos;, &apos;blob&apos;, &apos;document&apos;, &apos;json&apos;. The default value is &apos;arraybuffer&apos;.</dd>
                                     <dt>timeout<span className="argument-type">number</span></dt>
                                     <dd>This value is <abbr title="Asynchronous JavaScript and XML">Ajax</abbr> timeout.</dd>
                                     <dt>success<span className="argument-type">Function</span></dt>
