@@ -21,7 +21,7 @@ class ExitFullscreen extends React.Component {
                 <section>
                     <div className="component-title">
                         <h1>exitFullscreen</h1>
-                        <p className="returns">Returns : <span>undefined</span></p>
+                        <p className="returns">Returns : <span>Promise</span></p>
                     </div>
                     <hr role="presentation" />
                     <p>

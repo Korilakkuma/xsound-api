@@ -76,7 +76,7 @@ export default (
                 <Route exact path={`${path}xsound/exit-fullscreen`} render={render(XSound.ExitFullscreen)} />
                 <Route exact path={`${path}xsound/file`} render={render(XSound.File)} />
                 <Route exact path={`${path}xsound/free`} render={render(XSound.Free) } />
-                <Route exact path={`${path}xsound/fullscreen`} render={render(XSound.Fullscreen)} />
+                <Route exact path={`${path}xsound/request-fullscreen`} render={render(XSound.RequestFullscreen)} />
                 <Route exact path={`${path}xsound/get`} render={render(XSound.Get)} />
                 <Route exact path={`${path}xsound/get-current-time`} render={render(XSound.GetCurrentTime)} />
                 <Route exact path={`${path}xsound/no-conflict`} render={render(XSound.NoConflict)} />

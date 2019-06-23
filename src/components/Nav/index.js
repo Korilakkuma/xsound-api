@@ -67,11 +67,11 @@ class Nav extends React.Component {
                         <dd><Link to={`${this.path}xsound/exit-fullscreen`} className={this.getSelectedClassName(`${this.path}xsound/exit-fullscreen`)}>exitFullscreen</Link></dd>
                         <dd><Link to={`${this.path}xsound/file`} className={this.getSelectedClassName(`${this.path}xsound/file`)}>file</Link></dd>
                         <dd><Link to={`${this.path}xsound/free`} className={this.getSelectedClassName(`${this.path}xsound/free`)}>free</Link></dd>
-                        <dd><Link to={`${this.path}xsound/fullscreen`} className={this.getSelectedClassName(`${this.path}xsound/fullscreen`)}>fullscreen</Link></dd>
                         <dd><Link to={`${this.path}xsound/get`} className={this.getSelectedClassName(`${this.path}xsound/get`)}>get</Link></dd>
                         <dd><Link to={`${this.path}xsound/get-current-time`} className={this.getSelectedClassName(`${this.path}xsound/get-current-time`)}>getCurrentTime</Link></dd>
                         <dd><Link to={`${this.path}xsound/no-conflict`} className={this.getSelectedClassName(`${this.path}xsound/no-conflict`)}>noConflict</Link></dd>
                         <dd><Link to={`${this.path}xsound/read`} className={this.getSelectedClassName(`${this.path}xsound/read`)}>read</Link></dd>
+                        <dd><Link to={`${this.path}xsound/request-fullscreen`} className={this.getSelectedClassName(`${this.path}xsound/request-fullscreen`)}>requestFullscreen</Link></dd>
                         <dd><Link to={`${this.path}xsound/to-frequencies`} className={this.getSelectedClassName(`${this.path}xsound/to-frequencies`)}>toFrequencies</Link></dd>
                         <dd><Link to={`${this.path}xsound/to-text-file`} className={this.getSelectedClassName(`${this.path}xsound/to-text-file`)}>toTextFile</Link></dd>
                     </dl>
