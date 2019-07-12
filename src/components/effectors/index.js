@@ -14,6 +14,7 @@ import NoiseGate from './NoiseGate';
 import Phaser from './Phaser';
 import Reverb from './Reverb';
 import Ringmodulator from './Ringmodulator';
+import ListenerAndPanner from './ListenerAndPanner';
 import Tremolo from './Tremolo';
 import VocalCanceler from './VocalCanceler';
 import Wah from './Wah';
@@ -34,6 +35,7 @@ export {
     Phaser,
     Reverb,
     Ringmodulator,
+    ListenerAndPanner,
     Tremolo,
     VocalCanceler,
     Wah,
