@@ -14,6 +14,7 @@ import IsSource from './IsSource';
 import IsPaused from './IsPaused';
 import FadeIn from './FadeIn';
 import FadeOut from './FadeOut';
+import Sprite from './Sprite';
 
 export {
     Setup,
@@ -29,5 +30,6 @@ export {
     IsSource,
     IsPaused,
     FadeIn,
-    FadeOut
+    FadeOut,
+    Sprite
 };

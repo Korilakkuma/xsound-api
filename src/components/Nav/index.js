@@ -135,6 +135,7 @@ class Nav extends React.Component {
                         <dd><Link to={`${this.path}audio/is-paused`} className={this.getSelectedClassName(`${this.path}audio/is-paused`)}>isPaused</Link></dd>
                         <dd><Link to={`${this.path}audio/fade-in`} className={this.getSelectedClassName(`${this.path}audio/fade-in`)}>fadeIn</Link></dd>
                         <dd><Link to={`${this.path}audio/fade-out`} className={this.getSelectedClassName(`${this.path}audio/fade-out`)}>fadeOut</Link></dd>
+                        <dd><Link to={`${this.path}audio/sprite`} className={this.getSelectedClassName(`${this.path}audio/sprite`)}>sprite</Link></dd>
                     </dl>
                 </section>
                 <section role="presentation">

@@ -120,6 +120,7 @@ export default (
                 <Route exact path={`${path}audio/is-paused`} render={render(AudioModule.IsPaused)} />
                 <Route exact path={`${path}audio/fade-in`} render={render(AudioModule.FadeIn)} />
                 <Route exact path={`${path}audio/fade-out`} render={render(AudioModule.FadeOut)} />
+                <Route exact path={`${path}audio/sprite`} render={render(AudioModule.Sprite)} />
                 <Route exact path={`${path}media/setup`} render={render(MediaModule.Setup)} />
                 <Route exact path={`${path}media/ready`} render={render(MediaModule.Ready)} />
                 <Route exact path={`${path}media/start`} render={render(MediaModule.Start)} />
