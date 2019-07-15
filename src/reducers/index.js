@@ -5,7 +5,7 @@ import { connectRouter } from 'connected-react-router';
 import * as HeaderReducers from './HeaderReducers';
 import * as NavReducers from './NavReducers';
 
-export default history => combineReducers({
+export const rootReducer = history => combineReducers({
     ...HeaderReducers,
     ...NavReducers,
     router : connectRouter(history)
