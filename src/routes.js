@@ -162,6 +162,15 @@ export default (
                 <Route exact path={`${path}mml/is-sequences`} render={render(MML.IsSequences)} />
                 <Route exact path={`${path}mml/is-paused`} render={render(MML.IsPaused)} />
                 <Route exact path={`${path}mml/to-abc`} render={render(MML.ToABC)} />
+                <Route exact path={`${path}analyser/domain`} render={render(Analyser.Domain)} />
+                <Route exact path={`${path}analyser/param`} render={render(Analyser.Param)} />
+                <Route exact path={`${path}analyser/get`} render={render(Analyser.Get)} />
+                <Route exact path={`${path}analyser/visualizer/setup`} render={render(Analyser.VisualizerSetup)} />
+                <Route exact path={`${path}analyser/visualizer/param`} render={render(Analyser.VisualizerParam)} />
+                <Route exact path={`${path}analyser/visualizer/state`} render={render(Analyser.VisualizerState)} />
+                <Route exact path={`${path}analyser/visualizer/create`} render={render(Analyser.VisualizerCreate)} />
+                <Route exact path={`${path}analyser/time-overview/update`} render={render(Analyser.TimeOverviewUpdate)} />
+                <Route exact path={`${path}analyser/time-overview/drag`} render={render(Analyser.TimeOverviewDrag)} />
                 <Route exact path={`${path}effectors/autopanner`} render={render(Effectors.Autopanner)} />
                 <Route exact path={`${path}effectors/chorus`} render={render(Effectors.Chorus)} />
                 <Route exact path={`${path}effectors/compressor`} render={render(Effectors.Compressor)} />
@@ -181,15 +190,6 @@ export default (
                 <Route exact path={`${path}effectors/vocalcanceler`} render={render(Effectors.VocalCanceler)} />
                 <Route exact path={`${path}effectors/wah`} render={render(Effectors.Wah)} />
                 <Route exact path={`${path}effectors/custom`} render={render(Effectors.Custom)} />
-                <Route exact path={`${path}analyser/domain`} render={render(Analyser.Domain)} />
-                <Route exact path={`${path}analyser/param`} render={render(Analyser.Param)} />
-                <Route exact path={`${path}analyser/get`} render={render(Analyser.Get)} />
-                <Route exact path={`${path}analyser/visualizer/setup`} render={render(Analyser.VisualizerSetup)} />
-                <Route exact path={`${path}analyser/visualizer/param`} render={render(Analyser.VisualizerParam)} />
-                <Route exact path={`${path}analyser/visualizer/state`} render={render(Analyser.VisualizerState)} />
-                <Route exact path={`${path}analyser/visualizer/create`} render={render(Analyser.VisualizerCreate)} />
-                <Route exact path={`${path}analyser/time-overview/update`} render={render(Analyser.TimeOverviewUpdate)} />
-                <Route exact path={`${path}analyser/time-overview/drag`} render={render(Analyser.TimeOverviewDrag)} />
                 <Route exact path={`${path}recorder/setup`} render={render(Recorder.Setup)} />
                 <Route exact path={`${path}recorder/ready`} render={render(Recorder.Ready)} />
                 <Route exact path={`${path}recorder/start`} render={render(Recorder.Start)} />

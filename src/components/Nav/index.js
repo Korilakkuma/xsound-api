@@ -216,6 +216,21 @@ class Nav extends React.Component {
                     </dl>
                 </section>
                 <section role="presentation">
+                    <h2><button type="button" role="tab" aria-expanded={expandedPanelId === 'panel-analyser'} aria-selected={expandedPanelId === 'panel-analyser'} aria-controls="panel-analyser" tabIndex="0" onClick={this.onClick}>Analyser</button></h2>
+                    <dl id="panel-analyser" aria-hidden={expandedPanelId !== 'panel-analyser'}>
+                        <dt>Methods</dt>
+                        <dd><Link to={`${this.path}analyser/domain`} className={this.getSelectedClassName(`${this.path}analyser/domain`)}>domain</Link></dd>
+                        <dd><Link to={`${this.path}analyser/param`} className={this.getSelectedClassName(`${this.path}analyser/param`)}>param</Link></dd>
+                        <dd><Link to={`${this.path}analyser/get`} className={this.getSelectedClassName(`${this.path}analyser/get`)}>get</Link></dd>
+                        <dd><Link to={`${this.path}analyser/visualizer/setup`} className={this.getSelectedClassName(`${this.path}analyser/visualizer/setup`)}>Visualizer#setup</Link></dd>
+                        <dd><Link to={`${this.path}analyser/visualizer/param`} className={this.getSelectedClassName(`${this.path}analyser/visualizer/param`)}>Visualizer#param</Link></dd>
+                        <dd><Link to={`${this.path}analyser/visualizer/state`} className={this.getSelectedClassName(`${this.path}analyser/visualizer/state`)}>Visualizer#state</Link></dd>
+                        <dd><Link to={`${this.path}analyser/visualizer/create`} className={this.getSelectedClassName(`${this.path}analyser/visualizer/create`)}>Visualizer#create</Link></dd>
+                        <dd><Link to={`${this.path}analyser/time-overview/update`} className={this.getSelectedClassName(`${this.path}analyser/time-overview/update`)}>TimeOverview#update</Link></dd>
+                        <dd><Link to={`${this.path}analyser/time-overview/drag`} className={this.getSelectedClassName(`${this.path}analyser/time-overview/drag`)}>TimeOverview#drag</Link></dd>
+                    </dl>
+                </section>
+                <section role="presentation">
                     <h2><button type="button" role="tab" aria-expanded={expandedPanelId === 'panel-effectors'} aria-selected={expandedPanelId === 'panel-effectors'} aria-controls="panel-effectors" tabIndex="0" onClick={this.onClick}>Effectors</button></h2>
                     <dl id="panel-effectors" aria-hidden={expandedPanelId !== 'panel-effectors'}>
                         <dt>Modules</dt>
@@ -238,21 +253,6 @@ class Nav extends React.Component {
                         <dd><Link to={`${this.path}effectors/vocalcanceler`} className={this.getSelectedClassName(`${this.path}effectors/vocalcanceler`)}>vocalcanceler</Link></dd>
                         <dd><Link to={`${this.path}effectors/wah`} className={this.getSelectedClassName(`${this.path}effectors/wah`)}>wah</Link></dd>
                         <dd><Link to={`${this.path}effectors/custom`} className={this.getSelectedClassName(`${this.path}effectors/custom`)}>custom</Link></dd>
-                    </dl>
-                </section>
-                <section role="presentation">
-                    <h2><button type="button" role="tab" aria-expanded={expandedPanelId === 'panel-analyser'} aria-selected={expandedPanelId === 'panel-analyser'} aria-controls="panel-analyser" tabIndex="0" onClick={this.onClick}>Analyser</button></h2>
-                    <dl id="panel-analyser" aria-hidden={expandedPanelId !== 'panel-analyser'}>
-                        <dt>Methods</dt>
-                        <dd><Link to={`${this.path}analyser/domain`} className={this.getSelectedClassName(`${this.path}analyser/domain`)}>domain</Link></dd>
-                        <dd><Link to={`${this.path}analyser/param`} className={this.getSelectedClassName(`${this.path}analyser/param`)}>param</Link></dd>
-                        <dd><Link to={`${this.path}analyser/get`} className={this.getSelectedClassName(`${this.path}analyser/get`)}>get</Link></dd>
-                        <dd><Link to={`${this.path}analyser/visualizer/setup`} className={this.getSelectedClassName(`${this.path}analyser/visualizer/setup`)}>Visualizer#setup</Link></dd>
-                        <dd><Link to={`${this.path}analyser/visualizer/param`} className={this.getSelectedClassName(`${this.path}analyser/visualizer/param`)}>Visualizer#param</Link></dd>
-                        <dd><Link to={`${this.path}analyser/visualizer/state`} className={this.getSelectedClassName(`${this.path}analyser/visualizer/state`)}>Visualizer#state</Link></dd>
-                        <dd><Link to={`${this.path}analyser/visualizer/create`} className={this.getSelectedClassName(`${this.path}analyser/visualizer/create`)}>Visualizer#create</Link></dd>
-                        <dd><Link to={`${this.path}analyser/time-overview/update`} className={this.getSelectedClassName(`${this.path}analyser/time-overview/update`)}>TimeOverview#update</Link></dd>
-                        <dd><Link to={`${this.path}analyser/time-overview/drag`} className={this.getSelectedClassName(`${this.path}analyser/time-overview/drag`)}>TimeOverview#drag</Link></dd>
                     </dl>
                 </section>
                 <section role="presentation">
