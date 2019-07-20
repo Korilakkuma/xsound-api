@@ -55,6 +55,10 @@
     text-shadow: -1px -1px 1px var(--black);
 }
 
+.Header__title a {
+    text-decoration: none;
+}
+
 .Header__subtitle {
     font-size: 2rem;
     font-weight: 300;

@@ -3,6 +3,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import * as HeaderActions from '../../actions/HeaderActions';
 
 class Header extends React.Component {
@@ -51,7 +52,7 @@ class Header extends React.Component {
                     />
                 </a>
                 <div className={`${Header.CLASS_NAME}__headings`}>
-                    <h1 className={`${Header.CLASS_NAME}__title`}>XSound</h1>
+                    <h1 className={`${Header.CLASS_NAME}__title`}><Link to="/">XSound</Link></h1>
                     <h2 className={`${Header.CLASS_NAME}__subtitle`}>Web Audio API Library</h2>
                 </div>
             </header>
