@@ -9,7 +9,8 @@
     "lint:css": "stylelint ./src/*.css ./src/**/*.css",
     "lint": "run-p lint:js lint:css",
     "build": "npm run clean && webpack --progress --mode production",
-    "build:watch": "npm run clean && webpack --progress --watch --mode development"
+    "build:watch": "npm run clean && webpack --progress --watch --mode development",
+    "start": "webpack-dev-server --progress"
   },
   "repository": {
     "type": "git",
@@ -53,6 +54,7 @@
     "stylelint-config-standard": "^18.3.0",
     "url-loader": "^2.0.1",
     "webpack": "^4.35.3",
-    "webpack-cli": "^3.3.5"
+    "webpack-cli": "^3.3.5",
+    "webpack-dev-server": "^3.7.2"
   }
 }

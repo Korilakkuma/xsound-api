@@ -11,7 +11,8 @@ module.exports = {
   },
   output: {
     filename: '[name].js',
-    path: `${__dirname}/assets`
+    path: `${__dirname}/assets`,
+    publicPath: '/assets/'
   },
   module: {
     rules: [
@@ -60,5 +61,8 @@ module.exports = {
       name: 'vendor'
     }
   },
-  devtool: 'source-map'
+  devtool: 'source-map',
+  devServer: {
+    contentBase: __dirname
+  }
 };
