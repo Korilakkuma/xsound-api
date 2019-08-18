@@ -44,7 +44,7 @@ class Setup extends React.Component {
                                         <dd>This value is the array that contains media formats.</dd>
                                         */}
                                         <dt>listeners<span className="argument-type">Object</span></dt>
-                                        <dd>This value is the associative array that contains event listeners that are defined by HTMLMediaElement.</dd>
+                                        <dd>This value is the associative array that contains event listeners that are defined by HTMLMediaElement, MediaSource and SourceBuffer.</dd>
                                         <dt>autoplay<span className="argument-type">boolean</span></dt>
                                         <dd>This value should be true in the case of autoplay. The default value is false.</dd>
                                     </dl>

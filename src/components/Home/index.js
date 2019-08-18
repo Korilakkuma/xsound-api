@@ -50,6 +50,7 @@ class Home extends React.Component {
                         <li>Visualization (Overview in Time Domain / Time Domain / Spectrum)</li>
                         <li>Multi-Track Recording (Create WAVE file)</li>
                         <li>Session (by WebSocket)</li>
+                        <li>Audio Streaming</li>
                         <li>Visual Audio Sprite</li>
                     </ul>
                 </section>

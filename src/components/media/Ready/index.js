@@ -38,6 +38,13 @@ class Ready extends React.Component {
                                     This value is media URL.
                                 </td>
                             </tr>
+                            <tr>
+                                <th scope="row">2nd</th>
+                                <td><span className="argument-type">string</span></td>
+                                <td>
+                                    This value is codec (ex. &apos;audio/mpeg&apos;). This value is required in the case of audio streaming.
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                 </section>
