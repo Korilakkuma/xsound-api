@@ -49,9 +49,9 @@ const render = Component => ({ history, match }) => {
     store.dispatch(NavActions.expandPanel(expandedPanelId));
 
     if (Component.TITLE === 'Home') {
-        document.title = 'XSound - Web Audio API Library for Synthesizer, Effects, Visualization, Multi-Track Recording, Visual Audio Sprite ... -';
+        document.title = 'XSound - Web Audio API Library for Synthesizer, Effects, Visualization, Multi-Track Recording, Audio Streaming, Visual Audio Sprite ... -';
     } else {
-        document.title = `${Component.TITLE} | XSound - Web Audio API Library for Synthesizer, Effects, Visualization, Multi-Track Recording, Visual Audio Sprite ... -`;
+        document.title = `${Component.TITLE} | XSound - Web Audio API Library for Synthesizer, Effects, Visualization, Multi-Track Recording, Audio Streaming, Visual Audio Sprite ... -`;
     }
 
     return <Component history={history} match={match} />;
