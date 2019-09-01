@@ -52,6 +52,10 @@ class Ready extends React.Component {
                     <iframe height='265' scrolling='no' title='MediaModule#ready | XSound - Web Audio API Library -' src='//codepen.io/Korilakkuma/embed/eMNmjK/?height=265&amp;theme-id=0&amp;default-tab=js,result&amp;embed-version=2' frameBorder='no' allowtransparency='true' allowFullScreen='true' style={{ width : '100%' }}>See the Pen <a href='https://codepen.io/Korilakkuma/pen/eMNmjK/'>MediaModule#ready | XSound - Web Audio API Library -</a> by Tomohiro IKEDA (<a href='https://codepen.io/Korilakkuma'>@Korilakkuma</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
                 </section>
+                <section className="codepen">
+                    <iframe height='265' scrolling='no' title='MediaModule#ready | XSound - Web Audio API Library -' src='//codepen.io/Korilakkuma/embed/xxKOWbv/?height=265&amp;theme-id=0&amp;default-tab=js,result&amp;embed-version=2' frameBorder='no' allowtransparency='true' allowFullScreen='true' style={{ width : '100%' }}>See the Pen <a href='https://codepen.io/Korilakkuma/pen/xxKOWbv/'>MediaModule#ready | XSound - Web Audio API Library -</a> by Tomohiro IKEDA (<a href='https://codepen.io/Korilakkuma'>@Korilakkuma</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+                </section>
             </main>
         );
     }
