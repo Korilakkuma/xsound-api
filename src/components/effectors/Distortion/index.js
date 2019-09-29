@@ -46,7 +46,7 @@ class Distortion extends React.Component {
                             <tr>
                                 <th scope="row">drive</th>
                                 <td><span className="param-type">number</span></td>
-                                <td>0 &lt;= value &lt;= 1</td>
+                                <td>0 &lt;= value &lt;= 100</td>
                                 <td>1</td>
                             </tr>
                             <tr>
