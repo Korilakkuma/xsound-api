@@ -34,7 +34,7 @@ class Distortion extends React.Component {
                             <tr>
                                 <th scope="row">curve</th>
                                 <td><span className="param-type">string</span></td>
-                                <td>&apos;clean&apos;, &apos;crunch&apos;, &apos;overdrive&apos;, &apos;distortion&apos;, &apos;fuzz&apos;</td>
+                                <td>&apos;clean&apos;, &apos;crunch&apos;, &apos;overdrive&apos;, &apos;turbooverdrive&apos;, &apos;distortion&apos;, &apos;turbodistortion&apos;, &apos;fuzz&apos;</td>
                                 <td>&apos;clean&apos;</td>
                             </tr>
                             <tr>
