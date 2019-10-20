@@ -32,6 +32,12 @@ class Wah extends React.Component {
                         <thead><tr><th scope="col"></th><th scope="col">Type</th><th scope="col">Value</th><th scope="col">Default</th></tr></thead>
                         <tbody>
                             <tr>
+                                <th scope="row">auto</th>
+                                <td><span className="param-type">boolean</span></td>
+                                <td>true or false</td>
+                                <td>false</td>
+                            </tr>
+                            <tr>
                                 <th scope="row">cutoff</th>
                                 <td><span className="param-type">number</span></td>
                                 <td>10 &lt;= value &lt;= half the sample-rate</td>
