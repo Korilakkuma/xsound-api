@@ -32,7 +32,7 @@ class Start extends React.Component {
                         <thead><tr><th scope="col"></th><th scope="col">Type</th><th scope="col">Description</th></tr></thead>
                         <tbody>
                             <tr>
-                                <th scope="row">2nd</th>
+                                <th scope="row">1st</th>
                                 <td><span className="argument-type">Array</span></td>
                                 <td>This value is the array for changing connection.</td>
                             </tr>
