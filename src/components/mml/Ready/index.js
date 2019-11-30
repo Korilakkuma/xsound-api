@@ -33,7 +33,7 @@ class Ready extends React.Component {
                         <tbody>
                             <tr>
                                 <th scope="row">1st</th>
-                                <td><span className="argument-type">OscillatorModule</span> or <span className="argument-type">OneshotModule</span></td>
+                                <td><span className="argument-type">OscillatorModule</span> or <span className="argument-type">OneshotModule</span> or <span className="argument-type">NoiseModule</span></td>
                                 <td>This value is the instance of OscillatorModule or OneshotModule.</td>
                             </tr>
                             <tr>
