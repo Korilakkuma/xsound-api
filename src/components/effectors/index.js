@@ -12,6 +12,7 @@ import Flanger from './Flanger';
 import Glide from './Glide';
 import NoiseGate from './NoiseGate';
 import Phaser from './Phaser';
+import PitchShifter from './PitchShifter';
 import Reverb from './Reverb';
 import Ringmodulator from './Ringmodulator';
 import ListenerAndPanner from './ListenerAndPanner';
@@ -34,6 +35,7 @@ export {
     NoiseGate,
     Phaser,
     Reverb,
+    PitchShifter,
     Ringmodulator,
     ListenerAndPanner,
     Tremolo,

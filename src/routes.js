@@ -183,6 +183,7 @@ export default (
                 <Route exact path={`${path}effectors/glide`} render={render(Effectors.Glide)} />
                 <Route exact path={`${path}effectors/noisegate`} render={render(Effectors.NoiseGate)} />
                 <Route exact path={`${path}effectors/phaser`} render={render(Effectors.Phaser)} />
+                <Route exact path={`${path}effectors/pitch-shifter`} render={render(Effectors.PitchShifter)} />
                 <Route exact path={`${path}effectors/reverb`} render={render(Effectors.Reverb)} />
                 <Route exact path={`${path}effectors/ringmodulator`} render={render(Effectors.Ringmodulator)} />
                 <Route exact path={`${path}effectors/listener-and-panner`} render={render(Effectors.ListenerAndPanner)} />

@@ -246,6 +246,7 @@ class Nav extends React.Component {
                         <dd><Link to={`${this.path}effectors/glide`} className={this.getSelectedClassName(`${this.path}effectors/glide`)}>glide</Link></dd>
                         <dd><Link to={`${this.path}effectors/noisegate`} className={this.getSelectedClassName(`${this.path}effectors/noisegate`)}>noisegate</Link></dd>
                         <dd><Link to={`${this.path}effectors/phaser`} className={this.getSelectedClassName(`${this.path}effectors/phaser`)}>phaser</Link></dd>
+                        <dd><Link to={`${this.path}effectors/pitch-shifter`} className={this.getSelectedClassName(`${this.path}effectors/pitch-shifter`)}>pitchshifter</Link></dd>
                         <dd><Link to={`${this.path}effectors/reverb`} className={this.getSelectedClassName(`${this.path}effectors/reverb`)}>reverb</Link></dd>
                         <dd><Link to={`${this.path}effectors/ringmodulator`} className={this.getSelectedClassName(`${this.path}effectors/ringmodulator`)}>ringmodulator</Link></dd>
                         <dd><Link to={`${this.path}effectors/listener-and-panner`} className={this.getSelectedClassName(`${this.path}effectors/listener-and-panner`)}>listener / panner</Link></dd>
