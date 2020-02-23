@@ -11,6 +11,7 @@ import Filter from './Filter';
 import Flanger from './Flanger';
 import Glide from './Glide';
 import NoiseGate from './NoiseGate';
+import NoiseSuppressor from './NoiseSuppressor';
 import Phaser from './Phaser';
 import PitchShifter from './PitchShifter';
 import Reverb from './Reverb';
@@ -33,6 +34,7 @@ export {
     Flanger,
     Glide,
     NoiseGate,
+    NoiseSuppressor,
     Phaser,
     Reverb,
     PitchShifter,
