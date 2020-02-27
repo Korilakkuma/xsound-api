@@ -188,6 +188,7 @@ export default (
                 <Route exact path={`${path}effectors/reverb`} render={render(Effectors.Reverb)} />
                 <Route exact path={`${path}effectors/ringmodulator`} render={render(Effectors.Ringmodulator)} />
                 <Route exact path={`${path}effectors/listener-and-panner`} render={render(Effectors.ListenerAndPanner)} />
+                <Route exact path={`${path}effectors/stereo`} render={render(Effectors.Stereo)} />
                 <Route exact path={`${path}effectors/tremolo`} render={render(Effectors.Tremolo)} />
                 <Route exact path={`${path}effectors/vocalcanceler`} render={render(Effectors.VocalCanceler)} />
                 <Route exact path={`${path}effectors/wah`} render={render(Effectors.Wah)} />

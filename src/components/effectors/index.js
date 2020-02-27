@@ -17,6 +17,7 @@ import PitchShifter from './PitchShifter';
 import Reverb from './Reverb';
 import Ringmodulator from './Ringmodulator';
 import ListenerAndPanner from './ListenerAndPanner';
+import Stereo from './Stereo';
 import Tremolo from './Tremolo';
 import VocalCanceler from './VocalCanceler';
 import Wah from './Wah';
@@ -40,6 +41,7 @@ export {
     PitchShifter,
     Ringmodulator,
     ListenerAndPanner,
+    Stereo,
     Tremolo,
     VocalCanceler,
     Wah,
