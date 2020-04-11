@@ -21,6 +21,9 @@ class Home extends React.Component {
                         <a href="https://github.com/Korilakkuma/XSound/actions?query=workflow%3A%22Node.js+CI%22" target="_blank" rel="noopener nofollow">
                             <img src="https://github.com/Korilakkuma/XSound/workflows/Node.js%20CI/badge.svg" alt="Node.js CI" />
                         </a>
+                        <a target="_blank" rel="noopener noreferrer" href="https://camo.githubusercontent.com/1e5492c8921c1c2b0d35fd5490658845d37a93da/68747470733a2f2f696d672e736869656c64732e696f2f6e6f64652f762f78736f756e643f636f6c6f723d627269676874677265656e">
+                            <img src="https://camo.githubusercontent.com/1e5492c8921c1c2b0d35fd5490658845d37a93da/68747470733a2f2f696d672e736869656c64732e696f2f6e6f64652f762f78736f756e643f636f6c6f723d627269676874677265656e" alt="node-current" data-canonical-src="https://img.shields.io/node/v/xsound?color=brightgreen" />
+                        </a>
                         <a href="https://opensource.org/licenses/MIT" target="_blank" rel="noopener nofollow">
                             <img src="https://camo.githubusercontent.com/a2753323735099059bdc88b724534a1a6bd134ee/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4c6963656e73652d4d49542d627269676874677265656e2e737667" alt="License: MIT" data-canonical-src="https://img.shields.io/badge/License-MIT-brightgreen.svg" />
                         </a>
