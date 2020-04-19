@@ -159,12 +159,24 @@ class Home extends React.Component {
                 <section>
                     <h1>Setup</h1>
                     <hr role="presentation" />
+                    <section>
+                        <h2>Use Webpack Dev Server</h2>
 <pre><code>$ git clone git@github.com:Korilakkuma/XSound.git<br />
 $ cd XSound<br />
 $ npm install<br />
 $ npm run build<br />
 $ npm run dev<br />
 $ open http://localhost:8080/playground/</code></pre>
+                    </section>
+                    <section>
+                        <h2>Use Docker</h2>
+<pre><code>$ git clone git@github.com:Korilakkuma/XSound.git<br />
+$ cd XSound<br />
+$ npm install<br />
+$ npm run watch<br />
+$ docker-compose up -d --build<br />
+$ open http://localhost:8080/playground/</code></pre>
+                    </section>
                 </section>
                 <section>
                     <h1>Pickups</h1>
