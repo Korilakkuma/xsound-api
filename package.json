@@ -54,7 +54,7 @@
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "postcss-easy-import": "^3.0.0",
     "postcss-loader": "^3.0.0",
-    "stylelint": "^13.3.1",
+    "stylelint": "^13.3.2",
     "stylelint-config-standard": "^20.0.0",
     "url-loader": "^4.1.0",
     "webpack": "^4.42.1",
