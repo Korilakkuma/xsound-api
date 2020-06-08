@@ -7,6 +7,7 @@ class Home extends React.Component {
     static TITLE      = 'Home';
     static CLASS_NAME = 'Home';
 
+    // eslint-disable-next-line no-useless-constructor
     constructor(props) {
         super(props);
     }
@@ -18,22 +19,22 @@ class Home extends React.Component {
                     <h1>Overview</h1>
                     <hr role="presentation" />
                     <p className={`${Home.CLASS_NAME}__badges`}>
-                        <a href="https://github.com/Korilakkuma/XSound/actions?query=workflow%3A%22Node.js+CI%22" target="_blank" rel="noopener nofollow">
+                        <a href="https://github.com/Korilakkuma/XSound/actions?query=workflow%3A%22Node.js+CI%22" target="_blank" rel="noopener noreferrer">
                             <img src="https://github.com/Korilakkuma/XSound/workflows/Node.js%20CI/badge.svg" alt="Node.js CI" />
                         </a>
                         <a target="_blank" rel="noopener noreferrer" href="https://camo.githubusercontent.com/1e5492c8921c1c2b0d35fd5490658845d37a93da/68747470733a2f2f696d672e736869656c64732e696f2f6e6f64652f762f78736f756e643f636f6c6f723d627269676874677265656e">
                             <img src="https://camo.githubusercontent.com/1e5492c8921c1c2b0d35fd5490658845d37a93da/68747470733a2f2f696d672e736869656c64732e696f2f6e6f64652f762f78736f756e643f636f6c6f723d627269676874677265656e" alt="node-current" data-canonical-src="https://img.shields.io/node/v/xsound?color=brightgreen" />
                         </a>
-                        <a href="https://opensource.org/licenses/MIT" target="_blank" rel="noopener nofollow">
+                        <a href="https://opensource.org/licenses/MIT" target="_blank" rel="noopener noreferrer">
                             <img src="https://camo.githubusercontent.com/a2753323735099059bdc88b724534a1a6bd134ee/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4c6963656e73652d4d49542d627269676874677265656e2e737667" alt="License: MIT" data-canonical-src="https://img.shields.io/badge/License-MIT-brightgreen.svg" />
                         </a>
-                        <a href="https://www.npmjs.com/package/xsound" target="_blank" rel="noopener nofollow">
+                        <a href="https://www.npmjs.com/package/xsound" target="_blank" rel="noopener noreferrer">
                             <img src="https://camo.githubusercontent.com/924ac00c23318db9c83a524f9d5a2e5eb7b0185a/68747470733a2f2f696d672e736869656c64732e696f2f6e706d2f64742f78736f756e642e737667" alt="npm" data-canonical-src="https://img.shields.io/npm/dt/xsound.svg" />
                         </a>
                         <a href="https://camo.githubusercontent.com/21429f03a9849faec5363f6959a8245484c47309/68747470733a2f2f696d672e736869656c64732e696f2f64617669642f6465762f4b6f72696c616b6b756d612f58536f756e642e737667" target="_blank" rel="noopener noreferrer">
                             <img src="https://camo.githubusercontent.com/21429f03a9849faec5363f6959a8245484c47309/68747470733a2f2f696d672e736869656c64732e696f2f64617669642f6465762f4b6f72696c616b6b756d612f58536f756e642e737667" alt="David Dev" data-canonical-src="https://img.shields.io/david/dev/Korilakkuma/XSound.svg" />
                         </a>
-                        <a href="https://www.jsdelivr.com/package/npm/xsound" target="_blank" rel="noopener nofollow">
+                        <a href="https://www.jsdelivr.com/package/npm/xsound" target="_blank" rel="noopener noreferrer">
                             <img src="https://camo.githubusercontent.com/79cc34ae0548ba9864883b1926e2132d5bd3540a/68747470733a2f2f646174612e6a7364656c6976722e636f6d2f76312f7061636b6167652f6e706d2f78736f756e642f6261646765" alt="jsDelivr" data-canonical-src="https://data.jsdelivr.com/v1/package/npm/xsound/badge" />
                         </a>
                     </p>
@@ -68,19 +69,19 @@ class Home extends React.Component {
                     <h1>Getting Started</h1>
                     <hr role="presentation" />
                     <div className={`${Home.CLASS_NAME}__codeWrapper`}>
-<pre><code>X('oscillator').setup(true).ready().start(440);</code></pre>
-                    {navigator.clipboard && navigator.clipboard.writeText ?
-                        (
-                            <div className={`${Home.CLASS_NAME}__buttonWrapper`}>
-                                <button
-                                    type="button"
-                                    onClick={() => navigator.clipboard.writeText(`X('oscillator').setup(true).ready().start(440);`)}
-                                >
+                        <pre><code>X(&apos;oscillator&apos;).setup(true).ready().start(440);</code></pre>
+                        {navigator.clipboard && navigator.clipboard.writeText
+                            ? (
+                                <div className={`${Home.CLASS_NAME}__buttonWrapper`}>
+                                    <button
+                                        type="button"
+                                        onClick={() => navigator.clipboard.writeText('X(\'oscillator\').setup(true).ready().start(440);')}
+                                    >
                                     COPY
-                                </button>
-                            </div>
-                        )
-                    : null}
+                                    </button>
+                                </div>
+                            )
+                            : null}
                     </div>
                 </section>
                 <section>
@@ -102,22 +103,27 @@ class Home extends React.Component {
                     </ul>
                 </section>
                 <section>
+                    <h1>Playground</h1>
+                    <iframe width='560' height='315' src='https://www.youtube.com/embed/zqdmoB8VICY' frameBorder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowFullScreen></iframe>
+                    <nav><a href="https://xsound.jp/playground/" target="_blank" rel="noopener noreferrer">Here</a></nav>
+                </section>
+                <section>
                     <h1>Installation</h1>
                     <hr role="presentation" />
                     <div className={`${Home.CLASS_NAME}__codeWrapper`}>
-<pre><code>$ npm install --save xsound</code></pre>
-                    {navigator.clipboard && navigator.clipboard.writeText ?
-                        (
-                            <div className={`${Home.CLASS_NAME}__buttonWrapper`}>
-                                <button
-                                    type="button"
-                                    onClick={() => navigator.clipboard.writeText('npm install --save xsound')}
-                                >
+                        <pre><code>$ npm install --save xsound</code></pre>
+                        {navigator.clipboard && navigator.clipboard.writeText
+                            ? (
+                                <div className={`${Home.CLASS_NAME}__buttonWrapper`}>
+                                    <button
+                                        type="button"
+                                        onClick={() => navigator.clipboard.writeText('npm install --save xsound')}
+                                    >
                                     COPY
-                                </button>
-                            </div>
-                        )
-                    : null}
+                                    </button>
+                                </div>
+                            )
+                            : null}
                     </div>
                 </section>
                 <section>
@@ -125,35 +131,35 @@ class Home extends React.Component {
                     <hr role="presentation" />
                     <p>In the case of using CDN,</p>
                     <div className={`${Home.CLASS_NAME}__codeWrapper`}>
-<pre><code>&lt;script type="text/javascript" src="https://cdn.jsdelivr.net/npm/xsound@latest/build/xsound.min.js"&gt;&lt;/script&gt;</code></pre>
-                    {navigator.clipboard && navigator.clipboard.writeText ?
-                        (
-                            <div className={`${Home.CLASS_NAME}__buttonWrapper`}>
-                                <button
-                                    type="button"
-                                    onClick={() => navigator.clipboard.writeText('<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/xsound@latest/build/xsound.min.js"></script>')}
-                                >
+                        <pre><code>&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdn.jsdelivr.net/npm/xsound@latest/build/xsound.min.js&quot;&gt;&lt;/script&gt;</code></pre>
+                        {navigator.clipboard && navigator.clipboard.writeText
+                            ? (
+                                <div className={`${Home.CLASS_NAME}__buttonWrapper`}>
+                                    <button
+                                        type="button"
+                                        onClick={() => navigator.clipboard.writeText('<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/xsound@latest/build/xsound.min.js"></script>')}
+                                    >
                                     COPY
-                                </button>
-                            </div>
-                        )
-                    : null}
+                                    </button>
+                                </div>
+                            )
+                            : null}
                     </div>
                     <p>In the case of using ESModules for SSR ... etc,</p>
                     <div className={`${Home.CLASS_NAME}__codeWrapper`}>
-<pre><code>{`import { XSound, X } from 'xsound';`}</code></pre>
-                    {navigator.clipboard && navigator.clipboard.writeText ?
-                        (
-                            <div className={`${Home.CLASS_NAME}__buttonWrapper`}>
-                                <button
-                                    type="button"
-                                    onClick={() => navigator.clipboard.writeText(`import { XSound, X } from 'xsound';`)}
-                                >
+                        <pre><code>{'import { XSound, X } from \'xsound\';'}</code></pre>
+                        {navigator.clipboard && navigator.clipboard.writeText
+                            ? (
+                                <div className={`${Home.CLASS_NAME}__buttonWrapper`}>
+                                    <button
+                                        type="button"
+                                        onClick={() => navigator.clipboard.writeText('import { XSound, X } from \'xsound\';')}
+                                    >
                                     COPY
-                                </button>
-                            </div>
-                        )
-                    : null}
+                                    </button>
+                                </div>
+                            )
+                            : null}
                     </div>
                 </section>
                 <section>
@@ -161,7 +167,7 @@ class Home extends React.Component {
                     <hr role="presentation" />
                     <section>
                         <h2>Use Webpack Dev Server</h2>
-<pre><code>$ git clone git@github.com:Korilakkuma/XSound.git<br />
+                        <pre><code>$ git clone git@github.com:Korilakkuma/XSound.git<br />
 $ cd XSound<br />
 $ npm install<br />
 $ npm run build<br />
@@ -170,7 +176,7 @@ $ open http://localhost:8080/playground/</code></pre>
                     </section>
                     <section>
                         <h2>Use Docker</h2>
-<pre><code>$ git clone git@github.com:Korilakkuma/XSound.git<br />
+                        <pre><code>$ git clone git@github.com:Korilakkuma/XSound.git<br />
 $ cd XSound<br />
 $ npm install<br />
 $ npm run watch<br />
