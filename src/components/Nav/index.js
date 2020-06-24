@@ -4,7 +4,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import * as NavActions from '../../actions/NavActions';
 
 class Nav extends React.Component {
     static CLASS_NAME = 'Nav';
@@ -34,7 +33,8 @@ class Nav extends React.Component {
     }
 
     // TODO: Use `getDerivedStateFromProps` in React v17+
-    componentWillReceiveProps(nextProps) {
+    // eslint-disable-next-line camelcase
+    UNSAFE_componentWillReceiveProps(nextProps) {
         this.setState({ expandedPanelId : nextProps.expandedPanelId });
     }
 
@@ -44,7 +44,6 @@ class Nav extends React.Component {
 
     render() {
         const expandedPanelId = this.state.expandedPanelId;
-        const selectedPath    = this.props.selectedPath;
 
         return (
             <nav role="tablist" aria-multiselectable="false" className={Nav.CLASS_NAME}>
@@ -60,6 +59,7 @@ class Nav extends React.Component {
                         <dd><Link to={`${this.path}xsound/number-of-inputs`} className={this.getSelectedClassName(`${this.path}xsound/number-of-inputs`)}>NUMBER_OF_INPUTS</Link></dd>
                         <dd><Link to={`${this.path}xsound/number-of-outputs`} className={this.getSelectedClassName(`${this.path}xsound/number-of-outputs`)}>NUMBER_OF_OUTPUTS</Link></dd>
                         <dt>Methods</dt>
+                        <dd><Link to={`${this.path}xsound/fft`} className={this.getSelectedClassName(`${this.path}xsound/fft`)}>FFT / IFFT</Link></dd>
                         <dd><Link to={`${this.path}xsound/ajax`} className={this.getSelectedClassName(`${this.path}xsound/ajax`)}>ajax</Link></dd>
                         <dd><Link to={`${this.path}xsound/clone`} className={this.getSelectedClassName(`${this.path}xsound/clone`)}>clone</Link></dd>
                         <dd><Link to={`${this.path}xsound/convert-time`} className={this.getSelectedClassName(`${this.path}xsound/convert-time`)}>convertTime</Link></dd>

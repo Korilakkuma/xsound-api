@@ -69,6 +69,7 @@ export default (
                 <Route exact path={`${path}xsound/sample-rate`} render={render(XSound.SampleRate)} />
                 <Route exact path={`${path}xsound/number-of-inputs`} render={render(XSound.NumberOfInputs)} />
                 <Route exact path={`${path}xsound/number-of-outputs`} render={render(XSound.NumberOfOutputs)} />
+                <Route exact path={`${path}xsound/fft`} render={render(XSound.FFT)} />
                 <Route exact path={`${path}xsound/ajax`} render={render(XSound.Ajax)} />
                 <Route exact path={`${path}xsound/clone`} render={render(XSound.Clone)} />
                 <Route exact path={`${path}xsound/convert-time`} render={render(XSound.ConvertTime)} />

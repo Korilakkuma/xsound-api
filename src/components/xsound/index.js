@@ -4,6 +4,7 @@ import IsXSound from './IsXSound';
 import SampleRate from './SampleRate';
 import NumberOfInputs from './NumberOfInputs';
 import NumberOfOutputs from './NumberOfOutputs';
+import FFT from './FFT';
 import Ajax from './Ajax';
 import Clone from './Clone';
 import ConvertTime from './ConvertTime';
@@ -24,6 +25,7 @@ export {
     SampleRate,
     NumberOfInputs,
     NumberOfOutputs,
+    FFT,
     Ajax,
     Clone,
     ConvertTime,
