@@ -170,7 +170,6 @@ class Home extends React.Component {
                         <pre><code>$ git clone git@github.com:Korilakkuma/XSound.git<br />
 $ cd XSound<br />
 $ npm install<br />
-$ npm run build<br />
 $ npm run dev<br />
 $ open http://localhost:8080/playground/</code></pre>
                     </section>
