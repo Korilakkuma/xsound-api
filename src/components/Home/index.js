@@ -10,29 +10,72 @@ class Home extends React.Component {
     constructor(props) {
         super(props);
 
-        this.onClickGettingStarted = this.onClickGettingStarted.bind(this);
-        this.onClickNpmInstall     = this.onClickNpmInstall.bind(this);
-        this.onClickCdn            = this.onClickCdn.bind(this);
-        this.onClickEsModules      = this.onClickEsModules.bind(this);
+        this.state = {
+            copyingGetteingStarted : false,
+            copyingNpmInstall      : false,
+            copyingCdn             : false,
+            copyingEsModules       : false
+        };
+
+        this.onMouseDownGettingStarted = this.onMouseDownGettingStarted.bind(this);
+        this.onMouseDownNpmInstall     = this.onMouseDownNpmInstall.bind(this);
+        this.onMouseDownCdn            = this.onMouseDownCdn.bind(this);
+        this.onMouseDownEsModules      = this.onMouseDownEsModules.bind(this);
+
+        this.onMouseUpGettingStarted = this.onMouseUpGettingStarted.bind(this);
+        this.onMouseUpNpmInstall     = this.onMouseUpNpmInstall.bind(this);
+        this.onMouseUpCdn            = this.onMouseUpCdn.bind(this);
+        this.onMouseUpEsModules      = this.onMouseUpEsModules.bind(this);
     }
 
-    onClickGettingStarted() {
-        navigator.clipboard.writeText('X(\'oscillator\').setup(true).ready().start(440);');
+    onMouseDownGettingStarted() {
+        this.setState({ copyingGetteingStarted: true }, () => {
+            navigator.clipboard.writeText('X(\'oscillator\').setup(true).ready().start(440);');
+        });
     }
 
-    onClickNpmInstall() {
-        navigator.clipboard.writeText('npm install --save xsound');
+    onMouseDownNpmInstall() {
+        this.setState({ copyingNpmInstall: true }, () => {
+            navigator.clipboard.writeText('npm install --save xsound');
+        });
     }
 
-    onClickCdn() {
-        navigator.clipboard.writeText('<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/xsound@latest/build/xsound.min.js"></script>');
+    onMouseDownCdn() {
+        this.setState({ copyingCdn: true }, () => {
+            navigator.clipboard.writeText('<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/xsound@latest/build/xsound.min.js"></script>');
+        });
     }
 
-    onClickEsModules() {
-        navigator.clipboard.writeText('import { XSound, X } from \'xsound\';');
+    onMouseDownEsModules() {
+        this.setState({ copyingEsModules: true }, () => {
+            navigator.clipboard.writeText('import { XSound, X } from \'xsound\';');
+        });
+    }
+
+    onMouseUpGettingStarted() {
+        this.setState({ copyingGetteingStarted: false });
+    }
+
+    onMouseUpNpmInstall() {
+        this.setState({ copyingNpmInstall: false });
+    }
+
+    onMouseUpCdn() {
+        this.setState({ copyingCdn: false });
+    }
+
+    onMouseUpEsModules() {
+        this.setState({ copyingEsModules: false });
     }
 
     render() {
+        const {
+            copyingGetteingStarted,
+            copyingNpmInstall,
+            copyingCdn,
+            copyingEsModules
+        } = this.state;
+
         return (
             <main className={Home.CLASS_NAME}>
                 <section>
@@ -89,10 +132,16 @@ class Home extends React.Component {
                     <h1>Getting Started</h1>
                     <hr role="presentation" />
                     <div className={`${Home.CLASS_NAME}__codeWrapper`}>
-                        <pre><code>X(&apos;oscillator&apos;).setup(true).ready().start(440);</code></pre>
+                        <pre className={copyingGetteingStarted ? '-copying' : ''}><code>X(&apos;oscillator&apos;).setup(true).ready().start(440);</code></pre>
                         {navigator.clipboard && navigator.clipboard.writeText ? (
                             <div className={`${Home.CLASS_NAME}__buttonWrapper`}>
-                                <button type="button" onClick={this.onClickGettingStarted}>COPY</button>
+                                <button
+                                    type="button"
+                                    onMouseDown={this.onMouseDownGettingStarted}
+                                    onMouseUp={this.onMouseUpGettingStarted}
+                                >
+                                    COPY
+                                </button>
                             </div>
                         ) : null}
                     </div>
@@ -124,10 +173,16 @@ class Home extends React.Component {
                     <h1>Installation</h1>
                     <hr role="presentation" />
                     <div className={`${Home.CLASS_NAME}__codeWrapper`}>
-                        <pre><code>$ npm install --save xsound</code></pre>
+                        <pre className={copyingNpmInstall ? '-copying' : ''}><code>$ npm install --save xsound</code></pre>
                         {navigator.clipboard && navigator.clipboard.writeText ? (
                             <div className={`${Home.CLASS_NAME}__buttonWrapper`}>
-                                <button type="button" onClick={this.onClickNpmInstall}>COPY</button>
+                                <button
+                                    type="button"
+                                    onMouseDown={this.onMouseDownNpmInstall}
+                                    onMouseUp={this.onMouseUpNpmInstall}
+                                >
+                                    COPY
+                                </button>
                             </div>
                         ) : null}
                     </div>
@@ -137,19 +192,31 @@ class Home extends React.Component {
                     <hr role="presentation" />
                     <p>In the case of using CDN,</p>
                     <div className={`${Home.CLASS_NAME}__codeWrapper`}>
-                        <pre><code>&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdn.jsdelivr.net/npm/xsound@latest/build/xsound.min.js&quot;&gt;&lt;/script&gt;</code></pre>
+                        <pre className={copyingCdn ? '-copying' : ''}><code>&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdn.jsdelivr.net/npm/xsound@latest/build/xsound.min.js&quot;&gt;&lt;/script&gt;</code></pre>
                         {navigator.clipboard && navigator.clipboard.writeText ? (
                             <div className={`${Home.CLASS_NAME}__buttonWrapper`}>
-                                <button type="button" onClick={this.onClickCdn}>COPY</button>
+                                <button
+                                    type="button"
+                                    onMouseDown={this.onMouseDownCdn}
+                                    onMouseUp={this.onMouseUpCdn}
+                                >
+                                    COPY
+                                </button>
                             </div>
                         ) : null}
                     </div>
                     <p>In the case of using ESModules for SSR ... etc,</p>
                     <div className={`${Home.CLASS_NAME}__codeWrapper`}>
-                        <pre><code>{'import { XSound, X } from \'xsound\';'}</code></pre>
+                        <pre className={copyingEsModules ? '-copying' : ''}><code>{'import { XSound, X } from \'xsound\';'}</code></pre>
                         {navigator.clipboard && navigator.clipboard.writeText ? (
                             <div className={`${Home.CLASS_NAME}__buttonWrapper`}>
-                                <button type="button" onClick={this.onClickEsModules}>COPY</button>
+                                <button
+                                    type="button"
+                                    onMouseDown={this.onMouseDownEsModules}
+                                    onMouseUp={this.onMouseUpEsModules}
+                                >
+                                    COPY
+                                </button>
                             </div>
                         ) : null}
                     </div>
