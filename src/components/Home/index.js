@@ -7,9 +7,29 @@ class Home extends React.Component {
     static TITLE      = 'Home';
     static CLASS_NAME = 'Home';
 
-    // eslint-disable-next-line no-useless-constructor
     constructor(props) {
         super(props);
+
+        this.onClickGettingStarted = this.onClickGettingStarted.bind(this);
+        this.onClickNpmInstall     = this.onClickNpmInstall.bind(this);
+        this.onClickCdn            = this.onClickCdn.bind(this);
+        this.onClickEsModules      = this.onClickEsModules.bind(this);
+    }
+
+    onClickGettingStarted() {
+        navigator.clipboard.writeText('X(\'oscillator\').setup(true).ready().start(440);');
+    }
+
+    onClickNpmInstall() {
+        navigator.clipboard.writeText('npm install --save xsound');
+    }
+
+    onClickCdn() {
+        navigator.clipboard.writeText('<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/xsound@latest/build/xsound.min.js"></script>');
+    }
+
+    onClickEsModules() {
+        navigator.clipboard.writeText('import { XSound, X } from \'xsound\';');
     }
 
     render() {
@@ -70,18 +90,11 @@ class Home extends React.Component {
                     <hr role="presentation" />
                     <div className={`${Home.CLASS_NAME}__codeWrapper`}>
                         <pre><code>X(&apos;oscillator&apos;).setup(true).ready().start(440);</code></pre>
-                        {navigator.clipboard && navigator.clipboard.writeText
-                            ? (
-                                <div className={`${Home.CLASS_NAME}__buttonWrapper`}>
-                                    <button
-                                        type="button"
-                                        onClick={() => navigator.clipboard.writeText('X(\'oscillator\').setup(true).ready().start(440);')}
-                                    >
-                                    COPY
-                                    </button>
-                                </div>
-                            )
-                            : null}
+                        {navigator.clipboard && navigator.clipboard.writeText ? (
+                            <div className={`${Home.CLASS_NAME}__buttonWrapper`}>
+                                <button type="button" onClick={this.onClickGettingStarted}>COPY</button>
+                            </div>
+                        ) : null}
                     </div>
                 </section>
                 <section>
@@ -112,18 +125,11 @@ class Home extends React.Component {
                     <hr role="presentation" />
                     <div className={`${Home.CLASS_NAME}__codeWrapper`}>
                         <pre><code>$ npm install --save xsound</code></pre>
-                        {navigator.clipboard && navigator.clipboard.writeText
-                            ? (
-                                <div className={`${Home.CLASS_NAME}__buttonWrapper`}>
-                                    <button
-                                        type="button"
-                                        onClick={() => navigator.clipboard.writeText('npm install --save xsound')}
-                                    >
-                                    COPY
-                                    </button>
-                                </div>
-                            )
-                            : null}
+                        {navigator.clipboard && navigator.clipboard.writeText ? (
+                            <div className={`${Home.CLASS_NAME}__buttonWrapper`}>
+                                <button type="button" onClick={this.onClickNpmInstall}>COPY</button>
+                            </div>
+                        ) : null}
                     </div>
                 </section>
                 <section>
@@ -132,34 +138,20 @@ class Home extends React.Component {
                     <p>In the case of using CDN,</p>
                     <div className={`${Home.CLASS_NAME}__codeWrapper`}>
                         <pre><code>&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdn.jsdelivr.net/npm/xsound@latest/build/xsound.min.js&quot;&gt;&lt;/script&gt;</code></pre>
-                        {navigator.clipboard && navigator.clipboard.writeText
-                            ? (
-                                <div className={`${Home.CLASS_NAME}__buttonWrapper`}>
-                                    <button
-                                        type="button"
-                                        onClick={() => navigator.clipboard.writeText('<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/xsound@latest/build/xsound.min.js"></script>')}
-                                    >
-                                    COPY
-                                    </button>
-                                </div>
-                            )
-                            : null}
+                        {navigator.clipboard && navigator.clipboard.writeText ? (
+                            <div className={`${Home.CLASS_NAME}__buttonWrapper`}>
+                                <button type="button" onClick={this.onClickCdn}>COPY</button>
+                            </div>
+                        ) : null}
                     </div>
                     <p>In the case of using ESModules for SSR ... etc,</p>
                     <div className={`${Home.CLASS_NAME}__codeWrapper`}>
                         <pre><code>{'import { XSound, X } from \'xsound\';'}</code></pre>
-                        {navigator.clipboard && navigator.clipboard.writeText
-                            ? (
-                                <div className={`${Home.CLASS_NAME}__buttonWrapper`}>
-                                    <button
-                                        type="button"
-                                        onClick={() => navigator.clipboard.writeText('import { XSound, X } from \'xsound\';')}
-                                    >
-                                    COPY
-                                    </button>
-                                </div>
-                            )
-                            : null}
+                        {navigator.clipboard && navigator.clipboard.writeText ? (
+                            <div className={`${Home.CLASS_NAME}__buttonWrapper`}>
+                                <button type="button" onClick={this.onClickEsModules}>COPY</button>
+                            </div>
+                        ) : null}
                     </div>
                 </section>
                 <section>
