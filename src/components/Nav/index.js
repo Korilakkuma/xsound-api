@@ -8,6 +8,14 @@ import { Link } from 'react-router-dom';
 class Nav extends React.Component {
     static CLASS_NAME = 'Nav';
 
+    // static getDerivedStateFromProps(nextProps, prevState) {
+    //   if (nextProps.expandedPanelId !== prevState.expandedPanelId) {
+    //       return { expandedPanelId : nextProps.expandedPanelId };
+    //   }
+
+    //   return null;
+    // }
+
     static propTypes = {
         dispatch        : PropTypes.func.isRequired,
         expandedPanelId : PropTypes.string,
@@ -32,14 +40,14 @@ class Nav extends React.Component {
         this.setState({ expandedPanelId });
     }
 
-    // TODO: Use `getDerivedStateFromProps` in React v17+
-    // eslint-disable-next-line camelcase
-    UNSAFE_componentWillReceiveProps(nextProps) {
-        this.setState({ expandedPanelId : nextProps.expandedPanelId });
-    }
-
     shouldComponentUpdate() {
         return true;
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        if (prevProps.expandedPanelId !== this.props.expandedPanelId) {
+            this.setState({ expandedPanelId : this.props.expandedPanelId });
+        }
     }
 
     render() {
