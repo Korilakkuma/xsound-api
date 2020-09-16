@@ -8,6 +8,9 @@
     "lint:js": "eslint src",
     "lint:css": "stylelint src",
     "lint": "run-p lint:js lint:css",
+    "fix:js": "eslint --fix src",
+    "fix:css": "stylelint --fix src",
+    "fix": "run-p lint:js lint:css",
     "build": "npm run clean && webpack --progress --mode production",
     "dev": "webpack-dev-server --progress"
   },
