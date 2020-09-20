@@ -11,7 +11,7 @@
     "plugin:react/recommended"
   ],
   "rules": {
-    "indent": [2, 4, {
+    "indent": [2, 2, {
       "ignoredNodes": ["TemplateLiteral"],
       "SwitchCase": 1,
     }],
