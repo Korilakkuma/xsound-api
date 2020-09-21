@@ -1,9 +1,8 @@
-'use strict';
-
 import React from 'react';
+import { BASS_PATH, TITLE } from './config';
 import { Switch, Route } from 'react-router-dom';
 import { store } from './store';
-import * as NavActions from './actions/NavActions';
+import { expandPanel, setSelectedPath } from './actions/NavActions';
 import PageLoadingBar from './components/PageLoadingBar';
 import Header from './components/Header';
 import Home from './components/Home';
@@ -26,191 +25,193 @@ import NotFound from './components/NotFound';
 import Nav from './components/Nav';
 import Footer from './components/Footer';
 
-const path = '/'; // location.pathname;
-
 const onAnimationEnd = event => {
-    event.currentTarget.classList.remove('-loading');
-    event.currentTarget.removeEventListener('animationend', onAnimationEnd, false);
+  const target = event.currentTarget;
+
+  target.classList.remove('-loading');
+  target.removeEventListener('animationend', onAnimationEnd, false);
 };
 
+/* eslint-disable */
 const render = Component => ({ history, match }) => {
-    const pageLoadingBar = document.getElementById('page-loading-bar');
+  const pageLoadingBar = document.getElementById('page-loading-bar');
 
-    if (pageLoadingBar) {
-        pageLoadingBar.classList.add('-loading');
-        pageLoadingBar.addEventListener('animationend', onAnimationEnd, false);
-    }
+  if (pageLoadingBar) {
+    pageLoadingBar.classList.add('-loading');
+    pageLoadingBar.addEventListener('animationend', onAnimationEnd, false);
+  }
 
-    store.dispatch(NavActions.setSelectedPath(history.location.pathname));
+  store.dispatch(setSelectedPath(history.location.pathname));
 
-    const matches         = location.href.match(/#\/(.*?)\//);
-    const expandedPanelId = matches === null ? '' : `panel-${matches[1]}`;
+  const matches         = location.href.match(/#\/(.*?)\//);
+  const expandedPanelId = matches === null ? '' : `panel-${matches[1]}`;
 
-    store.dispatch(NavActions.expandPanel(expandedPanelId));
+  store.dispatch(expandPanel(expandedPanelId));
 
-    if (Component.TITLE === 'Home') {
-        document.title = 'XSound - Web Audio API Library for Synthesizer, Effects, Visualization, Multi-Track Recording, Audio Streaming, Visual Audio Sprite ... -';
-    } else {
-        document.title = `${Component.TITLE} | XSound - Web Audio API Library for Synthesizer, Effects, Visualization, Multi-Track Recording, Audio Streaming, Visual Audio Sprite ... -`;
-    }
+  if (Component.TITLE === 'Home') {
+    document.title = TITLE;
+  } else {
+    document.title = `${Component.TITLE} | ${TITLE}`;
+  }
 
-    return <Component history={history} match={match} />;
+  return <Component history={history} match={match} />;
 };
+/* eslint-enable */
 
 export default (
-    <React.Fragment>
-        <PageLoadingBar />
-        <Header />
-        <div className="Routes">
-            <Nav />
-            <Switch>
-                <Route exact path={path} render={render(Home)} />
-                <Route exact path={`${path}xsound/is-xsound`} render={render(XSound.IsXSound)} />
-                <Route exact path={`${path}xsound/sample-rate`} render={render(XSound.SampleRate)} />
-                <Route exact path={`${path}xsound/number-of-inputs`} render={render(XSound.NumberOfInputs)} />
-                <Route exact path={`${path}xsound/number-of-outputs`} render={render(XSound.NumberOfOutputs)} />
-                <Route exact path={`${path}xsound/fft`} render={render(XSound.FFT)} />
-                <Route exact path={`${path}xsound/ajax`} render={render(XSound.Ajax)} />
-                <Route exact path={`${path}xsound/clone`} render={render(XSound.Clone)} />
-                <Route exact path={`${path}xsound/convert-time`} render={render(XSound.ConvertTime)} />
-                <Route exact path={`${path}xsound/decode`} render={render(XSound.Decode)} />
-                <Route exact path={`${path}xsound/exit-fullscreen`} render={render(XSound.ExitFullscreen)} />
-                <Route exact path={`${path}xsound/file`} render={render(XSound.File)} />
-                <Route exact path={`${path}xsound/free`} render={render(XSound.Free) } />
-                <Route exact path={`${path}xsound/request-fullscreen`} render={render(XSound.RequestFullscreen)} />
-                <Route exact path={`${path}xsound/get`} render={render(XSound.Get)} />
-                <Route exact path={`${path}xsound/get-current-time`} render={render(XSound.GetCurrentTime)} />
-                <Route exact path={`${path}xsound/no-conflict`} render={render(XSound.NoConflict)} />
-                <Route exact path={`${path}xsound/read`} render={render(XSound.Read)} />
-                <Route exact path={`${path}xsound/to-frequencies`} render={render(XSound.ToFrequencies)} />
-                <Route exact path={`${path}xsound/to-text-file`} render={render(XSound.ToTextFile)} />
-                <Route exact path={`${path}oscillator/setup`} render={render(OscillatorModule.Setup)} />
-                <Route exact path={`${path}oscillator/ready`} render={render(OscillatorModule.Ready)} />
-                <Route exact path={`${path}oscillator/start`} render={render(OscillatorModule.Start)} />
-                <Route exact path={`${path}oscillator/stop`} render={render(OscillatorModule.Stop)} />
-                <Route exact path={`${path}oscillator/param`} render={render(OscillatorModule.Param)} />
-                <Route exact path={`${path}oscillator/params`} render={render(OscillatorModule.Params)} />
-                <Route exact path={`${path}oscillator/to-json`} render={render(OscillatorModule.ToJSON)} />
-                <Route exact path={`${path}oscillator/get`} render={render(OscillatorModule.Get)} />
-                <Route exact path={`${path}oscillator/length`} render={render(OscillatorModule.Length)} />
-                <Route exact path={`${path}oscillator/oscillator/param`} render={render(OscillatorModule.OscillatorParam)} />
-                <Route exact path={`${path}oscillator/oscillator/state`} render={render(OscillatorModule.OscillatorState)} />
-                <Route exact path={`${path}oscillator/oscillator/get`} render={render(OscillatorModule.OscillatorGet)} />
-                <Route exact path={`${path}oneshot/setup`} render={render(OneshotModule.Setup)} />
-                <Route exact path={`${path}oneshot/ready`} render={render(OneshotModule.Ready)} />
-                <Route exact path={`${path}oneshot/start`} render={render(OneshotModule.Start)} />
-                <Route exact path={`${path}oneshot/stop`} render={render(OneshotModule.Stop)} />
-                <Route exact path={`${path}oneshot/param`} render={render(OneshotModule.Param)} />
-                <Route exact path={`${path}oneshot/params`} render={render(OneshotModule.Params)} />
-                <Route exact path={`${path}oneshot/to-json`} render={render(OneshotModule.ToJSON)} />
-                <Route exact path={`${path}oneshot/get`} render={render(OneshotModule.Get)} />
-                <Route exact path={`${path}noise/start`} render={render(NoiseModule.Start)} />
-                <Route exact path={`${path}noise/stop`} render={render(NoiseModule.Stop)} />
-                <Route exact path={`${path}noise/param`} render={render(NoiseModule.Param)} />
-                <Route exact path={`${path}audio/setup`} render={render(AudioModule.Setup)} />
-                <Route exact path={`${path}audio/ready`} render={render(AudioModule.Ready)} />
-                <Route exact path={`${path}audio/start`} render={render(AudioModule.Start)} />
-                <Route exact path={`${path}audio/stop`} render={render(AudioModule.Stop)} />
-                <Route exact path={`${path}audio/param`} render={render(AudioModule.Param)} />
-                <Route exact path={`${path}audio/params`} render={render(AudioModule.Params)} />
-                <Route exact path={`${path}audio/to-json`} render={render(AudioModule.ToJSON)} />
-                <Route exact path={`${path}audio/get`} render={render(AudioModule.Get)} />
-                <Route exact path={`${path}audio/toggle`} render={render(AudioModule.Toggle)} />
-                <Route exact path={`${path}audio/is-buffer`} render={render(AudioModule.IsBuffer)} />
-                <Route exact path={`${path}audio/is-source`} render={render(AudioModule.IsSource)} />
-                <Route exact path={`${path}audio/is-paused`} render={render(AudioModule.IsPaused)} />
-                <Route exact path={`${path}audio/fade-in`} render={render(AudioModule.FadeIn)} />
-                <Route exact path={`${path}audio/fade-out`} render={render(AudioModule.FadeOut)} />
-                <Route exact path={`${path}audio/sprite`} render={render(AudioModule.Sprite)} />
-                <Route exact path={`${path}media/setup`} render={render(MediaModule.Setup)} />
-                <Route exact path={`${path}media/ready`} render={render(MediaModule.Ready)} />
-                <Route exact path={`${path}media/start`} render={render(MediaModule.Start)} />
-                <Route exact path={`${path}media/stop`} render={render(MediaModule.Stop)} />
-                <Route exact path={`${path}media/param`} render={render(MediaModule.Param)} />
-                <Route exact path={`${path}media/params`} render={render(MediaModule.Params)} />
-                <Route exact path={`${path}media/to-json`} render={render(MediaModule.ToJSON)} />
-                <Route exact path={`${path}media/get`} render={render(MediaModule.Get)} />
-                <Route exact path={`${path}media/toggle`} render={render(MediaModule.Toggle)} />
-                <Route exact path={`${path}media/is-media`} render={render(MediaModule.IsMedia)} />
-                <Route exact path={`${path}media/is-source`} render={render(MediaModule.IsSource)} />
-                <Route exact path={`${path}media/is-paused`} render={render(MediaModule.IsPaused)} />
-                <Route exact path={`${path}media/fade-in`} render={render(MediaModule.FadeIn)} />
-                <Route exact path={`${path}media/fade-out`} render={render(MediaModule.FadeOut)} />
-                <Route exact path={`${path}media/request-picture-in-picture`} render={render(MediaModule.RequestPictureInPicture)} />
-                <Route exact path={`${path}media/exit-picture-in-picture`} render={render(MediaModule.ExitPictureInPicture)} />
-                <Route exact path={`${path}stream/setup`} render={render(StreamModule.Setup)} />
-                <Route exact path={`${path}stream/ready`} render={render(StreamModule.Ready)} />
-                <Route exact path={`${path}stream/start`} render={render(StreamModule.Start)} />
-                <Route exact path={`${path}stream/stop`} render={render(StreamModule.Stop)} />
-                <Route exact path={`${path}stream/param`} render={render(StreamModule.Param)} />
-                <Route exact path={`${path}stream/params`} render={render(StreamModule.Params)} />
-                <Route exact path={`${path}stream/to-json`} render={render(StreamModule.ToJSON)} />
-                <Route exact path={`${path}stream/get`} render={render(StreamModule.Get)} />
-                <Route exact path={`${path}stream/toggle`} render={render(StreamModule.Toggle)} />
-                <Route exact path={`${path}stream/is-streaming`} render={render(StreamModule.IsStreaming)} />
-                <Route exact path={`${path}mixer/mix`} render={render(MixerModule.Mix)} />
-                <Route exact path={`${path}mixer/get`} render={render(MixerModule.Get)} />
-                <Route exact path={`${path}processor/setup`} render={render(ProcessorModule.Setup)} />
-                <Route exact path={`${path}processor/start`} render={render(ProcessorModule.Start)} />
-                <Route exact path={`${path}processor/stop`} render={render(ProcessorModule.Stop)} />
-                <Route exact path={`${path}midi/setup`} render={render(MIDI.Setup)} />
-                <Route exact path={`${path}midi/get`} render={render(MIDI.Get)} />
-                <Route exact path={`${path}mml/setup`} render={render(MML.Setup)} />
-                <Route exact path={`${path}mml/ready`} render={render(MML.Ready)} />
-                <Route exact path={`${path}mml/start`} render={render(MML.Start)} />
-                <Route exact path={`${path}mml/stop`} render={render(MML.Stop)} />
-                <Route exact path={`${path}mml/get`} render={render(MML.Get)} />
-                <Route exact path={`${path}mml/is-sequences`} render={render(MML.IsSequences)} />
-                <Route exact path={`${path}mml/is-paused`} render={render(MML.IsPaused)} />
-                <Route exact path={`${path}mml/to-abc`} render={render(MML.ToABC)} />
-                <Route exact path={`${path}analyser/domain`} render={render(Analyser.Domain)} />
-                <Route exact path={`${path}analyser/param`} render={render(Analyser.Param)} />
-                <Route exact path={`${path}analyser/get`} render={render(Analyser.Get)} />
-                <Route exact path={`${path}analyser/visualizer/setup`} render={render(Analyser.VisualizerSetup)} />
-                <Route exact path={`${path}analyser/visualizer/param`} render={render(Analyser.VisualizerParam)} />
-                <Route exact path={`${path}analyser/visualizer/state`} render={render(Analyser.VisualizerState)} />
-                <Route exact path={`${path}analyser/visualizer/create`} render={render(Analyser.VisualizerCreate)} />
-                <Route exact path={`${path}analyser/time-overview/update`} render={render(Analyser.TimeOverviewUpdate)} />
-                <Route exact path={`${path}analyser/time-overview/drag`} render={render(Analyser.TimeOverviewDrag)} />
-                <Route exact path={`${path}effectors/autopanner`} render={render(Effectors.Autopanner)} />
-                <Route exact path={`${path}effectors/chorus`} render={render(Effectors.Chorus)} />
-                <Route exact path={`${path}effectors/compressor`} render={render(Effectors.Compressor)} />
-                <Route exact path={`${path}effectors/delay`} render={render(Effectors.Delay)} />
-                <Route exact path={`${path}effectors/distortion`} render={render(Effectors.Distortion)} />
-                <Route exact path={`${path}effectors/envelopegenerator`} render={render(Effectors.EnvelopeGenerator)} />
-                <Route exact path={`${path}effectors/equalizer`} render={render(Effectors.Equalizer)} />
-                <Route exact path={`${path}effectors/filter`} render={render(Effectors.Filter)} />
-                <Route exact path={`${path}effectors/flanger`} render={render(Effectors.Flanger)} />
-                <Route exact path={`${path}effectors/glide`} render={render(Effectors.Glide)} />
-                <Route exact path={`${path}effectors/noisegate`} render={render(Effectors.NoiseGate)} />
-                <Route exact path={`${path}effectors/noisesuppressor`} render={render(Effectors.NoiseSuppressor)} />
-                <Route exact path={`${path}effectors/phaser`} render={render(Effectors.Phaser)} />
-                <Route exact path={`${path}effectors/pitch-shifter`} render={render(Effectors.PitchShifter)} />
-                <Route exact path={`${path}effectors/reverb`} render={render(Effectors.Reverb)} />
-                <Route exact path={`${path}effectors/ringmodulator`} render={render(Effectors.Ringmodulator)} />
-                <Route exact path={`${path}effectors/listener-and-panner`} render={render(Effectors.ListenerAndPanner)} />
-                <Route exact path={`${path}effectors/stereo`} render={render(Effectors.Stereo)} />
-                <Route exact path={`${path}effectors/tremolo`} render={render(Effectors.Tremolo)} />
-                <Route exact path={`${path}effectors/vocalcanceler`} render={render(Effectors.VocalCanceler)} />
-                <Route exact path={`${path}effectors/wah`} render={render(Effectors.Wah)} />
-                <Route exact path={`${path}effectors/custom`} render={render(Effectors.Custom)} />
-                <Route exact path={`${path}recorder/setup`} render={render(Recorder.Setup)} />
-                <Route exact path={`${path}recorder/ready`} render={render(Recorder.Ready)} />
-                <Route exact path={`${path}recorder/start`} render={render(Recorder.Start)} />
-                <Route exact path={`${path}recorder/stop`} render={render(Recorder.Stop)} />
-                <Route exact path={`${path}recorder/param`} render={render(Recorder.Param)} />
-                <Route exact path={`${path}recorder/clear`} render={render(Recorder.Clear)} />
-                <Route exact path={`${path}recorder/create`} render={render(Recorder.Create)} />
-                <Route exact path={`${path}recorder/get-active-track`} render={render(Recorder.GetActiveTrack)} />
-                <Route exact path={`${path}session/setup`} render={render(Session.Setup)} />
-                <Route exact path={`${path}session/start`} render={render(Session.Start)} />
-                <Route exact path={`${path}session/close`} render={render(Session.Close)} />
-                <Route exact path={`${path}session/get`} render={render(Session.Get)} />
-                <Route exact path={`${path}session/is-connected`} render={render(Session.IsConnected)} />
-                <Route exact path={`${path}session/state`} render={render(Session.State)} />
-                <Route exact render={render(NotFound)} />
-            </Switch>
-        </div>
-        <Footer />
-    </React.Fragment>
+  <React.Fragment>
+    <PageLoadingBar />
+    <Header />
+    <div className="Routes">
+      <Nav />
+      <Switch>
+        <Route exact path={BASS_PATH} render={render(Home)} />
+        <Route exact path={`${BASS_PATH}xsound/is-xsound`} render={render(XSound.IsXSound)} />
+        <Route exact path={`${BASS_PATH}xsound/sample-rate`} render={render(XSound.SampleRate)} />
+        <Route exact path={`${BASS_PATH}xsound/number-of-inputs`} render={render(XSound.NumberOfInputs)} />
+        <Route exact path={`${BASS_PATH}xsound/number-of-outputs`} render={render(XSound.NumberOfOutputs)} />
+        <Route exact path={`${BASS_PATH}xsound/fft`} render={render(XSound.FFT)} />
+        <Route exact path={`${BASS_PATH}xsound/ajax`} render={render(XSound.Ajax)} />
+        <Route exact path={`${BASS_PATH}xsound/clone`} render={render(XSound.Clone)} />
+        <Route exact path={`${BASS_PATH}xsound/convert-time`} render={render(XSound.ConvertTime)} />
+        <Route exact path={`${BASS_PATH}xsound/decode`} render={render(XSound.Decode)} />
+        <Route exact path={`${BASS_PATH}xsound/exit-fullscreen`} render={render(XSound.ExitFullscreen)} />
+        <Route exact path={`${BASS_PATH}xsound/file`} render={render(XSound.File)} />
+        <Route exact path={`${BASS_PATH}xsound/free`} render={render(XSound.Free) } />
+        <Route exact path={`${BASS_PATH}xsound/request-fullscreen`} render={render(XSound.RequestFullscreen)} />
+        <Route exact path={`${BASS_PATH}xsound/get`} render={render(XSound.Get)} />
+        <Route exact path={`${BASS_PATH}xsound/get-current-time`} render={render(XSound.GetCurrentTime)} />
+        <Route exact path={`${BASS_PATH}xsound/no-conflict`} render={render(XSound.NoConflict)} />
+        <Route exact path={`${BASS_PATH}xsound/read`} render={render(XSound.Read)} />
+        <Route exact path={`${BASS_PATH}xsound/to-frequencies`} render={render(XSound.ToFrequencies)} />
+        <Route exact path={`${BASS_PATH}xsound/to-text-file`} render={render(XSound.ToTextFile)} />
+        <Route exact path={`${BASS_PATH}oscillator/setup`} render={render(OscillatorModule.Setup)} />
+        <Route exact path={`${BASS_PATH}oscillator/ready`} render={render(OscillatorModule.Ready)} />
+        <Route exact path={`${BASS_PATH}oscillator/start`} render={render(OscillatorModule.Start)} />
+        <Route exact path={`${BASS_PATH}oscillator/stop`} render={render(OscillatorModule.Stop)} />
+        <Route exact path={`${BASS_PATH}oscillator/param`} render={render(OscillatorModule.Param)} />
+        <Route exact path={`${BASS_PATH}oscillator/params`} render={render(OscillatorModule.Params)} />
+        <Route exact path={`${BASS_PATH}oscillator/to-json`} render={render(OscillatorModule.ToJSON)} />
+        <Route exact path={`${BASS_PATH}oscillator/get`} render={render(OscillatorModule.Get)} />
+        <Route exact path={`${BASS_PATH}oscillator/length`} render={render(OscillatorModule.Length)} />
+        <Route exact path={`${BASS_PATH}oscillator/oscillator/param`} render={render(OscillatorModule.OscillatorParam)} />
+        <Route exact path={`${BASS_PATH}oscillator/oscillator/state`} render={render(OscillatorModule.OscillatorState)} />
+        <Route exact path={`${BASS_PATH}oscillator/oscillator/get`} render={render(OscillatorModule.OscillatorGet)} />
+        <Route exact path={`${BASS_PATH}oneshot/setup`} render={render(OneshotModule.Setup)} />
+        <Route exact path={`${BASS_PATH}oneshot/ready`} render={render(OneshotModule.Ready)} />
+        <Route exact path={`${BASS_PATH}oneshot/start`} render={render(OneshotModule.Start)} />
+        <Route exact path={`${BASS_PATH}oneshot/stop`} render={render(OneshotModule.Stop)} />
+        <Route exact path={`${BASS_PATH}oneshot/param`} render={render(OneshotModule.Param)} />
+        <Route exact path={`${BASS_PATH}oneshot/params`} render={render(OneshotModule.Params)} />
+        <Route exact path={`${BASS_PATH}oneshot/to-json`} render={render(OneshotModule.ToJSON)} />
+        <Route exact path={`${BASS_PATH}oneshot/get`} render={render(OneshotModule.Get)} />
+        <Route exact path={`${BASS_PATH}noise/start`} render={render(NoiseModule.Start)} />
+        <Route exact path={`${BASS_PATH}noise/stop`} render={render(NoiseModule.Stop)} />
+        <Route exact path={`${BASS_PATH}noise/param`} render={render(NoiseModule.Param)} />
+        <Route exact path={`${BASS_PATH}audio/setup`} render={render(AudioModule.Setup)} />
+        <Route exact path={`${BASS_PATH}audio/ready`} render={render(AudioModule.Ready)} />
+        <Route exact path={`${BASS_PATH}audio/start`} render={render(AudioModule.Start)} />
+        <Route exact path={`${BASS_PATH}audio/stop`} render={render(AudioModule.Stop)} />
+        <Route exact path={`${BASS_PATH}audio/param`} render={render(AudioModule.Param)} />
+        <Route exact path={`${BASS_PATH}audio/params`} render={render(AudioModule.Params)} />
+        <Route exact path={`${BASS_PATH}audio/to-json`} render={render(AudioModule.ToJSON)} />
+        <Route exact path={`${BASS_PATH}audio/get`} render={render(AudioModule.Get)} />
+        <Route exact path={`${BASS_PATH}audio/toggle`} render={render(AudioModule.Toggle)} />
+        <Route exact path={`${BASS_PATH}audio/is-buffer`} render={render(AudioModule.IsBuffer)} />
+        <Route exact path={`${BASS_PATH}audio/is-source`} render={render(AudioModule.IsSource)} />
+        <Route exact path={`${BASS_PATH}audio/is-paused`} render={render(AudioModule.IsPaused)} />
+        <Route exact path={`${BASS_PATH}audio/fade-in`} render={render(AudioModule.FadeIn)} />
+        <Route exact path={`${BASS_PATH}audio/fade-out`} render={render(AudioModule.FadeOut)} />
+        <Route exact path={`${BASS_PATH}audio/sprite`} render={render(AudioModule.Sprite)} />
+        <Route exact path={`${BASS_PATH}media/setup`} render={render(MediaModule.Setup)} />
+        <Route exact path={`${BASS_PATH}media/ready`} render={render(MediaModule.Ready)} />
+        <Route exact path={`${BASS_PATH}media/start`} render={render(MediaModule.Start)} />
+        <Route exact path={`${BASS_PATH}media/stop`} render={render(MediaModule.Stop)} />
+        <Route exact path={`${BASS_PATH}media/param`} render={render(MediaModule.Param)} />
+        <Route exact path={`${BASS_PATH}media/params`} render={render(MediaModule.Params)} />
+        <Route exact path={`${BASS_PATH}media/to-json`} render={render(MediaModule.ToJSON)} />
+        <Route exact path={`${BASS_PATH}media/get`} render={render(MediaModule.Get)} />
+        <Route exact path={`${BASS_PATH}media/toggle`} render={render(MediaModule.Toggle)} />
+        <Route exact path={`${BASS_PATH}media/is-media`} render={render(MediaModule.IsMedia)} />
+        <Route exact path={`${BASS_PATH}media/is-source`} render={render(MediaModule.IsSource)} />
+        <Route exact path={`${BASS_PATH}media/is-paused`} render={render(MediaModule.IsPaused)} />
+        <Route exact path={`${BASS_PATH}media/fade-in`} render={render(MediaModule.FadeIn)} />
+        <Route exact path={`${BASS_PATH}media/fade-out`} render={render(MediaModule.FadeOut)} />
+        <Route exact path={`${BASS_PATH}media/request-picture-in-picture`} render={render(MediaModule.RequestPictureInPicture)} />
+        <Route exact path={`${BASS_PATH}media/exit-picture-in-picture`} render={render(MediaModule.ExitPictureInPicture)} />
+        <Route exact path={`${BASS_PATH}stream/setup`} render={render(StreamModule.Setup)} />
+        <Route exact path={`${BASS_PATH}stream/ready`} render={render(StreamModule.Ready)} />
+        <Route exact path={`${BASS_PATH}stream/start`} render={render(StreamModule.Start)} />
+        <Route exact path={`${BASS_PATH}stream/stop`} render={render(StreamModule.Stop)} />
+        <Route exact path={`${BASS_PATH}stream/param`} render={render(StreamModule.Param)} />
+        <Route exact path={`${BASS_PATH}stream/params`} render={render(StreamModule.Params)} />
+        <Route exact path={`${BASS_PATH}stream/to-json`} render={render(StreamModule.ToJSON)} />
+        <Route exact path={`${BASS_PATH}stream/get`} render={render(StreamModule.Get)} />
+        <Route exact path={`${BASS_PATH}stream/toggle`} render={render(StreamModule.Toggle)} />
+        <Route exact path={`${BASS_PATH}stream/is-streaming`} render={render(StreamModule.IsStreaming)} />
+        <Route exact path={`${BASS_PATH}mixer/mix`} render={render(MixerModule.Mix)} />
+        <Route exact path={`${BASS_PATH}mixer/get`} render={render(MixerModule.Get)} />
+        <Route exact path={`${BASS_PATH}processor/setup`} render={render(ProcessorModule.Setup)} />
+        <Route exact path={`${BASS_PATH}processor/start`} render={render(ProcessorModule.Start)} />
+        <Route exact path={`${BASS_PATH}processor/stop`} render={render(ProcessorModule.Stop)} />
+        <Route exact path={`${BASS_PATH}midi/setup`} render={render(MIDI.Setup)} />
+        <Route exact path={`${BASS_PATH}midi/get`} render={render(MIDI.Get)} />
+        <Route exact path={`${BASS_PATH}mml/setup`} render={render(MML.Setup)} />
+        <Route exact path={`${BASS_PATH}mml/ready`} render={render(MML.Ready)} />
+        <Route exact path={`${BASS_PATH}mml/start`} render={render(MML.Start)} />
+        <Route exact path={`${BASS_PATH}mml/stop`} render={render(MML.Stop)} />
+        <Route exact path={`${BASS_PATH}mml/get`} render={render(MML.Get)} />
+        <Route exact path={`${BASS_PATH}mml/is-sequences`} render={render(MML.IsSequences)} />
+        <Route exact path={`${BASS_PATH}mml/is-paused`} render={render(MML.IsPaused)} />
+        <Route exact path={`${BASS_PATH}mml/to-abc`} render={render(MML.ToABC)} />
+        <Route exact path={`${BASS_PATH}analyser/domain`} render={render(Analyser.Domain)} />
+        <Route exact path={`${BASS_PATH}analyser/param`} render={render(Analyser.Param)} />
+        <Route exact path={`${BASS_PATH}analyser/get`} render={render(Analyser.Get)} />
+        <Route exact path={`${BASS_PATH}analyser/visualizer/setup`} render={render(Analyser.VisualizerSetup)} />
+        <Route exact path={`${BASS_PATH}analyser/visualizer/param`} render={render(Analyser.VisualizerParam)} />
+        <Route exact path={`${BASS_PATH}analyser/visualizer/state`} render={render(Analyser.VisualizerState)} />
+        <Route exact path={`${BASS_PATH}analyser/visualizer/create`} render={render(Analyser.VisualizerCreate)} />
+        <Route exact path={`${BASS_PATH}analyser/time-overview/update`} render={render(Analyser.TimeOverviewUpdate)} />
+        <Route exact path={`${BASS_PATH}analyser/time-overview/drag`} render={render(Analyser.TimeOverviewDrag)} />
+        <Route exact path={`${BASS_PATH}effectors/autopanner`} render={render(Effectors.Autopanner)} />
+        <Route exact path={`${BASS_PATH}effectors/chorus`} render={render(Effectors.Chorus)} />
+        <Route exact path={`${BASS_PATH}effectors/compressor`} render={render(Effectors.Compressor)} />
+        <Route exact path={`${BASS_PATH}effectors/delay`} render={render(Effectors.Delay)} />
+        <Route exact path={`${BASS_PATH}effectors/distortion`} render={render(Effectors.Distortion)} />
+        <Route exact path={`${BASS_PATH}effectors/envelopegenerator`} render={render(Effectors.EnvelopeGenerator)} />
+        <Route exact path={`${BASS_PATH}effectors/equalizer`} render={render(Effectors.Equalizer)} />
+        <Route exact path={`${BASS_PATH}effectors/filter`} render={render(Effectors.Filter)} />
+        <Route exact path={`${BASS_PATH}effectors/flanger`} render={render(Effectors.Flanger)} />
+        <Route exact path={`${BASS_PATH}effectors/glide`} render={render(Effectors.Glide)} />
+        <Route exact path={`${BASS_PATH}effectors/noisegate`} render={render(Effectors.NoiseGate)} />
+        <Route exact path={`${BASS_PATH}effectors/noisesuppressor`} render={render(Effectors.NoiseSuppressor)} />
+        <Route exact path={`${BASS_PATH}effectors/phaser`} render={render(Effectors.Phaser)} />
+        <Route exact path={`${BASS_PATH}effectors/pitch-shifter`} render={render(Effectors.PitchShifter)} />
+        <Route exact path={`${BASS_PATH}effectors/reverb`} render={render(Effectors.Reverb)} />
+        <Route exact path={`${BASS_PATH}effectors/ringmodulator`} render={render(Effectors.Ringmodulator)} />
+        <Route exact path={`${BASS_PATH}effectors/listener-and-panner`} render={render(Effectors.ListenerAndPanner)} />
+        <Route exact path={`${BASS_PATH}effectors/stereo`} render={render(Effectors.Stereo)} />
+        <Route exact path={`${BASS_PATH}effectors/tremolo`} render={render(Effectors.Tremolo)} />
+        <Route exact path={`${BASS_PATH}effectors/vocalcanceler`} render={render(Effectors.VocalCanceler)} />
+        <Route exact path={`${BASS_PATH}effectors/wah`} render={render(Effectors.Wah)} />
+        <Route exact path={`${BASS_PATH}effectors/custom`} render={render(Effectors.Custom)} />
+        <Route exact path={`${BASS_PATH}recorder/setup`} render={render(Recorder.Setup)} />
+        <Route exact path={`${BASS_PATH}recorder/ready`} render={render(Recorder.Ready)} />
+        <Route exact path={`${BASS_PATH}recorder/start`} render={render(Recorder.Start)} />
+        <Route exact path={`${BASS_PATH}recorder/stop`} render={render(Recorder.Stop)} />
+        <Route exact path={`${BASS_PATH}recorder/param`} render={render(Recorder.Param)} />
+        <Route exact path={`${BASS_PATH}recorder/clear`} render={render(Recorder.Clear)} />
+        <Route exact path={`${BASS_PATH}recorder/create`} render={render(Recorder.Create)} />
+        <Route exact path={`${BASS_PATH}recorder/get-active-track`} render={render(Recorder.GetActiveTrack)} />
+        <Route exact path={`${BASS_PATH}session/setup`} render={render(Session.Setup)} />
+        <Route exact path={`${BASS_PATH}session/start`} render={render(Session.Start)} />
+        <Route exact path={`${BASS_PATH}session/close`} render={render(Session.Close)} />
+        <Route exact path={`${BASS_PATH}session/get`} render={render(Session.Get)} />
+        <Route exact path={`${BASS_PATH}session/is-connected`} render={render(Session.IsConnected)} />
+        <Route exact path={`${BASS_PATH}session/state`} render={render(Session.State)} />
+        <Route exact render={render(NotFound)} />
+      </Switch>
+    </div>
+    <Footer />
+  </React.Fragment>
 );
