@@ -27,8 +27,8 @@ footer,
 figure,
 figcaption,
 nav {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 article,
@@ -44,20 +44,20 @@ menu,
 nav,
 section,
 summary {
-    display: block;
+  display: block;
 }
 
 html {
-    /*
-    overflow: scroll;
-    overflow: -moz-scrollbars-vertical;
-    overflow-x: scroll;
-    */
+  /*
+  overflow: scroll;
+  overflow: -moz-scrollbars-vertical;
+  overflow-x: scroll;
+  */
 }
 
 ul,
 ol {
-    list-style: none;
+  list-style: none;
 }
 
 p,
@@ -67,19 +67,19 @@ dd,
 th,
 td,
 pre {
-    -ms-line-break: strict;
-    line-break: strict;
-    -ms-word-break: break-strict;
-    word-break: break-strict;
+  -ms-line-break: strict;
+  line-break: strict;
+  -ms-word-break: break-strict;
+  word-break: break-strict;
 }
 
 table {
-    border-collapse: collapse;
-    border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 img {
-    border: none;
-    max-width: 100%;
-    vertical-align: middle;
+  border: none;
+  max-width: 100%;
+  vertical-align: middle;
 }
