@@ -1,19 +1,30 @@
 .PageLoadingBar {
-    height: 2px;
-    background-color: var(--black-light);
+  height: 2px;
+  background-color: var(--black-light);
 }
 
 .PageLoadingBar > div {
-    width: 0;
-    height: 2px;
+  width: 0;
+  height: 2px;
 }
 
 .PageLoadingBar.-loading > div {
-    background-color: var(--assort-color);
-    animation: animation-loading 1s ease-in-out 1 normal 0s;
+  background-color: var(--assort-color);
+  animation: animation-loading 1s ease-in-out 2 normal 0s;
 }
 
 @keyframes animation-loading {
-      0% { width:   0%; }
-    100% { width: 100%; }
+  0% {
+    width: 0;
+    transform: translateX(0);
+  }
+
+  30% {
+    width: 100%;
+  }
+
+  100% {
+    width: 100%;
+    transform: translateX(100%);
+  }
 }
