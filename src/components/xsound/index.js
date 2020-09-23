@@ -1,5 +1,3 @@
-'use strict';
-
 import IsXSound from './IsXSound';
 import SampleRate from './SampleRate';
 import NumberOfInputs from './NumberOfInputs';
@@ -21,23 +19,23 @@ import ToFrequencies from './ToFrequencies';
 import ToTextFile from './ToTextFile';
 
 export {
-    IsXSound,
-    SampleRate,
-    NumberOfInputs,
-    NumberOfOutputs,
-    FFT,
-    Ajax,
-    Clone,
-    ConvertTime,
-    Decode,
-    ExitFullscreen,
-    File,
-    Free,
-    RequestFullscreen,
-    Get,
-    GetCurrentTime,
-    NoConflict,
-    Read,
-    ToFrequencies,
-    ToTextFile
+  IsXSound,
+  SampleRate,
+  NumberOfInputs,
+  NumberOfOutputs,
+  FFT,
+  Ajax,
+  Clone,
+  ConvertTime,
+  Decode,
+  ExitFullscreen,
+  File,
+  Free,
+  RequestFullscreen,
+  Get,
+  GetCurrentTime,
+  NoConflict,
+  Read,
+  ToFrequencies,
+  ToTextFile
 };
