@@ -1,5 +1,3 @@
-'use strict';
-
 import Setup from './Setup';
 import Ready from './Ready';
 import Start from './Start';
@@ -14,16 +12,16 @@ import OscillatorState from './OscillatorState';
 import OscillatorGet from './OscillatorGet';
 
 export {
-    Setup,
-    Ready,
-    Start,
-    Stop,
-    Param,
-    Params,
-    ToJSON,
-    Get,
-    Length,
-    OscillatorParam,
-    OscillatorState,
-    OscillatorGet
+  Setup,
+  Ready,
+  Start,
+  Stop,
+  Param,
+  Params,
+  ToJSON,
+  Get,
+  Length,
+  OscillatorParam,
+  OscillatorState,
+  OscillatorGet
 };
