@@ -183,13 +183,13 @@ export default (
         <Route exact path={`${BASS_PATH}effectors/filter`} render={render(Effectors.Filter)} />
         <Route exact path={`${BASS_PATH}effectors/flanger`} render={render(Effectors.Flanger)} />
         <Route exact path={`${BASS_PATH}effectors/glide`} render={render(Effectors.Glide)} />
+        <Route exact path={`${BASS_PATH}effectors/listener-and-panner`} render={render(Effectors.ListenerAndPanner)} />
         <Route exact path={`${BASS_PATH}effectors/noisegate`} render={render(Effectors.NoiseGate)} />
         <Route exact path={`${BASS_PATH}effectors/noisesuppressor`} render={render(Effectors.NoiseSuppressor)} />
         <Route exact path={`${BASS_PATH}effectors/phaser`} render={render(Effectors.Phaser)} />
         <Route exact path={`${BASS_PATH}effectors/pitch-shifter`} render={render(Effectors.PitchShifter)} />
         <Route exact path={`${BASS_PATH}effectors/reverb`} render={render(Effectors.Reverb)} />
         <Route exact path={`${BASS_PATH}effectors/ringmodulator`} render={render(Effectors.Ringmodulator)} />
-        <Route exact path={`${BASS_PATH}effectors/listener-and-panner`} render={render(Effectors.ListenerAndPanner)} />
         <Route exact path={`${BASS_PATH}effectors/stereo`} render={render(Effectors.Stereo)} />
         <Route exact path={`${BASS_PATH}effectors/tremolo`} render={render(Effectors.Tremolo)} />
         <Route exact path={`${BASS_PATH}effectors/vocalcanceler`} render={render(Effectors.VocalCanceler)} />

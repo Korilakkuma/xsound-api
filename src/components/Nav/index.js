@@ -253,13 +253,13 @@ class Nav extends React.Component {
             <dd><Link to={`${BASS_PATH}effectors/filter`} className={this.getSelectedClassName(`${BASS_PATH}effectors/filter`)}>filter</Link></dd>
             <dd><Link to={`${BASS_PATH}effectors/flanger`} className={this.getSelectedClassName(`${BASS_PATH}effectors/flanger`)}>flanger</Link></dd>
             <dd><Link to={`${BASS_PATH}effectors/glide`} className={this.getSelectedClassName(`${BASS_PATH}effectors/glide`)}>glide</Link></dd>
+            <dd><Link to={`${BASS_PATH}effectors/listener-and-panner`} className={this.getSelectedClassName(`${BASS_PATH}effectors/listener-and-panner`)}>listener / panner</Link></dd>
             <dd><Link to={`${BASS_PATH}effectors/noisegate`} className={this.getSelectedClassName(`${BASS_PATH}effectors/noisegate`)}>noisegate</Link></dd>
             <dd><Link to={`${BASS_PATH}effectors/noisesuppressor`} className={this.getSelectedClassName(`${BASS_PATH}effectors/noisesuppressor`)}>noisesuppressor</Link></dd>
             <dd><Link to={`${BASS_PATH}effectors/phaser`} className={this.getSelectedClassName(`${BASS_PATH}effectors/phaser`)}>phaser</Link></dd>
             <dd><Link to={`${BASS_PATH}effectors/pitch-shifter`} className={this.getSelectedClassName(`${BASS_PATH}effectors/pitch-shifter`)}>pitchshifter</Link></dd>
             <dd><Link to={`${BASS_PATH}effectors/reverb`} className={this.getSelectedClassName(`${BASS_PATH}effectors/reverb`)}>reverb</Link></dd>
             <dd><Link to={`${BASS_PATH}effectors/ringmodulator`} className={this.getSelectedClassName(`${BASS_PATH}effectors/ringmodulator`)}>ringmodulator</Link></dd>
-            <dd><Link to={`${BASS_PATH}effectors/listener-and-panner`} className={this.getSelectedClassName(`${BASS_PATH}effectors/listener-and-panner`)}>listener / panner</Link></dd>
             <dd><Link to={`${BASS_PATH}effectors/stereo`} className={this.getSelectedClassName(`${BASS_PATH}effectors/stereo`)}>stereo</Link></dd>
             <dd><Link to={`${BASS_PATH}effectors/tremolo`} className={this.getSelectedClassName(`${BASS_PATH}effectors/tremolo`)}>tremolo</Link></dd>
             <dd><Link to={`${BASS_PATH}effectors/vocalcanceler`} className={this.getSelectedClassName(`${BASS_PATH}effectors/vocalcanceler`)}>vocalcanceler</Link></dd>
