@@ -49,8 +49,8 @@ const chorus = new X.Chorus(context, 0);
 const oscillator = context.createOscillator();
 
 // The instance that is defined by XSound has connectors for input and output
-oscillator.connect(chorus.IN);
-chorus.OUT.connect(context.destination);
+oscillator.connect(chorus.INPUT);
+chorus.OUTPUT.connect(context.destination);
 
 // Set parameters for chorus
 chorus.param({
@@ -169,28 +169,27 @@ oscillator.start(0);`);
         <section>
           <h1>Getting Started</h1>
           <hr role="presentation" />
-          <div className={`${Home.CLASS_NAME}__codeWrapper`}>
-            <p>
-              In the case of using as <b>full stack</b> (For example, in the case of using oscillator) ...
-            </p>
-            <SyntaxHighlighter className={copyingGetteingStarted ? '-copying' : ''} language='javascript' style={xcode}>
-              X(&apos;oscillator&apos;).setup(true).ready().start(440);
-            </SyntaxHighlighter>
-            {navigator.clipboard && navigator.clipboard.writeText ? (
-              <div className={`${Home.CLASS_NAME}__buttonWrapper`}>
-                <button
-                  type="button"
-                  onMouseDown={this.onMouseDownGettingStarted}
-                  onMouseUp={this.onMouseUpGettingStarted}
-                >
-                  COPY
-                </button>
-              </div>
-            ) : null}
-            <p>
-              In the case of using as <b>module base</b> (For example, in the case of using chorus effector) ...
-            </p>
-            <SyntaxHighlighter className={copyingGetteingStartedAsModule ? '-copying' : ''} language='javascript' style={xcode}>{'// The instance of ' + 'AudioContext' + `
+          <p>
+            In the case of using as <b>full stack</b> (For example, in the case of using oscillator) ...
+          </p>
+          <SyntaxHighlighter className={copyingGetteingStarted ? '-copying' : ''} language='javascript' style={xcode}>
+            X(&apos;oscillator&apos;).setup(true).ready().start(440);
+          </SyntaxHighlighter>
+          {navigator.clipboard && navigator.clipboard.writeText ? (
+            <div className={`${Home.CLASS_NAME}__buttonWrapper`}>
+              <button
+                type="button"
+                onMouseDown={this.onMouseDownGettingStarted}
+                onMouseUp={this.onMouseUpGettingStarted}
+              >
+                COPY
+              </button>
+            </div>
+          ) : null}
+          <p>
+            In the case of using as <b>module base</b> (For example, in the case of using chorus effector) ...
+          </p>
+          <SyntaxHighlighter className={copyingGetteingStartedAsModule ? '-copying' : ''} language='javascript' style={xcode}>{'// The instance of ' + 'AudioContext' + `
 const context = X.get();
 
 // Create the instance of ` + 'Chorus' + ` that is defined by XSound
@@ -200,8 +199,8 @@ const chorus = new X.Chorus(context, 0);
 const oscillator = context.createOscillator();
 
 // The instance that is defined by XSound has connectors for input and output
-oscillator.connect(chorus.IN);
-chorus.OUT.connect(context.destination);
+oscillator.connect(chorus.INPUT);
+chorus.OUTPUT.connect(context.destination);
 
 // Set parameters for chorus
 chorus.param({
@@ -215,18 +214,45 @@ chorus.param({
 chorus.state(true);
 
 oscillator.start(0);`}</SyntaxHighlighter>
-            {navigator.clipboard && navigator.clipboard.writeText ? (
-              <div className={`${Home.CLASS_NAME}__buttonWrapper`}>
-                <button
-                  type="button"
-                  onMouseDown={this.onMouseDownGettingStartedAsModule}
-                  onMouseUp={this.onMouseUpGettingStartedAsModule}
-                >
-                  COPY
-                </button>
-              </div>
-            ) : null}
-          </div>
+          {navigator.clipboard && navigator.clipboard.writeText ? (
+            <div className={`${Home.CLASS_NAME}__buttonWrapper`}>
+              <button
+                type="button"
+                onMouseDown={this.onMouseDownGettingStartedAsModule}
+                onMouseUp={this.onMouseUpGettingStartedAsModule}
+              >
+                COPY
+              </button>
+            </div>
+          ) : null}
+          <p>XSound enable to using the following classes.</p>
+          <SyntaxHighlighter language='typescript' style={xcode}>{`type BufferSize = 0 | 256 | 512 | 1024 | 2048 | 4096 | 8192 | 16384;
+
+// Effectors
+X.Autopanner(context: AudioContext, size: BufferSize);
+X.Chorus(context: AudioContext, size: BufferSize);
+X.Compressor(context: AudioContext, size: BufferSize);
+X.Delay(context: AudioContext, size: BufferSize);
+X.Distortion(context: AudioContext, size: BufferSize);
+X.EnvelopeGenerator(context: AudioContext);
+X.Equalizer(context: AudioContext, size: BufferSize);
+X.Filter(context: AudioContext, size: BufferSize);
+X.Flanger(context: AudioContext, size: BufferSize);
+X.Listener(context: AudioContext, size: BufferSize);
+X.Panner(context: AudioContext, size: BufferSize);
+X.Phaser(context: AudioContext, size: BufferSize);
+X.PitchShifter(context: AudioContext, size: BufferSize);
+X.Reverb(context: AudioContext, size: BufferSize);
+X.Ringmodulator(context: AudioContext, size: BufferSize);
+X.Stereo(context: AudioContext, size, size: BufferSize);
+X.Tremolo(context: AudioContext, size: BufferSize);
+X.Wah(context: AudioContext, size: BufferSize);
+
+X.Analyser(context: AudioContext);
+
+X.Recorder(context: AudioContext, size: BufferSize, numberOfInputs: number, numberOfOutputs: number);
+
+X.Session(context: AudioContext, size: BufferSize, numberOfInputs: number, numberOfOutputs, analyser: X.Analyser);`}</SyntaxHighlighter>
         </section>
         <section>
           <h1>Demo</h1>
@@ -254,60 +280,54 @@ oscillator.start(0);`}</SyntaxHighlighter>
         <section>
           <h1>Installation</h1>
           <hr role="presentation" />
-          <div className={`${Home.CLASS_NAME}__codeWrapper`}>
-            <SyntaxHighlighter className={copyingNpmInstall ? '-copying' : ''} language='bash' style={xcode}>
-              $ npm install --save xsound
-            </SyntaxHighlighter>
-            {navigator.clipboard && navigator.clipboard.writeText ? (
-              <div className={`${Home.CLASS_NAME}__buttonWrapper`}>
-                <button
-                  type="button"
-                  onMouseDown={this.onMouseDownNpmInstall}
-                  onMouseUp={this.onMouseUpNpmInstall}
-                >
-                  COPY
-                </button>
-              </div>
-            ) : null}
-          </div>
+          <SyntaxHighlighter className={copyingNpmInstall ? '-copying' : ''} language='bash' style={xcode}>
+            $ npm install --save xsound
+          </SyntaxHighlighter>
+          {navigator.clipboard && navigator.clipboard.writeText ? (
+            <div className={`${Home.CLASS_NAME}__buttonWrapper`}>
+              <button
+                type="button"
+                onMouseDown={this.onMouseDownNpmInstall}
+                onMouseUp={this.onMouseUpNpmInstall}
+              >
+                COPY
+              </button>
+            </div>
+          ) : null}
         </section>
         <section>
           <h1>Usage</h1>
           <hr role="presentation" />
           <p>In the case of using CDN,</p>
-          <div className={`${Home.CLASS_NAME}__codeWrapper`}>
-            <SyntaxHighlighter className={copyingCdn ? '-copying' : ''} language='html' style={xcode}>
-              &lt;script type=&quot;text/javascript&quot; src=&quot;https://cdn.jsdelivr.net/npm/xsound@latest/build/xsound.min.js&quot;&gt;&lt;/script&gt;
-            </SyntaxHighlighter>
-            {navigator.clipboard && navigator.clipboard.writeText ? (
-              <div className={`${Home.CLASS_NAME}__buttonWrapper`}>
-                <button
-                  type="button"
-                  onMouseDown={this.onMouseDownCdn}
-                  onMouseUp={this.onMouseUpCdn}
-                >
-                  COPY
-                </button>
-              </div>
-            ) : null}
-          </div>
+          <SyntaxHighlighter className={copyingCdn ? '-copying' : ''} language='html' style={xcode}>
+            &lt;script type=&quot;text/javascript&quot; src=&quot;https://cdn.jsdelivr.net/npm/xsound@latest/build/xsound.min.js&quot;&gt;&lt;/script&gt;
+          </SyntaxHighlighter>
+          {navigator.clipboard && navigator.clipboard.writeText ? (
+            <div className={`${Home.CLASS_NAME}__buttonWrapper`}>
+              <button
+                type="button"
+                onMouseDown={this.onMouseDownCdn}
+                onMouseUp={this.onMouseUpCdn}
+              >
+                COPY
+              </button>
+            </div>
+          ) : null}
           <p>In the case of using ESModules for SSR ... etc,</p>
-          <div className={`${Home.CLASS_NAME}__codeWrapper`}>
-            <SyntaxHighlighter className={copyingEsModules ? '-copying' : ''} language='javascript' style={xcode}>
-              {'import { XSound, X } from \'xsound\';'}
-            </SyntaxHighlighter>
-            {navigator.clipboard && navigator.clipboard.writeText ? (
-              <div className={`${Home.CLASS_NAME}__buttonWrapper`}>
-                <button
-                  type="button"
-                  onMouseDown={this.onMouseDownEsModules}
-                  onMouseUp={this.onMouseUpEsModules}
-                >
-                  COPY
-                </button>
-              </div>
-            ) : null}
-          </div>
+          <SyntaxHighlighter className={copyingEsModules ? '-copying' : ''} language='javascript' style={xcode}>
+            {'import { XSound, X } from \'xsound\';'}
+          </SyntaxHighlighter>
+          {navigator.clipboard && navigator.clipboard.writeText ? (
+            <div className={`${Home.CLASS_NAME}__buttonWrapper`}>
+              <button
+                type="button"
+                onMouseDown={this.onMouseDownEsModules}
+                onMouseUp={this.onMouseUpEsModules}
+              >
+                COPY
+              </button>
+            </div>
+          ) : null}
         </section>
         <section>
           <h1>Setup</h1>
