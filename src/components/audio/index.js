@@ -1,5 +1,3 @@
-'use strict';
-
 import Setup from './Setup';
 import Ready from './Ready';
 import Start from './Start';
@@ -17,19 +15,19 @@ import FadeOut from './FadeOut';
 import Sprite from './Sprite';
 
 export {
-    Setup,
-    Ready,
-    Start,
-    Stop,
-    Param,
-    Params,
-    ToJSON,
-    Get,
-    Toggle,
-    IsBuffer,
-    IsSource,
-    IsPaused,
-    FadeIn,
-    FadeOut,
-    Sprite
+  Setup,
+  Ready,
+  Start,
+  Stop,
+  Param,
+  Params,
+  ToJSON,
+  Get,
+  Toggle,
+  IsBuffer,
+  IsSource,
+  IsPaused,
+  FadeIn,
+  FadeOut,
+  Sprite
 };
