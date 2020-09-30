@@ -1,5 +1,3 @@
-'use strict';
-
 import Setup from './Setup';
 import Ready from './Ready';
 import Start from './Start';
@@ -18,20 +16,20 @@ import RequestPictureInPicture from './RequestPictureInPicture';
 import ExitPictureInPicture from './ExitPictureInPicture';
 
 export {
-    Setup,
-    Ready,
-    Start,
-    Stop,
-    Param,
-    Params,
-    ToJSON,
-    Get,
-    Toggle,
-    IsMedia,
-    IsSource,
-    IsPaused,
-    FadeIn,
-    FadeOut,
-    RequestPictureInPicture,
-    ExitPictureInPicture
+  Setup,
+  Ready,
+  Start,
+  Stop,
+  Param,
+  Params,
+  ToJSON,
+  Get,
+  Toggle,
+  IsMedia,
+  IsSource,
+  IsPaused,
+  FadeIn,
+  FadeOut,
+  RequestPictureInPicture,
+  ExitPictureInPicture
 };
