@@ -1,5 +1,3 @@
-'use strict';
-
 import Setup from './Setup';
 import Ready from './Ready';
 import Start from './Start';
@@ -12,14 +10,14 @@ import Toggle from './Toggle';
 import IsStreaming from './IsStreaming';
 
 export {
-    Setup,
-    Ready,
-    Start,
-    Stop,
-    Param,
-    Params,
-    ToJSON,
-    Get,
-    Toggle,
-    IsStreaming
+  Setup,
+  Ready,
+  Start,
+  Stop,
+  Param,
+  Params,
+  ToJSON,
+  Get,
+  Toggle,
+  IsStreaming
 };
