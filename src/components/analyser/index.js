@@ -1,5 +1,3 @@
-'use strict';
-
 import Domain from './Domain';
 import Param from './Param';
 import Get from './Get';
@@ -11,13 +9,13 @@ import TimeOverviewUpdate from './TimeOverviewUpdate';
 import TimeOverviewDrag from './TimeOverviewDrag';
 
 export {
-    Domain,
-    Param,
-    Get,
-    VisualizerSetup,
-    VisualizerParam,
-    VisualizerState,
-    VisualizerCreate,
-    TimeOverviewUpdate,
-    TimeOverviewDrag
+  Domain,
+  Param,
+  Get,
+  VisualizerSetup,
+  VisualizerParam,
+  VisualizerState,
+  VisualizerCreate,
+  TimeOverviewUpdate,
+  TimeOverviewDrag
 };
