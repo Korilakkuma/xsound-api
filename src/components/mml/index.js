@@ -1,5 +1,3 @@
-'use strict';
-
 import Setup from './Setup';
 import Ready from './Ready';
 import Start from './Start';
@@ -10,12 +8,12 @@ import IsPaused from './IsPaused';
 import ToABC from './ToABC';
 
 export {
-    Setup,
-    Ready,
-    Start,
-    Stop,
-    Get,
-    IsSequences,
-    IsPaused,
-    ToABC
+  Setup,
+  Ready,
+  Start,
+  Stop,
+  Get,
+  IsSequences,
+  IsPaused,
+  ToABC
 };
