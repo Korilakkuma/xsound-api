@@ -1,81 +1,73 @@
-'use strict';
-
 import React from 'react';
 import { connect } from 'react-redux';
+import { CodeViewer } from '../../utils/codeviewer';
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { xcode } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 class Custom extends React.Component {
-    static TITLE      = 'Custom';
-    static CLASS_NAME = 'Custom';
+  static TITLE      = 'Custom';
+  static CLASS_NAME = 'Custom';
 
-    constructor(props) {
-        super(props);
-    }
+  shouldComponentUpdate() {
+    return false;
+  }
 
-    shouldComponentUpdate() {
-        return false;
-    }
+  render() {
+    return (
+      <main className={Custom.CLASS_NAME}>
+        <section>
+          <div className="component-title">
+            <h1>custom</h1>
+            <p className="applicable">Applicable : <span>*</span></p>
+          </div>
+          <hr role="presentation" />
+          <p>
+            This module is implemented by this library user.
+          </p>
+          <section>
+            <ol>
+              <li>
+                1. Extends <code>XSound.Effector</code>
+                <SyntaxHighlighter language='javascript' style={xcode}>{`class GraphicEqualizer extends X.Effector {
+  constructor(context) {
+    super(context);
+  }
+}`}</SyntaxHighlighter>
+              </li>
+              <li>
+                2. Override some methods (<code>param</code>, <code>start</code>, <code>stop</code> ... etc)
+                <SyntaxHighlighter language='javascript' style={xcode}>{`class GraphicEqualizer extends X.Effector {
+  constructor(context) {
+    super(context);
+  }
 
-    render() {
-        return (
-            <main className={Custom.CLASS_NAME}>
-                <section>
-                    <div className="component-title">
-                        <h1>custom</h1>
-                        <p className="applicable">Applicable : <span>*</span></p>
-                    </div>
-                    <hr role="presentation" />
-                    <p>
-                        This module is implemented by this library user.
-                    </p>
-                    <section>
-                        <p>
-                            <ol>
-                                <li>
-                                    1. Extends <code>XSound.Effector</code>
-                                    <pre><code>{`class GraphicEqualizer extends X.Effector {
-    constructor(context) {
-        super(context);
-    }
-}`}</code></pre>
-                                </li>
-                                <li>
-                                    2. Override some methods (<code>param</code>, <code>start</code>, <code>stop</code> ... etc)
-                                    <pre><code>{`class GraphicEqualizer extends X.Effector {
-    constructor(context) {
-        super(context);
-    }
+  /** @override */
+  param(key, value) {
+    // ...
+  }
 
-    /** @override */
-    param(key, value) {
-        // ...
-    }
+  /** @override */
+  start() {
+    // ...
+  }
 
-    /** @override */
-    start() {
-        // ...
-    }
-
-    /** @override */
-    stop() {
-        // ...
-    }
-}`}</code></pre>
-                                </li>
-                                <li>
-                                    3. Invoke <code>install</code> method in target <code>SoundModule</code>
-                                    <pre><code>X('audio').install('graphicequalizer', new GraphicEqualizer(X.get()));</code></pre>
-                                </li>
-                             </ol>
-                         </p>
-                     </section>
-                </section>
-                <section className="codepen">
-                    <iframe height='265' scrolling='no' title='Custom | XSound - Web Audio API Library -' src='//codepen.io/Korilakkuma/embed/BMLRjM/?height=265&amp;theme-id=0&amp;default-tab=js,result&amp;embed-version=2' frameBorder='no' allowtransparency='true' allowFullScreen='true' style={{ width : '100%' }}>See the Pen <a href='https://codepen.io/Korilakkuma/pen/BMLRjM/'>Custom | XSound - Web Audio API Library -</a> by Tomohiro IKEDA (<a href='https://codepen.io/Korilakkuma'>@Korilakkuma</a>) on <a href='https://codepen.io'>CodePen</a>.
-</iframe>
-                </section>
-            </main>
-        );
-    }
+  /** @override */
+  stop() {
+    // ...
+  }
+}`}</SyntaxHighlighter>
+              </li>
+              <li>
+                3. Invoke <code>install</code> method in target <code>SoundModule</code>
+                <SyntaxHighlighter language='javascript' style={xcode}>{'X(\'audio\').install(\'graphicequalizer\', new GraphicEqualizer(X.get()));'}</SyntaxHighlighter>
+              </li>
+            </ol>
+          </section>
+        </section>
+        <CodeViewer title='Custom' path='BMLRjM' />
+      </main>
+    );
+  }
 }
 
 export default connect()(Custom);
