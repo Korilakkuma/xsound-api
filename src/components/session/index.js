@@ -1,5 +1,3 @@
-'use strict';
-
 import Setup from './Setup';
 import Start from './Start';
 import Close from './Close';
@@ -8,10 +6,10 @@ import IsConnected from './IsConnected';
 import State from './State';
 
 export {
-    Setup,
-    Start,
-    Close,
-    Get,
-    IsConnected,
-    State
+  Setup,
+  Start,
+  Close,
+  Get,
+  IsConnected,
+  State
 };
