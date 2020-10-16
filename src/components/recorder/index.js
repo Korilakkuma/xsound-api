@@ -1,5 +1,3 @@
-'use strict';
-
 import Setup from './Setup';
 import Ready from './Ready';
 import Start from './Start';
@@ -10,12 +8,12 @@ import Create from './Create';
 import GetActiveTrack from './GetActiveTrack';
 
 export {
-    Setup,
-    Ready,
-    Start,
-    Stop,
-    Param,
-    Clear,
-    Create,
-    GetActiveTrack
+  Setup,
+  Ready,
+  Start,
+  Stop,
+  Param,
+  Clear,
+  Create,
+  GetActiveTrack
 };
