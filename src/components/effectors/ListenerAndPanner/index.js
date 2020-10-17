@@ -1,5 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { xcode } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import { CodeViewer } from '../../utils/codeviewer';
 
 class ListenerAndPanner extends React.Component {
@@ -22,6 +24,61 @@ class ListenerAndPanner extends React.Component {
           <p>
             This module is listener and panner for 3D audio
           </p>
+          <section>
+            <h2>Interface</h2>
+            <SyntaxHighlighter language='typescript' style={xcode}>{`type BufferSize = 0 | 256 | 512 | 1024 | 2048 | 4096 | 8192 | 16384;
+
+type PanningModel = 'HRTF' | 'equalpower';
+
+type DistanceModal = 'linear' | 'inverse' | 'exponential';
+
+interface ListenerParams {
+  x: number;
+  y: number;
+  z: number;
+  fx: number;
+  fy: number;
+  fz: number;
+  ux: number;
+  uy: number;
+  uz: number;
+}
+
+interface PannerParams {
+  x: number;
+  y: number;
+  z: number;
+  ox: number;
+  oy: number;
+  oz: number;
+  refDistance: number;
+  maxDistance: number;
+  rolloffFactor: number;
+  coneInnerAngle: number;
+  coneOuterAngle: number;
+  coneOuterGain: number;
+  panningModel: PanningModel;
+  distanceModel: DistanceModal;
+}
+
+interface Listener {
+  constructor(context: AudioContext, bufferSize: BufferSize);
+  param(key: ListenerParams, value?: number): number | void;
+  params(): ListenerParams;
+  state(isActive?: boolean): boolean | void;
+  toJSON(): string;
+}
+
+interface Panner {
+  constructor(context: AudioContext, bufferSize: BufferSize);
+  param(key: PannerParams, value?: number): number | PanningModel | DistanceModal | void;
+  params(): PannerParams;
+  state(isActive?: boolean): boolean | void;
+  toJSON(): string;
+  INPUT: GainNode;
+  OUTPUT: GainNode;
+}`}</SyntaxHighlighter>
+          </section>
           <table>
             <caption>Listener Parameters</caption>
             <thead><tr><th scope="col"></th><th scope="col">Type</th><th scope="col">Value</th><th scope="col">Default</th></tr></thead>
@@ -123,12 +180,6 @@ class ListenerAndPanner extends React.Component {
                 <td>0</td>
               </tr>
               <tr>
-                <th scope="row">ux</th>
-                <td><span className="param-type">number</span></td>
-                <td>value is number</td>
-                <td>0</td>
-              </tr>
-              <tr>
                 <th scope="row">refDistance</th>
                 <td><span className="param-type">number</span></td>
                 <td>value &gt;= 0</td>
@@ -171,7 +222,7 @@ class ListenerAndPanner extends React.Component {
                 <td>&apos;HRTF&apos;</td>
               </tr>
               <tr>
-                <th scope="row">panningModel</th>
+                <th scope="row">distanceModel</th>
                 <td><span className="param-type">string</span></td>
                 <td>value is one of &apos;linear&apos;, &apos;inverse&apos;, &apos;exponential&apos;</td>
                 <td>&apos;inverse&apos;</td>

@@ -1,5 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { xcode } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import { CodeViewer } from '../../utils/codeviewer';
 
 class Filter extends React.Component {
@@ -22,6 +24,34 @@ class Filter extends React.Component {
           <p>
             This module is Filter.
           </p>
+          <section>
+            <h2>Interface</h2>
+            <SyntaxHighlighter language='typescript' style={xcode}>{`type BufferSize = 0 | 256 | 512 | 1024 | 2048 | 4096 | 8192 | 16384;
+
+type Type = 'lowpass' | 'highpass' | 'bandpass' | 'lowshelf' | 'highshelf' | 'peaking' | 'notch' | 'allpass';
+
+interface FilterParams {
+  type: Type;
+  frequency: number;
+  Q: number;
+  gain: number;
+  range: number;
+  attack: number;
+  decay: number;
+  sustain: number;
+  release: number;
+}
+
+interface Filter {
+  constructor(context: AudioContext, bufferSize: BufferSize);
+  param(key: FilterParams, value?: number): Type | number | void;
+  params(): FilterParams;
+  state(isActive?: boolean): boolean | void;
+  toJSON(): string;
+  INPUT: GainNode;
+  OUTPUT: GainNode;
+}`}</SyntaxHighlighter>
+          </section>
           <table>
             <caption>Parameters</caption>
             <thead><tr><th scope="col"></th><th scope="col">Type</th><th scope="col">Value</th><th scope="col">Default</th></tr></thead>

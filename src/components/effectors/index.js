@@ -1,5 +1,3 @@
-'use strict';
-
 import Autopanner from './Autopanner';
 import Chorus from './Chorus';
 import Compressor from './Compressor';
@@ -24,26 +22,26 @@ import Wah from './Wah';
 import Custom from './Custom';
 
 export {
-    Autopanner,
-    Chorus,
-    Compressor,
-    Delay,
-    Distortion,
-    EnvelopeGenerator,
-    Equalizer,
-    Filter,
-    Flanger,
-    Glide,
-    NoiseGate,
-    NoiseSuppressor,
-    Phaser,
-    Reverb,
-    PitchShifter,
-    Ringmodulator,
-    ListenerAndPanner,
-    Stereo,
-    Tremolo,
-    VocalCanceler,
-    Wah,
-    Custom
+  Autopanner,
+  Chorus,
+  Compressor,
+  Delay,
+  Distortion,
+  EnvelopeGenerator,
+  Equalizer,
+  Filter,
+  Flanger,
+  Glide,
+  NoiseGate,
+  NoiseSuppressor,
+  Phaser,
+  Reverb,
+  PitchShifter,
+  Ringmodulator,
+  ListenerAndPanner,
+  Stereo,
+  Tremolo,
+  VocalCanceler,
+  Wah,
+  Custom
 };

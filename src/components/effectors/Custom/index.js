@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { CodeViewer } from '../../utils/codeviewer';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { xcode } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import { CodeViewer } from '../../utils/codeviewer';
 
 class Custom extends React.Component {
   static TITLE      = 'Custom';

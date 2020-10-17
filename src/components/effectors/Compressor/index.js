@@ -1,5 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { xcode } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import { CodeViewer } from '../../utils/codeviewer';
 
 class Compressor extends React.Component {
@@ -22,6 +24,28 @@ class Compressor extends React.Component {
           <p>
             This module is Compressor.
           </p>
+          <section>
+            <h2>Interface</h2>
+            <SyntaxHighlighter language='typescript' style={xcode}>{`type BufferSize = 0 | 256 | 512 | 1024 | 2048 | 4096 | 8192 | 16384;
+
+interface CompressorParams {
+  threshold: number;
+  knee: number;
+  ratio: number;
+  attack: number;
+  release: number;
+}
+
+interface Compressor {
+  constructor(context: AudioContext, bufferSize: BufferSize);
+  param(key: CompressorParams, value?: number): number | void;
+  params(): CompressorParams;
+  state(isActive?: boolean): boolean | void;
+  toJSON(): string;
+  INPUT: GainNode;
+  OUTPUT: GainNode;
+}`}</SyntaxHighlighter>
+          </section>
           <table>
             <caption>Parameters</caption>
             <thead><tr><th scope="col"></th><th scope="col">Type</th><th scope="col">Value</th><th scope="col">Default</th></tr></thead>
