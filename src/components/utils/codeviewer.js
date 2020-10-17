@@ -6,6 +6,7 @@ export const CodeViewer = function(props) {
 
   return (
     <section className="codepen">
+      <h2>Example</h2>
       <iframe
         height='265'
         scrolling='no'
