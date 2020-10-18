@@ -26,7 +26,11 @@ h2 {
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: 36px;
+}
+
+h2 {
+  font-size: 24px;
 }
 
 a {
@@ -65,17 +69,18 @@ abbr {
 }
 
 table {
-  margin: 16px auto 32px;
-  border: 1px solid var(gray-light);
+  margin: 16px auto;
+  border: 1px solid var(--gray-light);
   width: 100%;
 }
 
 caption {
-  margin-bottom: 8px;
+  margin-bottom: 16px;
   font-family: "Lucida Grande", "Calibri", Helvetica, Arial, sans-serif;
   font-size: 24px;
   font-weight: lighter;
   color: var(--gray);
+  text-align: left;
 }
 
 thead th {
