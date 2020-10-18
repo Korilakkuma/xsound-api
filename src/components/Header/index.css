@@ -57,7 +57,7 @@
 }
 
 .Header__title {
-  font-size: 4rem;
+  font-size: 64px;
   font-weight: lighter;
   color: var(--assort-color);
   text-shadow: -1px -1px 1px var(--black);
@@ -68,7 +68,7 @@
 }
 
 .Header__subtitle {
-  font-size: 2rem;
+  font-size: 32px;
   font-weight: 300;
   color: var(--assort-color);
   text-shadow: -1px -1px 1px var(--black);

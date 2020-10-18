@@ -73,7 +73,7 @@ table {
 caption {
   margin-bottom: 8px;
   font-family: "Lucida Grande", "Calibri", Helvetica, Arial, sans-serif;
-  font-size: 1.5rem;
+  font-size: 24px;
   font-weight: lighter;
   color: var(--gray);
 }
@@ -81,7 +81,7 @@ caption {
 thead th {
   border: 1px solid var(--gray-light);
   padding: 8px 0;
-  font-size: 1.25rem;
+  font-size: 20px;
   font-weight: lighter;
   color: var(--white);
   text-align: center;
@@ -92,7 +92,7 @@ thead th {
 tbody th {
   padding: 8px;
   border: 1px solid var(--gray-light);
-  font-size: 1rem;
+  font-size: var(--base-font-size);
   font-weight: lighter;
   text-align: center;
 }
@@ -100,7 +100,7 @@ tbody th {
 td {
   padding: 16px;
   border: 1px solid var(--gray-light);
-  font-size: 1rem;
+  font-size: var(--base-font-size);
 }
 
 td dd {
