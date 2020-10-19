@@ -54,10 +54,10 @@ chorus.OUTPUT.connect(context.destination);
 
 // Set parameters for chorus
 chorus.param({
-  time  : 0.025,
-  depth : 0.5,
-  rate  : 2.5,
-  mix   : 0.5
+  time : 0.025,
+  depth: 0.5,
+  rate : 2.5,
+  mix  : 0.5
 })
 
 // Activate
@@ -204,10 +204,10 @@ chorus.OUTPUT.connect(context.destination);
 
 // Set parameters for chorus
 chorus.param({
-  time  : 0.025,
-  depth : 0.5,
-  rate  : 2.5,
-  mix   : 0.5
+  time : 0.025,
+  depth: 0.5,
+  rate : 2.5,
+  mix  : 0.5
 })
 
 // Activate
@@ -234,7 +234,6 @@ X.Chorus(context: AudioContext, size: BufferSize);
 X.Compressor(context: AudioContext, size: BufferSize);
 X.Delay(context: AudioContext, size: BufferSize);
 X.Distortion(context: AudioContext, size: BufferSize);
-X.EnvelopeGenerator(context: AudioContext);
 X.Equalizer(context: AudioContext, size: BufferSize);
 X.Filter(context: AudioContext, size: BufferSize);
 X.Flanger(context: AudioContext, size: BufferSize);
