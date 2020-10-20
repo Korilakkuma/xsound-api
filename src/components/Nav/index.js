@@ -45,7 +45,7 @@ class Nav extends React.Component {
     return true;
   }
 
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate(prevProps) {
     if (prevProps.expandedPanelId !== this.props.expandedPanelId) {
       this.setState({ expandedPanelId: this.props.expandedPanelId });
     }

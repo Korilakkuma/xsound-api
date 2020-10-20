@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { changeHidden } from '../../actions/HeaderActions';
 
 class Header extends React.Component {
   static CLASS_NAME  = 'Header';
