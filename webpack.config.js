@@ -45,8 +45,7 @@ module.exports = {
       }
     }),
     new MiniCSSExtractPlugin({
-      filename: 'app.css',
-      path: `${__dirname}/assets/`
+      filename: 'app.css'
     }),
     new OptimizeCSSAssetsWebpackPlugin({
       cssProcessorOptions: {
