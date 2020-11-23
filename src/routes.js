@@ -85,6 +85,8 @@ export default (
         <Route exact path={`${BASS_PATH}xsound/read`} render={render(XSound.Read)} />
         <Route exact path={`${BASS_PATH}xsound/to-frequencies`} render={render(XSound.ToFrequencies)} />
         <Route exact path={`${BASS_PATH}xsound/to-text-file`} render={render(XSound.ToTextFile)} />
+        <Route exact path={`${BASS_PATH}oscillator/interface`} render={render(OscillatorModule.OscillatorModule)} />
+        <Route exact path={`${BASS_PATH}oscillator/oscillator/interface`} render={render(OscillatorModule.Oscillator)} />
         <Route exact path={`${BASS_PATH}oscillator/setup`} render={render(OscillatorModule.Setup)} />
         <Route exact path={`${BASS_PATH}oscillator/ready`} render={render(OscillatorModule.Ready)} />
         <Route exact path={`${BASS_PATH}oscillator/start`} render={render(OscillatorModule.Start)} />

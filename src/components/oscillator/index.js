@@ -1,3 +1,5 @@
+import OscillatorModule from './OscillatorModule';
+import Oscillator from './Oscillator';
 import Setup from './Setup';
 import Ready from './Ready';
 import Start from './Start';
@@ -12,6 +14,8 @@ import OscillatorState from './OscillatorState';
 import OscillatorGet from './OscillatorGet';
 
 export {
+  OscillatorModule,
+  Oscillator,
   Setup,
   Ready,
   Start,

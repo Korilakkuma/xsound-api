@@ -88,6 +88,9 @@ class Nav extends React.Component {
         <section role="presentation">
           <h2><button type="button" role="tab" aria-expanded={expandedPanelId === 'panel-oscillator'} aria-selected={expandedPanelId === 'panel-oscillator'} aria-controls="panel-oscillator" tabIndex="0" onClick={this.onClick}>Oscillator</button></h2>
           <dl id="panel-oscillator" aria-hidden={expandedPanelId !== 'panel-oscillator'}>
+            <dt>Interfaces</dt>
+            <dd><Link to={`${BASS_PATH}oscillator/interface`} className={this.getSelectedClassName(`${BASS_PATH}oscillator/interface`)}>OscillatorModule</Link></dd>
+            <dd><Link to={`${BASS_PATH}oscillator/oscillator/interface`} className={this.getSelectedClassName(`${BASS_PATH}oscillator/oscillator/interface`)}>Oscillator</Link></dd>
             <dt>Methods</dt>
             <dd><Link to={`${BASS_PATH}oscillator/setup`} className={this.getSelectedClassName(`${BASS_PATH}oscillator/setup`)}>setup</Link></dd>
             <dd><Link to={`${BASS_PATH}oscillator/ready`} className={this.getSelectedClassName(`${BASS_PATH}oscillator/ready`)}>ready</Link></dd>
