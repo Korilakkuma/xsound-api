@@ -109,6 +109,8 @@ class Nav extends React.Component {
         <section role="presentation">
           <h2><button type="button" role="tab" aria-expanded={expandedPanelId === 'panel-oneshot'} aria-selected={expandedPanelId === 'panel-oneshot'} aria-controls="panel-oneshot" tabIndex="0" onClick={this.onClick}>One-shot</button></h2>
           <dl id="panel-oneshot" aria-hidden={expandedPanelId !== 'panel-oneshot'}>
+            <dt>Interfaces</dt>
+            <dd><Link to={`${BASS_PATH}oneshot/interface`} className={this.getSelectedClassName(`${BASS_PATH}oneshot/interface`)}>OneshotModule</Link></dd>
             <dt>Methods</dt>
             <dd><Link to={`${BASS_PATH}oneshot/setup`} className={this.getSelectedClassName(`${BASS_PATH}oneshot/setup`)}>setup</Link></dd>
             <dd><Link to={`${BASS_PATH}oneshot/ready`} className={this.getSelectedClassName(`${BASS_PATH}oneshot/ready`)}>ready</Link></dd>

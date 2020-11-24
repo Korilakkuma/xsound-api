@@ -99,6 +99,7 @@ export default (
         <Route exact path={`${BASS_PATH}oscillator/oscillator/param`} render={render(OscillatorModule.OscillatorParam)} />
         <Route exact path={`${BASS_PATH}oscillator/oscillator/state`} render={render(OscillatorModule.OscillatorState)} />
         <Route exact path={`${BASS_PATH}oscillator/oscillator/get`} render={render(OscillatorModule.OscillatorGet)} />
+        <Route exact path={`${BASS_PATH}oneshot/interface`} render={render(OneshotModule.OneshotModule)} />
         <Route exact path={`${BASS_PATH}oneshot/setup`} render={render(OneshotModule.Setup)} />
         <Route exact path={`${BASS_PATH}oneshot/ready`} render={render(OneshotModule.Ready)} />
         <Route exact path={`${BASS_PATH}oneshot/start`} render={render(OneshotModule.Start)} />
