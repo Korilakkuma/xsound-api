@@ -125,6 +125,8 @@ class Nav extends React.Component {
         <section role="presentation">
           <h2><button type="button" role="tab" aria-expanded={expandedPanelId === 'panel-noise'} aria-selected={expandedPanelId === 'panel-noise'} aria-controls="panel-noise" tabIndex="0" onClick={this.onClick}>Noise</button></h2>
           <dl id="panel-noise" aria-hidden={expandedPanelId !== 'panel-noise'}>
+            <dt>Interfaces</dt>
+            <dd><Link to={`${BASS_PATH}noise/interface`} className={this.getSelectedClassName(`${BASS_PATH}noise/interface`)}>NoiseModule</Link></dd>
             <dt>Methods</dt>
             <dd><Link to={`${BASS_PATH}noise/start`} className={this.getSelectedClassName(`${BASS_PATH}noise/start`)}>start</Link></dd>
             <dd><Link to={`${BASS_PATH}noise/stop`} className={this.getSelectedClassName(`${BASS_PATH}noise/stop`)}>stop</Link></dd>
