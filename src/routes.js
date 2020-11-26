@@ -112,6 +112,7 @@ export default (
         <Route exact path={`${BASS_PATH}noise/start`} render={render(NoiseModule.Start)} />
         <Route exact path={`${BASS_PATH}noise/stop`} render={render(NoiseModule.Stop)} />
         <Route exact path={`${BASS_PATH}noise/param`} render={render(NoiseModule.Param)} />
+        <Route exact path={`${BASS_PATH}audio/interface`} render={render(AudioModule.AudioModule)} />
         <Route exact path={`${BASS_PATH}audio/setup`} render={render(AudioModule.Setup)} />
         <Route exact path={`${BASS_PATH}audio/ready`} render={render(AudioModule.Ready)} />
         <Route exact path={`${BASS_PATH}audio/start`} render={render(AudioModule.Start)} />
