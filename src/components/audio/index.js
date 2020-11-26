@@ -1,3 +1,4 @@
+import AudioModule from './AudioModule';
 import Setup from './Setup';
 import Ready from './Ready';
 import Start from './Start';
@@ -15,6 +16,7 @@ import FadeOut from './FadeOut';
 import Sprite from './Sprite';
 
 export {
+  AudioModule,
   Setup,
   Ready,
   Start,
