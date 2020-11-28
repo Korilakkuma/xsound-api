@@ -1,3 +1,4 @@
+import MediaModule from './MediaModule';
 import Setup from './Setup';
 import Ready from './Ready';
 import Start from './Start';
@@ -16,6 +17,7 @@ import RequestPictureInPicture from './RequestPictureInPicture';
 import ExitPictureInPicture from './ExitPictureInPicture';
 
 export {
+  MediaModule,
   Setup,
   Ready,
   Start,
