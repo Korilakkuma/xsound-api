@@ -159,6 +159,8 @@ class Nav extends React.Component {
         <section role="presentation">
           <h2><button type="button" role="tab" aria-expanded={expandedPanelId === 'panel-media'} aria-selected={expandedPanelId === 'panel-media'} aria-controls="panel-media" tabIndex="0" onClick={this.onClick}>Media</button></h2>
           <dl id="panel-media" aria-hidden={expandedPanelId !== 'panel-media'}>
+            <dt>Interfaces</dt>
+            <dd><Link to={`${BASS_PATH}media/interface`} className={this.getSelectedClassName(`${BASS_PATH}media/interface`)}>MediaModule</Link></dd>
             <dt>Methods</dt>
             <dd><Link to={`${BASS_PATH}media/setup`} className={this.getSelectedClassName(`${BASS_PATH}media/setup`)}>setup</Link></dd>
             <dd><Link to={`${BASS_PATH}media/ready`} className={this.getSelectedClassName(`${BASS_PATH}media/ready`)}>ready</Link></dd>
