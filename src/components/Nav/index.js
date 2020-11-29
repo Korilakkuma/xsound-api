@@ -183,6 +183,8 @@ class Nav extends React.Component {
         <section role="presentation">
           <h2><button type="button" role="tab" aria-expanded={expandedPanelId === 'panel-stream'} aria-selected={expandedPanelId === 'panel-stream'} aria-controls="panel-stream" tabIndex="0" onClick={this.onClick}>Stream</button></h2>
           <dl id="panel-stream" aria-hidden={expandedPanelId !== 'panel-stream'}>
+            <dt>Interfaces</dt>
+            <dd><Link to={`${BASS_PATH}stream/interface`} className={this.getSelectedClassName(`${BASS_PATH}stream/interface`)}>StreamModule</Link></dd>
             <dt>Methods</dt>
             <dd><Link to={`${BASS_PATH}stream/setup`} className={this.getSelectedClassName(`${BASS_PATH}stream/setup`)}>setup</Link></dd>
             <dd><Link to={`${BASS_PATH}stream/ready`} className={this.getSelectedClassName(`${BASS_PATH}stream/ready`)}>ready</Link></dd>

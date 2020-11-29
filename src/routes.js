@@ -145,6 +145,7 @@ export default (
         <Route exact path={`${BASS_PATH}media/fade-out`} render={render(MediaModule.FadeOut)} />
         <Route exact path={`${BASS_PATH}media/request-picture-in-picture`} render={render(MediaModule.RequestPictureInPicture)} />
         <Route exact path={`${BASS_PATH}media/exit-picture-in-picture`} render={render(MediaModule.ExitPictureInPicture)} />
+        <Route exact path={`${BASS_PATH}stream/interface`} render={render(StreamModule.StreamModule)} />
         <Route exact path={`${BASS_PATH}stream/setup`} render={render(StreamModule.Setup)} />
         <Route exact path={`${BASS_PATH}stream/ready`} render={render(StreamModule.Ready)} />
         <Route exact path={`${BASS_PATH}stream/start`} render={render(StreamModule.Start)} />
