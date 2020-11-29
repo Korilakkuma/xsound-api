@@ -1,3 +1,4 @@
+import StreamModule from './StreamModule';
 import Setup from './Setup';
 import Ready from './Ready';
 import Start from './Start';
@@ -10,6 +11,7 @@ import Toggle from './Toggle';
 import IsStreaming from './IsStreaming';
 
 export {
+  StreamModule,
   Setup,
   Ready,
   Start,
