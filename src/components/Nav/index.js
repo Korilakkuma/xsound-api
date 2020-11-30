@@ -201,6 +201,8 @@ class Nav extends React.Component {
         <section role="presentation">
           <h2><button type="button" role="tab" aria-expanded={expandedPanelId === 'panel-mixer'} aria-selected={expandedPanelId === 'panel-mixer'} aria-controls="panel-mixer" tabIndex="0" onClick={this.onClick}>Mixer</button></h2>
           <dl id="panel-mixer" aria-hidden={expandedPanelId !== 'panel-mixer'}>
+            <dt>Interfaces</dt>
+            <dd><Link to={`${BASS_PATH}mixer/interface`} className={this.getSelectedClassName(`${BASS_PATH}mixer/interface`)}>MixerModule</Link></dd>
             <dt>Methods</dt>
             <dd><Link to={`${BASS_PATH}mixer/mix`} className={this.getSelectedClassName(`${BASS_PATH}mixer/mix`)}>mix</Link></dd>
             <dd><Link to={`${BASS_PATH}mixer/get`} className={this.getSelectedClassName(`${BASS_PATH}mixer/get`)}>get</Link></dd>
