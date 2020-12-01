@@ -159,6 +159,7 @@ export default (
         <Route exact path={`${BASS_PATH}mixer/interface`} render={render(MixerModule.MixerModule)} />
         <Route exact path={`${BASS_PATH}mixer/mix`} render={render(MixerModule.Mix)} />
         <Route exact path={`${BASS_PATH}mixer/get`} render={render(MixerModule.Get)} />
+        <Route exact path={`${BASS_PATH}processor/interface`} render={render(ProcessorModule.ProcessorModule)} />
         <Route exact path={`${BASS_PATH}processor/setup`} render={render(ProcessorModule.Setup)} />
         <Route exact path={`${BASS_PATH}processor/start`} render={render(ProcessorModule.Start)} />
         <Route exact path={`${BASS_PATH}processor/stop`} render={render(ProcessorModule.Stop)} />

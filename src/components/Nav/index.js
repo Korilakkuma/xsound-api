@@ -211,6 +211,8 @@ class Nav extends React.Component {
         <section role="presentation">
           <h2><button type="button" role="tab" aria-expanded={expandedPanelId === 'panel-processor'} aria-selected={expandedPanelId === 'panel-processor'} aria-controls="panel-processor" tabIndex="0" onClick={this.onClick}>Processor</button></h2>
           <dl id="panel-processor" aria-hidden={expandedPanelId !== 'panel-processor'}>
+            <dt>Interfaces</dt>
+            <dd><Link to={`${BASS_PATH}processor/interface`} className={this.getSelectedClassName(`${BASS_PATH}processor/interface`)}>ProcessorModule</Link></dd>
             <dt>Methods</dt>
             <dd><Link to={`${BASS_PATH}processor/setup`} className={this.getSelectedClassName(`${BASS_PATH}processor/setup`)}>setup</Link></dd>
             <dd><Link to={`${BASS_PATH}processor/start`} className={this.getSelectedClassName(`${BASS_PATH}processor/start`)}>start</Link></dd>
