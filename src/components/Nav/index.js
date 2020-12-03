@@ -222,6 +222,8 @@ class Nav extends React.Component {
         <section role="presentation">
           <h2><button type="button" role="tab" aria-expanded={expandedPanelId === 'panel-mexpandedPanelIdi'} aria-selected={expandedPanelId === 'panel-midi'} aria-controls="panel-midi" tabIndex="0" onClick={this.onClick}>MIDI</button></h2>
           <dl id="panel-midi" aria-hidden={expandedPanelId !== 'panel-midi'}>
+            <dt>Interfaces</dt>
+            <dd><Link to={`${BASS_PATH}midi/interface`} className={this.getSelectedClassName(`${BASS_PATH}midi/interface`)}>MIDI</Link></dd>
             <dt>Methods</dt>
             <dd><Link to={`${BASS_PATH}midi/setup`} className={this.getSelectedClassName(`${BASS_PATH}midi/setup`)}>setup</Link></dd>
             <dd><Link to={`${BASS_PATH}midi/get`} className={this.getSelectedClassName(`${BASS_PATH}midi/get`)}>get</Link></dd>
