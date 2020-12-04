@@ -166,6 +166,7 @@ export default (
         <Route exact path={`${BASS_PATH}midi/interface`} render={render(MIDI.MIDI)} />
         <Route exact path={`${BASS_PATH}midi/setup`} render={render(MIDI.Setup)} />
         <Route exact path={`${BASS_PATH}midi/get`} render={render(MIDI.Get)} />
+        <Route exact path={`${BASS_PATH}mml/interface`} render={render(MML.MML)} />
         <Route exact path={`${BASS_PATH}mml/setup`} render={render(MML.Setup)} />
         <Route exact path={`${BASS_PATH}mml/ready`} render={render(MML.Ready)} />
         <Route exact path={`${BASS_PATH}mml/start`} render={render(MML.Start)} />

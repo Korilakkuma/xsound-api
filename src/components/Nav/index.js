@@ -232,6 +232,8 @@ class Nav extends React.Component {
         <section role="presentation">
           <h2><button type="button" role="tab" aria-expanded={expandedPanelId === 'panel-mml'} aria-selected={expandedPanelId === 'panel-mml'} aria-controls="panel-mml" tabIndex="0" onClick={this.onClick}>MML</button></h2>
           <dl id="panel-mml" aria-hidden={expandedPanelId !== 'panel-mml'}>
+            <dt>Interfaces</dt>
+            <dd><Link to={`${BASS_PATH}mml/interface`} className={this.getSelectedClassName(`${BASS_PATH}mml/interface`)}>MML</Link></dd>
             <dt>Methods</dt>
             <dd><Link to={`${BASS_PATH}mml/setup`} className={this.getSelectedClassName(`${BASS_PATH}mml/setup`)}>setup</Link></dd>
             <dd><Link to={`${BASS_PATH}mml/ready`} className={this.getSelectedClassName(`${BASS_PATH}mml/ready`)}>ready</Link></dd>
