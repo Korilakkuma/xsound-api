@@ -175,6 +175,7 @@ export default (
         <Route exact path={`${BASS_PATH}mml/is-sequences`} render={render(MML.IsSequences)} />
         <Route exact path={`${BASS_PATH}mml/is-paused`} render={render(MML.IsPaused)} />
         <Route exact path={`${BASS_PATH}mml/to-abc`} render={render(MML.ToABC)} />
+        <Route exact path={`${BASS_PATH}analyser/interface`} render={render(Analyser.Analyser)} />
         <Route exact path={`${BASS_PATH}analyser/domain`} render={render(Analyser.Domain)} />
         <Route exact path={`${BASS_PATH}analyser/param`} render={render(Analyser.Param)} />
         <Route exact path={`${BASS_PATH}analyser/get`} render={render(Analyser.Get)} />
