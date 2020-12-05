@@ -1,3 +1,4 @@
+import Analyser from './Analyser';
 import Domain from './Domain';
 import Param from './Param';
 import Get from './Get';
@@ -9,6 +10,7 @@ import TimeOverviewUpdate from './TimeOverviewUpdate';
 import TimeOverviewDrag from './TimeOverviewDrag';
 
 export {
+  Analyser,
   Domain,
   Param,
   Get,
