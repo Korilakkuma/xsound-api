@@ -1,4 +1,5 @@
 import Analyser from './Analyser';
+import Visualizer from './Visualizer';
 import Domain from './Domain';
 import Param from './Param';
 import Get from './Get';
@@ -11,6 +12,7 @@ import TimeOverviewDrag from './TimeOverviewDrag';
 
 export {
   Analyser,
+  Visualizer,
   Domain,
   Param,
   Get,
