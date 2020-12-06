@@ -179,6 +179,7 @@ export default (
         <Route exact path={`${BASS_PATH}analyser/domain`} render={render(Analyser.Domain)} />
         <Route exact path={`${BASS_PATH}analyser/param`} render={render(Analyser.Param)} />
         <Route exact path={`${BASS_PATH}analyser/get`} render={render(Analyser.Get)} />
+        <Route exact path={`${BASS_PATH}analyser/visualizer/interface`} render={render(Analyser.Visualizer)} />
         <Route exact path={`${BASS_PATH}analyser/visualizer/setup`} render={render(Analyser.VisualizerSetup)} />
         <Route exact path={`${BASS_PATH}analyser/visualizer/param`} render={render(Analyser.VisualizerParam)} />
         <Route exact path={`${BASS_PATH}analyser/visualizer/state`} render={render(Analyser.VisualizerState)} />
