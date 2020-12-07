@@ -251,6 +251,7 @@ class Nav extends React.Component {
             <dt>Interfaces</dt>
             <dd><Link to={`${BASS_PATH}analyser/interface`} className={this.getSelectedClassName(`${BASS_PATH}analyser/interface`)}>Analyser</Link></dd>
             <dd><Link to={`${BASS_PATH}analyser/visualizer/interface`} className={this.getSelectedClassName(`${BASS_PATH}analyser/visualizer/interface`)}>Visualizer</Link></dd>
+            <dd><Link to={`${BASS_PATH}analyser/time-overview/interface`} className={this.getSelectedClassName(`${BASS_PATH}analyser/time-overview/interface`)}>TimeOverview</Link></dd>
             <dt>Methods</dt>
             <dd><Link to={`${BASS_PATH}analyser/domain`} className={this.getSelectedClassName(`${BASS_PATH}analyser/domain`)}>domain</Link></dd>
             <dd><Link to={`${BASS_PATH}analyser/param`} className={this.getSelectedClassName(`${BASS_PATH}analyser/param`)}>param</Link></dd>

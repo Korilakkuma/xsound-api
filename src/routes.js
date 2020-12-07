@@ -184,6 +184,7 @@ export default (
         <Route exact path={`${BASS_PATH}analyser/visualizer/param`} render={render(Analyser.VisualizerParam)} />
         <Route exact path={`${BASS_PATH}analyser/visualizer/state`} render={render(Analyser.VisualizerState)} />
         <Route exact path={`${BASS_PATH}analyser/visualizer/create`} render={render(Analyser.VisualizerCreate)} />
+        <Route exact path={`${BASS_PATH}analyser/time-overview/interface`} render={render(Analyser.TimeOverview)} />
         <Route exact path={`${BASS_PATH}analyser/time-overview/update`} render={render(Analyser.TimeOverviewUpdate)} />
         <Route exact path={`${BASS_PATH}analyser/time-overview/drag`} render={render(Analyser.TimeOverviewDrag)} />
         <Route exact path={`${BASS_PATH}effectors/autopanner`} render={render(Effectors.Autopanner)} />
