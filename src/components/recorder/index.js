@@ -1,3 +1,4 @@
+import Recorder from './Recorder';
 import Setup from './Setup';
 import Ready from './Ready';
 import Start from './Start';
@@ -8,6 +9,7 @@ import Create from './Create';
 import GetActiveTrack from './GetActiveTrack';
 
 export {
+  Recorder,
   Setup,
   Ready,
   Start,
