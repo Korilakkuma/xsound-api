@@ -209,6 +209,7 @@ export default (
         <Route exact path={`${BASS_PATH}effectors/vocalcanceler`} render={render(Effectors.VocalCanceler)} />
         <Route exact path={`${BASS_PATH}effectors/wah`} render={render(Effectors.Wah)} />
         <Route exact path={`${BASS_PATH}effectors/custom`} render={render(Effectors.Custom)} />
+        <Route exact path={`${BASS_PATH}recorder/interface`} render={render(Recorder.Recorder)} />
         <Route exact path={`${BASS_PATH}recorder/setup`} render={render(Recorder.Setup)} />
         <Route exact path={`${BASS_PATH}recorder/ready`} render={render(Recorder.Ready)} />
         <Route exact path={`${BASS_PATH}recorder/start`} render={render(Recorder.Start)} />

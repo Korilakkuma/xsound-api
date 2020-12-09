@@ -295,6 +295,8 @@ class Nav extends React.Component {
         <section role="presentation">
           <h2><button type="button" role="tab" aria-expanded={expandedPanelId === 'panel-recorder'} aria-selected={expandedPanelId === 'panel-recorder'} aria-controls="panel-recorder" tabIndex="0" onClick={this.onClick}>Recorder</button></h2>
           <dl id="panel-recorder" aria-hidden={expandedPanelId !== 'panel-recorder'}>
+            <dt>Interfaces</dt>
+            <dd><Link to={`${BASS_PATH}recorder/interface`} className={this.getSelectedClassName(`${BASS_PATH}recorder/interface`)}>Recorder</Link></dd>
             <dt>Methods</dt>
             <dd><Link to={`${BASS_PATH}recorder/setup`} className={this.getSelectedClassName(`${BASS_PATH}recorder/setup`)}>setup</Link></dd>
             <dd><Link to={`${BASS_PATH}recorder/ready`} className={this.getSelectedClassName(`${BASS_PATH}recorder/ready`)}>ready</Link></dd>
