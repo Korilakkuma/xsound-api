@@ -218,6 +218,7 @@ export default (
         <Route exact path={`${BASS_PATH}recorder/clear`} render={render(Recorder.Clear)} />
         <Route exact path={`${BASS_PATH}recorder/create`} render={render(Recorder.Create)} />
         <Route exact path={`${BASS_PATH}recorder/get-active-track`} render={render(Recorder.GetActiveTrack)} />
+        <Route exact path={`${BASS_PATH}session/interface`} render={render(Session.Session)} />
         <Route exact path={`${BASS_PATH}session/setup`} render={render(Session.Setup)} />
         <Route exact path={`${BASS_PATH}session/start`} render={render(Session.Start)} />
         <Route exact path={`${BASS_PATH}session/close`} render={render(Session.Close)} />
