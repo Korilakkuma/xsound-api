@@ -16,7 +16,7 @@ class EnvelopeGenerator extends React.Component {
         <section>
           <div className="component-title">
             <h1>envelopegenerator</h1>
-            <p className="applicable">Applicable : <span>OscillatorModule | OneshotModule | NoiseModule</span></p>
+            <p className="applicable">Applicable : <span>OscillatorModule | OneshotModule | NoiseModule | ProcessorModule</span></p>
           </div>
           <hr role="presentation" />
           <p>
