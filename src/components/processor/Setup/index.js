@@ -20,7 +20,7 @@ class Setup extends React.Component {
           </div>
           <hr role="presentation" />
           <p>
-            This method sets the instance of ScriptProcessorNode or AudioWorkletNode.
+            This method sets registered processor and options for <code>AudioWorkletNode</code> constructor.
           </p>
           <table>
             <caption>Arguments</caption>
@@ -28,8 +28,13 @@ class Setup extends React.Component {
             <tbody>
               <tr>
                 <th scope="row">1st</th>
-                <td><span className="argument-type">ScriptProcessorNode</span> or <span className="argument-type">AudioWorkletNode</span></td>
-                <td>This value is the instance of ScriptProcessorNode or AudioWorkletNode.</td>
+                <td><span className="argument-type">string</span></td>
+                <td>This value is the name of the <code>AudioWorkletProcessor</code> this node will be based on.</td>
+              </tr>
+              <tr>
+                <th scope="row">2nd</th>
+                <td><span className="argument-type">AudioWorkletNodeOptions</span></td>
+                <td>This value is an object based on the <code>AudioWorkletNodeOptions</code> dictionary.</td>
               </tr>
             </tbody>
           </table>
