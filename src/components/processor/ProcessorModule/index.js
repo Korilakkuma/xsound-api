@@ -22,9 +22,15 @@ class ProcessorModule extends React.Component {
           <section>
             <h2>Interface</h2>
             <SyntaxHighlighter language='typescript' style={xcode}>{`interface ProcessorModule {
-  setup(processor: ScriptProcessorNode | AudioWorkletNode): ProcessorModule;
-  start(processCallback?(event: AudioProcessingEvent): void, connects?: Connectable[]): ProcessorModule;
-  stop(processCallback?(event: AudioProcessingEvent): ProcessorModule;
+ setup(name: string, options?: AudioWorkletNodeOptions): ProcessorModule;
+ ready(moduleURL: string, options?: { credentials: 'omit' | 'same-origin' | 'include' }): Promise;
+ start(processCallback?(event: AudioProcessingEvent): void, connects?: Connectable[]): ProcessorModule;
+ stop(processCallback?(event: AudioProcessingEvent): void): ProcessorModule;
+ postMessage(data: any): ProcessorModule;
+ onMessage(callback(event: Event): void): ProcessorModule;
+ map(void): AudioParamMap | Map;
+ param(key: string): AudioParam;
+ get(void): AudioWorkletNode | ScriptProcessorNode;
 }`}</SyntaxHighlighter>
           </section>
         </section>
