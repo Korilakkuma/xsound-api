@@ -51,6 +51,7 @@ interface AudioModule {
   isPaused(void): boolean;
   fadeIn(time?: number): number | AudioModule;
   fadeOut(time?: number): number | AudioModule;
+  slice(startTime: number, endTime: number): AudioBuffer;
   sprite({ [key: string]: number[] }): { [key: string]: AudioBuffer };
 }`}</SyntaxHighlighter>
           </section>

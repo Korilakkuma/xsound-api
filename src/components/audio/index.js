@@ -13,6 +13,7 @@ import IsSource from './IsSource';
 import IsPaused from './IsPaused';
 import FadeIn from './FadeIn';
 import FadeOut from './FadeOut';
+import Slice from './Slice';
 import Sprite from './Sprite';
 
 export {
@@ -31,5 +32,6 @@ export {
   IsPaused,
   FadeIn,
   FadeOut,
+  Slice,
   Sprite
 };
