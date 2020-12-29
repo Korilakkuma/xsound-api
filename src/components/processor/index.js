@@ -4,6 +4,7 @@ import Ready from './Ready';
 import Start from './Start';
 import Stop from './Stop';
 import PostMessage from './PostMessage';
+import OnMessage from './OnMessage';
 
 export {
   ProcessorModule,
@@ -11,5 +12,6 @@ export {
   Ready,
   Start,
   Stop,
-  PostMessage
+  PostMessage,
+  OnMessage
 };

@@ -220,6 +220,7 @@ class Nav extends React.Component {
             <dd><Link to={`${BASS_PATH}processor/start`} className={this.getSelectedClassName(`${BASS_PATH}processor/start`)}>start</Link></dd>
             <dd><Link to={`${BASS_PATH}processor/stop`} className={this.getSelectedClassName(`${BASS_PATH}processor/stop`)}>stop</Link></dd>
             <dd><Link to={`${BASS_PATH}processor/post-message`} className={this.getSelectedClassName(`${BASS_PATH}processor/post-message`)}>postMessage</Link></dd>
+            <dd><Link to={`${BASS_PATH}processor/on-message`} className={this.getSelectedClassName(`${BASS_PATH}processor/on-message`)}>onMessage</Link></dd>
           </dl>
         </section>
         <section role="presentation">
