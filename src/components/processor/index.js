@@ -5,6 +5,7 @@ import Start from './Start';
 import Stop from './Stop';
 import PostMessage from './PostMessage';
 import OnMessage from './OnMessage';
+import Map from './Map';
 
 export {
   ProcessorModule,
@@ -13,5 +14,6 @@ export {
   Start,
   Stop,
   PostMessage,
-  OnMessage
+  OnMessage,
+  Map
 };
