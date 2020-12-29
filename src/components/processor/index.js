@@ -3,11 +3,13 @@ import Setup from './Setup';
 import Ready from './Ready';
 import Start from './Start';
 import Stop from './Stop';
+import PostMessage from './PostMessage';
 
 export {
   ProcessorModule,
   Setup,
   Ready,
   Start,
-  Stop
+  Stop,
+  PostMessage
 };
