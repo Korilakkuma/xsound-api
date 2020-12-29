@@ -216,6 +216,7 @@ class Nav extends React.Component {
             <dd><Link to={`${BASS_PATH}processor/interface`} className={this.getSelectedClassName(`${BASS_PATH}processor/interface`)}>ProcessorModule</Link></dd>
             <dt>Methods</dt>
             <dd><Link to={`${BASS_PATH}processor/setup`} className={this.getSelectedClassName(`${BASS_PATH}processor/setup`)}>setup</Link></dd>
+            <dd><Link to={`${BASS_PATH}processor/ready`} className={this.getSelectedClassName(`${BASS_PATH}processor/ready`)}>ready</Link></dd>
             <dd><Link to={`${BASS_PATH}processor/start`} className={this.getSelectedClassName(`${BASS_PATH}processor/start`)}>start</Link></dd>
             <dd><Link to={`${BASS_PATH}processor/stop`} className={this.getSelectedClassName(`${BASS_PATH}processor/stop`)}>stop</Link></dd>
           </dl>
