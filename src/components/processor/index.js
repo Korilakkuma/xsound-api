@@ -7,6 +7,7 @@ import PostMessage from './PostMessage';
 import OnMessage from './OnMessage';
 import Map from './Map';
 import Param from './Param';
+import Get from './Get';
 
 export {
   ProcessorModule,
@@ -17,5 +18,6 @@ export {
   PostMessage,
   OnMessage,
   Map,
-  Param
+  Param,
+  Get
 };

@@ -169,6 +169,7 @@ export default (
         <Route exact path={`${BASS_PATH}processor/on-message`} render={render(ProcessorModule.OnMessage)} />
         <Route exact path={`${BASS_PATH}processor/map`} render={render(ProcessorModule.Map)} />
         <Route exact path={`${BASS_PATH}processor/param`} render={render(ProcessorModule.Param)} />
+        <Route exact path={`${BASS_PATH}processor/get`} render={render(ProcessorModule.Get)} />
         <Route exact path={`${BASS_PATH}midi/interface`} render={render(MIDI.MIDI)} />
         <Route exact path={`${BASS_PATH}midi/setup`} render={render(MIDI.Setup)} />
         <Route exact path={`${BASS_PATH}midi/get`} render={render(MIDI.Get)} />
