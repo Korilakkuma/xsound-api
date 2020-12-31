@@ -33,5 +33,10 @@
     "semi": [2, "always"],
     "space-before-function-paren": 0,
     "template-curly-spacing" : 0
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
   }
 }
