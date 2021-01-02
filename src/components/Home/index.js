@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { xcode } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
-class Home extends React.Component {
+class Home extends React.PureComponent {
   static TITLE      = 'Home';
   static CLASS_NAME = 'Home';
 
@@ -11,11 +11,11 @@ class Home extends React.Component {
     super(props);
 
     this.state = {
-      copyingGetteingStarted        : false,
-      copyingGetteingStartedAsModule: false,
-      copyingNpmInstall             : false,
-      copyingCdn                    : false,
-      copyingEsModules              : false
+      copyGetteingStarted        : false,
+      copyGetteingStartedAsModule: false,
+      copyNpmInstall             : false,
+      copyCdn                    : false,
+      copyEsModules              : false
     };
 
     this.onMouseDownGettingStarted         = this.onMouseDownGettingStarted.bind(this);
@@ -32,13 +32,13 @@ class Home extends React.Component {
   }
 
   onMouseDownGettingStarted() {
-    this.setState({ copyingGetteingStarted: true }, () => {
+    this.setState({ copyGetteingStarted: true }, () => {
       navigator.clipboard.writeText('X(\'oscillator\').setup(true).ready().start(440);');
     });
   }
 
   onMouseDownGettingStartedAsModule() {
-    this.setState({ copyingGetteingStartedAsModule: true }, () => {
+    this.setState({ copyGetteingStartedAsModule: true }, () => {
       navigator.clipboard.writeText('// The instance of ' + 'AudioContext' + `
 const context = X.get();
 
@@ -68,50 +68,50 @@ oscillator.start(0);`);
   }
 
   onMouseDownNpmInstall() {
-    this.setState({ copyingNpmInstall: true }, () => {
+    this.setState({ copyNpmInstall: true }, () => {
       navigator.clipboard.writeText('npm install --save xsound');
     });
   }
 
   onMouseDownCdn() {
-    this.setState({ copyingCdn: true }, () => {
+    this.setState({ copyCdn: true }, () => {
       navigator.clipboard.writeText('<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/xsound@latest/build/xsound.min.js"></script>');
     });
   }
 
   onMouseDownEsModules() {
-    this.setState({ copyingEsModules: true }, () => {
+    this.setState({ copyEsModules: true }, () => {
       navigator.clipboard.writeText('import { XSound, X } from \'xsound\';');
     });
   }
 
   onMouseUpGettingStarted() {
-    this.setState({ copyingGetteingStarted: false });
+    this.setState({ copyGetteingStarted: false });
   }
 
   onMouseUpGettingStartedAsModule() {
-    this.setState({ copyingGetteingStartedAsModule: false });
+    this.setState({ copyGetteingStartedAsModule: false });
   }
 
   onMouseUpNpmInstall() {
-    this.setState({ copyingNpmInstall: false });
+    this.setState({ copyNpmInstall: false });
   }
 
   onMouseUpCdn() {
-    this.setState({ copyingCdn: false });
+    this.setState({ copyCdn: false });
   }
 
   onMouseUpEsModules() {
-    this.setState({ copyingEsModules: false });
+    this.setState({ copyEsModules: false });
   }
 
   render() {
     const {
-      copyingGetteingStarted,
-      copyingGetteingStartedAsModule,
-      copyingNpmInstall,
-      copyingCdn,
-      copyingEsModules
+      copyGetteingStarted,
+      copyGetteingStartedAsModule,
+      copyNpmInstall,
+      copyCdn,
+      copyEsModules
     } = this.state;
 
     return (
@@ -172,7 +172,7 @@ oscillator.start(0);`);
           <p>
             In the case of using as <b>full stack</b> (For example, in the case of using oscillator) ...
           </p>
-          <SyntaxHighlighter className={copyingGetteingStarted ? '-copying' : ''} language='javascript' style={xcode}>
+          <SyntaxHighlighter className={copyGetteingStarted ? '-copy' : ''} language='javascript' style={xcode}>
             X(&apos;oscillator&apos;).setup(true).ready().start(440);
           </SyntaxHighlighter>
           {navigator.clipboard && navigator.clipboard.writeText ? (
@@ -189,7 +189,7 @@ oscillator.start(0);`);
           <p>
             In the case of using as <b>module base</b> (For example, in the case of using chorus effector) ...
           </p>
-          <SyntaxHighlighter className={copyingGetteingStartedAsModule ? '-copying' : ''} language='javascript' style={xcode}>{'// The instance of ' + 'AudioContext' + `
+          <SyntaxHighlighter className={copyGetteingStartedAsModule ? '-copy' : ''} language='javascript' style={xcode}>{'// The instance of ' + 'AudioContext' + `
 const context = X.get();
 
 // Create the instance of ` + 'Chorus' + ` that is defined by XSound
@@ -279,7 +279,7 @@ X.Session(context: AudioContext, size: BufferSize, numberOfInputs: number, numbe
         <section>
           <h1>Installation</h1>
           <hr role="presentation" />
-          <SyntaxHighlighter className={copyingNpmInstall ? '-copying' : ''} language='bash' style={xcode}>
+          <SyntaxHighlighter className={copyNpmInstall ? '-copy' : ''} language='bash' style={xcode}>
             $ npm install --save xsound
           </SyntaxHighlighter>
           {navigator.clipboard && navigator.clipboard.writeText ? (
@@ -298,7 +298,7 @@ X.Session(context: AudioContext, size: BufferSize, numberOfInputs: number, numbe
           <h1>Usage</h1>
           <hr role="presentation" />
           <p>In the case of using CDN,</p>
-          <SyntaxHighlighter className={copyingCdn ? '-copying' : ''} language='html' style={xcode}>
+          <SyntaxHighlighter className={copyCdn ? '-copy' : ''} language='html' style={xcode}>
             &lt;script type=&quot;text/javascript&quot; src=&quot;https://cdn.jsdelivr.net/npm/xsound@latest/build/xsound.min.js&quot;&gt;&lt;/script&gt;
           </SyntaxHighlighter>
           {navigator.clipboard && navigator.clipboard.writeText ? (
@@ -313,7 +313,7 @@ X.Session(context: AudioContext, size: BufferSize, numberOfInputs: number, numbe
             </div>
           ) : null}
           <p>In the case of using ESModules for SSR ... etc,</p>
-          <SyntaxHighlighter className={copyingEsModules ? '-copying' : ''} language='javascript' style={xcode}>
+          <SyntaxHighlighter className={copyEsModules ? '-copy' : ''} language='javascript' style={xcode}>
             {'import { XSound, X } from \'xsound\';'}
           </SyntaxHighlighter>
           {navigator.clipboard && navigator.clipboard.writeText ? (
