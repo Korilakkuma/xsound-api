@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { BASS_PATH } from '../../config';
 
-class Nav extends React.Component {
+class Nav extends React.PureComponent {
   static CLASS_NAME = 'Nav';
 
   // static getDerivedStateFromProps(nextProps, prevState) {
@@ -39,10 +39,6 @@ class Nav extends React.Component {
     const expandedPanelId = event.currentTarget.getAttribute('aria-controls');
 
     this.setState({ expandedPanelId });
-  }
-
-  shouldComponentUpdate() {
-    return true;
   }
 
   componentDidUpdate(prevProps) {
