@@ -167,6 +167,7 @@ export default (
         <Route exact path={`${BASS_PATH}processor/stop`} render={render(ProcessorModule.Stop)} />
         <Route exact path={`${BASS_PATH}processor/post-message`} render={render(ProcessorModule.PostMessage)} />
         <Route exact path={`${BASS_PATH}processor/on-message`} render={render(ProcessorModule.OnMessage)} />
+        <Route exact path={`${BASS_PATH}processor/on-message-error`} render={render(ProcessorModule.OnMessageError)} />
         <Route exact path={`${BASS_PATH}processor/map`} render={render(ProcessorModule.Map)} />
         <Route exact path={`${BASS_PATH}processor/param`} render={render(ProcessorModule.Param)} />
         <Route exact path={`${BASS_PATH}processor/get`} render={render(ProcessorModule.Get)} />

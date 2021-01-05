@@ -217,6 +217,7 @@ class Nav extends React.PureComponent {
             <dd><Link to={`${BASS_PATH}processor/stop`} className={this.getSelectedClassName(`${BASS_PATH}processor/stop`)}>stop</Link></dd>
             <dd><Link to={`${BASS_PATH}processor/post-message`} className={this.getSelectedClassName(`${BASS_PATH}processor/post-message`)}>postMessage</Link></dd>
             <dd><Link to={`${BASS_PATH}processor/on-message`} className={this.getSelectedClassName(`${BASS_PATH}processor/on-message`)}>onMessage</Link></dd>
+            <dd><Link to={`${BASS_PATH}processor/on-message-error`} className={this.getSelectedClassName(`${BASS_PATH}processor/on-message-error`)}>onMessageError</Link></dd>
             <dd><Link to={`${BASS_PATH}processor/map`} className={this.getSelectedClassName(`${BASS_PATH}processor/map`)}>map</Link></dd>
             <dd><Link to={`${BASS_PATH}processor/param`} className={this.getSelectedClassName(`${BASS_PATH}processor/param`)}>param</Link></dd>
             <dd><Link to={`${BASS_PATH}processor/get`} className={this.getSelectedClassName(`${BASS_PATH}processor/get`)}>get</Link></dd>
