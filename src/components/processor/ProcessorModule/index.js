@@ -27,7 +27,7 @@ class ProcessorModule extends React.Component {
  start(processCallback?(event: AudioProcessingEvent): void, connects?: Connectable[]): ProcessorModule;
  stop(processCallback?(event: AudioProcessingEvent): void): ProcessorModule;
  postMessage(data: any): ProcessorModule;
- onMessage(callback(event: Event): void): ProcessorModule;
+ onMessage(callback(event: MessageEvent): void): ProcessorModule;
  onMessage(callback(event: MessageEvent): void): ProcessorModule;
  map(void): AudioParamMap | Map;
  param(key: string): AudioParam;
