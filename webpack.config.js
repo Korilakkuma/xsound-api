@@ -1,6 +1,6 @@
-const webpack                        = require('webpack');
-const MiniCSSExtractPlugin           = require('mini-css-extract-plugin');
-const OptimizeCSSAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin');
+const webpack              = require('webpack');
+const MiniCSSExtractPlugin = require('mini-css-extract-plugin');
+const CssMinimizerPlugin   = require('css-minimizer-webpack-plugin');
 
 module.exports = {
   mode: 'development',
@@ -47,12 +47,8 @@ module.exports = {
     new MiniCSSExtractPlugin({
       filename: 'app.css'
     }),
-    new OptimizeCSSAssetsWebpackPlugin({
-      cssProcessorOptions: {
-        map: {
-          inline: false
-        }
-      }
+    new CssMinimizerPlugin({
+      sourceMap: true
     })
   ],
   optimization: {
