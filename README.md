@@ -1,7 +1,7 @@
 XSound API Documentation
 =========
 
-This repository is [API documentation](https://xsound.dev/) for [XSound](https://github.com/Korilakkuma/XSound).
+This repository is [API documentation](https://xsound.dev) for [XSound](https://github.com/Korilakkuma/XSound).
 
 ## Setup
 
