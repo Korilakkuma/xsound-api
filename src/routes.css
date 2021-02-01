@@ -1,4 +1,4 @@
-.Routes {
+.Router {
   display: -webkit-flex;
   display: flex;
   -webkit-justify-content: space-between;
@@ -14,7 +14,7 @@
   */
 }
 
-.Routes > main {
+.Router > main {
   margin: 0 auto;
   width: 70vw;
 }
