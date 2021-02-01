@@ -1,20 +1,16 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
-class PageLoadingBar extends React.Component {
-  static CLASS_NAME  = 'PageLoadingBar';
+const CLASS_NAME = 'PageLoadingBar';
 
-  shouldComponentUpdate() {
-    return false;
-  }
+export const PageLoadingBar = (props) => {
+  return (
+    <div id="page-loading-bar" className={CLASS_NAME}>
+      <div role="presentation" onAnimationEnd={props.onAnimationEnd} />
+    </div>
+  );
+};
 
-  render() {
-    return (
-      <div id="page-loading-bar" className={PageLoadingBar.CLASS_NAME}>
-        <div role="progressbar" />
-      </div>
-    );
-  }
-}
-
-export default connect()(PageLoadingBar);
+PageLoadingBar.propTypes = {
+  onAnimationEnd: PropTypes.func
+};
