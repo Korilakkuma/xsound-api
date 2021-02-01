@@ -8,7 +8,8 @@
   "extends": [
     "eslint:recommended",
     "standard",
-    "plugin:react/recommended"
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended"
   ],
   "rules": {
     "default-param-last": 0,
