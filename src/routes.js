@@ -5,7 +5,7 @@ import { BASS_PATH, TITLE } from './config';
 import { expandPanel, setSelectedPath } from './actions/NavActions';
 import { PageLoadingBar } from './components/PageLoadingBar';
 import Header from './components/Header';
-import Home from './components/Home';
+import { Home } from './components/Home';
 import * as XSound from './components/xsound';
 import * as OscillatorModule from './components/oscillator';
 import * as OneshotModule from './components/oneshot';
