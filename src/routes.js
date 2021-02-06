@@ -23,7 +23,7 @@ import * as Recorder from './components/recorder';
 import * as Session from './components/session';
 import NotFound from './components/NotFound';
 import { Nav } from './components/Nav';
-import Footer from './components/Footer';
+import { Footer } from './components/Footer';
 
 export const Router = () => {
   const dispatch = useDispatch();
