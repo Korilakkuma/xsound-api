@@ -4,7 +4,7 @@ import { Switch, Route } from 'react-router-dom';
 import { BASS_PATH, TITLE } from './config';
 import { expandPanel, setSelectedPath } from './actions/NavActions';
 import { PageLoadingBar } from './components/PageLoadingBar';
-import Header from './components/Header';
+import { Header } from './components/Header';
 import { Home } from './components/Home';
 import * as XSound from './components/xsound';
 import * as OscillatorModule from './components/oscillator';
