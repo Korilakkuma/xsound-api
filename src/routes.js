@@ -21,7 +21,7 @@ import * as Effectors from './components/effectors';
 import * as Analyser from './components/analyser';
 import * as Recorder from './components/recorder';
 import * as Session from './components/session';
-import NotFound from './components/NotFound';
+import { NotFound } from './components/NotFound';
 import { Nav } from './components/Nav';
 import { Footer } from './components/Footer';
 
