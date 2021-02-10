@@ -329,6 +329,9 @@ $ open http://localhost:8080/playground/`}</SyntaxHighlighter>
           <li>
             <a href="https://bashooka.com/coding/web-audio-javascript-libraries/" target="_blank" rel="noopener noreferrer">20 Useful Web Audio Javascript Libraries – Bashooka</a>
           </li>
+          <li>
+            <a href="https://dl.acm.org/doi/10.1145/3424616.3424709" target="_blank" rel="noopener noreferrer">Extending X3D Realism with Audio Graphs, Acoustic Properties and 3D Spatial Sound</a>
+          </li>
         </ul>
       </section>
     </main>
