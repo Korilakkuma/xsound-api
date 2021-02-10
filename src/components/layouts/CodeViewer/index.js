@@ -5,7 +5,7 @@ export const CodeViewer = (props) => {
   const { title, path } = props;
 
   return (
-    <section className="codepen">
+    <section className="CodeViewer">
       <h2>Example</h2>
       <iframe
         height='265'
