@@ -1,0 +1,25 @@
+.Overview__heading {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.Overview__heading h1 {
+  -webkit-flex-grow: 40;
+  flex-grow: 40;
+}
+
+.Overview__returns,
+.Overview__applicable {
+  -webkit-flex-grow: 1;
+  flex-grow: 1;
+  font-size: 16px;
+  font-style: italic;
+}
