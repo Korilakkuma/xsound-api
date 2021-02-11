@@ -1,0 +1,53 @@
+.Parameters > table {
+  margin: 16px auto;
+  border: 1px solid var(--gray-light);
+  width: 100%;
+}
+
+.Parameters > table > caption {
+  margin-bottom: 16px;
+  font-family: "Lucida Grande", "Calibri", Helvetica, Arial, sans-serif;
+  font-size: 24px;
+  font-weight: lighter;
+  color: var(--gray);
+  text-align: left;
+}
+
+.Parameters > table > thead th {
+  border: 1px solid var(--gray-light);
+  padding: 8px 0;
+  font-size: 20px;
+  font-weight: lighter;
+  color: var(--white);
+  text-align: center;
+  text-shadow: -1px -1px 1px var(--black);
+  background-color: var(--black-light);
+}
+
+.Parameters > table > tbody th {
+  padding: 8px;
+  border: 1px solid var(--gray-light);
+  font-size: var(--base-font-size);
+  font-weight: lighter;
+  text-align: center;
+}
+
+.Parameters td {
+  padding: 16px;
+  border: 1px solid var(--gray-light);
+  font-size: var(--base-font-size);
+}
+
+.Parameters td dd {
+  margin-left: 16px;
+}
+
+.Parameters__type {
+  font-size: 16px;
+  font-style: italic;
+  color: var(--assort-color);
+}
+
+dl dt .Parameters__type {
+  margin-left: 8px;
+}
