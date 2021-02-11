@@ -25,29 +25,3 @@
   border-bottom: 10px solid transparent;
   vertical-align: -4px;
 }
-
-.type,
-.applicable {
-  -webkit-flex-grow: 1;
-  flex-grow: 1;
-  font-size: 16px;
-  font-style: italic;
-}
-
-.type > span,
-.returns > span,
-.applicable > span {
-  color: var(--assort-color);
-}
-
-.argument-type,
-.param-type {
-  font-size: 16px;
-  font-style: italic;
-  color: var(--assort-color);
-}
-
-dl dt .argument-type,
-dl dt .param-type {
-  margin-left: 8px;
-}
