@@ -23,3 +23,8 @@
   font-size: 16px;
   font-style: italic;
 }
+
+.Overview__returns > span,
+.Overview__applicable > span {
+  color: var(--assort-color);
+}
