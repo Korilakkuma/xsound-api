@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { connect } from 'react-redux';
-import { CodeViewer } from '../../utils/codeviewer';
+import { CodeViewer } from '../../layouts/CodeViewer';
 
 class ToFrequencies extends React.Component {
   static TITLE      = 'XSound.toFrequencies';

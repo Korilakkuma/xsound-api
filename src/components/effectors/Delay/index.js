@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { xcode } from 'react-syntax-highlighter/dist/esm/styles/hljs';
-import { CodeViewer } from '../../utils/codeviewer';
+import { CodeViewer } from '../../layouts/CodeViewer';
 
 class Delay extends React.Component {
   static TITLE      = 'Delay';

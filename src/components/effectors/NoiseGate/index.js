@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { CodeViewer } from '../../utils/codeviewer';
+import { CodeViewer } from '../../layouts/CodeViewer';
 
 class NoiseGate extends React.Component {
   static TITLE      = 'Noise Gate';
