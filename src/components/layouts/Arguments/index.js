@@ -11,16 +11,16 @@ export const Arguments = (props) => {
         <thead><tr><th scope="col"></th><th scope="col">Type</th><th scope="col">Description</th></tr></thead>
         <tbody>
           {props.rows.map((row, index) => {
-            const { description, types } = row;
+            const { types, description } = row;
 
             return (
               <tr key={order[index]}>
                 <th scope="row">{order[index]}</th>
-                <td dangerouslySetInnerHtml={{ __html: types.map((type, index) => <span key={index} className="Arguments__type">{type}</span>).join(' or ') }} />
-                <td>{description}</td>
+                <td>{types.map((type, index) => <span key={type} className="Arguments__type">{type}</span>)}</td>
+                <td dangerouslySetInnerHTML={{ __html: description }} />
               </tr>
             );
-          })};
+          })}
         </tbody>
       </table>
     </section>
@@ -28,5 +28,5 @@ export const Arguments = (props) => {
 };
 
 Arguments.propTypes = {
-  rows: PropTypes.array.required
+  rows: PropTypes.arrayOf(PropTypes.object).isRequired
 };
