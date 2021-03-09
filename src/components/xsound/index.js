@@ -6,7 +6,7 @@ import FFT from './FFT';
 import { Ajax } from './Ajax';
 import { Clone } from './Clone';
 import { ConvertTime } from './ConvertTime';
-import Decode from './Decode';
+import { Decode } from './Decode';
 import ExitFullscreen from './ExitFullscreen';
 import File from './File';
 import Free from './Free';
