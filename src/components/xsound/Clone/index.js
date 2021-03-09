@@ -1,32 +1,20 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { Overview } from '../../layouts/Overview';
 import { CodeViewer } from '../../layouts/CodeViewer';
 
-class Clone extends React.Component {
-  static TITLE      = 'XSound#clone';
-  static CLASS_NAME = 'Clone';
+const CLASS_NAME = 'Clone';
 
-  shouldComponentUpdate() {
-    return false;
-  }
+export const Clone = () => {
+  return (
+    <main className={CLASS_NAME}>
+      <Overview
+        title='clone'
+        returnTypes={['Function']}
+        description='This method clones XSound function.'
+      />
+      <CodeViewer title='clone' path='VygjVP' />
+    </main>
+  );
+};
 
-  render() {
-    return (
-      <main className={Clone.CLASS_NAME}>
-        <section>
-          <div className="component-title">
-            <h1>clone</h1>
-            <p className="returns">Returns : <span>Function</span></p>
-          </div>
-          <hr role="presentation" />
-          <p>
-            This method clones <var>XSound</var> function.
-          </p>
-        </section>
-        <CodeViewer title='clone' path='VygjVP' />
-      </main>
-    );
-  }
-}
-
-export default connect()(Clone);
+Clone.TITLE = 'XSound.clone';
