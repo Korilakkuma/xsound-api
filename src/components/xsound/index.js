@@ -5,7 +5,7 @@ import NumberOfOutputs from './NumberOfOutputs';
 import FFT from './FFT';
 import { Ajax } from './Ajax';
 import { Clone } from './Clone';
-import ConvertTime from './ConvertTime';
+import { ConvertTime } from './ConvertTime';
 import Decode from './Decode';
 import ExitFullscreen from './ExitFullscreen';
 import File from './File';
