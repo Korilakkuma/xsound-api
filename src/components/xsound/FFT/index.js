@@ -1,59 +1,37 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { Overview } from '../../layouts/Overview';
+import { Arguments } from '../../layouts/Arguments';
 import { CodeViewer } from '../../layouts/CodeViewer';
 
-class FFT extends React.Component {
-  static TITLE      = 'XSound.FFT';
-  static CLASS_NAME = 'FFT';
+const CLASS_NAME = 'FFT';
 
-  shouldComponentUpdate() {
-    return false;
-  }
+export const FFT = () => {
+  return (
+    <main className={CLASS_NAME}>
+      <Overview
+        title='FFT'
+        returnTypes={['undefined']}
+        description='This method executes FFT or IFFT.'
+      />
+      <Arguments
+        rows={[
+          {
+            types      : ['Float32Array'],
+            description: 'This argument is the instance of Float32Array as real.'
+          },
+          {
+            types      : ['Float32Array'],
+            description: 'This argument is the instance of Float32Array as imaginary.'
+          },
+          {
+            types      : ['number'],
+            description: 'This argument is FFT / IFFT size.'
+          }
+        ]}
+      />
+      <CodeViewer title='FFT / IFFT' path='NWxvOwj' />
+    </main>
+  );
+};
 
-  render() {
-    return (
-      <main className={FFT.CLASS_NAME}>
-        <section>
-          <div className="component-title">
-            <h1>FFT / IFFT</h1>
-            <p className="returns">Returns : <span>undefined</span></p>
-          </div>
-          <hr role="presentation" />
-          <p>
-            This method executes FFT or IFFT.
-          </p>
-          <table>
-            <caption>Arguments</caption>
-            <thead><tr><th scope="col"></th><th scope="col">Type</th><th scope="col">Description</th></tr></thead>
-            <tbody>
-              <tr>
-                <th scope="row">1st</th>
-                <td><span className="argument-type">Float32Array</span></td>
-                <td>
-                  This argument is the instance of Float32Array as real.
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">2nd</th>
-                <td><span className="argument-type">Float32Array</span></td>
-                <td>
-                  This argument is the instance of Float32Array as imaginary.
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">3rd</th>
-                <td><span className="argument-type">number</span></td>
-                <td>
-                  This argument is FFT / IFFT size.
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </section>
-        <CodeViewer title='FFT / IFFT' path='NWxvOwj' />
-      </main>
-    );
-  }
-}
-
-export default connect()(FFT);
+FFT.TITLE = 'XSound.FFT';
