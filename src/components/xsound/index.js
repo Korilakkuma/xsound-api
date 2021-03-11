@@ -8,7 +8,7 @@ import { Clone } from './Clone';
 import { ConvertTime } from './ConvertTime';
 import { Decode } from './Decode';
 import { ExitFullscreen } from './ExitFullscreen';
-import File from './File';
+import { File } from './File';
 import Free from './Free';
 import RequestFullscreen from './RequestFullscreen';
 import Get from './Get';
