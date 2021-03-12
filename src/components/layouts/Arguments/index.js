@@ -16,7 +16,15 @@ export const Arguments = (props) => {
             return (
               <tr key={order[index]}>
                 <th scope="row">{order[index]}</th>
-                <td>{types.map((type) => <span key={type} className="Arguments__type">{type}</span>)}</td>
+                <td>
+                  {types.map((type) => {
+                    if (type === '') {
+                      return ' or ';
+                    }
+
+                    return <span key={type} className="Arguments__type">{type}</span>;
+                  })}
+                </td>
                 <td dangerouslySetInnerHTML={{ __html: description }} />
               </tr>
             );
