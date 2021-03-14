@@ -12,7 +12,7 @@
     "fix:css": "stylelint --fix src",
     "fix": "run-p lint:js lint:css",
     "build": "npm run clean && webpack --progress --mode production",
-    "dev": "webpack-dev-server --progress"
+    "dev": "webpack-cli serve --progress"
   },
   "husky": {
     "hooks": {
