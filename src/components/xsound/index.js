@@ -1,4 +1,4 @@
-import IsXSound from './IsXSound';
+import { IsXSound } from './IsXSound';
 import SampleRate from './SampleRate';
 import NumberOfInputs from './NumberOfInputs';
 import NumberOfOutputs from './NumberOfOutputs';

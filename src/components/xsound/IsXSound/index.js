@@ -1,34 +1,20 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { Overview } from '../../layouts/Overview';
 import { CodeViewer } from '../../layouts/CodeViewer';
 
-class IsXSound extends React.Component {
-  static TITLE      = 'XSound.IS_XSOUND';
-  static CLASS_NAME = 'IsXSound';
+const CLASS_NAME = 'IS_XSOUND';
 
-  shouldComponentUpdate() {
-    return false;
-  }
+export const IsXSound = () => {
+  return (
+    <main className={CLASS_NAME}>
+      <Overview
+        title='IS_XSOUND'
+        types={['boolean']}
+        description='This property is to determine whether this library is usable. If this library is usable, this value is true. Otherwise this value is false.'
+      />
+      <CodeViewer title='IS_XSOUND' path='NXBEjK' />
+    </main>
+  );
+};
 
-  render() {
-    return (
-      <main className={IsXSound.CLASS_NAME}>
-        <section>
-          <div className="component-title">
-            <h1>IS_XSOUND</h1>
-            <p className="type">Type : <span>boolean</span></p>
-          </div>
-          <hr role="presentation" />
-          <p>
-            This property is to determine whether this library is usable.
-            If this library is usable, this value is true.
-            Otherwise this value is false.
-          </p>
-        </section>
-        <CodeViewer title='IS_XSOUND' path='NXBEjK' />
-      </main>
-    );
-  }
-}
-
-export default connect()(IsXSound);
+IsXSound.TITLE = 'XSound.IS_XSOUND';
