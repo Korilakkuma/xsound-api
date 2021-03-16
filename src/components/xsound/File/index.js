@@ -10,7 +10,7 @@ export const File = () => {
     <main className={CLASS_NAME}>
       <Overview
         title='file'
-        returnTypes={['']}
+        returnTypes={['File (extends Blob)']}
         description='This method gets the instance of File (extends Blob) and reads this.'
       />
       <Arguments
@@ -23,7 +23,7 @@ export const File = () => {
                 <dt>event<span class="argument-type">Event</span></dt>
                 <dd>This value is event object.</dd>
                 <dt>type<span class="argument-type">string</span></dt>
-                <dd>This value is one of &apos;ArrayBuffer&apos;, &apos;DataURL&apos;, &apos;ObjectURL&apos;, &apos;Text&apos;</dd>
+                <dd>This value is one of &apos;ArrayBuffer&apos;, &apos;DataURL&apos;, &apos;ObjectURL&apos;, &apos;Text&apos;, &apos;JSON&apos;</dd>
                 <dt>success<span class="argument-type">Function</span></dt>
                 <dd>This function is invoked on read success.</dd>
                 <dt>error<span class="argument-type">Function</span></dt>
