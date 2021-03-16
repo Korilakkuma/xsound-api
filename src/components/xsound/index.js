@@ -1,7 +1,7 @@
 import { IsXSound } from './IsXSound';
 import { NumberOfInputs } from './NumberOfInputs';
+import { NumberOfOutputs } from './NumberOfOutputs';
 import SampleRate from './SampleRate';
-import NumberOfOutputs from './NumberOfOutputs';
 import { FFT } from './FFT';
 import { Ajax } from './Ajax';
 import { Clone } from './Clone';

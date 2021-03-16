@@ -1,33 +1,20 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { Overview } from '../../layouts/Overview';
 import { CodeViewer } from '../../layouts/CodeViewer';
 
-class NumberOfOutputs extends React.Component {
-  static TITLE      = 'XSound.NUMBER_OF_OUTPUTS';
-  static CLASS_NAME = 'NumberOfOutputs';
+const CLASS_NAME = 'NUMBER_OF_OUTPUTS';
 
-  shouldComponentUpdate() {
-    return false;
-  }
+export const NumberOfOutputs = () => {
+  return (
+    <main className={CLASS_NAME}>
+      <Overview
+        title='NUMBER_OF_OUTPUTS'
+        types={['number']}
+        description='This property is the number of output channels for ScriptProcessorNode. The default value is 2.'
+      />
+      <CodeViewer title='NUMBER_OF_OUTPUTS' path='XVyYXY' />
+    </main>
+  );
+};
 
-  render() {
-    return (
-      <main className={NumberOfOutputs.CLASS_NAME}>
-        <section>
-          <div className="component-title">
-            <h1>NUMBER_OF_OUTPUTS</h1>
-            <p className="type">Type : <span>number</span></p>
-          </div>
-          <hr role="presentation" />
-          <p>
-            This property is the number of output channels for <a href="http://webaudio.github.io/web-audio-api/#the-scriptprocessornode-interface---deprecated" target="_blank" rel="noopener noreferrer nofollow">ScriptProcessorNode</a>.
-            The default value is 2.
-          </p>
-        </section>
-        <CodeViewer title='NUMBER_OF_OUTPUTS' path='XVyYXY' />
-      </main>
-    );
-  }
-}
-
-export default connect()(NumberOfOutputs);
+NumberOfOutputs.TITLE = 'XSound.NUMBER_OF_OUTPUTS';
