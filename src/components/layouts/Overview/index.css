@@ -16,6 +16,7 @@
   flex-grow: 40;
 }
 
+.Overview__types,
 .Overview__returns,
 .Overview__applicable {
   -webkit-flex-grow: 1;
@@ -24,6 +25,7 @@
   font-style: italic;
 }
 
+.Overview__types > span,
 .Overview__returns > span,
 .Overview__applicable > span {
   color: var(--assort-color);
