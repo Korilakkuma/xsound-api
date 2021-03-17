@@ -10,7 +10,7 @@ import { Decode } from './Decode';
 import { ExitFullscreen } from './ExitFullscreen';
 import { File } from './File';
 import { Free } from './Free';
-import RequestFullscreen from './RequestFullscreen';
+import { RequestFullscreen } from './RequestFullscreen';
 import { Get } from './Get';
 import { GetCurrentTime } from './GetCurrentTime';
 import { NoConflict } from './NoConflict';
