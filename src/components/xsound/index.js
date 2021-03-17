@@ -13,7 +13,7 @@ import { Free } from './Free';
 import RequestFullscreen from './RequestFullscreen';
 import { Get } from './Get';
 import { GetCurrentTime } from './GetCurrentTime';
-import NoConflict from './NoConflict';
+import { NoConflict } from './NoConflict';
 import Read from './Read';
 import ToFrequencies from './ToFrequencies';
 import ToTextFile from './ToTextFile';
