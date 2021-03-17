@@ -1,32 +1,20 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { Overview } from '../../layouts/Overview';
 import { CodeViewer } from '../../layouts/CodeViewer';
 
-class SampleRate extends React.Component {
-  static TITLE      = 'XSound.SAMPLE_RATE';
-  static CLASS_NAME = 'SampleRate';
+const CLASS_NAME = 'SAMPLE_RATE';
 
-  shouldComponentUpdate() {
-    return false;
-  }
+export const SampleRate = () => {
+  return (
+    <main className={CLASS_NAME}>
+      <Overview
+        title='SAMPLE_RATE'
+        types={['number']}
+        description='This property is sample rate for PCM (Pulse Code Modulation).'
+      />
+      <CodeViewer title='SAMPLE_RATE' path='MrqBMp' />
+    </main>
+  );
+};
 
-  render() {
-    return (
-      <main className={SampleRate.CLASS_NAME}>
-        <section>
-          <div className="component-title">
-            <h1>SAMPLE_RATE</h1>
-            <p className="type">Type : <span>number</span></p>
-          </div>
-          <hr role="presentation" />
-          <p>
-            This property is sample rate for <abbr title="Pulse Code Modulation">PCM</abbr> (Pulse Code Modulation).
-          </p>
-        </section>
-        <CodeViewer title='SAMPLE_RATE' path='MrqBMp' />
-      </main>
-    );
-  }
-}
-
-export default connect()(SampleRate);
+SampleRate.TITLE = 'XSound.SAMPLE_RATE';
