@@ -1,45 +1,29 @@
-'use strict';
-
 import React from 'react';
-import { connect } from 'react-redux';
+import { Overview } from '../../layouts/Overview';
+import { Arguments } from '../../layouts/Arguments';
 import { CodeViewer } from '../../layouts/CodeViewer';
 
-class ToFrequencies extends React.Component {
-  static TITLE      = 'XSound.toFrequencies';
-  static CLASS_NAME = 'ToFrequencies';
+const CLASS_NAME = 'ToFrequencies';
 
-  shouldComponentUpdate() {
-    return false;
-  }
+export const ToFrequencies = () => {
+  return (
+    <main className={CLASS_NAME}>
+      <Overview
+        title='toFrequencies'
+        returnTypes={['Array']}
+        description='This method returns array that contains frequency.'
+      />
+      <Arguments
+        rows={[
+          {
+            types      : ['Array', '', 'number'],
+            description: 'This value means the index that corresponds to 88 keyboards of Piano.'
+          }
+        ]}
+      />
+      <CodeViewer title='toFrequencies' path='LQGZwE' />
+    </main>
+  );
+};
 
-  render() {
-    return (
-      <main className={ToFrequencies.CLASS_NAME}>
-        <section>
-          <div className="component-title">
-            <h1>toFrequencies</h1>
-            <p className="returns">Returns : <span>Array</span></p>
-          </div>
-          <hr role="presentation" />
-          <p>
-            This method returns array that contains frequency.
-          </p>
-          <table>
-            <caption>Arguments</caption>
-            <thead><tr><th scope="col"></th><th scope="col">Type</th><th scope="col">Description</th></tr></thead>
-            <tbody>
-              <tr>
-                <th scope="row">1st</th>
-                <td><span className="argument-type">Array</span> or <span className="argument-type">number</span></td>
-                <td>This value means the index that corresponds to 88 keyboards of Piano.</td>
-              </tr>
-            </tbody>
-          </table>
-        </section>
-        <CodeViewer title='toFrequencies' path='LQGZwE' />
-      </main>
-    );
-  }
-}
-
-export default connect()(ToFrequencies);
+ToFrequencies.TITLE = 'XSound.toFrequencies';
