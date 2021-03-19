@@ -175,7 +175,7 @@ chorus.param({
   depth: 0.5,
   rate : 2.5,
   mix  : 0.5
-})
+});
 
 // Activate
 chorus.state(true);
