@@ -1,46 +1,30 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import SyntaxHighlighter from 'react-syntax-highlighter';
-import { xcode } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import { Overview } from '../../layouts/Overview';
+import { Interface } from '../../layouts/Interface';
 
-class OscillatorModule extends React.Component {
-  static TITLE      = 'OscillatorModule';
-  static CLASS_NAME = 'OscillatorModule';
+const CLASS_NAME = 'OscillatorModule';
 
-  shouldComponentUpdate() {
-    return false;
-  }
-
-  render() {
-    return (
-      <main className={OscillatorModule.CLASS_NAME}>
-        <section>
-          <div className="component-title">
-            <h1>OscillatorModule</h1>
-          </div>
-          <hr role="presentation" />
-          <section>
-            <h2>Interface</h2>
-            <SyntaxHighlighter language='typescript' style={xcode}>{`interface OscillatorModuleParams {
+export const OscillatorModule = () => {
+  return (
+    <main className={CLASS_NAME}>
+      <Overview title='OscillatorModule' />
+      <Interface interfaceString={`interface OscillatorModuleParams {
   mastervolume: number;
 }
 
 interface OscillatorModule {
   setup(state: boolean[] | boolean): OscillatorModule;
-  ready(start: number, duration?: number); OscillatorModule;
-  start(frequencies: number[] | number, connects?: Connectable[], processor?(event: AudioProcessingEvent): void): OscillatorModule;
-  stop(processor?(event: AudioProcessingEvent): void): OscillatorModule;
+  ready(start?: number, duration?: number): OscillatorModule;
+  start(frequencies: number[] | number): OscillatorModule;
+  stop(void): OscillatorModule;
   param(key: string | OscillatorModuleParams, value?: number): number | void;
   params(void): OscillatorModuleParams;
   toJSON(void): string;
   get(index?: number): Oscillator[] | Oscillator;
   length(void): number;
-}`}</SyntaxHighlighter>
-          </section>
-        </section>
-      </main>
-    );
-  }
-}
+}`} />
+    </main>
+  );
+};
 
-export default connect()(OscillatorModule);
+OscillatorModule.TITLE = 'OscillatorModule';
