@@ -23,5 +23,5 @@ Overview.propTypes = {
   types            : PropTypes.arrayOf(PropTypes.string),
   returnTypes      : PropTypes.arrayOf(PropTypes.string),
   applicableModules: PropTypes.arrayOf(PropTypes.string),
-  description      : PropTypes.string.isRequired
+  description      : PropTypes.string
 };
