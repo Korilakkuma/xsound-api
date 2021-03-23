@@ -1,31 +1,18 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import SyntaxHighlighter from 'react-syntax-highlighter';
-import { xcode } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import { Overview } from '../../layouts/Overview';
+import { Interface } from '../../layouts/Interface';
 
-class Oscillator extends React.Component {
-  static TITLE      = 'Oscillator';
-  static CLASS_NAME = 'Oscillator';
+const CLASS_NAME = 'Oscillator';
 
-  shouldComponentUpdate() {
-    return false;
-  }
-
-  render() {
-    return (
-      <main className={Oscillator.CLASS_NAME}>
-        <section>
-          <div className="component-title">
-            <h1>Oscillator</h1>
-          </div>
-          <hr role="presentation" />
-          <section>
-            <h2>Interface</h2>
-            <SyntaxHighlighter language='typescript' style={xcode}>{`type OscillatorType = 'sine' | 'square' | 'sawtooth' | 'triangle' | 'custom';
+export const Oscillator = () => {
+  return (
+    <main className={CLASS_NAME}>
+      <Overview title='Oscillator' />
+      <Interface interfaceString={`type OscillatorType = "sine" | "square" | "sawtooth" | "triangle" | "custom";
 
 type Custom = {
   real: Float32Array,
-  imag: Float32Array
+  imag: Float32Array,
 };
 
 interface OscillatorParams {
@@ -36,15 +23,13 @@ interface OscillatorParams {
 }
 
 interface Oscillator {
-  param(key: string | OscillatorParams, value?: OscillatorType | Custom | number ): OscillatorType | number | void;
+  param(key: string | OscillatorParams, value?: OscillatorType | Custom | number): OscillatorType | number | void;
   state(isActive?: boolean): boolean | void;
   get(void): OscillatorNode;
-}`}</SyntaxHighlighter>
-          </section>
-        </section>
-      </main>
-    );
-  }
 }
+`} />
+    </main>
+  );
+};
 
-export default connect()(Oscillator);
+Oscillator.TITLE = 'Oscillator';

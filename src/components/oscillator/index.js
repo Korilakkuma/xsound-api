@@ -1,5 +1,5 @@
 import { OscillatorModule } from './OscillatorModule';
-import Oscillator from './Oscillator';
+import { Oscillator } from './Oscillator';
 import Setup from './Setup';
 import Ready from './Ready';
 import Start from './Start';
