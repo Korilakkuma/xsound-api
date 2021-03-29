@@ -23,7 +23,7 @@ interface OscillatorParams {
 }
 
 interface Oscillator {
-  param(key: string | OscillatorParams, value?: OscillatorType | Custom | number): OscillatorType | number | void;
+  param(key: string | OscillatorParams, value?: OscillatorType | Custom | number): OscillatorType | number | Oscillator;
   state(isActive?: boolean): boolean | void;
   get(void): OscillatorNode;
 }
