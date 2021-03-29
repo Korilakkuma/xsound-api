@@ -17,7 +17,7 @@ interface OscillatorModule {
   ready(start?: number, duration?: number): OscillatorModule;
   start(frequencies: number[] | number): OscillatorModule;
   stop(void): OscillatorModule;
-  param(key: string | OscillatorModuleParams, value?: number): number | void;
+  param(key: string | OscillatorModuleParams, value?: number): number | OscillatorModule;
   params(void): OscillatorModuleParams;
   toJSON(void): string;
   get(index?: number): Oscillator[] | Oscillator;
