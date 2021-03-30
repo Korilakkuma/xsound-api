@@ -1,32 +1,20 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { Overview } from '../../layouts/Overview';
 import { CodeViewer } from '../../layouts/CodeViewer';
 
-class Length extends React.Component {
-  static TITLE      = 'OscillatorModule#length';
-  static CLASS_NAME = 'Length';
+const CLASS_NAME = 'OscillatorModule#Length';
 
-  shouldComponentUpdate() {
-    return false;
-  }
+export const Length = () => {
+  return (
+    <main className={CLASS_NAME}>
+      <Overview
+        title='length'
+        returnTypes={['number']}
+        description='This method gets the number of oscillators.'
+      />
+      <CodeViewer title='OscillatorModule#length' path='OQjKVm' />
+    </main>
+  );
+};
 
-  render() {
-    return (
-      <main className={Length.CLASS_NAME}>
-        <section>
-          <div className="component-title">
-            <h1>length</h1>
-            <p className="returns">Returns : <span>number</span></p>
-          </div>
-          <hr role="presentation" />
-          <p>
-            This method gets the number of oscillators.
-          </p>
-        </section>
-        <CodeViewer title='OscillatorModule#length' path='OQjKVm' />
-      </main>
-    );
-  }
-}
-
-export default connect()(Length);
+Length.TITLE = 'OscillatorModule#length';

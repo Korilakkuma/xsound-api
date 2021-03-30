@@ -8,7 +8,7 @@ import { Param } from './Param';
 import { Params } from './Params';
 import { ToJSON } from './ToJSON';
 import { Get } from './Get';
-import Length from './Length';
+import { Length } from './Length';
 import OscillatorParam from './OscillatorParam';
 import OscillatorState from './OscillatorState';
 import OscillatorGet from './OscillatorGet';
