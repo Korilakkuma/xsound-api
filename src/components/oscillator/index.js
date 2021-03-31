@@ -11,7 +11,7 @@ import { Get } from './Get';
 import { Length } from './Length';
 import { OscillatorParam } from './OscillatorParam';
 import { OscillatorState } from './OscillatorState';
-import OscillatorGet from './OscillatorGet';
+import { OscillatorGet } from './OscillatorGet';
 
 export {
   OscillatorModule,

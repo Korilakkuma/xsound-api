@@ -1,32 +1,20 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { Overview } from '../../layouts/Overview';
 import { CodeViewer } from '../../layouts/CodeViewer';
 
-class OscillatorGet extends React.Component {
-  static TITLE      = 'Oscillator#get';
-  static CLASS_NAME = 'OscillatorGet';
+const CLASS_NAME = 'Oscillator#Get';
 
-  shouldComponentUpdate() {
-    return false;
-  }
+export const OscillatorGet = () => {
+  return (
+    <main className={CLASS_NAME}>
+      <Overview
+        title='Oscillator#get'
+        returnTypes={['OscillatorNode']}
+        description='This method gets the instance of OscillatorNode.'
+      />
+      <CodeViewer title='Oscillator#get' path='vdRRPj' />
+    </main>
+  );
+};
 
-  render() {
-    return (
-      <main className={OscillatorGet.CLASS_NAME}>
-        <section>
-          <div className="component-title">
-            <h1>Oscillator#get</h1>
-            <p className="returns">Returns : <span>OscillatorNode</span></p>
-          </div>
-          <hr role="presentation" />
-          <p>
-            This method gets the instance of OscillatorNode.
-          </p>
-        </section>
-        <CodeViewer title='Oscillator#get' path='vdRRPj' />
-      </main>
-    );
-  }
-}
-
-export default connect()(OscillatorGet);
+OscillatorGet.TITLE = 'Oscillator#get';
