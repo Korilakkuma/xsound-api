@@ -1,60 +1,42 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { Overview } from '../../layouts/Overview';
+import { Arguments } from '../../layouts/Arguments';
 import { CodeViewer } from '../../layouts/CodeViewer';
 
-class OscillatorParam extends React.Component {
-  static TITLE      = 'Oscillator#param';
-  static CLASS_NAME = 'OscillatorParam';
+const CLASS_NAME = 'Oscillator#Param';
 
-  shouldComponentUpdate() {
-    return false;
-  }
+export const OscillatorParam = () => {
+  return (
+    <main className={CLASS_NAME}>
+      <Overview
+        title='Oscillator#param'
+        returnTypes={['number', 'string', 'Oscillator']}
+        description='This method gets or sets parameters of each oscillator.'
+      />
+      <Arguments
+        rows={[
+          {
+            types      : ['number'],
+            description: `This value is key for parameters.`
+          },
+          {
+            types      : ['number', '', 'string'],
+            description: `This value is value for parameters (optional). If this value is undefined, this method is getter.`
+          }
+        ]}
+      />
+      <p>or,</p>
+      <Arguments
+        rows={[
+          {
+            types      : ['Object'],
+            description: `This value is associative array for parameters.`
+          }
+        ]}
+      />
+      <CodeViewer title='Oscillator#param' path='MQQjXr' />
+    </main>
+  );
+};
 
-  render() {
-    return (
-      <main className={OscillatorParam.CLASS_NAME}>
-        <section>
-          <div className="component-title">
-            <h1>Oscillator#param</h1>
-            <p className="returns">Returns : <span>number | string | Oscillator</span></p>
-          </div>
-          <hr role="presentation" />
-          <p>
-            This method gets or sets parameters of each oscillator.
-          </p>
-          <table>
-            <caption>Arguments</caption>
-            <thead><tr><th scope="col"></th><th scope="col">Type</th><th scope="col">Description</th></tr></thead>
-            <tbody>
-              <tr>
-                <th scope="row">1st</th>
-                <td><span className="argument-type">string</span></td>
-                <td>This value is key for parameters.</td>
-              </tr>
-              <tr>
-                <th scope="row">2nd</th>
-                <td><span className="argument-type">number</span> or <span className="argument-type">string</span> or <span className="argument-type">undefined</span></td>
-                <td>This value is value for parameters. If this value is undefined, this method is getter.</td>
-              </tr>
-            </tbody>
-          </table>
-          <p>or,</p>
-          <table>
-            <caption>Arguments</caption>
-            <thead><tr><th scope="col"></th><th scope="col">Type</th><th scope="col">Description</th></tr></thead>
-            <tbody>
-              <tr>
-                <th scope="row">1st</th>
-                <td><span className="argument-type">Object</span></td>
-                <td>This value is associative array for parameters.</td>
-              </tr>
-            </tbody>
-          </table>
-        </section>
-        <CodeViewer title='Oscillator#param' path='MQQjXr' />
-      </main>
-    );
-  }
-}
-
-export default connect()(OscillatorParam);
+OscillatorParam.TITLE = 'Oscillator#param';
