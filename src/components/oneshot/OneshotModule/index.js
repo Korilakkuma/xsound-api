@@ -1,27 +1,13 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import SyntaxHighlighter from 'react-syntax-highlighter';
-import { xcode } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import React from 'react'; import { Overview } from '../../layouts/Overview';
+import { Interface } from '../../layouts/Interface';
 
-class OneshotModule extends React.Component {
-  static TITLE      = 'OneshotModule';
-  static CLASS_NAME = 'OneshotModule';
+const CLASS_NAME = 'OneshotModule';
 
-  shouldComponentUpdate() {
-    return false;
-  }
-
-  render() {
-    return (
-      <main className={OneshotModule.CLASS_NAME}>
-        <section>
-          <div className="component-title">
-            <h1>OneshotModule</h1>
-          </div>
-          <hr role="presentation" />
-          <section>
-            <h2>Interface</h2>
-            <SyntaxHighlighter language='typescript' style={xcode}>{`type OneshotModuleSettings = {
+export const OneshotModule = () => {
+  return (
+    <main className={CLASS_NAME}>
+      <Overview title='OneshotModule' />
+      <Interface interfaceString={`type OneshotModuleSettings = {
   buffer: number,
   rate?: number,
   loop?: boolean,
@@ -39,25 +25,22 @@ interface OneshotModule {
   setup(
     resources: string[] | AudioBuffer[],
     settings: OneshotModuleSettings,
-    timeout: number,
-    successCallback(event: ProgressEvent, buffers: AudioBuffer[]),
-    errorCallback(error: Error, textStatus: 'error' | 'timeout' | 'decode'),
-    progressCallback(event: ProgressEvent)
+    timeout?: number,
+    successCallback?(event: ProgressEvent, buffers: AudioBuffer[]),
+    errorCallback?(error: Error, textStatus: 'error' | 'timeout' | 'decode'),
+    progressCallback?(event: ProgressEvent)
   ): OneshotModule;
-  ready(start: number, duration?: number); OneshotModule;
-  start(index: number, connects?: Connectable[], processor?(event: AudioProcessingEvent): void): OneshotModule;
+  ready(start?: number, duration?: number); OneshotModule;
+  start(index: number): void): OneshotModule;
   stop(index: number): OneshotModule;
-  param(key: string | OneshotModuleParams, value?: number): number | void;
+  param(key: string | OneshotModuleParams, value?: number): number | OneshotModule;
   params(void): OneshotModuleParams;
   toJSON(void): string;
   get(index?: number): AudioBuffer[] | AudioBuffer;
   length(void): number;
-}`}</SyntaxHighlighter>
-          </section>
-        </section>
-      </main>
-    );
-  }
-}
+}`} />
+    </main>
+  );
+};
 
-export default connect()(OneshotModule);
+OneshotModule.TITLE = 'OneshotModule';
