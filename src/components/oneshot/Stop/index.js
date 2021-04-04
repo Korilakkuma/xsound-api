@@ -1,43 +1,29 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { Overview } from '../../layouts/Overview';
+import { Arguments } from '../../layouts/Arguments';
 import { CodeViewer } from '../../layouts/CodeViewer';
 
-class Stop extends React.Component {
-  static TITLE      = 'OneshotModule#stop';
-  static CLASS_NAME = 'Stop';
+const CLASS_NAME = 'OneshotModule#Stop';
 
-  shouldComponentUpdate() {
-    return false;
-  }
+export const Stop = () => {
+  return (
+    <main className={CLASS_NAME}>
+      <Overview
+        title='stop'
+        returnTypes={['OneshotModule']}
+        description='This method stops one-shot audio.'
+      />
+      <Arguments
+        rows={[
+          {
+            types      : ['number'],
+            description: 'This value is one-shot index.'
+          }
+        ]}
+      />
+      <CodeViewer title='OneshotModule#stop' path='aqaNLL' />
+    </main>
+  );
+};
 
-  render() {
-    return (
-      <main className={Stop.CLASS_NAME}>
-        <section>
-          <div className="component-title">
-            <h1>stop</h1>
-            <p className="returns">Returns : <span>OneshotModule</span></p>
-          </div>
-          <hr role="presentation" />
-          <p>
-            This method stops one-shot audio.
-          </p>
-          <table>
-            <caption>Arguments</caption>
-            <thead><tr><th scope="col"></th><th scope="col">Type</th><th scope="col">Description</th></tr></thead>
-            <tbody>
-              <tr>
-                <th scope="row">1st</th>
-                <td><span className="argument-type">number</span></td>
-                <td>This value is one-shot index.</td>
-              </tr>
-            </tbody>
-          </table>
-        </section>
-        <CodeViewer title='OneshotModule#stop' path='aqaNLL' />
-      </main>
-    );
-  }
-}
-
-export default connect()(Stop);
+Stop.TITLE = 'OneshotModule#stop';
