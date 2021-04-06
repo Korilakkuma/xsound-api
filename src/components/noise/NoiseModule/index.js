@@ -1,27 +1,13 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import SyntaxHighlighter from 'react-syntax-highlighter';
-import { xcode } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import React from 'react'; import { Overview } from '../../layouts/Overview';
+import { Interface } from '../../layouts/Interface';
 
-class NoiseModule extends React.Component {
-  static TITLE      = 'NoiseModule';
-  static CLASS_NAME = 'NoiseModule';
+const CLASS_NAME = 'NoiseModule';
 
-  shouldComponentUpdate() {
-    return false;
-  }
-
-  render() {
-    return (
-      <main className={NoiseModule.CLASS_NAME}>
-        <section>
-          <div className="component-title">
-            <h1>NoiseModule</h1>
-          </div>
-          <hr role="presentation" />
-          <section>
-            <h2>Interface</h2>
-            <SyntaxHighlighter language='typescript' style={xcode}>{`type NoiseType = 'whitenoise' | 'pinknoise' | 'browniannoise';
+export const NoiseModule = () => {
+  return (
+    <main className={CLASS_NAME}>
+      <Overview title='NoiseModule' />
+      <Interface interfaceString={`type NoiseType = 'whitenoise' | 'pinknoise' | 'browniannoise';
 
 interface NoiseModuleParams {
   mastervolume: number;
@@ -31,16 +17,13 @@ interface NoiseModuleParams {
 interface NoiseModule {
   setup(void): NoiseModule;
   ready(void); NoiseModule;
-  start(connects?: Connectable[]): NoiseModule;
+  start(void): NoiseModule;
   stop(void): OneshotModule;
-  param(key: string | NoiseModuleParams, value?: number | NoiseType): number | NoiseType | void;
+  param(key: string | NoiseModuleParams, value?: number | NoiseType): number | NoiseType | NoiseModule;
   params(void): NoiseModuleParams;
-}`}</SyntaxHighlighter>
-          </section>
-        </section>
-      </main>
-    );
-  }
-}
+}`} />
+    </main>
+  );
+};
 
-export default connect()(NoiseModule);
+NoiseModule.TITLE = 'NoiseModule';
