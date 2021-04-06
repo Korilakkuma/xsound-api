@@ -1,60 +1,42 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { Overview } from '../../layouts/Overview';
+import { Arguments } from '../../layouts/Arguments';
 import { CodeViewer } from '../../layouts/CodeViewer';
 
-class Param extends React.Component {
-  static TITLE      = 'NoiseModule#param';
-  static CLASS_NAME = 'Param';
+const CLASS_NAME = 'NoiseModule#Param';
 
-  shouldComponentUpdate() {
-    return false;
-  }
+export const Param = () => {
+  return (
+    <main className={CLASS_NAME}>
+      <Overview
+        title='param'
+        returnTypes={['number', 'string', 'NoiseModule']}
+        description='This method gets or sets parameters.'
+      />
+      <Arguments
+        rows={[
+          {
+            types      : ['string'],
+            description: 'This value is key for parameters.'
+          },
+          {
+            types      : ['number', '', 'string'],
+            description: 'This value is value for parameters (optional). If this value is undefined, this method is getter.'
+          }
+        ]}
+      />
+      <p>or,</p>
+      <Arguments
+        rows={[
+          {
+            types      : ['Object'],
+            description: 'This value is associative array for parameters.'
+          }
+        ]}
+      />
+      <CodeViewer title='NoiseModule#param' path='ejqoYd' />
+    </main>
+  );
+};
 
-  render() {
-    return (
-      <main className={Param.CLASS_NAME}>
-        <section>
-          <div className="component-title">
-            <h1>param</h1>
-            <p className="returns">Returns : <span>number | string | NoiseModule</span></p>
-          </div>
-          <hr role="presentation" />
-          <p>
-            This method gets or sets parameters.
-          </p>
-          <table>
-            <caption>Arguments</caption>
-            <thead><tr><th scope="col"></th><th scope="col">Type</th><th scope="col">Description</th></tr></thead>
-            <tbody>
-              <tr>
-                <th scope="row">1st</th>
-                <td><span className="argument-type">string</span></td>
-                <td>This value is key for parameters.</td>
-              </tr>
-              <tr>
-                <th scope="row">2nd</th>
-                <td><span className="argument-type">number</span> or <span className="argument-type">string</span> or <span className="argument-type">undefined</span></td>
-                <td>This value is value for parameters. If this value is undefined, this method is getter.</td>
-              </tr>
-            </tbody>
-          </table>
-          <p>or,</p>
-          <table>
-            <caption>Arguments</caption>
-            <thead><tr><th scope="col"></th><th scope="col">Type</th><th scope="col">Description</th></tr></thead>
-            <tbody>
-              <tr>
-                <th scope="row">1st</th>
-                <td><span className="argument-type">Object</span></td>
-                <td>This value is associative array for parameters.</td>
-              </tr>
-            </tbody>
-          </table>
-        </section>
-        <CodeViewer title='NoiseModule#param' path='ejqoYd' />
-      </main>
-    );
-  }
-}
-
-export default connect()(Param);
+Param.TITLE = 'NoiseModule#Param';
