@@ -98,6 +98,7 @@ export const Nav = () => {
           <dd><Link to={`${BASS_PATH}noise/stop`} className={getSelectedClassNameCallback(`${BASS_PATH}noise/stop`)}>stop</Link></dd>
           <dd><Link to={`${BASS_PATH}noise/param`} className={getSelectedClassNameCallback(`${BASS_PATH}noise/param`)}>param</Link></dd>
           <dd><Link to={`${BASS_PATH}noise/params`} className={getSelectedClassNameCallback(`${BASS_PATH}noise/params`)}>params</Link></dd>
+          <dd><Link to={`${BASS_PATH}noise/to-json`} className={getSelectedClassNameCallback(`${BASS_PATH}noise/to-json`)}>toJSON</Link></dd>
         </dl>
       </section>
       <section role="presentation">
