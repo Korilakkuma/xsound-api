@@ -1,61 +1,47 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { Overview } from '../../layouts/Overview';
+import { Arguments } from '../../layouts/Arguments';
 import { CodeViewer } from '../../layouts/CodeViewer';
 
-class Setup extends React.Component {
-  static TITLE      = 'AudioModule#setup';
-  static CLASS_NAME = 'Setup';
+const CLASS_NAME = 'AudioModule#Setup';
 
-  shouldComponentUpdate() {
-    return false;
-  }
+export const Setup = () => {
+  return (
+    <main className={CLASS_NAME}>
+      <Overview
+        title='setup'
+        returnTypes={['AudioModule']}
+        description='This method setups callback functions.'
+      />
+      <Arguments
+        rows={[
+          {
+            types      : ['Object'],
+            description: `
+              This argument is plain object that has the following properties.
+              <dl class="list-marker">
+                <dt>decode<span class="Arguments__type">Function</span></dt>
+                <dd>This callback function is invoked while decodeAudioData is invoking.</dd>
+                <dt>ready<span class="Arguments__type">Function</span></dt>
+                <dd>This callback function is invoked when decodeAudioData ended.</dd>
+                <dt>start<span class="Arguments__type">Function</span></dt>
+                <dd>This callback function is invoked when audio starts.</dd>
+                <dt>stop <span class="Arguments__type">Function</span></dt>
+                <dd>This callback function is invoked when audio stopped.</dd>
+                <dt>update <span class="Arguments__type">Function</span></dt>
+                <dd>This callback function is invoked while audio is playing.</dd>
+                <dt>ended <span class="Arguments__type">Function</span></dt>
+                <dd>This callback function is invoked when audio ended.</dd>
+                <dt>error <span class="Arguments__type">Function</span></dt>
+                <dd>This callback function is invoked when decodeAudioData failed.</dd>
+              </dl>
+            `
+          }
+        ]}
+      />
+      <CodeViewer title='AudioModule#setup' path='aqRGjb' />
+    </main>
+  );
+};
 
-  render() {
-    return (
-      <main className={Setup.CLASS_NAME}>
-        <section>
-          <div className="component-title">
-            <h1>setup</h1>
-            <p className="returns">Returns : <span>AudioModule</span></p>
-          </div>
-          <hr role="presentation" />
-          <p>
-            This method setups callback functions.
-          </p>
-          <table>
-            <caption>Arguments</caption>
-            <thead><tr><th scope="col"></th><th scope="col">Type</th><th scope="col">Description</th></tr></thead>
-            <tbody>
-              <tr>
-                <th scope="row">1st</th>
-                <td><span className="argument-type">Object</span></td>
-                <td>
-                  This argument is plain object that has the following properties.
-                  <dl className="list-marker">
-                    <dt>decode<span className="argument-type">Function</span></dt>
-                    <dd>This callback function is invoked while <a href="http://webaudio.github.io/web-audio-api/#widl-AudioContext-decodeAudioData-Promise-AudioBuffer--ArrayBuffer-audioData-DecodeSuccessCallback-successCallback-DecodeErrorCallback-errorCallback" target="_blank" rel="noopener noreferrer nofollow">decodeAudioData</a> is invoking.</dd>
-                    <dt>ready<span className="argument-type">Function</span></dt>
-                    <dd>This callback function is invoked when <a href="http://webaudio.github.io/web-audio-api/#widl-AudioContext-decodeAudioData-Promise-AudioBuffer--ArrayBuffer-audioData-DecodeSuccessCallback-successCallback-DecodeErrorCallback-errorCallback" target="_blank" rel="noopener noreferrer nofollow">decodeAudioData</a> ended.</dd>
-                    <dt>start<span className="argument-type">Function</span></dt>
-                    <dd>This callback function is invoked when audio starts.</dd>
-                    <dt>stop <span className="argument-type">Function</span></dt>
-                    <dd>This callback function is invoked when audio stopped.</dd>
-                    <dt>update <span className="argument-type">Function</span></dt>
-                    <dd>This callback function is invoked while audio is playing.</dd>
-                    <dt>ended <span className="argument-type">Function</span></dt>
-                    <dd>This callback function is invoked when audio ended.</dd>
-                    <dt>error <span className="argument-type">Function</span></dt>
-                    <dd>This callback function is invoked when <a href="http://webaudio.github.io/web-audio-api/#widl-AudioContext-decodeAudioData-Promise-AudioBuffer--ArrayBuffer-audioData-DecodeSuccessCallback-successCallback-DecodeErrorCallback-errorCallback" target="_blank" rel="noopener noreferrer nofollow">decodeAudioData</a> failed.</dd>
-                  </dl>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </section>
-        <CodeViewer title='AudioModule#setup' path='aqRGjb' />
-      </main>
-    );
-  }
-}
-
-export default connect()(Setup);
+Setup.TITLE = 'AudioModule#setup';
