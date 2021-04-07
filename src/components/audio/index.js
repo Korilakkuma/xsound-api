@@ -1,4 +1,4 @@
-import AudioModule from './AudioModule';
+import { AudioModule } from './AudioModule';
 import Setup from './Setup';
 import Ready from './Ready';
 import Start from './Start';
