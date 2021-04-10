@@ -14,7 +14,7 @@ import { IsPaused } from './IsPaused';
 import { FadeIn } from './FadeIn';
 import { FadeOut } from './FadeOut';
 import { Slice } from './Slice';
-import Sprite from './Sprite';
+import { Sprite } from './Sprite';
 
 export {
   AudioModule,
