@@ -1,5 +1,5 @@
 import { MediaModule } from './MediaModule';
-import Setup from './Setup';
+import { Setup } from './Setup';
 import Ready from './Ready';
 import Start from './Start';
 import Stop from './Stop';
