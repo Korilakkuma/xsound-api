@@ -1,4 +1,4 @@
-import MediaModule from './MediaModule';
+import { MediaModule } from './MediaModule';
 import Setup from './Setup';
 import Ready from './Ready';
 import Start from './Start';
