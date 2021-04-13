@@ -1,52 +1,33 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { Overview } from '../../layouts/Overview';
+import { Arguments } from '../../layouts/Arguments';
 import { CodeViewer } from '../../layouts/CodeViewer';
 
-class Stop extends React.Component {
-  static TITLE      = 'MediaModule#stop';
-  static CLASS_NAME = 'Stop';
+const CLASS_NAME = 'MediaModule#Stop';
 
-  shouldComponentUpdate() {
-    return false;
-  }
+export const Stop = () => {
+  return (
+    <main className={CLASS_NAME}>
+      <Overview
+        title='stop'
+        returnTypes={['MediaModule']}
+        description='This method stops media.'
+      />
+      <Arguments
+        rows={[
+          {
+            types      : ['Function'],
+            description: 'This argument is function that is invoked on success.'
+          },
+          {
+            types      : ['Function'],
+            description: 'This argument is function that is invoked on error.'
+          }
+        ]}
+      />
+      <CodeViewer title='MediaModule#stop' path='VXLeYq' />
+    </main>
+  );
+};
 
-  render() {
-    return (
-      <main className={Stop.CLASS_NAME}>
-        <section>
-          <div className="component-title">
-            <h1>stop</h1>
-            <p className="returns">Returns : <span>MediaModule</span></p>
-          </div>
-          <hr role="presentation" />
-          <p>
-            This method stops media.
-          </p>
-          <table>
-            <caption>Arguments</caption>
-            <thead><tr><th scope="col"></th><th scope="col">Type</th><th scope="col">Description</th></tr></thead>
-            <tbody>
-              <tr>
-                <th scope="row">1st</th>
-                <td><span className="argument-type">Function</span></td>
-                <td>
-                  This argument is function that is invoked on success.
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">2nd</th>
-                <td><span className="argument-type">Function</span></td>
-                <td>
-                  This argument is function that is invoked on error.
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </section>
-        <CodeViewer title='MediaModule#stop' path='VXLeYq' />
-      </main>
-    );
-  }
-}
-
-export default connect()(Stop);
+Stop.TITLE = 'MediaModule#stop';
