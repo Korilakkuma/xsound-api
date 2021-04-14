@@ -1,32 +1,20 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { Overview } from '../../layouts/Overview';
 import { CodeViewer } from '../../layouts/CodeViewer';
 
-class Get extends React.Component {
-  static TITLE      = 'MediaModule#get';
-  static CLASS_NAME = 'Get';
+const CLASS_NAME = 'MediaModule#Get';
 
-  shouldComponentUpdate() {
-    return false;
-  }
+export const Get = () => {
+  return (
+    <main className={CLASS_NAME}>
+      <Overview
+        title='get'
+        returnTypes={['MediaElementAudioSourceNode']}
+        description='This method gets the instance of MediaElementAudioSourceNode.'
+      />
+      <CodeViewer title='MediaModule#get' path='VXvoNR' />
+    </main>
+  );
+};
 
-  render() {
-    return (
-      <main className={Get.CLASS_NAME}>
-        <section>
-          <div className="component-title">
-            <h1>get</h1>
-            <p className="returns">Returns : <span>MediaElementAudioSourceNode</span></p>
-          </div>
-          <hr role="presentation" />
-          <p>
-            This method gets the instance of MediaElementAudioSourceNode.
-          </p>
-        </section>
-        <CodeViewer title='MediaModule#get' path='VXvoNR' />
-      </main>
-    );
-  }
-}
-
-export default connect()(Get);
+Get.TITLE = 'MediaModule#get';
