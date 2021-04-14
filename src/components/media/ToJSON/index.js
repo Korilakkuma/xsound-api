@@ -1,32 +1,20 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { Overview } from '../../layouts/Overview';
 import { CodeViewer } from '../../layouts/CodeViewer';
 
-class ToJSON extends React.Component {
-  static TITLE      = 'MediaModule#toJSON';
-  static CLASS_NAME = 'ToJSON';
+const CLASS_NAME = 'MediaModule#ToJSON';
 
-  shouldComponentUpdate() {
-    return false;
-  }
+export const ToJSON = () => {
+  return (
+    <main className={CLASS_NAME}>
+      <Overview
+        title='toJSON'
+        returnTypes={['string (JSON)']}
+        description='This method gets the JSON for parameters.'
+      />
+      <CodeViewer title='MediaModule#toJSON' path='qoOeMy' />
+    </main>
+  );
+};
 
-  render() {
-    return (
-      <main className={ToJSON.CLASS_NAME}>
-        <section>
-          <div className="component-title">
-            <h1>toJSON</h1>
-            <p className="returns">Returns : <span>string (JSON)</span></p>
-          </div>
-          <hr role="presentation" />
-          <p>
-            This method gets the JSON for parameters.
-          </p>
-        </section>
-        <CodeViewer title='MediaModule#toJSON' path='qoOeMy' />
-      </main>
-    );
-  }
-}
-
-export default connect()(ToJSON);
+ToJSON.TITLE = 'MediaModule#toJSON';
