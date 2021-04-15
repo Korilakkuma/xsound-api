@@ -7,7 +7,7 @@ import { Param } from './Param';
 import { Params } from './Params';
 import { ToJSON } from './ToJSON';
 import { Get } from './Get';
-import Toggle from './Toggle';
+import { Toggle } from './Toggle';
 import IsMedia from './IsMedia';
 import IsSource from './IsSource';
 import IsPaused from './IsPaused';
