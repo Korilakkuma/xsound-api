@@ -1,43 +1,29 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { Overview } from '../../layouts/Overview';
+import { Arguments } from '../../layouts/Arguments';
 import { CodeViewer } from '../../layouts/CodeViewer';
 
-class FadeIn extends React.Component {
-  static TITLE      = 'MediaModule#fadeIn';
-  static CLASS_NAME = 'FadeIn';
+const CLASS_NAME = 'MediaModule#FadeIn';
 
-  shouldComponentUpdate() {
-    return false;
-  }
+export const FadeIn = () => {
+  return (
+    <main className={CLASS_NAME}>
+      <Overview
+        title='fadeIn'
+        returnTypes={['number', 'MediaModule']}
+        description='This method is getter or setter for fade-in time.'
+      />
+      <Arguments
+        rows={[
+          {
+            types      : ['number'],
+            description: 'This argument is fade-in time. If this argument is undefined, This method is getter.'
+          }
+        ]}
+      />
+      <CodeViewer title='MediaModule#fadeIn' path='QPmZRV' />
+    </main>
+  );
+};
 
-  render() {
-    return (
-      <main className={FadeIn.CLASS_NAME}>
-        <section>
-          <div className="component-title">
-            <h1>fadeIn</h1>
-            <p className="returns">Returns : <span>number | MediaModule</span></p>
-          </div>
-          <hr role="presentation" />
-          <p>
-            This method is getter or setter for fade-in time.
-          </p>
-          <table>
-            <caption>Arguments</caption>
-            <thead><tr><th scope="col"></th><th scope="col">Type</th><th scope="col">Description</th></tr></thead>
-            <tbody>
-              <tr>
-                <th scope="row">1st</th>
-                <td><span className="argument-type">number</span> or <span className="argument-type">undefined</span></td>
-                <td>This argument is fade-in time. If this argument is undefined, This method is getter.</td>
-              </tr>
-            </tbody>
-          </table>
-        </section>
-        <CodeViewer title='MediaModule#fadeIn' path='QPmZRV' />
-      </main>
-    );
-  }
-}
-
-export default connect()(FadeIn);
+FadeIn.TITLE = 'MediaModule#fadeIn';
