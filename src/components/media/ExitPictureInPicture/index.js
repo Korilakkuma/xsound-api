@@ -1,32 +1,20 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { Overview } from '../../layouts/Overview';
 import { CodeViewer } from '../../layouts/CodeViewer';
 
-class ExitPictureInPicture extends React.Component {
-  static TITLE      = 'MediaModule#exitPictureInPicture';
-  static CLASS_NAME = 'ExitPictureInPicture';
+const CLASS_NAME = 'MediaModule#ExitPictureInPicture';
 
-  shouldComponentUpdate() {
-    return false;
-  }
+export const ExitPictureInPicture = () => {
+  return (
+    <main className={CLASS_NAME}>
+      <Overview
+        title='exitPictureInPicture'
+        returnTypes={['Promise']}
+        description='This method exits Picture in Picture.'
+      />
+      <CodeViewer title='MediaModule#exitPictureInPicture' path='qJLjVQ' />
+    </main>
+  );
+};
 
-  render() {
-    return (
-      <main className={ExitPictureInPicture.CLASS_NAME}>
-        <section>
-          <div className="component-title">
-            <h1>exitPictureInPicture</h1>
-            <p className="returns">Returns : <span>Promise</span></p>
-          </div>
-          <hr role="presentation" />
-          <p>
-            This method exits Picture in Picture.
-          </p>
-        </section>
-        <CodeViewer title='MediaModule#exitPictureInPicture' path='qJLjVQ' />
-      </main>
-    );
-  }
-}
-
-export default connect()(ExitPictureInPicture);
+ExitPictureInPicture.TITLE = 'MediaModule#exitPictureInPicture';

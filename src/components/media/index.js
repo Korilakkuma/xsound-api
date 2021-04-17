@@ -14,7 +14,7 @@ import { IsPaused } from './IsPaused';
 import { FadeIn } from './FadeIn';
 import { FadeOut } from './FadeOut';
 import { RequestPictureInPicture } from './RequestPictureInPicture';
-import ExitPictureInPicture from './ExitPictureInPicture';
+import { ExitPictureInPicture } from './ExitPictureInPicture';
 
 export {
   MediaModule,
