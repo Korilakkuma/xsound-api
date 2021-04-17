@@ -1,32 +1,20 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { Overview } from '../../layouts/Overview';
 import { CodeViewer } from '../../layouts/CodeViewer';
 
-class RequestPictureInPicture extends React.Component {
-  static TITLE      = 'MediaModule#requestPictureInPicture';
-  static CLASS_NAME = 'RequestPictureInPicture';
+const CLASS_NAME = 'MediaModule#RequestPictureInPicture';
 
-  shouldComponentUpdate() {
-    return false;
-  }
+export const RequestPictureInPicture = () => {
+  return (
+    <main className={CLASS_NAME}>
+      <Overview
+        title='requestPictureInPicture'
+        returnTypes={['Promise']}
+        description='This method requests Picture in Picture.'
+      />
+      <CodeViewer title='MediaModule#requestPictureInPicture' path='GYwJZw' />
+    </main>
+  );
+};
 
-  render() {
-    return (
-      <main className={RequestPictureInPicture.CLASS_NAME}>
-        <section>
-          <div className="component-title">
-            <h1>requestPictureInPicture</h1>
-            <p className="returns">Returns : <span>Promise</span></p>
-          </div>
-          <hr role="presentation" />
-          <p>
-            This method requests Picture in Picture.
-          </p>
-        </section>
-        <CodeViewer title='MediaModule#requestPictureInPicture' path='GYwJZw' />
-      </main>
-    );
-  }
-}
-
-export default connect()(RequestPictureInPicture);
+RequestPictureInPicture.TITLE = 'MediaModule#requestPictureInPicture';
