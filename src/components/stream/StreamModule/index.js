@@ -1,52 +1,41 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import SyntaxHighlighter from 'react-syntax-highlighter';
-import { xcode } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import { Overview } from '../../layouts/Overview';
+import { Interface } from '../../layouts/Interface';
 
-class StreamModule extends React.Component {
-  static TITLE      = 'StreamModule';
-  static CLASS_NAME = 'StreamModule';
+const CLASS_NAME = 'StreamModule';
 
-  shouldComponentUpdate() {
-    return false;
-  }
-
-  render() {
-    return (
-      <main className={StreamModule.CLASS_NAME}>
-        <section>
-          <div className="component-title">
-            <h1>StreamModule</h1>
-          </div>
-          <hr role="presentation" />
-          <section>
-            <h2>Interface</h2>
-            <SyntaxHighlighter language='typescript' style={xcode}>{`interface StreamModuleParams {
+export const StreamModule = () => {
+  return (
+    <main className={CLASS_NAME}>
+      <Overview title='StreamModule' />
+      <Interface interfaceString={`interface StreamModuleParams {
   mastervolume: number;
+  each: boolean;
   output: boolean;
 }
 
 interface StreamModule {
-  setup({
+  setup(
     constraints?: MediaStreamConstraints,
     successCallback?(stream: MediaStream): void,
     errorCallback?(error: Error): void
-  }): StreamModule;
-  ready(void); StreamModule;
-  start(connects?: Connectable[], processor?(event: AudioProcessingEvent): void): StreamModule;
+  ): StreamModule;
+  ready(stream?: MediaStream): Promise<void | MediaStream | Error>;
+  start(void): StreamModule;
   stop(void): StreamModule;
   param(key: string | StreamModuleParams, value?: number | boolean): number | boolean | StreamModule;
   params(void): StreamModuleParams;
   toJSON(void): string;
-  get(void): MediaStreamAudioSourceNode;
-  toggle(connects?: Connectable[], processor?(event: AudioProcessingEvent): void): StreamModule;
+  get(index?: number): MediaStreamAudioSourceNode | MediaStreamTrackAudioSourceNode | MediaStreamTrackAudioSourceNode[];
+  getStream(void): MediaStream;
+  toggle(void): StreamModule;
+  clear(void): StreamModule;
+  clearAudio(void): StreamModule;
+  clearVideo(void): StreamModule;
   isStreaming(void): boolean;
-}`}</SyntaxHighlighter>
-          </section>
-        </section>
-      </main>
-    );
-  }
-}
+}`} />
+    </main>
+  );
+};
 
-export default connect()(StreamModule);
+StreamModule.TITLE = 'StreamModule';
