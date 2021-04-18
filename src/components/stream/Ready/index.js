@@ -1,32 +1,29 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { Overview } from '../../layouts/Overview';
+import { Arguments } from '../../layouts/Arguments';
 import { CodeViewer } from '../../layouts/CodeViewer';
 
-class Ready extends React.Component {
-  static TITLE      = 'StreamModule#ready';
-  static CLASS_NAME = 'Ready';
+const CLASS_NAME = 'StreamModule#Ready';
 
-  shouldComponentUpdate() {
-    return false;
-  }
+export const Ready = () => {
+  return (
+    <main className={CLASS_NAME}>
+      <Overview
+        title='ready'
+        returnTypes={['Promise']}
+        description='This method opens devices (microphone and camera) or sets the instance of MediaStream'
+      />
+      <Arguments
+        rows={[
+          {
+            types      : ['MediaStream'],
+            description: 'This value is the instance of MediaStream (optional).'
+          }
+        ]}
+      />
+      <CodeViewer title='StreamModule#ready' path='oqYrbM' />
+    </main>
+  );
+};
 
-  render() {
-    return (
-      <main className={Ready.CLASS_NAME}>
-        <section>
-          <div className="component-title">
-            <h1>ready</h1>
-            <p className="returns">Returns : <span>StreamModule</span></p>
-          </div>
-          <hr role="presentation" />
-          <p>
-            This method does not do anything.
-          </p>
-        </section>
-        <CodeViewer title='StreamModule#ready' path='oqYrbM' />
-      </main>
-    );
-  }
-}
-
-export default connect()(Ready);
+Ready.TITLE = 'StreamModule#ready';
