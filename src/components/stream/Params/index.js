@@ -1,32 +1,20 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { Overview } from '../../layouts/Overview';
 import { CodeViewer } from '../../layouts/CodeViewer';
 
-class Params extends React.Component {
-  static TITLE      = 'StreamModule#params';
-  static CLASS_NAME = 'Params';
+const CLASS_NAME = 'StreamModule#Param';
 
-  shouldComponentUpdate() {
-    return false;
-  }
+export const Params = () => {
+  return (
+    <main className={CLASS_NAME}>
+      <Overview
+        title='param'
+        returnTypes={['Object']}
+        description='This method gets the associative array for parameters.'
+      />
+      <CodeViewer title='StreamModule#params' path='XEqbZm' />
+    </main>
+  );
+};
 
-  render() {
-    return (
-      <main className={Params.CLASS_NAME}>
-        <section>
-          <div className="component-title">
-            <h1>params</h1>
-            <p className="returns">Returns : <span>Object</span></p>
-          </div>
-          <hr role="presentation" />
-          <p>
-            This method gets the associative array for parameters.
-          </p>
-        </section>
-        <CodeViewer title='StreamModule#params' path='XEqbZm' />
-      </main>
-    );
-  }
-}
-
-export default connect()(Params);
+Params.TITLE = 'StreamModule#params';
