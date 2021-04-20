@@ -7,6 +7,7 @@ import { Param } from './Param';
 import { Params } from './Params';
 import { ToJSON } from './ToJSON';
 import { Get } from './Get';
+import { GetStream } from './GetStream';
 import Toggle from './Toggle';
 import IsStreaming from './IsStreaming';
 
@@ -20,6 +21,7 @@ export {
   Params,
   ToJSON,
   Get,
+  GetStream,
   Toggle,
   IsStreaming
 };

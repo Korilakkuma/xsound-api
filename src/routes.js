@@ -158,6 +158,7 @@ export const Router = () => {
           <Route exact path={`${BASS_PATH}stream/params`} render={render(StreamModule.Params)} />
           <Route exact path={`${BASS_PATH}stream/to-json`} render={render(StreamModule.ToJSON)} />
           <Route exact path={`${BASS_PATH}stream/get`} render={render(StreamModule.Get)} />
+          <Route exact path={`${BASS_PATH}stream/get-stream`} render={render(StreamModule.GetStream)} />
           <Route exact path={`${BASS_PATH}stream/toggle`} render={render(StreamModule.Toggle)} />
           <Route exact path={`${BASS_PATH}stream/is-streaming`} render={render(StreamModule.IsStreaming)} />
           <Route exact path={`${BASS_PATH}mixer/interface`} render={render(MixerModule.MixerModule)} />
