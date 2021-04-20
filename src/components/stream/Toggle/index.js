@@ -1,48 +1,20 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { Overview } from '../../layouts/Overview';
 import { CodeViewer } from '../../layouts/CodeViewer';
 
-class Toggle extends React.Component {
-  static TITLE      = 'StreamModule#toggle';
-  static CLASS_NAME = 'Toggle';
+const CLASS_NAME = 'StreamModule#Toggle';
 
-  shouldComponentUpdate() {
-    return false;
-  }
+export const Toggle = () => {
+  return (
+    <main className={CLASS_NAME}>
+      <Overview
+        title='toggle'
+        returnTypes={['StreamModule']}
+        description='This method starts or stops streaming.'
+      />
+      <CodeViewer title='StreamModule#toggle' path='KoXPGZ' />
+    </main>
+  );
+};
 
-  render() {
-    return (
-      <main className={Toggle.CLASS_NAME}>
-        <section>
-          <div className="component-title">
-            <h1>toggle</h1>
-            <p className="returns">Returns : <span>StreamModule</span></p>
-          </div>
-          <hr role="presentation" />
-          <p>
-            This method starts or stops streaming.
-          </p>
-          <table>
-            <caption>Arguments</caption>
-            <thead><tr><th scope="col"></th><th scope="col">Type</th><th scope="col">Description</th></tr></thead>
-            <tbody>
-              <tr>
-                <th scope="row">1st</th>
-                <td><span className="argument-type">Array</span></td>
-                <td>This value is the array for changing connection.</td>
-              </tr>
-              <tr>
-                <th scope="row">2nd</th>
-                <td><span className="argument-type">Function</span></td>
-                <td>This value is <a href="http://webaudio.github.io/web-audio-api/#the-scriptprocessornode-interface---deprecated" target="_blank" rel="noopener noreferrer nofollow">onaudioprocess</a> event hanlder.</td>
-              </tr>
-            </tbody>
-          </table>
-        </section>
-        <CodeViewer title='StreamModule#toggle' path='KoXPGZ' />
-      </main>
-    );
-  }
-}
-
-export default connect()(Toggle);
+Toggle.TITLE = 'StreamModule#toggle';
