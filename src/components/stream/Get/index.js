@@ -1,32 +1,29 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { Overview } from '../../layouts/Overview';
+import { Arguments } from '../../layouts/Arguments';
 import { CodeViewer } from '../../layouts/CodeViewer';
 
-class Get extends React.Component {
-  static TITLE      = 'StreamModule#get';
-  static CLASS_NAME = 'Get';
+const CLASS_NAME = 'StreamModule#Get';
 
-  shouldComponentUpdate() {
-    return false;
-  }
+export const Get = () => {
+  return (
+    <main className={CLASS_NAME}>
+      <Overview
+        title='get'
+        returnTypes={['MediaStreamAudioSourceNode', 'MediaStreamTrackAudioSourceNode', 'Array']}
+        description='This method gets the instance of MediaStreamAudioSourceNode or MediaStreamTrackAudioSourceNode'
+      />
+      <Arguments
+        rows={[
+          {
+            types      : ['number'],
+            description: 'This value is required in the case of designating track.'
+          }
+        ]}
+      />
+      <CodeViewer title='StreamModule#get' path='pLPYbX' />
+    </main>
+  );
+};
 
-  render() {
-    return (
-      <main className={Get.CLASS_NAME}>
-        <section>
-          <div className="component-title">
-            <h1>get</h1>
-            <p className="returns">Returns : <span>MediaStreamAudioSourceNode</span></p>
-          </div>
-          <hr role="presentation" />
-          <p>
-            This method gets the instance of MediaStreamAudioSourceNode.
-          </p>
-        </section>
-        <CodeViewer title='StreamModule#get' path='pLPYbX' />
-      </main>
-    );
-  }
-}
-
-export default connect()(Get);
+Get.TITLE = 'StreamModule#get';
