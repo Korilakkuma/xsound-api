@@ -9,7 +9,7 @@ import { ToJSON } from './ToJSON';
 import { Get } from './Get';
 import { GetStream } from './GetStream';
 import { Toggle } from './Toggle';
-import IsStreaming from './IsStreaming';
+import { IsStreaming } from './IsStreaming';
 
 export {
   StreamModule,
