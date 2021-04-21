@@ -166,6 +166,7 @@ export const Nav = () => {
           <dd><Link to={`${BASS_PATH}stream/get-stream`} className={getSelectedClassNameCallback(`${BASS_PATH}stream/get-stream`)}>getStream</Link></dd>
           <dd><Link to={`${BASS_PATH}stream/toggle`} className={getSelectedClassNameCallback(`${BASS_PATH}stream/toggle`)}>toggle</Link></dd>
           <dd><Link to={`${BASS_PATH}stream/clear`} className={getSelectedClassNameCallback(`${BASS_PATH}stream/clear`)}>clear</Link></dd>
+          <dd><Link to={`${BASS_PATH}stream/clear-audio`} className={getSelectedClassNameCallback(`${BASS_PATH}stream/clear-audio`)}>clearAudio</Link></dd>
           <dd><Link to={`${BASS_PATH}stream/is-streaming`} className={getSelectedClassNameCallback(`${BASS_PATH}stream/is-streaming`)}>isStreaming</Link></dd>
         </dl>
       </section>

@@ -10,6 +10,7 @@ import { Get } from './Get';
 import { GetStream } from './GetStream';
 import { Toggle } from './Toggle';
 import { Clear } from './Clear';
+import { ClearAudio } from './ClearAudio';
 import { IsStreaming } from './IsStreaming';
 
 export {
@@ -25,5 +26,6 @@ export {
   GetStream,
   Toggle,
   Clear,
+  ClearAudio,
   IsStreaming
 };
