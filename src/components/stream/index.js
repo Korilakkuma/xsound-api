@@ -9,6 +9,7 @@ import { ToJSON } from './ToJSON';
 import { Get } from './Get';
 import { GetStream } from './GetStream';
 import { Toggle } from './Toggle';
+import { Clear } from './Clear';
 import { IsStreaming } from './IsStreaming';
 
 export {
@@ -23,5 +24,6 @@ export {
   Get,
   GetStream,
   Toggle,
+  Clear,
   IsStreaming
 };
