@@ -1,4 +1,4 @@
-import ProcessorModule from './ProcessorModule';
+import { ProcessorModule } from './ProcessorModule';
 import Setup from './Setup';
 import Ready from './Ready';
 import Start from './Start';
