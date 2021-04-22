@@ -162,6 +162,7 @@ export const Router = () => {
           <Route exact path={`${BASS_PATH}stream/toggle`} render={render(StreamModule.Toggle)} />
           <Route exact path={`${BASS_PATH}stream/clear`} render={render(StreamModule.Clear)} />
           <Route exact path={`${BASS_PATH}stream/clear-audio`} render={render(StreamModule.ClearAudio)} />
+          <Route exact path={`${BASS_PATH}stream/clear-video`} render={render(StreamModule.ClearVideo)} />
           <Route exact path={`${BASS_PATH}stream/is-streaming`} render={render(StreamModule.IsStreaming)} />
           <Route exact path={`${BASS_PATH}mixer/interface`} render={render(MixerModule.MixerModule)} />
           <Route exact path={`${BASS_PATH}mixer/mix`} render={render(MixerModule.Mix)} />
