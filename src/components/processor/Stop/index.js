@@ -1,43 +1,29 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { Overview } from '../../layouts/Overview';
+import { Arguments } from '../../layouts/Arguments';
 import { CodeViewer } from '../../layouts/CodeViewer';
 
-class Stop extends React.Component {
-  static TITLE      = 'ProcessorModule#stop';
-  static CLASS_NAME = 'Stop';
+const CLASS_NAME = 'ProcessorModule#Stop';
 
-  shouldComponentUpdate() {
-    return false;
-  }
+export const Stop = () => {
+  return (
+    <main className={CLASS_NAME}>
+      <Overview
+        title='stop'
+        returnTypes={['ProcessorModule']}
+        description='This method stops sound by disconnecting to AudioDestinationNode.'
+      />
+      <Arguments
+        rows={[
+          {
+            types      : ['Function'],
+            description: 'This value is <a href="https://www.w3.org/TR/webaudio/#scriptprocessornode" target="_blank" rel="noopener noreferrer">onaudioprocess</a> event hanlder.'
+          }
+        ]}
+      />
+      <CodeViewer title='ProcessorModule#stop' path='drjLdP' />
+    </main>
+  );
+};
 
-  render() {
-    return (
-      <main className={Stop.CLASS_NAME}>
-        <section>
-          <div className="component-title">
-            <h1>stop</h1>
-            <p className="returns">Returns : <span>ProcessorModule</span></p>
-          </div>
-          <hr role="presentation" />
-          <p>
-            This method stops sound.
-          </p>
-          <table>
-            <caption>Arguments</caption>
-            <thead><tr><th scope="col"></th><th scope="col">Type</th><th scope="col">Description</th></tr></thead>
-            <tbody>
-              <tr>
-                <th scope="row">1st</th>
-                <td><span className="argument-type">Function</span></td>
-                <td>This value is <a href="http://webaudio.github.io/web-audio-api/#the-scriptprocessornode-interface---deprecated" target="_blank" rel="noopener noreferrer nofollow">onaudioprocess</a> event hanlder.</td>
-              </tr>
-            </tbody>
-          </table>
-        </section>
-        <CodeViewer title='ProcessorModule#stop' path='drjLdP' />
-      </main>
-    );
-  }
-}
-
-export default connect()(Stop);
+Stop.TITLE = 'ProcessorModule#stop';
