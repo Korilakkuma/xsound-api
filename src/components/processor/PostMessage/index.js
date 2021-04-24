@@ -1,43 +1,29 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { Overview } from '../../layouts/Overview';
+import { Arguments } from '../../layouts/Arguments';
 import { CodeViewer } from '../../layouts/CodeViewer';
 
-class PostMessage extends React.Component {
-  static TITLE      = 'ProcessorModule#postMessage';
-  static CLASS_NAME = 'PostMessage';
+const CLASS_NAME = 'ProcessorModule#PostMessage';
 
-  shouldComponentUpdate() {
-    return false;
-  }
+export const PostMessage = () => {
+  return (
+    <main className={CLASS_NAME}>
+      <Overview
+        title='postMessage'
+        returnTypes={['ProcessorModule']}
+        description='This method sends a message from the MessagePort of AudioWorkletNode.'
+      />
+      <Arguments
+        rows={[
+          {
+            types      : ['any'],
+            description: 'This value is sent as any data.'
+          }
+        ]}
+      />
+      <CodeViewer title='ProcessorModule#postMessage' path='RwGxEJy' />
+    </main>
+  );
+};
 
-  render() {
-    return (
-      <main className={PostMessage.CLASS_NAME}>
-        <section>
-          <div className="component-title">
-            <h1>postMessage</h1>
-            <p className="returns">Returns : <span>ProcessorModule</span></p>
-          </div>
-          <hr role="presentation" />
-          <p>
-            This method sends a message from the <code>MessagePort</code> of <code>AudioWorkletNode</code>.
-          </p>
-          <table>
-            <caption>Arguments</caption>
-            <thead><tr><th scope="col"></th><th scope="col">Type</th><th scope="col">Description</th></tr></thead>
-            <tbody>
-              <tr>
-                <th scope="row">1st</th>
-                <td><span className="argument-type">any</span></td>
-                <td>This value is sent as any data.</td>
-              </tr>
-            </tbody>
-          </table>
-        </section>
-        <CodeViewer title='ProcessorModule#postMessage' path='RwGxEJy' />
-      </main>
-    );
-  }
-}
-
-export default connect()(PostMessage);
+PostMessage.TITLE = 'ProcessorModule#postMessage';

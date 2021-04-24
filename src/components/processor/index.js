@@ -3,7 +3,7 @@ import { Setup } from './Setup';
 import { Ready } from './Ready';
 import { Start } from './Start';
 import { Stop } from './Stop';
-import PostMessage from './PostMessage';
+import { PostMessage } from './PostMessage';
 import OnMessage from './OnMessage';
 import OnMessageError from './OnMessageError';
 import Map from './Map';
