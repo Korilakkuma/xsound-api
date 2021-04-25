@@ -7,7 +7,7 @@ import { PostMessage } from './PostMessage';
 import { OnMessage } from './OnMessage';
 import { OnMessageError } from './OnMessageError';
 import { Map } from './Map';
-import Param from './Param';
+import { Param } from './Param';
 import Get from './Get';
 
 export {
