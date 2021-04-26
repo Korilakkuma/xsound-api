@@ -1,5 +1,5 @@
 import { MIDI } from './MIDI';
-import Setup from './Setup';
+import { Setup } from './Setup';
 import Get from './Get';
 
 export {
