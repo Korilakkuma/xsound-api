@@ -1,32 +1,20 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { Overview } from '../../layouts/Overview';
 import { CodeViewer } from '../../layouts/CodeViewer';
 
-class Get extends React.Component {
-  static TITLE      = 'ProcessorModule#get';
-  static CLASS_NAME = 'Get';
+const CLASS_NAME = 'ProcessorModule#Get';
 
-  shouldComponentUpdate() {
-    return false;
-  }
+export const Get = () => {
+  return (
+    <main className={CLASS_NAME}>
+      <Overview
+        title='get'
+        returnTypes={['AudioWorkletNode', 'ScriptProcessorNode']}
+        description='This method gets the instance of AudioWorkletNode (or ScriptProcessorNode).'
+      />
+      <CodeViewer title='ProcessorModule#get' path='JjRMzbq' />
+    </main>
+  );
+};
 
-  render() {
-    return (
-      <main className={Get.CLASS_NAME}>
-        <section>
-          <div className="component-title">
-            <h1>get</h1>
-            <p className="returns">Returns : <span>AudioWorkletNode | ScriptProcessorNode</span></p>
-          </div>
-          <hr role="presentation" />
-          <p>
-            This method gets the instance of <code>AudioWorkletNode</code> (or <code>ScriptProcessorNode</code>).
-          </p>
-        </section>
-        <CodeViewer title='ProcessorModule#get' path='JjRMzbq' />
-      </main>
-    );
-  }
-}
-
-export default connect()(Get);
+Get.TITLE = 'ProcessorModule#get';
