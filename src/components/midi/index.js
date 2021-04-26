@@ -1,4 +1,4 @@
-import MIDI from './MIDI';
+import { MIDI } from './MIDI';
 import Setup from './Setup';
 import Get from './Get';
 
