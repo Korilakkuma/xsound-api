@@ -1,4 +1,4 @@
-import MML from './MML';
+import { MML } from './MML';
 import Setup from './Setup';
 import Ready from './Ready';
 import Start from './Start';
