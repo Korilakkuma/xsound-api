@@ -30,6 +30,7 @@
   font-size: var(--base-font-size);
   font-weight: lighter;
   text-align: center;
+  white-space: nowrap;
 }
 
 .Arguments td {
