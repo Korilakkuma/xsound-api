@@ -29,7 +29,7 @@
   border: 1px solid var(--gray-light);
   font-size: var(--base-font-size);
   font-weight: lighter;
-  text-align: center;
+  text-align: left;
   white-space: nowrap;
 }
 
