@@ -1,32 +1,20 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { Overview } from '../../layouts/Overview';
 import { CodeViewer } from '../../layouts/CodeViewer';
 
-class IsPaused extends React.Component {
-  static TITLE      = 'MML#isPaused';
-  static CLASS_NAME = 'IsPaused';
+const CLASS_NAME = 'MML#IsSequences';
 
-  shouldComponentUpdate() {
-    return false;
-  }
+export const IsPaused = () => {
+  return (
+    <main className={CLASS_NAME}>
+      <Overview
+        title='isPaused'
+        returnTypes={['boolean']}
+        description='This method is to check pause.'
+      />
+      <CodeViewer title='MML#isPaused' path='GxzPoj' />
+    </main>
+  );
+};
 
-  render() {
-    return (
-      <main className={IsPaused.CLASS_NAME}>
-        <section>
-          <div className="component-title">
-            <h1>isPaused</h1>
-            <p className="returns">Returns : <span>boolean</span></p>
-          </div>
-          <hr role="presentation" />
-          <p>
-            This method is to check pause.
-          </p>
-        </section>
-        <CodeViewer title='MML#isPaused' path='GxzPoj' />
-      </main>
-    );
-  }
-}
-
-export default connect()(IsPaused);
+IsPaused.TITLE = 'MML#isPaused';
