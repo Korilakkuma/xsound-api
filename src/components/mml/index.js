@@ -6,6 +6,7 @@ import { Stop } from './Stop';
 import { Get } from './Get';
 import { IsSequences } from './IsSequences';
 import { IsPaused } from './IsPaused';
+import { CurrentIndex } from './CurrentIndex';
 import ToABC from './ToABC';
 
 export {
@@ -17,5 +18,6 @@ export {
   Get,
   IsSequences,
   IsPaused,
+  CurrentIndex,
   ToABC
 };

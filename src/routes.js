@@ -189,6 +189,7 @@ export const Router = () => {
           <Route exact path={`${BASS_PATH}mml/get`} render={render(MML.Get)} />
           <Route exact path={`${BASS_PATH}mml/is-sequences`} render={render(MML.IsSequences)} />
           <Route exact path={`${BASS_PATH}mml/is-paused`} render={render(MML.IsPaused)} />
+          <Route exact path={`${BASS_PATH}mml/current-index`} render={render(MML.CurrentIndex)} />
           <Route exact path={`${BASS_PATH}mml/to-abc`} render={render(MML.ToABC)} />
           <Route exact path={`${BASS_PATH}analyser/interface`} render={render(Analyser.Analyser)} />
           <Route exact path={`${BASS_PATH}analyser/domain`} render={render(Analyser.Domain)} />
