@@ -224,6 +224,7 @@ export const Nav = () => {
           <dd><Link to={`${BASS_PATH}mml/is-paused`} className={getSelectedClassNameCallback(`${BASS_PATH}mml/is-paused`)}>isPaused</Link></dd>
           <dd><Link to={`${BASS_PATH}mml/current-index`} className={getSelectedClassNameCallback(`${BASS_PATH}mml/current-index`)}>currentIndex</Link></dd>
           <dd><Link to={`${BASS_PATH}mml/to-abc`} className={getSelectedClassNameCallback(`${BASS_PATH}mml/to-abc`)}>toABC</Link></dd>
+          <dd><Link to={`${BASS_PATH}mml/clear`} className={getSelectedClassNameCallback(`${BASS_PATH}mml/clear`)}>clear</Link></dd>
         </dl>
       </section>
       <section role="presentation">

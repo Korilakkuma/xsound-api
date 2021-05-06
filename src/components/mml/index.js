@@ -8,6 +8,7 @@ import { IsSequences } from './IsSequences';
 import { IsPaused } from './IsPaused';
 import { CurrentIndex } from './CurrentIndex';
 import { ToABC } from './ToABC';
+import { Clear } from './Clear';
 
 export {
   MML,
@@ -19,5 +20,6 @@ export {
   IsSequences,
   IsPaused,
   CurrentIndex,
-  ToABC
+  ToABC,
+  Clear
 };
