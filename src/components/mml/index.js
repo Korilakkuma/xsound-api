@@ -7,7 +7,7 @@ import { Get } from './Get';
 import { IsSequences } from './IsSequences';
 import { IsPaused } from './IsPaused';
 import { CurrentIndex } from './CurrentIndex';
-import ToABC from './ToABC';
+import { ToABC } from './ToABC';
 
 export {
   MML,
