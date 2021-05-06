@@ -1,48 +1,33 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { Overview } from '../../layouts/Overview';
+import { Arguments } from '../../layouts/Arguments';
 import { CodeViewer } from '../../layouts/CodeViewer';
 
-class Get extends React.Component {
-  static TITLE      = 'MML#get';
-  static CLASS_NAME = 'Get';
+const CLASS_NAME = 'MML#Get';
 
-  shouldComponentUpdate() {
-    return false;
-  }
+export const Get = () => {
+  return (
+    <main className={CLASS_NAME}>
+      <Overview
+        title='get'
+        returnTypes={['string', 'Sequece', 'Array']}
+        description='This method gets the string as MML or the array that contains parsed MML.'
+      />
+      <Arguments
+        rows={[
+          {
+            types      : ['number'],
+            description: 'This value is index for MML part.'
+          },
+          {
+            types      : ['boolean'],
+            description: 'If argument is true, the return value is MML string.'
+          }
+        ]}
+      />
+      <CodeViewer title='MML#get' path='jzedKm' />
+    </main>
+  );
+};
 
-  render() {
-    return (
-      <main className={Get.CLASS_NAME}>
-        <section>
-          <div className="component-title">
-            <h1>get</h1>
-            <p className="returns">Returns : <span>Array</span></p>
-          </div>
-          <hr role="presentation" />
-          <p>
-            This method gets the string as MML or the array that contains parsed MML.
-          </p>
-          <table>
-            <caption>Arguments</caption>
-            <thead><tr><th scope="col"></th><th scope="col">Type</th><th scope="col">Description</th></tr></thead>
-            <tbody>
-              <tr>
-                <th scope="row">1st</th>
-                <td><span className="argument-type">number</span></td>
-                <td>This value is index for MML part.</td>
-              </tr>
-              <tr>
-                <th scope="row">2nd</th>
-                <td><span className="argument-type">boolean</span></td>
-                <td>If argument is true, the return value is MML string.</td>
-              </tr>
-            </tbody>
-          </table>
-        </section>
-        <CodeViewer title='MML#get' path='jzedKm' />
-      </main>
-    );
-  }
-}
-
-export default connect()(Get);
+Get.TITLE = 'MML#get';
