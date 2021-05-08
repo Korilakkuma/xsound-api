@@ -10,7 +10,7 @@ export const ProcessorModule = () => {
       <Overview title='ProcessorModule' />
       <Interface interfaceString={`interface ProcessorModule {
  setup(name: string, options?: AudioWorkletNodeOptions): ProcessorModule;
- ready(moduleURL: string, options?: { credentials: 'omit' | 'same-origin' | 'include' }): Promise;
+ ready(moduleURL: string, options?: WorkletOptions): Promise;
  start(processCallback?(event: AudioProcessingEvent): void, connects?: Connectable[]): ProcessorModule;
  stop(processCallback?(event: AudioProcessingEvent): void): ProcessorModule;
  postMessage(data: any): ProcessorModule;
