@@ -2,6 +2,7 @@ import { Analyser } from './Analyser';
 import { Visualizer } from './Visualizer';
 import { TimeOverview } from './TimeOverview';
 import { Time } from './Time';
+import { FFT } from './FFT';
 import Domain from './Domain';
 import Param from './Param';
 import Get from './Get';
@@ -17,6 +18,7 @@ export {
   Visualizer,
   TimeOverview,
   Time,
+  FFT,
   Domain,
   Param,
   Get,

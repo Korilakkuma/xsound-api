@@ -205,6 +205,7 @@ export const Router = () => {
           <Route exact path={`${BASS_PATH}analyser/time-overview/update`} render={render(Analyser.TimeOverviewUpdate)} />
           <Route exact path={`${BASS_PATH}analyser/time-overview/drag`} render={render(Analyser.TimeOverviewDrag)} />
           <Route exact path={`${BASS_PATH}analyser/time/interface`} render={render(Analyser.Time)} />
+          <Route exact path={`${BASS_PATH}analyser/fft/interface`} render={render(Analyser.FFT)} />
           <Route exact path={`${BASS_PATH}effectors/autopanner`} render={render(Effectors.Autopanner)} />
           <Route exact path={`${BASS_PATH}effectors/chorus`} render={render(Effectors.Chorus)} />
           <Route exact path={`${BASS_PATH}effectors/compressor`} render={render(Effectors.Compressor)} />

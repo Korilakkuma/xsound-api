@@ -235,6 +235,7 @@ export const Nav = () => {
           <dd><Link to={`${BASS_PATH}analyser/visualizer/interface`} className={getSelectedClassNameCallback(`${BASS_PATH}analyser/visualizer/interface`)}>Visualizer</Link></dd>
           <dd><Link to={`${BASS_PATH}analyser/time-overview/interface`} className={getSelectedClassNameCallback(`${BASS_PATH}analyser/time-overview/interface`)}>TimeOverview</Link></dd>
           <dd><Link to={`${BASS_PATH}analyser/time/interface`} className={getSelectedClassNameCallback(`${BASS_PATH}analyser/time/interface`)}>Time</Link></dd>
+          <dd><Link to={`${BASS_PATH}analyser/fft/interface`} className={getSelectedClassNameCallback(`${BASS_PATH}analyser/fft/interface`)}>FFT</Link></dd>
           <dt>Methods</dt>
           <dd><Link to={`${BASS_PATH}analyser/domain`} className={getSelectedClassNameCallback(`${BASS_PATH}analyser/domain`)}>domain</Link></dd>
           <dd><Link to={`${BASS_PATH}analyser/param`} className={getSelectedClassNameCallback(`${BASS_PATH}analyser/param`)}>param</Link></dd>
