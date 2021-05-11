@@ -1,6 +1,6 @@
 import { Analyser } from './Analyser';
 import { Visualizer } from './Visualizer';
-import TimeOverview from './TimeOverview';
+import { TimeOverview } from './TimeOverview';
 import Domain from './Domain';
 import Param from './Param';
 import Get from './Get';
