@@ -1,27 +1,14 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import SyntaxHighlighter from 'react-syntax-highlighter';
-import { xcode } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import { Overview } from '../../layouts/Overview';
+import { Interface } from '../../layouts/Interface';
 
-class Visualizer extends React.Component {
-  static TITLE      = 'Visualizer';
-  static CLASS_NAME = 'Visualizer';
+const CLASS_NAME = 'Visualizer';
 
-  shouldComponentUpdate() {
-    return false;
-  }
-
-  render() {
-    return (
-      <main className={Visualizer.CLASS_NAME}>
-        <section>
-          <div className="component-title">
-            <h1>Visualizer</h1>
-          </div>
-          <hr role="presentation" />
-          <section>
-            <h2>Interface</h2>
-            <SyntaxHighlighter language='typescript' style={xcode}>{`type GradientParams = {
+export const Visualizer = () => {
+  return (
+    <main className={CLASS_NAME}>
+      <Overview title='Visualizer' />
+      <Interface interfaceString={`type GradientParams = {
   offset: number,
   color: string
 };
@@ -40,8 +27,8 @@ interface VisualizerParams {
   text: string;
   font: FontParams;
   width: number;
-  cap: 'round' | 'butt' | 'square';
-  join: 'miter' | 'bevel' | 'round';
+  cap: CanvasLineCap;
+  join: CanvasLineJoin;
   top: number;
   right: number;
   bottom: number;
@@ -56,12 +43,9 @@ interface Visualizer {
   ): number | string | GradientParams[] | FontParams | Visualizer;
   state(isActive?: boolean): boolean | Visualizer;
   create(void): string;
-}`}</SyntaxHighlighter>
-          </section>
-        </section>
-      </main>
-    );
-  }
-}
+}`} />
+    </main>
+  );
+};
 
-export default connect()(Visualizer);
+Visualizer.TITLE = 'Visualizer';
