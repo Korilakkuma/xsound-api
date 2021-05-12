@@ -3,7 +3,7 @@ import { Visualizer } from './Visualizer';
 import { TimeOverview } from './TimeOverview';
 import { Time } from './Time';
 import { FFT } from './FFT';
-import Domain from './Domain';
+import { Domain } from './Domain';
 import Param from './Param';
 import Get from './Get';
 import VisualizerSetup from './VisualizerSetup';
