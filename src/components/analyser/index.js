@@ -6,7 +6,7 @@ import { FFT } from './FFT';
 import { Domain } from './Domain';
 import { Param } from './Param';
 import { Get } from './Get';
-import VisualizerSetup from './VisualizerSetup';
+import { VisualizerSetup } from './VisualizerSetup';
 import VisualizerParam from './VisualizerParam';
 import VisualizerState from './VisualizerState';
 import VisualizerCreate from './VisualizerCreate';
