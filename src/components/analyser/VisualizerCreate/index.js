@@ -1,32 +1,20 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { Overview } from '../../layouts/Overview';
 import { CodeViewer } from '../../layouts/CodeViewer';
 
-class VisualizerCreate extends React.Component {
-  static TITLE      = 'Visualizer#create';
-  static CLASS_NAME = 'VisualizerCreate';
+const CLASS_NAME = 'Visualizer#Create';
 
-  shouldComponentUpdate() {
-    return false;
-  }
+export const VisualizerCreate = () => {
+  return (
+    <main className={CLASS_NAME}>
+      <Overview
+        title='create'
+        returnTypes={['string (Data URL | SVG)']}
+        description='This method captures the drawn wave.'
+      />
+      <CodeViewer title='Visualizer#create' path='YLaQxq' />
+    </main>
+  );
+};
 
-  render() {
-    return (
-      <main className={VisualizerCreate.CLASS_NAME}>
-        <section>
-          <div className="component-title">
-            <h1>Visualizer#create</h1>
-            <p className="returns">Returns : <span>string (Data URL | XML)</span></p>
-          </div>
-          <hr role="presentation" />
-          <p>
-            This method captures the drawn wave.
-          </p>
-        </section>
-        <CodeViewer title='Visualizer#create' path='YLaQxq' />
-      </main>
-    );
-  }
-}
-
-export default connect()(VisualizerCreate);
+VisualizerCreate.TITLE = 'Visualizer#create';
