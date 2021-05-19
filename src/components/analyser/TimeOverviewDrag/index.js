@@ -1,43 +1,29 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { Overview } from '../../layouts/Overview';
+import { Arguments } from '../../layouts/Arguments';
 import { CodeViewer } from '../../layouts/CodeViewer';
 
-class TimeOverviewDrag extends React.Component {
-  static TITLE      = 'TimeOverview#drag';
-  static CLASS_NAME = 'TimeOverviewDrag';
+const CLASS_NAME = 'TimeOverview#Drag';
 
-  shouldComponentUpdate() {
-    return false;
-  }
+export const TimeOverviewDrag = () => {
+  return (
+    <main className={CLASS_NAME}>
+      <Overview
+        title='drag'
+        returnTypes={['TimeOverview']}
+        description='This method sets current time by drag.'
+      />
+      <Arguments
+        rows={[
+          {
+            types      : ['Function'],
+            description: 'This function is invoked during drag.'
+          }
+        ]}
+      />
+      <CodeViewer title='TimeOverview#drag' path='wjjoxa' />
+    </main>
+  );
+};
 
-  render() {
-    return (
-      <main className={TimeOverviewDrag.CLASS_NAME}>
-        <section>
-          <div className="component-title">
-            <h1>TimeOverview#drag</h1>
-            <p className="returns">Returns : <span>TimeOverview</span></p>
-          </div>
-          <hr role="presentation" />
-          <p>
-            This method sets current time by drag.
-          </p>
-          <table>
-            <caption>Arguments</caption>
-            <thead><tr><th scope="col"></th><th scope="col">Type</th><th scope="col">Description</th></tr></thead>
-            <tbody>
-              <tr>
-                <th scope="row">1st</th>
-                <td><span className="argument-type">Function</span></td>
-                <td>This function is invoked during drag.</td>
-              </tr>
-            </tbody>
-          </table>
-        </section>
-        <CodeViewer title='TimeOverview#drag' path='wjjoxa' />
-      </main>
-    );
-  }
-}
-
-export default connect()(TimeOverviewDrag);
+TimeOverviewDrag.TITLE = 'TimeOverview#drag';
