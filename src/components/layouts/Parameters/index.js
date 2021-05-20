@@ -6,16 +6,24 @@ export const Parameters = (props) => {
     <section className="Parameters">
       <table>
         <caption>Parameters</caption>
-        <thead><tr><th scope="col"></th><th scope="col">Type</th><th scope="col">Description</th></tr></thead>
+        <thead>
+          <tr>
+            <th scope="col">Parameter</th>
+            <th scope="col">Type</th>
+            <th scope="col">Value</th>
+            <th scope="col">Default</th>
+          </tr>
+        </thead>
         <tbody>
           {props.rows.map((row) => {
-            const { name, types, description } = row;
+            const { name, type, value, defaultValue } = row;
 
             return (
               <tr key={name}>
                 <th scope="row">{name}</th>
-                <td>{types.map((type) => <span key={type} className="Parameters__type">{type}</span>)}</td>
-                <td dangerouslySetInnerHTML={{ __html: description }} />
+                <td>{type}</td>
+                <td>{value}</td>
+                <td>{defaultValue}</td>
               </tr>
             );
           })}
