@@ -1,4 +1,4 @@
-import Autopanner from './Autopanner';
+import { Autopanner } from './Autopanner';
 import Chorus from './Chorus';
 import Compressor from './Compressor';
 import Delay from './Delay';
