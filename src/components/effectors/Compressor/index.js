@@ -1,32 +1,20 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import SyntaxHighlighter from 'react-syntax-highlighter';
-import { xcode } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import { Overview } from '../../layouts/Overview';
+import { Interface } from '../../layouts/Interface';
+import { Parameters } from '../../layouts/Parameters';
 import { CodeViewer } from '../../layouts/CodeViewer';
 
-class Compressor extends React.Component {
-  static TITLE      = 'Compressor';
-  static CLASS_NAME = 'Compressor';
+const CLASS_NAME = 'Compressor';
 
-  shouldComponentUpdate() {
-    return false;
-  }
-
-  render() {
-    return (
-      <main className={Compressor.CLASS_NAME}>
-        <section>
-          <div className="component-title">
-            <h1>compressor</h1>
-            <p className="applicable">Applicable : <span>*</span></p>
-          </div>
-          <hr role="presentation" />
-          <p>
-            This module is Compressor.
-          </p>
-          <section>
-            <h2>Interface</h2>
-            <SyntaxHighlighter language='typescript' style={xcode}>{`type BufferSize = 0 | 256 | 512 | 1024 | 2048 | 4096 | 8192 | 16384;
+export const Compressor = () => {
+  return (
+    <main className={CLASS_NAME}>
+      <Overview
+        title='compressor'
+        applicableModules={['*']}
+        description='This module is Compressor.'
+      />
+      <Interface interfaceString={`type BufferSize = 0 | 256 | 512 | 1024 | 2048 | 4096 | 8192 | 16384;
 
 interface CompressorParams {
   threshold: number;
@@ -38,55 +26,50 @@ interface CompressorParams {
 
 interface Compressor {
   constructor(context: AudioContext, bufferSize: BufferSize);
-  param(key: CompressorParams, value?: number): number | void;
-  params(): CompressorParams;
-  state(isActive?: boolean): boolean | void;
-  toJSON(): string;
+  param(key: string | CompressorParams, value?: number): number | Compressor;
+  params(void): CompressorParams;
+  state(isActive?: boolean): boolean | Compressor;
+  toJSON(void): string;
   INPUT: GainNode;
   OUTPUT: GainNode;
-}`}</SyntaxHighlighter>
-          </section>
-          <table>
-            <caption>Parameters</caption>
-            <thead><tr><th scope="col"></th><th scope="col">Type</th><th scope="col">Value</th><th scope="col">Default</th></tr></thead>
-            <tbody>
-              <tr>
-                <th scope="row">threshold</th>
-                <td><span className="param-type">number</span></td>
-                <td>-100 &lt;= value &lt;= 0</td>
-                <td>24</td>
-              </tr>
-              <tr>
-                <th scope="row">knee</th>
-                <td><span className="param-type">number</span></td>
-                <td>0 &lt;= value &lt;= 40</td>
-                <td>30</td>
-              </tr>
-              <tr>
-                <th scope="row">ratio</th>
-                <td><span className="param-type">number</span></td>
-                <td>1 &lt;= value &lt;= 20</td>
-                <td>12</td>
-              </tr>
-              <tr>
-                <th scope="row">attack</th>
-                <td><span className="param-type">number</span></td>
-                <td>0 &lt;= value &lt;= 1</td>
-                <td>0.003</td>
-              </tr>
-              <tr>
-                <th scope="row">release</th>
-                <td><span className="param-type">number</span></td>
-                <td>0 &lt;= value &lt;= 1</td>
-                <td>0.25</td>
-              </tr>
-            </tbody>
-          </table>
-        </section>
-        <CodeViewer title='Compressor' path='rdEvdY' />
-      </main>
-    );
-  }
-}
+}`} />
+      <Parameters
+        rows={[
+          {
+            name: 'threshold',
+            type: 'number',
+            value: '-100 <= value <= 0',
+            defaultValue: 24
+          },
+          {
+            name: 'knee',
+            type: 'number',
+            value: '0 <= value <= 40',
+            defaultValue: 30
+          },
+          {
+            name: 'ratio',
+            type: 'number',
+            value: '1 <= value <= 20',
+            defaultValue: 12
+          },
+          {
+            name: 'attack',
+            type: 'number',
+            value: '0 <= value <= 1',
+            defaultValue: 0.003
+          },
+          {
+            name: 'release',
+            type: 'number',
+            value: '0 <= value <= 1',
+            defaultValue: 0.25
+          }
+        ]}
+      />
+      <CodeViewer title='Compressor' path='rdEvdY' />
+    </main>
+  );
+};
 
-export default connect()(Compressor);
+Compressor.TITLE = 'Compressor';
