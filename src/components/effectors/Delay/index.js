@@ -1,32 +1,20 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import SyntaxHighlighter from 'react-syntax-highlighter';
-import { xcode } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import { Overview } from '../../layouts/Overview';
+import { Interface } from '../../layouts/Interface';
+import { Parameters } from '../../layouts/Parameters';
 import { CodeViewer } from '../../layouts/CodeViewer';
 
-class Delay extends React.Component {
-  static TITLE      = 'Delay';
-  static CLASS_NAME = 'Delay';
+const CLASS_NAME = 'Delay';
 
-  shouldComponentUpdate() {
-    return false;
-  }
-
-  render() {
-    return (
-      <main className={Delay.CLASS_NAME}>
-        <section>
-          <div className="component-title">
-            <h1>delay</h1>
-            <p className="applicable">Applicable : <span>*</span></p>
-          </div>
-          <hr role="presentation" />
-          <p>
-            This module is Delay.
-          </p>
-          <section>
-            <h2>Interface</h2>
-            <SyntaxHighlighter language='typescript' style={xcode}>{`type BufferSize = 0 | 256 | 512 | 1024 | 2048 | 4096 | 8192 | 16384;
+export const Delay = () => {
+  return (
+    <main className={CLASS_NAME}>
+      <Overview
+        title='delay'
+        applicableModules={['*']}
+        description='This module is Delay.'
+      />
+      <Interface interfaceString={`type BufferSize = 0 | 256 | 512 | 1024 | 2048 | 4096 | 8192 | 16384;
 
 interface DelayParams {
   delayTime: number;
@@ -38,55 +26,50 @@ interface DelayParams {
 
 interface Delay {
   constructor(context: AudioContext, bufferSize: BufferSize);
-  param(key: DelayParams, value?: number): number | void;
-  params(): DelayParams;
+  param(key: string | DelayParams, value?: number): number | Delay;
+  params(void): DelayParams;
   state(isActive?: boolean): boolean | void;
-  toJSON(): string;
+  toJSON(void): string;
   INPUT: GainNode;
   OUTPUT: GainNode;
-}`}</SyntaxHighlighter>
-          </section>
-          <table>
-            <caption>Parameters</caption>
-            <thead><tr><th scope="col"></th><th scope="col">Type</th><th scope="col">Value</th><th scope="col">Default</th></tr></thead>
-            <tbody>
-              <tr>
-                <th scope="row">delayTime</th>
-                <td><span className="param-type">number</span></td>
-                <td>0 &lt;= value &lt;= 5</td>
-                <td>0</td>
-              </tr>
-              <tr>
-                <th scope="row">dry</th>
-                <td><span className="param-type">number</span></td>
-                <td>0 &lt;= value &lt;= 1</td>
-                <td>1</td>
-              </tr>
-              <tr>
-                <th scope="row">wet</th>
-                <td><span className="param-type">number</span></td>
-                <td>0 &lt;= value &lt;= 1</td>
-                <td>0</td>
-              </tr>
-              <tr>
-                <th scope="row">tone</th>
-                <td><span className="param-type">number</span></td>
-                <td>10 &lt;= value &lt;= half the sample-rate</td>
-                <td>350</td>
-              </tr>
-              <tr>
-                <th scope="row">feedback</th>
-                <td><span className="param-type">number</span></td>
-                <td>0 &lt;= value &lt;= 1</td>
-                <td>0</td>
-              </tr>
-            </tbody>
-          </table>
-        </section>
-        <CodeViewer title='Delay' path='mLbXNP' />
-      </main>
-    );
-  }
-}
+}`} />
+      <Parameters
+        rows={[
+          {
+            name        : 'delayTime',
+            type        : 'number',
+            value       : '0 <= value <= 5',
+            defaultValue: 0
+          },
+          {
+            name        : 'dry',
+            type        : 'number',
+            value       : '0 <= value <= 1',
+            defaultValue: 0
+          },
+          {
+            name        : 'wet',
+            type        : 'number',
+            value       : '0 <= value <= 1',
+            defaultValue: 0
+          },
+          {
+            name        : 'tone',
+            type        : 'number',
+            value       : '10 <= value <= half the sample-rate',
+            defaultValue: 350
+          },
+          {
+            name        : 'feedback',
+            type        : 'number',
+            value       : '0 <= value <= 1',
+            defaultValue: 0
+          }
+        ]}
+      />
+      <CodeViewer title='Delay' path='mLbXNP' />
+    </main>
+  );
+};
 
-export default connect()(Delay);
+Delay.TITLE = 'Delay';
