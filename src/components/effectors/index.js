@@ -5,7 +5,7 @@ import { Delay } from './Delay';
 import { Distortion } from './Distortion';
 import { EnvelopeGenerator } from './EnvelopeGenerator';
 import { Equalizer } from './Equalizer';
-import Filter from './Filter';
+import { Filter } from './Filter';
 import Flanger from './Flanger';
 import Glide from './Glide';
 import NoiseGate from './NoiseGate';
