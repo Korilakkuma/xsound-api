@@ -8,7 +8,7 @@
   margin-bottom: 16px;
   font-family: "Lucida Grande", "Calibri", Helvetica, Arial, sans-serif;
   font-size: 24px;
-  font-weight: lighter;
+  font-weight: normal;
   color: var(--gray);
   text-align: left;
 }
@@ -17,7 +17,7 @@
   border: 1px solid var(--gray-light);
   padding: 8px 0;
   font-size: 20px;
-  font-weight: lighter;
+  font-weight: normal;
   color: var(--white);
   text-align: center;
   text-shadow: -1px -1px 1px var(--black);
@@ -28,7 +28,7 @@
   padding: 8px;
   border: 1px solid var(--gray-light);
   font-size: var(--base-font-size);
-  font-weight: lighter;
+  font-weight: normal;
   text-align: left;
   white-space: nowrap;
 }
@@ -37,6 +37,11 @@
   padding: 16px;
   border: 1px solid var(--gray-light);
   font-size: var(--base-font-size);
+  white-space: pre-line;
+}
+
+.Parameters td:first-of-type {
+  color: var(--assort-color);
 }
 
 .Parameters td dd {
