@@ -6,7 +6,7 @@ import { Distortion } from './Distortion';
 import { EnvelopeGenerator } from './EnvelopeGenerator';
 import { Equalizer } from './Equalizer';
 import { Filter } from './Filter';
-import Flanger from './Flanger';
+import { Flanger } from './Flanger';
 import Glide from './Glide';
 import NoiseGate from './NoiseGate';
 import NoiseSuppressor from './NoiseSuppressor';
