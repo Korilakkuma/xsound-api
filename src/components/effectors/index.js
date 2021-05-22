@@ -4,7 +4,7 @@ import { Compressor } from './Compressor';
 import { Delay } from './Delay';
 import { Distortion } from './Distortion';
 import { EnvelopeGenerator } from './EnvelopeGenerator';
-import Equalizer from './Equalizer';
+import { Equalizer } from './Equalizer';
 import Filter from './Filter';
 import Flanger from './Flanger';
 import Glide from './Glide';
