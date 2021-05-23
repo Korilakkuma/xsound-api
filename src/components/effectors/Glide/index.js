@@ -1,50 +1,51 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { Overview } from '../../layouts/Overview';
+import { Interface } from '../../layouts/Interface';
+import { Parameters } from '../../layouts/Parameters';
 import { CodeViewer } from '../../layouts/CodeViewer';
 
-class Glide extends React.Component {
-  static TITLE      = 'Glide';
-  static CLASS_NAME = 'Glide';
+const CLASS_NAME = 'Glide';
 
-  shouldComponentUpdate() {
-    return false;
-  }
+export const Glide = () => {
+  return (
+    <main className={CLASS_NAME}>
+      <Overview
+        title='glide'
+        applicableModules={['OscillatorModule']}
+        description='This module is Glide.'
+      />
+      <Interface interfaceString={`type GlideType = 'linear' | 'exponential';
 
-  render() {
-    return (
-      <main className={Glide.CLASS_NAME}>
-        <section>
-          <div className="component-title">
-            <h1>glide</h1>
-            <p className="applicable">Applicable : <span>OscillatorModule</span></p>
-          </div>
-          <hr role="presentation" />
-          <p>
-            This module is Glide.
-          </p>
-          <table>
-            <caption>Parameters</caption>
-            <thead><tr><th scope="col"></th><th scope="col">Type</th><th scope="col">Value</th><th scope="col">Default</th></tr></thead>
-            <tbody>
-              <tr>
-                <th scope="row">time</th>
-                <td><span className="param-type">number</span></td>
-                <td>value &gt;= 0</td>
-                <td>0</td>
-              </tr>
-              <tr>
-                <th scope="row">type</th>
-                <td><span className="param-type">string</span></td>
-                <td>&apos;linear&apos; or &apos;exponential&apos;</td>
-                <td>&apos;linear&apos;</td>
-              </tr>
-            </tbody>
-          </table>
-        </section>
-        <CodeViewer title='Glide' path='OZNgRa' />
-      </main>
-    );
-  }
+interface GlideParams {
+  time: number;
+  type: GlideType;
 }
 
-export default connect()(Glide);
+interface Glide {
+  constructor(context: AudioContext);
+  param(key: string | GlideParams, value?: number | GlideType): number | GlideType | Glide;
+  params(void): GlideParams;
+  toJSON(void): string;
+}`} />
+      <Parameters
+        rows={[
+          {
+            name        : 'time',
+            type        : 'number',
+            value       : 'value >= 0',
+            defaultValue: 0
+          },
+          {
+            name        : 'type',
+            type        : 'string',
+            value       : '\'linear\', \'exponential\'',
+            defaultValue: '\'linear\''
+          }
+        ]}
+      />
+      <CodeViewer title='Glide' path='OZNgRa' />
+    </main>
+  );
+};
+
+Glide.TITLE = 'Glide';

@@ -7,7 +7,7 @@ import { EnvelopeGenerator } from './EnvelopeGenerator';
 import { Equalizer } from './Equalizer';
 import { Filter } from './Filter';
 import { Flanger } from './Flanger';
-import Glide from './Glide';
+import { Glide } from './Glide';
 import NoiseGate from './NoiseGate';
 import NoiseSuppressor from './NoiseSuppressor';
 import Phaser from './Phaser';
