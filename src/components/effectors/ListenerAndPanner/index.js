@@ -67,6 +67,7 @@ interface Panner {
   OUTPUT: GainNode;
 }`} />
       <Parameters
+        caption="Listener Parameters"
         rows={[
           {
             name        : 'x',
@@ -125,6 +126,7 @@ interface Panner {
         ]}
       />
       <Parameters
+        caption="Panner Parameters"
         rows={[
           {
             name        : 'x',
