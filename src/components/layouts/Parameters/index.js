@@ -2,10 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 export const Parameters = (props) => {
+  const { caption, rows } = props;
+
   return (
     <section className="Parameters">
       <table>
-        <caption>Parameters</caption>
+        <caption>{caption ? caption : 'Parameters'}</caption>
         <thead>
           <tr>
             <th scope="col">Parameter</th>
@@ -15,7 +17,7 @@ export const Parameters = (props) => {
           </tr>
         </thead>
         <tbody>
-          {props.rows.map((row) => {
+          {rows.map((row) => {
             const { name, type, value, defaultValue } = row;
 
             return (
@@ -34,5 +36,6 @@ export const Parameters = (props) => {
 };
 
 Parameters.propTypes = {
-  rows: PropTypes.arrayOf(PropTypes.object).isRequired
+  caption: PropTypes.string,
+  rows   : PropTypes.arrayOf(PropTypes.object).isRequired
 };
