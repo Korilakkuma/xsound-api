@@ -1,32 +1,20 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import SyntaxHighlighter from 'react-syntax-highlighter';
-import { xcode } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import { Overview } from '../../layouts/Overview';
+import { Interface } from '../../layouts/Interface';
+import { Parameters } from '../../layouts/Parameters';
 import { CodeViewer } from '../../layouts/CodeViewer';
 
-class ListenerAndPanner extends React.Component {
-  static TITLE      = 'Listener / Panner';
-  static CLASS_NAME = 'ListenerAndPanner';
+const CLASS_NAME = 'ListenerAndPanner';
 
-  shouldComponentUpdate() {
-    return false;
-  }
-
-  render() {
-    return (
-      <main className={ListenerAndPanner.CLASS_NAME}>
-        <section>
-          <div className="component-title">
-            <h1>listener / panner</h1>
-            <p className="applicable">Applicable : <span>*</span></p>
-          </div>
-          <hr role="presentation" />
-          <p>
-            This module is listener and panner for 3D audio
-          </p>
-          <section>
-            <h2>Interface</h2>
-            <SyntaxHighlighter language='typescript' style={xcode}>{`type BufferSize = 0 | 256 | 512 | 1024 | 2048 | 4096 | 8192 | 16384;
+export const ListenerAndPanner = () => {
+  return (
+    <main className={CLASS_NAME}>
+      <Overview
+        title='linear / panner'
+        applicableModules={['*']}
+        description='This module is listener and panner for 3D audio.'
+      />
+      <Interface interfaceString={`type BufferSize = 0 | 256 | 512 | 1024 | 2048 | 4096 | 8192 | 16384;
 
 type PanningModel = 'HRTF' | 'equalpower';
 
@@ -63,177 +51,170 @@ interface PannerParams {
 
 interface Listener {
   constructor(context: AudioContext, bufferSize: BufferSize);
-  param(key: ListenerParams, value?: number): number | void;
-  params(): ListenerParams;
-  state(isActive?: boolean): boolean | void;
-  toJSON(): string;
+  param(key: string | ListenerParams, value?: number): number | Listener;
+  params(void): ListenerParams;
+  state(isActive?: boolean): boolean | Listener;
+  toJSON(void): string;
 }
 
 interface Panner {
   constructor(context: AudioContext, bufferSize: BufferSize);
-  param(key: PannerParams, value?: number): number | PanningModel | DistanceModal | void;
-  params(): PannerParams;
-  state(isActive?: boolean): boolean | void;
-  toJSON(): string;
+  param(key: string | PannerParams, value?: number): number | PanningModel | DistanceModal | Panner;
+  params(void): PannerParams;
+  state(isActive?: boolean): boolean | Panner;
+  toJSON(void): string;
   INPUT: GainNode;
   OUTPUT: GainNode;
-}`}</SyntaxHighlighter>
-          </section>
-          <table>
-            <caption>Listener Parameters</caption>
-            <thead><tr><th scope="col"></th><th scope="col">Type</th><th scope="col">Value</th><th scope="col">Default</th></tr></thead>
-            <tbody>
-              <tr>
-                <th scope="row">x</th>
-                <td><span className="param-type">number</span></td>
-                <td>value is number</td>
-                <td>0</td>
-              </tr>
-              <tr>
-                <th scope="row">y</th>
-                <td><span className="param-type">number</span></td>
-                <td>value is number</td>
-                <td>0</td>
-              </tr>
-              <tr>
-                <th scope="row">z</th>
-                <td><span className="param-type">number</span></td>
-                <td>value is number</td>
-                <td>0</td>
-              </tr>
-              <tr>
-                <th scope="row">fx</th>
-                <td><span className="param-type">number</span></td>
-                <td>value is number</td>
-                <td>0</td>
-              </tr>
-              <tr>
-                <th scope="row">fy</th>
-                <td><span className="param-type">number</span></td>
-                <td>value is number</td>
-                <td>0</td>
-              </tr>
-              <tr>
-                <th scope="row">fz</th>
-                <td><span className="param-type">number</span></td>
-                <td>value is number</td>
-                <td>-1</td>
-              </tr>
-              <tr>
-                <th scope="row">ux</th>
-                <td><span className="param-type">number</span></td>
-                <td>value is number</td>
-                <td>0</td>
-              </tr>
-              <tr>
-                <th scope="row">uy</th>
-                <td><span className="param-type">number</span></td>
-                <td>value is number</td>
-                <td>1</td>
-              </tr>
-              <tr>
-                <th scope="row">uz</th>
-                <td><span className="param-type">number</span></td>
-                <td>value is number</td>
-                <td>0</td>
-              </tr>
-            </tbody>
-          </table>
-          <table>
-            <caption>Panner Parameters</caption>
-            <thead><tr><th scope="col"></th><th scope="col">Type</th><th scope="col">Value</th><th scope="col">Default</th></tr></thead>
-            <tbody>
-              <tr>
-                <th scope="row">x</th>
-                <td><span className="param-type">number</span></td>
-                <td>value is number</td>
-                <td>0</td>
-              </tr>
-              <tr>
-                <th scope="row">y</th>
-                <td><span className="param-type">number</span></td>
-                <td>value is number</td>
-                <td>0</td>
-              </tr>
-              <tr>
-                <th scope="row">z</th>
-                <td><span className="param-type">number</span></td>
-                <td>value is number</td>
-                <td>0</td>
-              </tr>
-              <tr>
-                <th scope="row">ox</th>
-                <td><span className="param-type">number</span></td>
-                <td>value is number</td>
-                <td>1</td>
-              </tr>
-              <tr>
-                <th scope="row">oy</th>
-                <td><span className="param-type">number</span></td>
-                <td>value is number</td>
-                <td>0</td>
-              </tr>
-              <tr>
-                <th scope="row">oz</th>
-                <td><span className="param-type">number</span></td>
-                <td>value is number</td>
-                <td>0</td>
-              </tr>
-              <tr>
-                <th scope="row">refDistance</th>
-                <td><span className="param-type">number</span></td>
-                <td>value &gt;= 0</td>
-                <td>1</td>
-              </tr>
-              <tr>
-                <th scope="row">maxDistance</th>
-                <td><span className="param-type">number</span></td>
-                <td>value &gt; 0</td>
-                <td>10000</td>
-              </tr>
-              <tr>
-                <th scope="row">rolloffFactor</th>
-                <td><span className="param-type">number</span></td>
-                <td>value &gt;= 0</td>
-                <td>1</td>
-              </tr>
-              <tr>
-                <th scope="row">coneInnerAngle</th>
-                <td><span className="param-type">number</span></td>
-                <td>0 &lt;= value &lt;= 360</td>
-                <td>360</td>
-              </tr>
-              <tr>
-                <th scope="row">coneOuterAngle</th>
-                <td><span className="param-type">number</span></td>
-                <td>0 &lt;= value &lt;= 360</td>
-                <td>360</td>
-              </tr>
-              <tr>
-                <th scope="row">coneOuterGain</th>
-                <td><span className="param-type">number</span></td>
-                <td>0 &lt;= value &lt;= 1</td>
-                <td>0</td>
-              </tr>
-              <tr>
-                <th scope="row">panningModel</th>
-                <td><span className="param-type">string</span></td>
-                <td>value is one of &apos;HRTF&apos;, &apos;equalpower&apos;</td>
-                <td>&apos;HRTF&apos;</td>
-              </tr>
-              <tr>
-                <th scope="row">distanceModel</th>
-                <td><span className="param-type">string</span></td>
-                <td>value is one of &apos;linear&apos;, &apos;inverse&apos;, &apos;exponential&apos;</td>
-                <td>&apos;inverse&apos;</td>
-              </tr>
-            </tbody>
-          </table>
-        </section>
-        <CodeViewer title='Listener / Panner' path='wjBmyJ' />
-      </main>
-    );
-  }
-}
+}`} />
+      <Parameters
+        rows={[
+          {
+            name        : 'x',
+            type        : 'number',
+            value       : 'any numbers',
+            defaultValue: 0
+          },
+          {
+            name        : 'y',
+            type        : 'number',
+            value       : 'any numbers',
+            defaultValue: 0
+          },
+          {
+            name        : 'z',
+            type        : 'number',
+            value       : 'any numbers',
+            defaultValue: 0
+          },
+          {
+            name        : 'fx',
+            type        : 'number',
+            value       : 'any numbers',
+            defaultValue: 0
+          },
+          {
+            name        : 'fy',
+            type        : 'number',
+            value       : 'any numbers',
+            defaultValue: 0
+          },
+          {
+            name        : 'fz',
+            type        : 'number',
+            value       : 'any numbers',
+            defaultValue: -1
+          },
+          {
+            name        : 'ux',
+            type        : 'number',
+            value       : 'any numbers',
+            defaultValue: 0
+          },
+          {
+            name        : 'uy',
+            type        : 'number',
+            value       : 'any numbers',
+            defaultValue: 1
+          },
+          {
+            name        : 'uz',
+            type        : 'number',
+            value       : 'any numbers',
+            defaultValue: 0
+          }
+        ]}
+      />
+      <Parameters
+        rows={[
+          {
+            name        : 'x',
+            type        : 'number',
+            value       : 'any numbers',
+            defaultValue: 0
+          },
+          {
+            name        : 'y',
+            type        : 'number',
+            value       : 'any numbers',
+            defaultValue: 0
+          },
+          {
+            name        : 'z',
+            type        : 'number',
+            value       : 'any numbers',
+            defaultValue: 0
+          },
+          {
+            name        : 'ox',
+            type        : 'number',
+            value       : 'any numbers',
+            defaultValue: 1
+          },
+          {
+            name        : 'oy',
+            type        : 'number',
+            value       : 'any numbers',
+            defaultValue: 0
+          },
+          {
+            name        : 'oz',
+            type        : 'number',
+            value       : 'any numbers',
+            defaultValue: 0
+          },
+          {
+            name        : 'refDistance',
+            type        : 'number',
+            value       : 'value >= 0',
+            defaultValue: 1
+          },
+          {
+            name        : 'maxDistance',
+            type        : 'number',
+            value       : 'value > 0',
+            defaultValue: 10000
+          },
+          {
+            name        : 'rolloffFactor',
+            type        : 'number',
+            value       : 'value >= 0',
+            defaultValue: 1
+          },
+          {
+            name        : 'coneInnerAngle',
+            type        : 'number',
+            value       : '0 <= value <= 360',
+            defaultValue: 360
+          },
+          {
+            name        : 'coneOuterAngle',
+            type        : 'number',
+            value       : '0 <= value <= 360',
+            defaultValue: 360
+          },
+          {
+            name        : 'coneOuterGain',
+            type        : 'number',
+            value       : '0 <= value <= 1',
+            defaultValue: 0
+          },
+          {
+            name        : 'panningModel',
+            type        : 'string',
+            value       : '\'HRTF\', \'equalpower\'',
+            defaultValue: '\'HRTF\''
+          },
+          {
+            name        : 'distanceModel',
+            type        : 'string',
+            value       : '\'linear\', \'inverse\', \'exponential\'',
+            defaultValue: '\'inverse\''
+          }
+        ]}
+      />
+      <CodeViewer title='Listener / Panner' path='wjBmyJ' />
+    </main>
+  );
+};
 
-export default connect()(ListenerAndPanner);
+ListenerAndPanner.TITLE = 'ListenerAndPanner';
