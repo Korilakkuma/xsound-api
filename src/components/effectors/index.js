@@ -10,7 +10,7 @@ import { Flanger } from './Flanger';
 import { Glide } from './Glide';
 import { ListenerAndPanner } from './ListenerAndPanner';
 import { NoiseGate } from './NoiseGate';
-import NoiseSuppressor from './NoiseSuppressor';
+import { NoiseSuppressor } from './NoiseSuppressor';
 import Phaser from './Phaser';
 import PitchShifter from './PitchShifter';
 import Reverb from './Reverb';
