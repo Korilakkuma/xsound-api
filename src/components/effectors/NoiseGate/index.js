@@ -1,44 +1,42 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { Overview } from '../../layouts/Overview';
+import { Interface } from '../../layouts/Interface';
+import { Parameters } from '../../layouts/Parameters';
 import { CodeViewer } from '../../layouts/CodeViewer';
 
-class NoiseGate extends React.Component {
-  static TITLE      = 'Noise Gate';
-  static CLASS_NAME = 'NoiseGate';
+const CLASS_NAME = 'NoiseGate';
 
-  shouldComponentUpdate() {
-    return false;
-  }
-
-  render() {
-    return (
-      <main className={NoiseGate.CLASS_NAME}>
-        <section>
-          <div className="component-title">
-            <h1>noisegate</h1>
-            <p className="applicable">Applicable : <span>StreamModule</span></p>
-          </div>
-          <hr role="presentation" />
-          <p>
-            This module is Noise Gate.
-          </p>
-          <table>
-            <caption>Parameters</caption>
-            <thead><tr><th scope="col"></th><th scope="col">Type</th><th scope="col">Value</th><th scope="col">Default</th></tr></thead>
-            <tbody>
-              <tr>
-                <th scope="row">level</th>
-                <td><span className="param-type">number</span></td>
-                <td>0 &lt;= value &lt;= 1</td>
-                <td>0</td>
-              </tr>
-            </tbody>
-          </table>
-        </section>
-        <CodeViewer title='Noise Gate' path='VxaWVG' />
-      </main>
-    );
-  }
+export const NoiseGate = () => {
+  return (
+    <main className={CLASS_NAME}>
+      <Overview
+        title='noisegate'
+        applicableModules={['StreamModule']}
+        description='This module is Noise Gate.'
+      />
+      <Interface interfaceString={`interface NoiseGateParams {
+  level: number;
 }
 
-export default connect()(NoiseGate);
+interface NoiseGate {
+  constructor(context: AudioContext);
+  param(key: string | NoiseGateParams, value?: number): number | NoiseGate;
+  params(void): NoiseGateParams;
+  toJSON(void): string;
+}`} />
+      <Parameters
+        rows={[
+          {
+            name        : 'level',
+            type        : 'number',
+            value       : '0 <= value <= 1',
+            defaultValue: 0
+          }
+        ]}
+      />
+      <CodeViewer title='Noise Gate' path='VxaWVG' />
+    </main>
+  );
+};
+
+NoiseGate.TITLE = 'Noise Gate';
