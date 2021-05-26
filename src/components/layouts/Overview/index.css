@@ -11,9 +11,10 @@
   align-items: center;
 }
 
-.Overview__heading h1 {
+.Overview__heading h2 {
   -webkit-flex-grow: 40;
   flex-grow: 40;
+  font-size: 36px;
 }
 
 .Overview__types,

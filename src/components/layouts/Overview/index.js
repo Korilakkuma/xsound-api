@@ -7,7 +7,7 @@ export const Overview = (props) => {
   return (
     <section className="Overview">
       <div className="Overview__heading">
-        <h1>{title}</h1>
+        <h2>{title}</h2>
         {Array.isArray(types) ? <p className="Overview__types">Types : <span>{types.join(' | ')}</span></p> : null}
         {Array.isArray(returnTypes) ? <p className="Overview__returns">Returns : <span>{returnTypes.join(' | ')}</span></p> : null}
         {Array.isArray(applicableModules) ? <p className="Overview__applicable">Applicable : <span>{applicableModules.join(' | ')}</span></p> : null}
