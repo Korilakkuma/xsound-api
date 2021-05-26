@@ -13,7 +13,7 @@ import { NoiseGate } from './NoiseGate';
 import { NoiseSuppressor } from './NoiseSuppressor';
 import { Phaser } from './Phaser';
 import { PitchShifter } from './PitchShifter';
-import Reverb from './Reverb';
+import { Reverb } from './Reverb';
 import Ringmodulator from './Ringmodulator';
 import Stereo from './Stereo';
 import Tremolo from './Tremolo';

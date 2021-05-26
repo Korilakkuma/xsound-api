@@ -1,32 +1,20 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import SyntaxHighlighter from 'react-syntax-highlighter';
-import { xcode } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import { Overview } from '../../layouts/Overview';
+import { Interface } from '../../layouts/Interface';
+import { Parameters } from '../../layouts/Parameters';
 import { CodeViewer } from '../../layouts/CodeViewer';
 
-class Reverb extends React.Component {
-  static TITLE      = 'Reverb';
-  static CLASS_NAME = 'Reverb';
+const CLASS_NAME = 'Reverb';
 
-  shouldComponentUpdate() {
-    return false;
-  }
-
-  render() {
-    return (
-      <main className={Reverb.CLASS_NAME}>
-        <section>
-          <div className="component-title">
-            <h1>reverb</h1>
-            <p className="applicable">Applicable : <span>*</span></p>
-          </div>
-          <hr role="presentation" />
-          <p>
-            This module is Reverb.
-          </p>
-          <section>
-            <h2>Interface</h2>
-            <SyntaxHighlighter language='typescript' style={xcode}>{`type BufferSize = 0 | 256 | 512 | 1024 | 2048 | 4096 | 8192 | 16384;
+export const Reverb = () => {
+  return (
+    <main className={CLASS_NAME}>
+      <Overview
+        title='reverb'
+        applicableModules={['*']}
+        description='This module is Reverb.'
+      />
+      <Interface interfaceString={`type BufferSize = 0 | 256 | 512 | 1024 | 2048 | 4096 | 8192 | 16384;
 
 interface ReverbParams {
   type: number;
@@ -36,49 +24,51 @@ interface ReverbParams {
 
 interface Reverb {
   constructor(context: AudioContext, bufferSize: BufferSize);
-  param(key: ReverbParams, value?: number): number | void;
-  params(): ReverbParams;
-  state(isActive?: boolean): boolean | void;
-  toJSON(): string;
+  param(key: string | ReverbParams, value?: number): number | Reverb;
+  params(void): ReverbParams;
+  state(isActive?: boolean): boolean | Reverb;
+  toJSON(void): string;
+  preset(
+    rirs: string[] | AudioBuffer[],
+    timeout?: number,
+    successCallback?(event: ProgressEvent),
+    errorCallback?(error: Error, textStatus: 'error' | 'timeout' | 'decode'),
+    progressCallback?(event: ProgressEvent)
+  );
   INPUT: GainNode;
   OUTPUT: GainNode;
-}`}</SyntaxHighlighter>
-          </section>
-          <table>
-            <caption>Parameters</caption>
-            <thead><tr><th scope="col"></th><th scope="col">Type</th><th scope="col">Value</th><th scope="col">Default</th></tr></thead>
-            <tbody>
-              <tr>
-                <th scope="row">type</th>
-                <td><span className="param-type">number</span></td>
-                <td>0 &lt;= value &lt;= (the number of preset RIRs - 1)</td>
-                <td>null</td>
-              </tr>
-              <tr>
-                <th scope="row">dry</th>
-                <td><span className="param-type">number</span></td>
-                <td>0 &lt;= value &lt;= 1</td>
-                <td>1</td>
-              </tr>
-              <tr>
-                <th scope="row">wet</th>
-                <td><span className="param-type">number</span></td>
-                <td>0 &lt;= value &lt;= 1</td>
-                <td>0</td>
-              </tr>
-              <tr>
-                <th scope="row">tone</th>
-                <td><span className="param-type">number</span></td>
-                <td>10 &lt;= value &lt;= half the sample-rate</td>
-                <td>350</td>
-              </tr>
-            </tbody>
-          </table>
-        </section>
-        <CodeViewer title='Reverb' path='gzwGwP' />
-      </main>
-    );
-  }
-}
+}`} />
+      <Parameters
+        rows={[
+          {
+            name        : 'type',
+            type        : 'number',
+            value       : '0 <= value <= (the number of preset RIRs - 1)',
+            defaultValue: 'null'
+          },
+          {
+            name        : 'dry',
+            type        : 'number',
+            value       : '0 <= value <= 1',
+            defaultValue: 0
+          },
+          {
+            name        : 'wet',
+            type        : 'number',
+            value       : '0 <= value <= 1',
+            defaultValue: 0
+          },
+          {
+            name        : 'tone',
+            type        : 'number',
+            value       : '10 <= value <= half the sample-rate',
+            defaultValue: 350
+          }
+        ]}
+      />
+      <CodeViewer title='Reverb' path='gzwGwP' />
+    </main>
+  );
+};
 
-export default connect()(Reverb);
+Reverb.TITLE = 'Reverb';
