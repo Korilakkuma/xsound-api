@@ -12,16 +12,13 @@
 }
 
 .Overview__heading h2 {
-  -webkit-flex-grow: 40;
-  flex-grow: 40;
   font-size: 36px;
 }
 
 .Overview__types,
 .Overview__returns,
 .Overview__applicable {
-  -webkit-flex-grow: 1;
-  flex-grow: 1;
+  margin-left: auto;
   font-size: 16px;
   font-style: italic;
 }
