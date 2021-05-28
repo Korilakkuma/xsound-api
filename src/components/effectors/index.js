@@ -15,7 +15,7 @@ import { Phaser } from './Phaser';
 import { PitchShifter } from './PitchShifter';
 import { Reverb } from './Reverb';
 import { Ringmodulator } from './Ringmodulator';
-import Stereo from './Stereo';
+import { Stereo } from './Stereo';
 import Tremolo from './Tremolo';
 import VocalCanceler from './VocalCanceler';
 import Wah from './Wah';
