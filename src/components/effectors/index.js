@@ -18,7 +18,7 @@ import { Ringmodulator } from './Ringmodulator';
 import { Stereo } from './Stereo';
 import { Tremolo } from './Tremolo';
 import { VocalCanceler } from './VocalCanceler';
-import Wah from './Wah';
+import { Wah } from './Wah';
 import Custom from './Custom';
 
 export {
