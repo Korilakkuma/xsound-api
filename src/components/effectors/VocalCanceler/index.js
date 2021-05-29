@@ -1,44 +1,47 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { Overview } from '../../layouts/Overview';
+import { Interface } from '../../layouts/Interface';
+import { Parameters } from '../../layouts/Parameters';
 import { CodeViewer } from '../../layouts/CodeViewer';
 
-class VocalCanceler extends React.Component {
-  static TITLE      = 'Vocal Canceler';
-  static CLASS_NAME = 'VocalCanceler';
+const CLASS_NAME = 'VocalCanceler';
 
-  shouldComponentUpdate() {
-    return false;
-  }
+export const VocalCanceler = () => {
+  return (
+    <main className={CLASS_NAME}>
+      <Overview
+        title='vocalcanceler'
+        applicableModules={['AudioModule', 'MediaModule']}
+        description='This module is Vocal Canceler.'
+      />
+      <Interface interfaceString={`type BufferSize = 0 | 256 | 512 | 1024 | 2048 | 4096 | 8192 | 16384;
 
-  render() {
-    return (
-      <main className={VocalCanceler.CLASS_NAME}>
-        <section>
-          <div className="component-title">
-            <h1>vocalcanceler</h1>
-            <p className="applicable">Applicable : <span>AudioModule | MediaModule</span></p>
-          </div>
-          <hr role="presentation" />
-          <p>
-            This module is Vocal Canceler.
-          </p>
-          <table>
-            <caption>Parameters</caption>
-            <thead><tr><th scope="col"></th><th scope="col">Type</th><th scope="col">Value</th><th scope="col">Default</th></tr></thead>
-            <tbody>
-              <tr>
-                <th scope="row">depth</th>
-                <td><span className="param-type">number</span></td>
-                <td>0 &lt;= value &lt;= 1</td>
-                <td>0</td>
-              </tr>
-            </tbody>
-          </table>
-        </section>
-        <CodeViewer title='Vocal Canceler' path='jxmvpQ' />
-      </main>
-    );
-  }
+interface VocalCancelerParams {
+  depth: number;
 }
 
-export default connect()(VocalCanceler);
+interface VocalCanceler {
+  constructor(context: AudioContext, bufferSize: BufferSize);
+  param(key: string | VocalCancelerParams, value?: number): number | VocalCanceler;
+  params(void): VocalCancelerParams;
+  state(isActive?: boolean): boolean | VocalCanceler;
+  toJSON(void): string;
+  INPUT: GainNode;
+  OUTPUT: GainNode;
+}`} />
+      <Parameters
+        rows={[
+          {
+            name        : 'depth',
+            type        : 'number',
+            value       : '0 <= value <= 1',
+            defaultValue: 0
+          }
+        ]}
+      />
+      <CodeViewer title='Vocal Canceler' path='jxmvpQ' />
+    </main>
+  );
+};
+
+VocalCanceler.TITLE = 'Vocal Canceler';
