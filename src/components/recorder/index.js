@@ -1,4 +1,4 @@
-import Recorder from './Recorder';
+import { Recorder } from './Recorder';
 import Setup from './Setup';
 import Ready from './Ready';
 import Start from './Start';

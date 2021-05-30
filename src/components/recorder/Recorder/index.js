@@ -1,27 +1,13 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import SyntaxHighlighter from 'react-syntax-highlighter';
-import { xcode } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import React from 'react'; import { Overview } from '../../layouts/Overview';
+import { Interface } from '../../layouts/Interface';
 
-class Recorder extends React.Component {
-  static TITLE      = 'Recorder';
-  static CLASS_NAME = 'Recorder';
+const CLASS_NAME = 'Recorder';
 
-  shouldComponentUpdate() {
-    return false;
-  }
-
-  render() {
-    return (
-      <main className={Recorder.CLASS_NAME}>
-        <section>
-          <div className="component-title">
-            <h1>Recorder</h1>
-          </div>
-          <hr role="presentation" />
-          <section>
-            <h2>Interface</h2>
-            <SyntaxHighlighter language='typescript' style={xcode}>{`interface RecorderParams {
+export const Recorder = () => {
+  return (
+    <main className={CLASS_NAME}>
+      <Overview title='Recorder' />
+      <Interface interfaceString={`interface RecorderParams {
   gainL: number;
   gainR: number;
 }
@@ -35,12 +21,9 @@ interface Recorder {
   clear(track: number | 'all'): Recorder;
   create(track: number | 'all', channel: 1 | 2, qbit: 8 | 16, type: 'blob' | 'objecturl' | 'base64' | 'dataurl'): Recorder;
   getActiveTrack(void): boolean;
-}`}</SyntaxHighlighter>
-          </section>
-        </section>
-      </main>
-    );
-  }
-}
+}`} />
+    </main>
+  );
+};
 
-export default connect()(Recorder);
+Recorder.TITLE = 'Recorder';
