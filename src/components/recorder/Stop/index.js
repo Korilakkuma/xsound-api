@@ -1,32 +1,20 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { Overview } from '../../layouts/Overview';
 import { CodeViewer } from '../../layouts/CodeViewer';
 
-class Stop extends React.Component {
-  static TITLE      = 'Recorder#stop';
-  static CLASS_NAME = 'Stop';
+const CLASS_NAME = 'Recorder#Stop';
 
-  shouldComponentUpdate() {
-    return false;
-  }
+export const Stop = () => {
+  return (
+    <main className={CLASS_NAME}>
+      <Overview
+        title='stop'
+        returnTypes={['Recorder']}
+        description='This method stops recording.'
+      />
+      <CodeViewer title='Recorder#stop' path='odabQv' />
+    </main>
+  );
+};
 
-  render() {
-    return (
-      <main className={Stop.CLASS_NAME}>
-        <section>
-          <div className="component-title">
-            <h1>stop</h1>
-            <p className="returns">Returns : <span>Recorder</span></p>
-          </div>
-          <hr role="presentation" />
-          <p>
-            This method stops recording.
-          </p>
-        </section>
-        <CodeViewer title='Recorder#stop' path='odabQv' />
-      </main>
-    );
-  }
-}
-
-export default connect()(Stop);
+Stop.TITLE = 'Recorder#stop';
