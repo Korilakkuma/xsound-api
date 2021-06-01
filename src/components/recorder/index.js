@@ -1,6 +1,6 @@
 import { Recorder } from './Recorder';
 import { Setup } from './Setup';
-import Ready from './Ready';
+import { Ready } from './Ready';
 import Start from './Start';
 import Stop from './Stop';
 import Param from './Param';
