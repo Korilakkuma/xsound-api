@@ -4,7 +4,7 @@ import { Ready } from './Ready';
 import { Start } from './Start';
 import { Stop } from './Stop';
 import { Param } from './Param';
-import Clear from './Clear';
+import { Clear } from './Clear';
 import Create from './Create';
 import GetActiveTrack from './GetActiveTrack';
 
