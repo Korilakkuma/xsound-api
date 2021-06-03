@@ -1,32 +1,20 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { Overview } from '../../layouts/Overview';
 import { CodeViewer } from '../../layouts/CodeViewer';
 
-class Close extends React.Component {
-  static TITLE      = 'Session#close';
-  static CLASS_NAME = 'Close';
+const CLASS_NAME = 'Session#Close';
 
-  shouldComponentUpdate() {
-    return false;
-  }
+export const Close = () => {
+  return (
+    <main className={CLASS_NAME}>
+      <Overview
+        title='close'
+        returnTypes={['Session']}
+        description='This method closes connection to WebSocket server.'
+      />
+      <CodeViewer title='Session#close' path='RyvrQq' />
+    </main>
+  );
+};
 
-  render() {
-    return (
-      <main className={Close.CLASS_NAME}>
-        <section>
-          <div className="component-title">
-            <h1>close</h1>
-            <p className="returns">Returns : <span>Session</span></p>
-          </div>
-          <hr role="presentation" />
-          <p>
-            This method closes connection to WebSocket server.
-          </p>
-        </section>
-        <CodeViewer title='Session#close' path='RyvrQq' />
-      </main>
-    );
-  }
-}
-
-export default connect()(Close);
+Close.TITLE = 'Session#close';
