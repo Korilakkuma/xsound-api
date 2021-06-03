@@ -1,61 +1,47 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { Overview } from '../../layouts/Overview';
+import { Arguments } from '../../layouts/Arguments';
 import { CodeViewer } from '../../layouts/CodeViewer';
 
-class Setup extends React.Component {
-  static TITLE      = 'Session#setup';
-  static CLASS_NAME = 'Setup';
+const CLASS_NAME = 'Session#Setup';
 
-  shouldComponentUpdate() {
-    return false;
-  }
+export const Setup = () => {
+  return (
+    <main className={CLASS_NAME}>
+      <Overview
+        title='setup'
+        returnTypes={['Session']}
+        description='This method connects to WebSocket server.'
+      />
+      <Arguments
+        rows={[
+          {
+            types      : ['Object'],
+            description: `
+              This argument is plain object that has the following properties.
+              <dl class="list-marker">
+                <dt>tls <span class="Arguments__type">boolean</span></dt>
+                <dd>If this value is true, 'wss' is used. Otherwise, 'ws' is used.</dd>
+                <dt>host <span class="Arguments__type">string</span></dt>
+                <dd>This value is either IP address or hostname.</dd>
+                <dt>port <span class="Arguments__type">number</span></dt>
+                <dd>This value is port number.</dd>
+                <dt>path <span class="Arguments__type">string</span></dt>
+                <dd>This value is WebSocket server's path.</dd>
+                <dt>open <span class="Arguments__type">Function</span></dt>
+                <dd>This function is invoked when connection to WebSocket server is established.</dd>
+                <dt>close <span class="Arguments__type">Function</span></dt>
+                <dd>This function is invoked when connection to WebSocket server is closed.</dd>
+                <dt>error <span class="Arguments__type">Function</span></dt>
+                <dd>This function is invoked on error.</dd>
+              </dl>
+            `
+          }
+        ]}
+      />
+      <CodeViewer title='Session#setup' path='bMOMNy' />
+    </main>
+  );
+};
 
-  render() {
-    return (
-      <main className={Setup.CLASS_NAME}>
-        <section>
-          <div className="component-title">
-            <h1>setup</h1>
-            <p className="returns">Returns : <span>Session</span></p>
-          </div>
-          <hr role="presentation" />
-          <p>
-            This method connects to WebSocket server.
-          </p>
-          <table>
-            <caption>Arguments</caption>
-            <thead><tr><th scope="col"></th><th scope="col">Type</th><th scope="col">Description</th></tr></thead>
-            <tbody>
-              <tr>
-                <th scope="row">1st</th>
-                <td><span className="argument-type">Object</span></td>
-                <td>
-                  This argument is plain object that has the following properties.
-                  <dl className="list-marker">
-                    <dt>tls <span className="argument-type">boolean</span></dt>
-                    <dd>If this value is true, &apos;wss&apos; is used. Otherwise, &apos;ws&apos; is used.</dd>
-                    <dt>host <span className="argument-type">string</span></dt>
-                    <dd>This value is either IP address or hostname.</dd>
-                    <dt>port <span className="argument-type">number</span></dt>
-                    <dd>This value is port number.</dd>
-                    <dt>path <span className="argument-type">string</span></dt>
-                    <dd>This value is WebSocket server&apos;s path.</dd>
-                    <dt>open <span className="argument-type">Function</span></dt>
-                    <dd>This function is invoked when connection to WebSocket server is established.</dd>
-                    <dt>close <span className="argument-type">Function</span></dt>
-                    <dd>This function is invoked when connection to WebSocket server is closed.</dd>
-                    <dt>error <span className="argument-type">Function</span></dt>
-                    <dd>This function is invoked on error.</dd>
-                  </dl>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </section>
-        <CodeViewer title='Session#setup' path='bMOMNy' />
-      </main>
-    );
-  }
-}
-
-export default connect()(Setup);
+Setup.TITLE = 'Session#setup';
