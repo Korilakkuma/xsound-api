@@ -1,32 +1,20 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { Overview } from '../../layouts/Overview';
 import { CodeViewer } from '../../layouts/CodeViewer';
 
-class Start extends React.Component {
-  static TITLE      = 'Session#start';
-  static CLASS_NAME = 'Start';
+const CLASS_NAME = 'Session#Start';
 
-  shouldComponentUpdate() {
-    return false;
-  }
+export const Start = () => {
+  return (
+    <main className={CLASS_NAME}>
+      <Overview
+        title='start'
+        returnTypes={['Session']}
+        description='This method starts session.'
+      />
+      <CodeViewer title='Session#start' path='erbrZd' />
+    </main>
+  );
+};
 
-  render() {
-    return (
-      <main className={Start.CLASS_NAME}>
-        <section>
-          <div className="component-title">
-            <h1>start</h1>
-            <p className="returns">Returns : <span>Session</span></p>
-          </div>
-          <hr role="presentation" />
-          <p>
-            This method starts session.
-          </p>
-        </section>
-        <CodeViewer title='Session#start' path='erbrZd' />
-      </main>
-    );
-  }
-}
-
-export default connect()(Start);
+Start.TITLE = 'Session#start';
