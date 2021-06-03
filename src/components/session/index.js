@@ -1,4 +1,4 @@
-import Session from './Session';
+import { Session } from './Session';
 import Setup from './Setup';
 import Start from './Start';
 import Close from './Close';
