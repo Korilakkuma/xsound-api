@@ -4,7 +4,7 @@ import { Start } from './Start';
 import { Close } from './Close';
 import { Get } from './Get';
 import { IsConnected } from './IsConnected';
-import State from './State';
+import { State } from './State';
 
 export {
   Session,
