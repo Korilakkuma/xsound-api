@@ -17,11 +17,11 @@ export const OscillatorParam = () => {
         rows={[
           {
             types      : ['number'],
-            description: `This value is key for parameters.`
+            description: 'This value is key for parameters.'
           },
           {
             types      : ['number', '', 'string'],
-            description: `This value is value for parameters (optional). If this value is undefined, this method is getter.`
+            description: 'This value is value for parameters (optional). If this value is undefined, this method is getter.'
           }
         ]}
       />
@@ -30,7 +30,7 @@ export const OscillatorParam = () => {
         rows={[
           {
             types      : ['Object'],
-            description: `This value is associative array for parameters.`
+            description: 'This value is associative array for parameters.'
           }
         ]}
       />
