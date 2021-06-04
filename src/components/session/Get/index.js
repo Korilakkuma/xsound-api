@@ -1,32 +1,20 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { Overview } from '../../layouts/Overview';
 import { CodeViewer } from '../../layouts/CodeViewer';
 
-class Get extends React.Component {
-  static TITLE      = 'Session#get';
-  static CLASS_NAME = 'Get';
+const CLASS_NAME = 'Session#Get';
 
-  shouldComponentUpdate() {
-    return false;
-  }
+export const Get = () => {
+  return (
+    <main className={CLASS_NAME}>
+      <Overview
+        title='get'
+        returnTypes={['WebSocket']}
+        description='This method gets the instance of WebSocket.'
+      />
+      <CodeViewer title='Session#get' path='Gdzeqr' />
+    </main>
+  );
+};
 
-  render() {
-    return (
-      <main className={Get.CLASS_NAME}>
-        <section>
-          <div className="component-title">
-            <h1>get</h1>
-            <p className="returns">Returns : <span>WebSocket</span></p>
-          </div>
-          <hr role="presentation" />
-          <p>
-            This method gets the instance of WebSocket.
-          </p>
-        </section>
-        <CodeViewer title='Session#get' path='Gdzeqr' />
-      </main>
-    );
-  }
-}
-
-export default connect()(Get);
+Get.TITLE = 'Session#get';
