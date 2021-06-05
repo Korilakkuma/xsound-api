@@ -247,7 +247,7 @@ X.Session(context: AudioContext, size: BufferSize, numberOfInputs: number, numbe
       </section>
       <section>
         <h2>Playground</h2>
-        <iframe width='560' height='315' src='https://www.youtube.com/embed/zqdmoB8VICY' frameBorder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowFullScreen></iframe>
+        <iframe width='560' height='315' src='https://www.youtube.com/embed/zqdmoB8VICY' title="XSound Playground" frameBorder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowFullScreen></iframe>
         <nav><a href="https://xsound.jp/playground/" target="_blank" rel="noopener noreferrer">Here</a></nav>
       </section>
       <section>
