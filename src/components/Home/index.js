@@ -17,11 +17,11 @@ export const Home = () => {
   }, []);
 
   const onMouseDownGettingStartedAsModuleCallback = useCallback(() => {
-    navigator.clipboard.writeText('// The instance of ' + 'AudioContext' + `
+    navigator.clipboard.writeText('// The instance of ' + '`AudioContext`' + `
 const context = X.get();
 
-// Create the instance of ` + 'Chorus' + ` that is defined by XSound
-// (The 2nd argument is buffer size for ` + 'ScriptProcessorNode' + `)
+// Create the instance of ` + '`Chorus`' + ` that is defined by XSound
+// (The 2nd argument is buffer size for ` + '`ScriptProcessorNode`' + `)
 const chorus = new X.Chorus(context, 0);
 
 const oscillator = context.createOscillator();
@@ -107,8 +107,8 @@ oscillator.start(0);`);
           </a>
         </p>
         <p>
-          XSound is Multifunctional Library for Web Audio API.<br />
-          In concrete, XSound may be useful to implement the following features.
+          XSound gives Web Developers Powerful Audio Features Easily !<br />
+          In concrete, XSound is useful to implement the following features.
         </p>
         <ul className="list-marker">
           <li>Create Sound</li>
@@ -125,6 +125,9 @@ oscillator.start(0);`);
           <li>Audio Streaming</li>
           <li>Visual Audio Sprite</li>
         </ul>
+        <p>
+          XSound don&apos;t depend on other libraries or frameworks (For example, jQuery, React).
+        </p>
       </section>
       <section>
         <h1>Supported Browsers</h1>
@@ -137,7 +140,7 @@ oscillator.start(0);`);
         <h1>Getting Started</h1>
         <hr role="presentation" />
         <p>
-          In the case of using as <b>full stack</b> (For example, in the case of using oscillator) ...
+          In the case of using as <b>full stack</b> (For example, use oscillator) ...
         </p>
         <SyntaxHighlighter className={copyGettingStarted ? '-copy' : ''} language='javascript' style={xcode}>
           X(&apos;oscillator&apos;).setup(true).ready().start(440);
@@ -154,13 +157,13 @@ oscillator.start(0);`);
           </div>
         ) : null}
         <p>
-          In the case of using as <b>module base</b> (For example, in the case of using chorus effector) ...
+          or, in the case of using as <b>module base</b> (For example, use chorus effector) ...
         </p>
-        <SyntaxHighlighter className={copyGettingStartedAsModule ? '-copy' : ''} language='javascript' style={xcode}>{'// The instance of ' + 'AudioContext' + `
+        <SyntaxHighlighter className={copyGettingStartedAsModule ? '-copy' : ''} language='javascript' style={xcode}>{'// The instance of ' + '`AudioContext`' + `
 const context = X.get();
 
-// Create the instance of ` + 'Chorus' + ` that is defined by XSound
-// (The 2nd argument is buffer size for ` + 'ScriptProcessorNode' + `)
+// Create the instance of ` + '`Chorus`' + ` that is defined by XSound
+// (The 2nd argument is buffer size for ` + '`ScriptProcessorNode`' + `)
 const chorus = new X.Chorus(context, 0);
 
 const oscillator = context.createOscillator();
@@ -192,7 +195,9 @@ oscillator.start(0);`}</SyntaxHighlighter>
             </button>
           </div>
         ) : null}
-        <p>XSound enable to using the following classes.</p>
+        <p>
+          XSound enable to using the following classes.
+        </p>
         <SyntaxHighlighter language='typescript' style={xcode}>{`type BufferSize = 0 | 256 | 512 | 1024 | 2048 | 4096 | 8192 | 16384;
 
 // Effectors
@@ -233,7 +238,9 @@ X.Session(context: AudioContext, size: BufferSize, numberOfInputs: number, numbe
           <li><a href="https://github.com/Korilakkuma/Music-Tweet" target="_blank" rel="noopener noreferrer">Music Tweet</a></li>
           <li><a href="https://github.com/Korilakkuma/Chrome-EQUALIZER" target="_blank" rel="noopener noreferrer">Chrome EQUALIZER</a></li>
         </ul>
-        <p>Now, I&apos;m creating website for Web Audio API. Please refer to the following site for understanding this API Documentation.</p>
+        <p>
+          Now, I&apos;m creating website for Web Audio API. Please refer to the following site for understanding API Documentation.
+        </p>
         <ul className="list-marker">
           <li><a href="https://weblike-curtaincall.ssl-lolipop.jp/portfolio-web-sounder/" target="_blank" rel="noopener noreferrer">WEB SOUNDER</a></li>
         </ul>
@@ -264,7 +271,9 @@ X.Session(context: AudioContext, size: BufferSize, numberOfInputs: number, numbe
       <section>
         <h1>Usage</h1>
         <hr role="presentation" />
-        <p>In the case of using CDN,</p>
+        <p>
+          In the case of using CDN,
+        </p>
         <SyntaxHighlighter className={copyCdn ? '-copy' : ''} language='html' style={xcode}>
           &lt;script type=&quot;text/javascript&quot; src=&quot;https://cdn.jsdelivr.net/npm/xsound@latest/build/xsound.min.js&quot;&gt;&lt;/script&gt;
         </SyntaxHighlighter>
@@ -279,7 +288,9 @@ X.Session(context: AudioContext, size: BufferSize, numberOfInputs: number, numbe
             </button>
           </div>
         ) : null}
-        <p>In the case of using ESModules for SSR ... etc,</p>
+        <p>
+          In the case of using ESModules for SSR ... etc,
+        </p>
         <SyntaxHighlighter className={copyEsModules ? '-copy' : ''} language='javascript' style={xcode}>
           {'import { XSound, X } from \'xsound\';'}
         </SyntaxHighlighter>
