@@ -47,9 +47,7 @@ module.exports = {
     new MiniCSSExtractPlugin({
       filename: 'app.css'
     }),
-    new CssMinimizerPlugin({
-      sourceMap: true
-    })
+    new CssMinimizerPlugin()
   ],
   optimization: {
     splitChunks: {
