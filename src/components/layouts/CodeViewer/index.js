@@ -6,7 +6,7 @@ export const CodeViewer = (props) => {
 
   return (
     <section className="CodeViewer">
-      <h2>Example</h2>
+      <h3>Example</h3>
       <iframe
         height='265'
         scrolling='no'

@@ -6,7 +6,7 @@ import { xcode } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 export const Interface = (props) => {
   return (
     <section className="Interface">
-      <h2>Interface</h2>
+      <h3>Interface</h3>
       <SyntaxHighlighter language='typescript' style={xcode}>{props.interfaceString}</SyntaxHighlighter>
     </section>
   );

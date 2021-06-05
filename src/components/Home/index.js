@@ -84,7 +84,7 @@ oscillator.start(0);`);
   return (
     <main className={CLASS_NAME}>
       <section>
-        <h1>Overview</h1>
+        <h2>Overview</h2>
         <hr role="presentation" />
         <p className={`${CLASS_NAME}__badges`}>
           <a href="https://github.com/Korilakkuma/XSound/actions?query=workflow%3A%22Node.js+CI%22" target="_blank" rel="noopener noreferrer">
@@ -130,14 +130,14 @@ oscillator.start(0);`);
         </p>
       </section>
       <section>
-        <h1>Supported Browsers</h1>
+        <h2>Supported Browsers</h2>
         <hr role="presentation" />
         <p className={`${CLASS_NAME}__supportedBrowsers`}>
           <img src="assets/images/supported-browsers.png" alt="Supported Browsers" />
         </p>
       </section>
       <section>
-        <h1>Getting Started</h1>
+        <h2>Getting Started</h2>
         <hr role="presentation" />
         <p>
           In the case of using as <b>full stack</b> (For example, use oscillator) ...
@@ -226,7 +226,7 @@ X.Recorder(context: AudioContext, size: BufferSize, numberOfInputs: number, numb
 X.Session(context: AudioContext, size: BufferSize, numberOfInputs: number, numberOfOutputs, analyser: X.Analyser);`}</SyntaxHighlighter>
       </section>
       <section>
-        <h1>Demo</h1>
+        <h2>Demo</h2>
         <hr role="presentation" />
         <p>
           The application that uses XSound is in the following URLs.
@@ -246,12 +246,12 @@ X.Session(context: AudioContext, size: BufferSize, numberOfInputs: number, numbe
         </ul>
       </section>
       <section>
-        <h1>Playground</h1>
+        <h2>Playground</h2>
         <iframe width='560' height='315' src='https://www.youtube.com/embed/zqdmoB8VICY' frameBorder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowFullScreen></iframe>
         <nav><a href="https://xsound.jp/playground/" target="_blank" rel="noopener noreferrer">Here</a></nav>
       </section>
       <section>
-        <h1>Installation</h1>
+        <h2>Installation</h2>
         <hr role="presentation" />
         <SyntaxHighlighter className={copyNpmInstall ? '-copy' : ''} language='bash' style={xcode}>
           $ npm install --save xsound
@@ -269,7 +269,7 @@ X.Session(context: AudioContext, size: BufferSize, numberOfInputs: number, numbe
         ) : null}
       </section>
       <section>
-        <h1>Usage</h1>
+        <h2>Usage</h2>
         <hr role="presentation" />
         <p>
           In the case of using CDN,
@@ -307,10 +307,10 @@ X.Session(context: AudioContext, size: BufferSize, numberOfInputs: number, numbe
         ) : null}
       </section>
       <section>
-        <h1>Setup</h1>
+        <h2>Setup</h2>
         <hr role="presentation" />
         <section>
-          <h2>Use Webpack Dev Server</h2>
+          <h3>Use Webpack Dev Server</h3>
           <SyntaxHighlighter language='bash' style={xcode}>{`$ git clone git@github.com:Korilakkuma/XSound.git
 $ cd XSound
 $ npm install
@@ -318,7 +318,7 @@ $ npm run dev
 $ open http://localhost:8080/playground/`}</SyntaxHighlighter>
         </section>
         <section>
-          <h2>Use Docker</h2>
+          <h3>Use Docker</h3>
           <SyntaxHighlighter language='bash' style={xcode}>{`$ git clone git@github.com:Korilakkuma/XSound.git
 $ cd XSound
 $ npm install
@@ -328,7 +328,7 @@ $ open http://localhost:8080/playground/`}</SyntaxHighlighter>
         </section>
       </section>
       <section>
-        <h1>Pickups</h1>
+        <h2>Pickups</h2>
         <hr role="presentation" />
         <ul className="list-marker">
           <li>

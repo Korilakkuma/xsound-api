@@ -7,7 +7,7 @@ export const NotFound = () => {
     <main className={CLASS_NAME}>
       <section>
         <div className="component-title">
-          <h1>Not Found</h1>
+          <h2>Not Found</h2>
         </div>
         <hr role="presentation" />
         <p>

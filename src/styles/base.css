@@ -19,18 +19,19 @@ noscript {
 }
 
 h1,
-h2 {
+h2,
+h3 {
   margin: 16px 0;
   font-family: "Lucida Grande", "Calibri", Helvetica, Arial, sans-serif;
   font-weight: lighter;
   color: var(--gray);
 }
 
-h1 {
+h2 {
   font-size: 36px;
 }
 
-h2 {
+h3 {
   font-size: 24px;
 }
 
