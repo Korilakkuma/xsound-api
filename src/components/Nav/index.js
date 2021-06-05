@@ -27,7 +27,7 @@ export const Nav = () => {
       </section>
       <section role="presentation">
         <h2><button type="button" role="tab" aria-expanded={expandedPanelId === 'panel-xsound'} aria-selected={expandedPanelId === 'panel-xsound'} aria-controls="panel-xsound" tabIndex="0" onClick={onClickCallback}>XSound</button></h2>
-        <dl id="panel-xsound" aria-hidden={expandedPanelId !== 'panel-xsound'}>
+        <dl id="panel-xsound" hidden={expandedPanelId !== 'panel-xsound'}>
           <dt>Properties</dt>
           <dd><Link to={`${BASS_PATH}xsound/is-xsound`} className={getSelectedClassNameCallback(`${BASS_PATH}xsound/is-xsound`)}>IS_XSOUND</Link></dd>
           <dd><Link to={`${BASS_PATH}xsound/sample-rate`} className={getSelectedClassNameCallback(`${BASS_PATH}xsound/sample-rate`)}>SAMPLE_RATE</Link></dd>
@@ -53,7 +53,7 @@ export const Nav = () => {
       </section>
       <section role="presentation">
         <h2><button type="button" role="tab" aria-expanded={expandedPanelId === 'panel-oscillator'} aria-selected={expandedPanelId === 'panel-oscillator'} aria-controls="panel-oscillator" tabIndex="0" onClick={onClickCallback}>Oscillator</button></h2>
-        <dl id="panel-oscillator" aria-hidden={expandedPanelId !== 'panel-oscillator'}>
+        <dl id="panel-oscillator" hidden={expandedPanelId !== 'panel-oscillator'}>
           <dt>Interfaces</dt>
           <dd><Link to={`${BASS_PATH}oscillator/interface`} className={getSelectedClassNameCallback(`${BASS_PATH}oscillator/interface`)}>OscillatorModule</Link></dd>
           <dd><Link to={`${BASS_PATH}oscillator/oscillator/interface`} className={getSelectedClassNameCallback(`${BASS_PATH}oscillator/oscillator/interface`)}>Oscillator</Link></dd>
@@ -74,7 +74,7 @@ export const Nav = () => {
       </section>
       <section role="presentation">
         <h2><button type="button" role="tab" aria-expanded={expandedPanelId === 'panel-oneshot'} aria-selected={expandedPanelId === 'panel-oneshot'} aria-controls="panel-oneshot" tabIndex="0" onClick={onClickCallback}>One-shot</button></h2>
-        <dl id="panel-oneshot" aria-hidden={expandedPanelId !== 'panel-oneshot'}>
+        <dl id="panel-oneshot" hidden={expandedPanelId !== 'panel-oneshot'}>
           <dt>Interfaces</dt>
           <dd><Link to={`${BASS_PATH}oneshot/interface`} className={getSelectedClassNameCallback(`${BASS_PATH}oneshot/interface`)}>OneshotModule</Link></dd>
           <dt>Methods</dt>
@@ -90,7 +90,7 @@ export const Nav = () => {
       </section>
       <section role="presentation">
         <h2><button type="button" role="tab" aria-expanded={expandedPanelId === 'panel-noise'} aria-selected={expandedPanelId === 'panel-noise'} aria-controls="panel-noise" tabIndex="0" onClick={onClickCallback}>Noise</button></h2>
-        <dl id="panel-noise" aria-hidden={expandedPanelId !== 'panel-noise'}>
+        <dl id="panel-noise" hidden={expandedPanelId !== 'panel-noise'}>
           <dt>Interfaces</dt>
           <dd><Link to={`${BASS_PATH}noise/interface`} className={getSelectedClassNameCallback(`${BASS_PATH}noise/interface`)}>NoiseModule</Link></dd>
           <dt>Methods</dt>
@@ -103,7 +103,7 @@ export const Nav = () => {
       </section>
       <section role="presentation">
         <h2><button type="button" role="tab" aria-expanded={expandedPanelId === 'panel-audio'} aria-selected={expandedPanelId === 'panel-audio'} aria-controls="panel-audio" tabIndex="0" onClick={onClickCallback}>Audio</button></h2>
-        <dl id="panel-audio" aria-hidden={expandedPanelId !== 'panel-audio'}>
+        <dl id="panel-audio" hidden={expandedPanelId !== 'panel-audio'}>
           <dt>Interfaces</dt>
           <dd><Link to={`${BASS_PATH}audio/interface`} className={getSelectedClassNameCallback(`${BASS_PATH}audio/interface`)}>AudioModule</Link></dd>
           <dt>Methods</dt>
@@ -127,7 +127,7 @@ export const Nav = () => {
       </section>
       <section role="presentation">
         <h2><button type="button" role="tab" aria-expanded={expandedPanelId === 'panel-media'} aria-selected={expandedPanelId === 'panel-media'} aria-controls="panel-media" tabIndex="0" onClick={onClickCallback}>Media</button></h2>
-        <dl id="panel-media" aria-hidden={expandedPanelId !== 'panel-media'}>
+        <dl id="panel-media" hidden={expandedPanelId !== 'panel-media'}>
           <dt>Interfaces</dt>
           <dd><Link to={`${BASS_PATH}media/interface`} className={getSelectedClassNameCallback(`${BASS_PATH}media/interface`)}>MediaModule</Link></dd>
           <dt>Methods</dt>
@@ -151,7 +151,7 @@ export const Nav = () => {
       </section>
       <section role="presentation">
         <h2><button type="button" role="tab" aria-expanded={expandedPanelId === 'panel-stream'} aria-selected={expandedPanelId === 'panel-stream'} aria-controls="panel-stream" tabIndex="0" onClick={onClickCallback}>Stream</button></h2>
-        <dl id="panel-stream" aria-hidden={expandedPanelId !== 'panel-stream'}>
+        <dl id="panel-stream" hidden={expandedPanelId !== 'panel-stream'}>
           <dt>Interfaces</dt>
           <dd><Link to={`${BASS_PATH}stream/interface`} className={getSelectedClassNameCallback(`${BASS_PATH}stream/interface`)}>StreamModule</Link></dd>
           <dt>Methods</dt>
@@ -173,7 +173,7 @@ export const Nav = () => {
       </section>
       <section role="presentation">
         <h2><button type="button" role="tab" aria-expanded={expandedPanelId === 'panel-mixer'} aria-selected={expandedPanelId === 'panel-mixer'} aria-controls="panel-mixer" tabIndex="0" onClick={onClickCallback}>Mixer</button></h2>
-        <dl id="panel-mixer" aria-hidden={expandedPanelId !== 'panel-mixer'}>
+        <dl id="panel-mixer" hidden={expandedPanelId !== 'panel-mixer'}>
           <dt>Interfaces</dt>
           <dd><Link to={`${BASS_PATH}mixer/interface`} className={getSelectedClassNameCallback(`${BASS_PATH}mixer/interface`)}>MixerModule</Link></dd>
           <dt>Methods</dt>
@@ -183,7 +183,7 @@ export const Nav = () => {
       </section>
       <section role="presentation">
         <h2><button type="button" role="tab" aria-expanded={expandedPanelId === 'panel-processor'} aria-selected={expandedPanelId === 'panel-processor'} aria-controls="panel-processor" tabIndex="0" onClick={onClickCallback}>Processor</button></h2>
-        <dl id="panel-processor" aria-hidden={expandedPanelId !== 'panel-processor'}>
+        <dl id="panel-processor" hidden={expandedPanelId !== 'panel-processor'}>
           <dt>Interfaces</dt>
           <dd><Link to={`${BASS_PATH}processor/interface`} className={getSelectedClassNameCallback(`${BASS_PATH}processor/interface`)}>ProcessorModule</Link></dd>
           <dt>Methods</dt>
@@ -201,7 +201,7 @@ export const Nav = () => {
       </section>
       <section role="presentation">
         <h2><button type="button" role="tab" aria-expanded={expandedPanelId === 'panel-mexpandedPanelIdi'} aria-selected={expandedPanelId === 'panel-midi'} aria-controls="panel-midi" tabIndex="0" onClick={onClickCallback}>MIDI</button></h2>
-        <dl id="panel-midi" aria-hidden={expandedPanelId !== 'panel-midi'}>
+        <dl id="panel-midi" hidden={expandedPanelId !== 'panel-midi'}>
           <dt>Interfaces</dt>
           <dd><Link to={`${BASS_PATH}midi/interface`} className={getSelectedClassNameCallback(`${BASS_PATH}midi/interface`)}>MIDI</Link></dd>
           <dt>Methods</dt>
@@ -211,7 +211,7 @@ export const Nav = () => {
       </section>
       <section role="presentation">
         <h2><button type="button" role="tab" aria-expanded={expandedPanelId === 'panel-mml'} aria-selected={expandedPanelId === 'panel-mml'} aria-controls="panel-mml" tabIndex="0" onClick={onClickCallback}>MML</button></h2>
-        <dl id="panel-mml" aria-hidden={expandedPanelId !== 'panel-mml'}>
+        <dl id="panel-mml" hidden={expandedPanelId !== 'panel-mml'}>
           <dt>Interfaces</dt>
           <dd><Link to={`${BASS_PATH}mml/interface`} className={getSelectedClassNameCallback(`${BASS_PATH}mml/interface`)}>MML</Link></dd>
           <dt>Methods</dt>
@@ -229,7 +229,7 @@ export const Nav = () => {
       </section>
       <section role="presentation">
         <h2><button type="button" role="tab" aria-expanded={expandedPanelId === 'panel-analyser'} aria-selected={expandedPanelId === 'panel-analyser'} aria-controls="panel-analyser" tabIndex="0" onClick={onClickCallback}>Analyser</button></h2>
-        <dl id="panel-analyser" aria-hidden={expandedPanelId !== 'panel-analyser'}>
+        <dl id="panel-analyser" hidden={expandedPanelId !== 'panel-analyser'}>
           <dt>Interfaces</dt>
           <dd><Link to={`${BASS_PATH}analyser/interface`} className={getSelectedClassNameCallback(`${BASS_PATH}analyser/interface`)}>Analyser</Link></dd>
           <dd><Link to={`${BASS_PATH}analyser/visualizer/interface`} className={getSelectedClassNameCallback(`${BASS_PATH}analyser/visualizer/interface`)}>Visualizer</Link></dd>
@@ -250,7 +250,7 @@ export const Nav = () => {
       </section>
       <section role="presentation">
         <h2><button type="button" role="tab" aria-expanded={expandedPanelId === 'panel-effectors'} aria-selected={expandedPanelId === 'panel-effectors'} aria-controls="panel-effectors" tabIndex="0" onClick={onClickCallback}>Effectors</button></h2>
-        <dl id="panel-effectors" aria-hidden={expandedPanelId !== 'panel-effectors'}>
+        <dl id="panel-effectors" hidden={expandedPanelId !== 'panel-effectors'}>
           <dt>Modules</dt>
           <dd><Link to={`${BASS_PATH}effectors/autopanner`} className={getSelectedClassNameCallback(`${BASS_PATH}effectors/autopanner`)}>autopanner</Link></dd>
           <dd><Link to={`${BASS_PATH}effectors/chorus`} className={getSelectedClassNameCallback(`${BASS_PATH}effectors/chorus`)}>chorus</Link></dd>
@@ -278,7 +278,7 @@ export const Nav = () => {
       </section>
       <section role="presentation">
         <h2><button type="button" role="tab" aria-expanded={expandedPanelId === 'panel-recorder'} aria-selected={expandedPanelId === 'panel-recorder'} aria-controls="panel-recorder" tabIndex="0" onClick={onClickCallback}>Recorder</button></h2>
-        <dl id="panel-recorder" aria-hidden={expandedPanelId !== 'panel-recorder'}>
+        <dl id="panel-recorder" hidden={expandedPanelId !== 'panel-recorder'}>
           <dt>Interfaces</dt>
           <dd><Link to={`${BASS_PATH}recorder/interface`} className={getSelectedClassNameCallback(`${BASS_PATH}recorder/interface`)}>Recorder</Link></dd>
           <dt>Methods</dt>
@@ -294,7 +294,7 @@ export const Nav = () => {
       </section>
       <section role="presentation">
         <h2><button type="button" role="tab" aria-expanded={expandedPanelId === 'panel-session'} aria-selected={expandedPanelId === 'panel-session'} aria-controls="panel-session" tabIndex="0" onClick={onClickCallback}>Session</button></h2>
-        <dl id="panel-session" aria-hidden={expandedPanelId !== 'panel-session'}>
+        <dl id="panel-session" hidden={expandedPanelId !== 'panel-session'}>
           <dt>Interfaces</dt>
           <dd><Link to={`${BASS_PATH}session/interface`} className={getSelectedClassNameCallback(`${BASS_PATH}session/interface`)}>Session</Link></dd>
           <dt>Methods</dt>
