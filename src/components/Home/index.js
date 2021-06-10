@@ -133,7 +133,7 @@ oscillator.start(0);`);
         <h2>Supported Browsers</h2>
         <hr role="presentation" />
         <p className={`${CLASS_NAME}__supportedBrowsers`}>
-          <img src="assets/images/supported-browsers.png" alt="Supported Browsers" width="2810" height="562" loading="lazy" />
+          <img src="assets/images/supported-browsers.png" alt="Supported Browsers are Chrome, Edge, Firefox, Opera and Safari" width="2810" height="562" loading="lazy" />
         </p>
       </section>
       <section>
