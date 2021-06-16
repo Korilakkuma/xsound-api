@@ -13,7 +13,8 @@ module.exports = {
   output: {
     filename: '[name].js',
     path: `${__dirname}/assets`,
-    publicPath: '/assets/'
+    publicPath: '/assets/',
+    assetModuleFilename: 'images/[name][ext]'
   },
   module: {
     rules: [
@@ -32,7 +33,7 @@ module.exports = {
       },
       {
         test: /\.png$/,
-        use: 'url-loader'
+        type: 'asset/resource'
       }
     ]
   },
