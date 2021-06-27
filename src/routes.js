@@ -1,8 +1,6 @@
 import React, { useCallback } from 'react';
-import { useDispatch } from 'react-redux';
 import { Switch, Route } from 'react-router-dom';
 import { BASS_PATH, TITLE } from './config';
-import { expandPanel, setSelectedPath } from './actions/NavActions';
 import { PageLoadingBar } from './components/PageLoadingBar';
 import { Header } from './components/Header';
 import { Home } from './components/Home';
@@ -26,8 +24,6 @@ import { Nav } from './components/Nav';
 import { Footer } from './components/Footer';
 
 export const Router = () => {
-  const dispatch = useDispatch();
-
   const onAnimationEnd = useCallback(() => {
     // HACK:
     document.getElementById('page-loading-bar').classList.remove('-loading');
@@ -35,28 +31,14 @@ export const Router = () => {
 
   /* eslint-disable */
   const render = useCallback((Component) => ({ history, match }) => {
-    // HACK:
-    const pageLoadingBar = document.getElementById('page-loading-bar');
-
-    if (pageLoadingBar) {
-      pageLoadingBar.classList.add('-loading');
-    }
-
-    dispatch(setSelectedPath(history.location.pathname));
-
     if (Component.TITLE === 'Home') {
       document.title = TITLE;
     } else {
       document.title = `${Component.TITLE} | ${TITLE}`;
     }
 
-    const matches         = location.href.match(/#\/(.*?)\//);
-    const expandedPanelId = matches === null ? '' : `panel-${matches[1]}`;
-
-    dispatch(expandPanel(expandedPanelId));
-
     return <Component history={history} match={match} />;
-  }, [dispatch]);
+  }, []);
   /* eslint-enable */
 
   return (
