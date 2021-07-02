@@ -1,8 +1,8 @@
-import React, { useEffect, useCallback } from 'react';
+import React, { useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { BASS_PATH } from '../../config';
-import { expandPanel, setSelectedPath } from '../../actions/NavActions';
+import { expandPanel } from '../../actions/NavActions';
 
 const CLASS_NAME = 'Nav';
 
@@ -19,29 +19,6 @@ export const Nav = () => {
   const getSelectedClassNameCallback = useCallback((path) => {
     return path === selectedPath ? '-selected' : '';
   }, [selectedPath]);
-
-  useEffect(() => {
-    const onPopstate = () => {
-      // HACK:
-      const pageLoadingBar = document.getElementById('page-loading-bar');
-
-      if (pageLoadingBar) {
-        pageLoadingBar.classList.add('-loading');
-      }
-
-      const matches         = location.href.match(/#\/(.*?)\/.*$/);
-      const expandedPanelId = matches === null ? '' : `panel-${matches[1]}`;
-
-      dispatch(setSelectedPath(matches === null ? '/' : matches[0].slice(1)));
-      dispatch(expandPanel(expandedPanelId));
-    };
-
-    window.addEventListener('popstate', onPopstate, false);
-
-    return () => {
-      window.removeEventListener('popstate', onPopstate, false);
-    };
-  }, [dispatch]);
 
   return (
     <nav className={CLASS_NAME}>

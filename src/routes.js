@@ -1,6 +1,8 @@
-import React, { useCallback } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Switch, Route } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import { BASS_PATH, TITLE } from './config';
+import { expandPanel, setSelectedPath } from './actions/NavActions';
 import { PageLoadingBar } from './components/PageLoadingBar';
 import { Header } from './components/Header';
 import { Home } from './components/Home';
@@ -24,9 +26,12 @@ import { Nav } from './components/Nav';
 import { Footer } from './components/Footer';
 
 export const Router = () => {
+  const dispatch = useDispatch();
+
+  const [loading, setLoading] = useState(false);
+
   const onAnimationEnd = useCallback(() => {
-    // HACK:
-    document.getElementById('page-loading-bar').classList.remove('-loading');
+    setLoading(false);
   }, []);
 
   /* eslint-disable */
@@ -41,9 +46,27 @@ export const Router = () => {
   }, []);
   /* eslint-enable */
 
+  useEffect(() => {
+    const onPopstate = () => {
+      const matches         = location.href.match(/#\/(.*?)\/.*$/);
+      const expandedPanelId = matches === null ? '' : `panel-${matches[1]}`;
+
+      dispatch(setSelectedPath(matches === null ? '/' : matches[0].slice(1)));
+      dispatch(expandPanel(expandedPanelId));
+
+      setLoading(true);
+    };
+
+    window.addEventListener('popstate', onPopstate, false);
+
+    return () => {
+      window.removeEventListener('popstate', onPopstate, false);
+    };
+  }, [dispatch]);
+
   return (
     <React.Fragment>
-      <PageLoadingBar onAnimationEnd={onAnimationEnd} />
+      <PageLoadingBar loading={loading} onAnimationEnd={onAnimationEnd} />
       <Header />
       <div className="Router">
         <Nav />
