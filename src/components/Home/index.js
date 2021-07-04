@@ -152,7 +152,7 @@ oscillator.start(0);`);
               onMouseDown={onMouseDownGettingStartedCallback}
               onMouseUp={onMouseUpGettingStartedCallback}
             >
-              COPY
+              copy
             </button>
           </div>
         ) : null}
@@ -191,7 +191,7 @@ oscillator.start(0);`}</SyntaxHighlighter>
               onMouseDown={onMouseDownGettingStartedAsModuleCallback}
               onMouseUp={onMouseUpGettingStartedAsModuleCallback}
             >
-              COPY
+              copy
             </button>
           </div>
         ) : null}
@@ -267,7 +267,7 @@ X.Session(context: AudioContext, size: BufferSize, numberOfInputs: number, numbe
               onMouseDown={onMouseDownNpmInstallCallback}
               onMouseUp={onMouseUpNpmInstallCallback}
             >
-              COPY
+              copy
             </button>
           </div>
         ) : null}
@@ -288,7 +288,7 @@ X.Session(context: AudioContext, size: BufferSize, numberOfInputs: number, numbe
               onMouseDown={onMouseDownCdnCallback}
               onMouseUp={onMouseUpCdnCallback}
             >
-              COPY
+              copy
             </button>
           </div>
         ) : null}
@@ -305,7 +305,7 @@ X.Session(context: AudioContext, size: BufferSize, numberOfInputs: number, numbe
               onMouseDown={onMouseDownEsModulesCallback}
               onMouseUp={onMouseUpEsModulesCallback}
             >
-              COPY
+              copy
             </button>
           </div>
         ) : null}
