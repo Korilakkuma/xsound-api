@@ -143,7 +143,7 @@ oscillator.start(0);`);
           In the case of using as <b>full stack</b> (For example, use oscillator) ...
         </p>
         <SyntaxHighlighter className={copyGettingStarted ? '-copy' : ''} language='javascript' style={xcode}>
-          X(&apos;oscillator&apos;).setup(true).ready().start(440);
+          {'X(\'oscillator\').setup(true).ready().start(440);'}
         </SyntaxHighlighter>
         {navigator.clipboard && navigator.clipboard.writeText ? (
           <div className={`${CLASS_NAME}__buttonWrapper`}>
@@ -258,7 +258,7 @@ X.Session(context: AudioContext, size: BufferSize, numberOfInputs: number, numbe
         <h2>Installation</h2>
         <hr role="presentation" />
         <SyntaxHighlighter className={copyNpmInstall ? '-copy' : ''} language='bash' style={xcode}>
-          $ npm install --save xsound
+          {'$ npm install --save xsound'}
         </SyntaxHighlighter>
         {navigator.clipboard && navigator.clipboard.writeText ? (
           <div className={`${CLASS_NAME}__buttonWrapper`}>
@@ -279,7 +279,7 @@ X.Session(context: AudioContext, size: BufferSize, numberOfInputs: number, numbe
           In the case of using CDN,
         </p>
         <SyntaxHighlighter className={copyCdn ? '-copy' : ''} language='html' style={xcode}>
-          &lt;script type=&quot;text/javascript&quot; src=&quot;https://cdn.jsdelivr.net/npm/xsound@latest/build/xsound.min.js&quot;&gt;&lt;/script&gt;
+          {'<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/xsound@latest/build/xsound.min.js"></script>'}
         </SyntaxHighlighter>
         {navigator.clipboard && navigator.clipboard.writeText ? (
           <div className={`${CLASS_NAME}__buttonWrapper`}>
@@ -338,7 +338,7 @@ $ open http://localhost:8080/playground/`}</SyntaxHighlighter>
           <li>
             <a href="https://dev.to/areknawo/9-libraries-to-kickstart-your-web-audio-stuff-460p" target="_blank" rel="noopener noreferrer">9 libraries to kickstart your Web Audio stuff - DEV Community</a>
             <blockquote>
-                XSound is a batteries-included library for everything audio. From basic management and loading through streaming, effects, ending with visualizations and recording, this libraries provides almost everything! It also has nice, semi-chainable API with solid documentation.
+              XSound is a batteries-included library for everything audio. From basic management and loading through streaming, effects, ending with visualizations and recording, this libraries provides almost everything! It also has nice, semi-chainable API with solid documentation.
             </blockquote>
           </li>
           <li>
