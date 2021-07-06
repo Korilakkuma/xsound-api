@@ -34,4 +34,4 @@ export const FFT = () => {
   );
 };
 
-FFT.TITLE = 'XSound.FFT';
+FFT.TITLE = 'XSound.FFT, XSound.IFFT';
